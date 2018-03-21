@@ -33,6 +33,9 @@ function mdb_ir_plugin_activation()
 {
     global $wpdb;
 
+    require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+
+
     /**
      * Tabelle für Lizenzen installieren
      */
@@ -40,21 +43,32 @@ function mdb_ir_plugin_activation()
     $charset_collate = $wpdb->get_charset_collate();
     $table_name      = $wpdb->prefix . MDB_IR_TABLE_LICENSES;
 
-    if( $wpdb->get_var( "SHOW TABLES LIKE `$table_name`" ) != $table_name) :
+    if( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) != $table_name) :
 
-        $wpdb->query( "CREATE TABLE `$table_name` (
-          `id` int(8)() UNSIGNED NOT NULL AUTO_INCREMENT,
-          `term` varchar(200) DEFAULT '' NOT NULL,
-          `short term` varchar(50) DEFAULT '' NOT NULL,
-          `description` text NOT NULL,
-          `link` varchar(255) DEFAULT '' NOT NULL,
-          PRIMARY KEY (`id`)
+
+        $sql = "CREATE TABLE $table_name (
+          id int(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+          term varchar(200) DEFAULT '' NOT NULL,
+          short_term varchar(50) DEFAULT '' NOT NULL,
+          description text NOT NULL,
+          link varchar(255) DEFAULT '' NOT NULL,
+          PRIMARY KEY  (id)
         ) $charset_collate;";
 
-        add_option( 'MDB_IR_DATABASE_VERSION', MDB_IR_PLUGIN_DATABASE_VERSION );
+        dbDelta( $sql );
     else :
-        //table in database. Check version and/or update
+        //table in database. update only
     endif;
+
+
+    /**
+     * Datenbankversion setzen
+     */
+
+    add_option( 'MDB_IR_DATABASE_VERSION', MDB_IR_PLUGIN_DATABASE_VERSION );
 }
 
-register_activation_hook( __FILE__, 'plugin_activation' );
+register_activation_hook( __FILE__, 'mdb_ir_plugin_activation' );
+
+
+//debug purposes only: file_put_contents( __DIR__ . '/my_loggg.txt', ob_get_contents() );
