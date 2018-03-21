@@ -5,20 +5,22 @@ Author:          Marco Di Bella
 Author URI:      https://www.marcodibella.de
 Description:     Implementiert eine Bildrechteverwaltung.
 Version:         0.0.1
-Text Domain:     mdb-image-rights
+Text Domain:     mdb_ir
 */
 
 
 
 // Check & Quit
-defined('ABSPATH') OR exit;
+defined( 'ABSPATH' ) OR exit;
 
 
 
 // Wichtige Konstanten
-define( 'PLUGIN_VERSION', '0.0.1' );
-define( 'PLUGIN_DOMAIN', 'mdb-image-rights' );
-define( 'TABLE_LICENSES', 'mdb_ir_licenses' );
+define( 'MDB_IR_PLUGIN_VERSION', '0.0.1' );
+define( 'MDB_IR_PLUGIN_DATABASE_VERSION', '0.0.1' );
+define( 'MDB_IR_PLUGIN_DOMAIN', 'mdb_ir' );
+
+define( 'MDB_IR_TABLE_LICENSES', 'mdb_ir_licenses' );
 
 
 
@@ -27,36 +29,29 @@ define( 'TABLE_LICENSES', 'mdb_ir_licenses' );
  * @since 0.0.1
  */
 
-function plugin_activation()
+function mdb_ir_plugin_activation()
 {
     global $wpdb;
 
-    // Tabelle für Lizenzen installieren
-    $table_name      = $wpdb->prefix . TABLE_LICENSES;
+    /**
+     * Tabelle für Lizenzen installieren
+     */
+
     $charset_collate = $wpdb->get_charset_collate();
+    $table_name      = $wpdb->prefix . MDB_IR_TABLE_LICENSES;
 
-    if( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) != $table_name) :
+    if( $wpdb->get_var( "SHOW TABLES LIKE `$table_name`" ) != $table_name) :
 
-        //table not in database. Create new table
-        $sql = "CREATE TABLE $table_name (
-                id      mediumint(9) NOT NULL AUTO_INCREMENT,
-                name    text NOT NULL,
-                field_y text NOT NULL,
-                PRIMARY KEY id (id)
-                ) $charset_collate;";
+        $wpdb->query( "CREATE TABLE `$table_name` (
+          `id` int(8)() UNSIGNED NOT NULL AUTO_INCREMENT,
+          `term` varchar(200) DEFAULT '' NOT NULL,
+          `short term` varchar(50) DEFAULT '' NOT NULL,
+          `description` text NOT NULL,
+          `link` varchar(255) DEFAULT '' NOT NULL,
+          PRIMARY KEY (`id`)
+        ) $charset_collate;";
 
-                `id` int(11) NOT NULL AUTO_INCREMENT,
-                	            `customer_id` int(11) NOT NULL,
-                	            `project` varchar(50) NOT NULL,
-                	            `description` TEXT DEFAULT '',
-                  				`created_at` TIMESTAMP NOT NULL DEFAULT NOW(),
-                				`created_by` int(11) NOT NULL,
-                				`updated_at` TIMESTAMP NOT NULL DEFAULT NOW(),
-                				`updated_by` int(11) NOT NULL,
-                	            PRIMARY KEY (`id`)
-
-        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-        dbDelta( $sql );
+        add_option( 'MDB_IR_DATABASE_VERSION', MDB_IR_PLUGIN_DATABASE_VERSION );
     else :
         //table in database. Check version and/or update
     endif;
