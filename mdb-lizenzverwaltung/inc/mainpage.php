@@ -41,5 +41,9 @@ add_action( 'admin_menu', 'mdb_lv_add_mainpage' );
 
 function mdb_lv_show_mainpage()
 {
-    echo 'yeah';
+?>
+<div class="wrap">
+<h1 class="wp-heading-inline"><h2>My List Table Test</h1>
+</div>
+<?php
 }
