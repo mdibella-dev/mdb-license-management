@@ -54,7 +54,7 @@ function mdb_ir_plugin_activation()
           link varchar(255) DEFAULT '' NOT NULL,
           PRIMARY KEY  (id)
         ) $charset_collate;";
-
+// Bool Wert für Lizenzanzeige einbauen 
         dbDelta( $sql );
     else :
         //table in database. update only
