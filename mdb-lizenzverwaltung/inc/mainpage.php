@@ -44,6 +44,11 @@ function mdb_lv_show_mainpage()
 ?>
 <div class="wrap">
 <h1 class="wp-heading-inline"><h2>My List Table Test</h1>
-</div>
 <?php
+
+    $maintable = new MDB_main_table();
+    $maintable->prepare_items();
+    $maintable->display();
+?>
+</div>
 }
