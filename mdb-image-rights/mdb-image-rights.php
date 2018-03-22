@@ -47,14 +47,14 @@ function mdb_ir_plugin_activation()
 
 
         $sql = "CREATE TABLE $table_name (
-          id int(8) UNSIGNED NOT NULL AUTO_INCREMENT,
-          term varchar(200) DEFAULT '' NOT NULL,
-          short_term varchar(50) DEFAULT '' NOT NULL,
-          description text NOT NULL,
-          link varchar(255) DEFAULT '' NOT NULL,
-          PRIMARY KEY  (id)
+            id int(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+            term varchar(50) DEFAULT '' NOT NULL,
+            description text NOT NULL,
+            link varchar(255) DEFAULT '' NOT NULL,
+            version varchar(20) DEFAULT '' NOT NULL,
+            PRIMARY KEY  (id)
         ) $charset_collate;";
-// Bool Wert für Lizenzanzeige einbauen 
+
         dbDelta( $sql );
     else :
         //table in database. update only
