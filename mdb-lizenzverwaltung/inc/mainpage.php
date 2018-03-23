@@ -113,4 +113,5 @@ function mdb_lv_show_indexing_tab()
 <h2><?php _e( 'Indizierung der Medien', 'mdb_lv' )?></h2>
 <?php
 
+    indexing();
 }

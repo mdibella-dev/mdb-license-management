@@ -16,6 +16,7 @@ defined( 'ABSPATH' ) OR exit;
 
 // Dateien einbinden
 require_once( __DIR__ . '/inc/class-main-table.php' );
+require_once( __DIR__ . '/inc/indexing.php' );
 require_once( __DIR__ . '/inc/mainpage.php' );
 
 
