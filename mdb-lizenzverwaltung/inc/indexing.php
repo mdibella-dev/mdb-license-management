@@ -16,6 +16,4 @@ kopieren in die entsprechenden Felder
 */
 function indexing()
 {
-    endforeach;
-
 }
