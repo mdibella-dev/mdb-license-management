@@ -47,13 +47,14 @@ function mdb_lv_plugin_activation()
          */
 
         $sql = "CREATE TABLE $table_name (
-            license_id int(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+            license_guid varchar(4) DEFAULT '' NOT NULL,
             license_term varchar(50) DEFAULT '' NOT NULL,
             license_description text NOT NULL,
             license_link varchar(255) DEFAULT '' NOT NULL,
             license_version varchar(20) DEFAULT '' NOT NULL,
-            PRIMARY KEY  (license_id)
-        ) $charset_collate;";
+            PRIMARY KEY  (license_guid)
+            )
+            COLLATE utf8_general_ci;";
 
         dbDelta( $sql );
 
@@ -67,15 +68,14 @@ function mdb_lv_plugin_activation()
 
             while( ( $file_data = fgetcsv( $file_handle, 1000, ",", "'" ) ) !== FALSE ) :
                 if( $file_row != 1 ) :  // erste Zeile mit Titelfeldern ignorieren
+                    $table_format = array( '%s', '%s', '%s', '%s', '%s' );
                     $table_data   = array(
-                                    'license_id'          => 0,
+                                    'license_guid'        => $file_data[0],
                                     'license_term'        => $file_data[1],
                                     'license_description' => $file_data[2],
                                     'license_link'        => $file_data[3],
                                     'license_version'     => $file_data[4]
                                     );
-
-                    $table_format = array( '%d', '%s', '%s', '%s', '%s' );
 
                     $wpdb->insert( $table_name, $table_data, $table_format );
                 endif;
@@ -102,11 +102,12 @@ function mdb_lv_plugin_activation()
         $sql = "CREATE TABLE $table_name (
             media_id bigint(20) UNSIGNED NOT NULL,
             media_link varchar(255) DEFAULT '' NOT NULL,
-            license_id int(8) UNSIGNED NOT NULL,
+            license_guid varchar(4) DEFAULT '' NOT NULL,
             by_name varchar(255) DEFAULT '' NOT NULL,
             by_link varchar(255) DEFAULT '' NOT NULL,
             PRIMARY KEY  (media_id)
-        ) $charset_collate;";
+            )
+            COLLATE utf8_general_ci;";
 
         dbDelta( $sql );
     endif;

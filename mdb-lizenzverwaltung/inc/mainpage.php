@@ -14,6 +14,11 @@
 defined( 'ABSPATH' ) OR exit;
 
 
+// Wichtige Lizenzen
+define( 'LICENSE_GUID_CC0', '0001' );
+define( 'LICENSE_GUID_DREAMSTIME_RF', '0056' );
+
+
 /**
  * Integriert die Hauptseite in das 'Medien'-Menü
  *
@@ -135,6 +140,7 @@ function mdb_lv_show_indexing_tab()
 
             echo '<p>';
             foreach( $data as $image ) :
+                indexing( $image->ID );
                 echo( sprintf( __( 'Bearbeite Bild mit ID #%1$s: %2$s', 'mdb_lv'), $image->ID, $image->post_title ) );
                 echo '<br>';
             endforeach;
