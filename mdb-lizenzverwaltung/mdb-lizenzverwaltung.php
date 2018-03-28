@@ -26,6 +26,7 @@ define( 'MEDIA_STATE_LICENSED', 3 );
 
 // Dateien einbinden
 require_once( __DIR__ . '/inc/class-main-table.php' );
+require_once( __DIR__ . '/inc/media-library-enhancement.php' );
 require_once( __DIR__ . '/inc/indexing.php' );
 require_once( __DIR__ . '/inc/mainpage.php' );
 
