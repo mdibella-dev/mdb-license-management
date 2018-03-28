@@ -16,7 +16,7 @@ class MDB_main_table extends WP_List_Table
         $columns = array(
                     'license_term'        => __( 'Lizenz', 'mdb_lv' ),
                     'license_description' => __( 'Beschreibung', 'mdb_lv' ),
-                    'license_link'        => __( 'Vollständiger Lizenztext', 'mdb_lv' )
+                    'license_link'        => __( 'Lizenztext', 'mdb_lv' )
                 );
 
         return $columns;
@@ -68,4 +68,47 @@ class MDB_main_table extends WP_List_Table
                 return print_r( $item, true ) ; //Show the whole array for troubleshooting purposes
         endswitch;
     }
+
+
+    function __construct()
+    {
+        parent::__construct();
+
+        add_action( 'admin_head', array( &$this, 'admin_header' ), 10, 0 );
+    }
+
+
+    function admin_header()
+    {
+    /*    $page = ( isset( $_GET[ 'page' ] ) ) ? esc_attr( $_GET[ 'page' ] ) : false;
+        $tab  = ( isset( $_GET[ 'tab' ] ) ) ? esc_attr( $_GET[ 'tab' ] ) : false;
+
+        if( ('mdb_lizenzverwaltung' != $page ) or ( 'tab-02' != $tab ) )
+            return;
+*/
+        echo '<style type="text/css">';
+        echo '.wp-list-table .column-license_term { width: 15%; }';
+        echo '.wp-list-table .column-license_link { width: 15%; }';
+        echo '</style>';
+    }
+}
+
+
+
+add_action( 'admin_head', 'admin_header', 10, 0 );
+
+
+
+function admin_header()
+{
+/*    $page = ( isset( $_GET[ 'page' ] ) ) ? esc_attr( $_GET[ 'page' ] ) : false;
+$tab  = ( isset( $_GET[ 'tab' ] ) ) ? esc_attr( $_GET[ 'tab' ] ) : false;
+
+if( ('mdb_lizenzverwaltung' != $page ) or ( 'tab-02' != $tab ) )
+    return;
+*/
+echo '<style type="text/css">';
+echo '.wp-list-table .column-license_term { width: 15%; }';
+echo '.wp-list-table .column-license_link { width: 10%; text-align: center}';
+echo '</style>';
 }
