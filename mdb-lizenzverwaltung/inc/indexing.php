@@ -14,7 +14,7 @@
  * Liest ein Medium (attachement) aus und bereitet einen Eintrag für die Medientabelle vor
  */
 
-function indexing( $id )
+function mdb_lv_indexing( $id )
 {
     global $wpdb;
 

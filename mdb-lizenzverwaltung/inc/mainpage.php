@@ -9,7 +9,6 @@
  */
 
 
-
 // Check & Quit
 defined( 'ABSPATH' ) OR exit;
 
@@ -17,6 +16,7 @@ defined( 'ABSPATH' ) OR exit;
 // Wichtige Lizenzen
 define( 'LICENSE_GUID_CC0', '0001' );
 define( 'LICENSE_GUID_DREAMSTIME_RF', '0056' );
+
 
 
 /**
@@ -140,7 +140,7 @@ function mdb_lv_show_indexing_tab()
 
             echo '<p>';
             foreach( $data as $image ) :
-                indexing( $image->ID );
+                mdb_lv_indexing( $image->ID );
                 echo( sprintf( __( 'Bearbeite Bild mit ID #%1$s: %2$s', 'mdb_lv'), $image->ID, $image->post_title ) );
                 echo '<br>';
             endforeach;
