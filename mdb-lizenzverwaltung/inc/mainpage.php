@@ -13,12 +13,6 @@
 defined( 'ABSPATH' ) OR exit;
 
 
-// Wichtige Lizenzen
-define( 'LICENSE_GUID_CC0', '0001' );
-define( 'LICENSE_GUID_DREAMSTIME_RF', '0056' );
-
-
-
 /**
  * Integriert die Hauptseite in das 'Medien'-Menü
  *

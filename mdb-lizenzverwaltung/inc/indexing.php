@@ -19,6 +19,7 @@ function mdb_lv_indexing( $id )
     global $wpdb;
 
     $media_link   = '';
+    $media_state  = MEDIA_STATE_UNKNOWN;
     $by_name      = '';
     $license_guid = '';
 
@@ -34,8 +35,10 @@ function mdb_lv_indexing( $id )
 
         if( strpos( strtolower( $media_link), 'dreamstime' ) !== false ) :
             $license_guid = LICENSE_GUID_DREAMSTIME_RF;
+            $media_state  = MEDIA_STATE_LICENSED;
         elseif( strpos( strtolower( $media_link), 'pixabay' ) !== false ) :
             $license_guid = LICENSE_GUID_CC0;
+            $media_state  = MEDIA_STATE_LICENSED;
         endif;
     endif;
 
@@ -55,6 +58,7 @@ function mdb_lv_indexing( $id )
     $table_data   = array(
                     'media_id'     => $id,
                     'media_link'   => $media_link,
+                    'media_state'  => $media_state,
                     'license_guid' => $license_guid,
                     'by_name'      => $by_name,
                     'by_link'      => ''

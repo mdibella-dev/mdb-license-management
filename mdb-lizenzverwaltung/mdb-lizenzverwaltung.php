@@ -14,6 +14,16 @@ Text Domain:     mdb_lv
 defined( 'ABSPATH' ) OR exit;
 
 
+// Wichtige Konstanten
+define( 'LICENSE_GUID_CC0', '0001' );
+define( 'LICENSE_GUID_DREAMSTIME_RF', '0056' );
+
+define( 'MEDIA_STATE_UNKNOWN', 0 );
+define( 'MEDIA_STATE_NO_CREDIT', 1 );
+define( 'MEDIA_STATE_SIMPLE_CREDIT', 2 );
+define( 'MEDIA_STATE_LICENSED', 3 );
+
+
 // Dateien einbinden
 require_once( __DIR__ . '/inc/class-main-table.php' );
 require_once( __DIR__ . '/inc/indexing.php' );
@@ -102,6 +112,7 @@ function mdb_lv_plugin_activation()
         $sql = "CREATE TABLE $table_name (
             media_id bigint(20) UNSIGNED NOT NULL,
             media_link varchar(255) DEFAULT '' NOT NULL,
+            media_state int(8) UNSIGNED DEFAULT 0,
             license_guid varchar(4) DEFAULT '' NOT NULL,
             by_name varchar(255) DEFAULT '' NOT NULL,
             by_link varchar(255) DEFAULT '' NOT NULL,
