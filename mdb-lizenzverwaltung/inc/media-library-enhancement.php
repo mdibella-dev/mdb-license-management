@@ -77,14 +77,6 @@ add_action( 'manage_media_custom_column', 'media_custom_column', 10, 2 );
 
 function mdb_lv_attachement_fields_to_edit( $form_fields, $post )
 {
-    //
-    $form_fields[ 'mdb-lv-media-link' ] = array(
-		'label' => __( 'Link zur Originaldatei', 'mdb_lv' ),
-		'input' => 'html',
-		'html' 	=> "<input type='url' size='128' class='widefat' value='" . esc_url( $media_link ) . "' name='attachments[{$post->ID}][mdb-lv-media-link]'>",
-	);
-
-
     $html  = "<select id='mdb-lv-media-state' name='attachments[{$post->ID}][mdb-lv-media-state]'>";
     $html .= sprintf( '<option value="%1$s">%2$s</option>', MEDIA_STATE_UNKNOWN, __( 'unbekannt/nicht erfasst', 'mdb_lv' ) );
     $html .= sprintf( '<option value="%1$s">%2$s</option>', MEDIA_STATE_NO_CREDIT, __( 'keine Angaben notwendig', 'mdb_lv' ) );
@@ -99,6 +91,13 @@ function mdb_lv_attachement_fields_to_edit( $form_fields, $post )
 	);
 
 
+    $form_fields[ 'mdb-lv-media-link' ] = array(
+		'label' => __( 'Link zur Originaldatei', 'mdb_lv' ),
+		'input' => 'html',
+		'html' 	=> "<input type='url' size='128' class='widefat' value='" . esc_url( $media_link ) . "' name='attachments[{$post->ID}][mdb-lv-media-link]'>",
+	);
+
+
 	$form_fields[ 'mdb-lv-by-name' ] = array(
 		'label' => __( 'Urheber', 'mdb_lv' ),
 		'input' => 'html',
@@ -110,6 +109,31 @@ function mdb_lv_attachement_fields_to_edit( $form_fields, $post )
 		'input' => 'html',
 		'html' 	=> "<input type='url' size='128' class='widefat' value='" . esc_url( $by_link ) . "' name='attachments[{$post->ID}][mdb-lv-by-link]'>",
 	);
+
+
+
+    /**
+     * Lade Daten aus der Datentabelle
+     */
+
+    global $wpdb;
+
+    $table_name  = $wpdb->prefix . 'mdb_lv_licenses';
+    $table_data  = $wpdb->get_results( "SELECT license_guid, license_term FROM $table_name", 'ARRAY_A' );
+
+    $html  = "<select id='mdb-lv-license-guid' name='attachments[{$post->ID}][mdb-lv-license-guid]'>";
+
+    foreach ( $table_data as $data ) :
+        $html .= sprintf( '<option value="%1$s">%2$s</option>', $data[ 'license_guid' ], $data[ 'license_term' ] );
+    endforeach;
+    $html .= '</select>';
+
+    $form_fields[ 'mdb-lv-license-guid' ] = array(
+		'label' => __( 'Lizenz', 'mdb_lv' ),
+		'input' => 'html',
+		'html' 	=> $html,
+	);
+
 
 	return $form_fields;
 }
