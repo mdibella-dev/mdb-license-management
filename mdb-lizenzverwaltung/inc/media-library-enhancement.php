@@ -77,8 +77,9 @@ add_action( 'manage_media_custom_column', 'media_custom_column', 10, 2 );
 
 function mdb_lv_attachement_fields_to_edit( $form_fields, $post )
 {
+    //
     $form_fields[ 'mdb-lv-media-link' ] = array(
-		'label' => __( 'Link zur Originaldatei', LOCALIZED ),
+		'label' => __( 'Link zur Originaldatei', 'mdb_lv' ),
 		'input' => 'html',
 		'html' 	=> "<input type='url' size='128' class='widefat' value='" . esc_url( $media_link ) . "' name='attachments[{$post->ID}][mdb-lv-media-link]'>",
 	);
@@ -92,20 +93,20 @@ function mdb_lv_attachement_fields_to_edit( $form_fields, $post )
     $html .= '</select>';
 
     $form_fields[ 'mdb-lv-media-state' ] = array(
-		'label' => __( 'Angaben zum Urheber', LOCALIZED ),
+		'label' => __( 'Angaben zum Urheber', 'mdb_lv' ),
 		'input' => 'html',
 		'html' 	=> $html,
 	);
 
 
 	$form_fields[ 'mdb-lv-by-name' ] = array(
-		'label' => __( 'Urheber', LOCALIZED ),
+		'label' => __( 'Urheber', 'mdb_lv' ),
 		'input' => 'html',
 		'html' 	=> "<input type='text' size='128' class='widefat' value='" . $by_name . "' name='attachments[{$post->ID}][mdb-lv-by-name]'>",
 	);
 
     $form_fields[ 'mdb-lv-by-link' ] = array(
-		'label' => __( 'Link zum Urheber', LOCALIZED ),
+		'label' => __( 'Link zum Urheber', 'mdb_lv' ),
 		'input' => 'html',
 		'html' 	=> "<input type='url' size='128' class='widefat' value='" . esc_url( $by_link ) . "' name='attachments[{$post->ID}][mdb-lv-by-link]'>",
 	);
