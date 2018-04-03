@@ -126,3 +126,18 @@ function mdb_lv_plugin_activation()
 }
 
 register_activation_hook( __FILE__, 'mdb_lv_plugin_activation' );
+
+
+
+/**
+ * Lädt Plugin-Scripts
+ *
+ * @since 0.0.1
+ */
+
+function mdb_lv_plugin_scripts( $hook )
+{
+    wp_enqueue_script( 'mdb_lizenzverwaltung', plugin_dir_url( __FILE__ ) . 'js.js', array( 'jquery' ) );
+}
+
+add_action( 'admin_enqueue_scripts', 'mdb_lv_plugin_scripts' );
