@@ -9,6 +9,9 @@
  */
 
 
+// Check & Quit
+defined( 'ABSPATH' ) OR exit;
+
 
 /**
  * Liest ein Medium (attachement) aus und bereitet einen Eintrag für die Medientabelle vor

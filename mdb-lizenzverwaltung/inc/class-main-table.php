@@ -1,5 +1,10 @@
 <?php
 
+
+// Check & Quit
+defined( 'ABSPATH' ) OR exit;
+
+
 // http://wpengineer.com/2426/wp_list_table-a-step-by-step-guide/
 // https://wp.smashingmagazine.com/2011/11/native-admin-tables-wordpress/
 

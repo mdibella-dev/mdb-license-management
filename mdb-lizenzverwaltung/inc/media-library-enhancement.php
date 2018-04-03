@@ -1,6 +1,10 @@
 <?php
 
 
+// Check & Quit
+defined( 'ABSPATH' ) OR exit;
+
+
 function get_media_record( $id )
 {
     global $wpdb;
@@ -76,11 +80,11 @@ function mdb_lv_attachement_fields_to_edit( $form_fields, $post )
     $form_fields[ 'mdb-lv-media-link' ] = array(
 		'label' => __( 'Link zur Originaldatei', LOCALIZED ),
 		'input' => 'html',
-		'html' 	=> "<input type='text' size='128' class='widefat' value='" . esc_url( $media_link ) . "' name='attachments[{$post->ID}][mdb-lv-media-link]'>",
+		'html' 	=> "<input type='url' size='128' class='widefat' value='" . esc_url( $media_link ) . "' name='attachments[{$post->ID}][mdb-lv-media-link]'>",
 	);
 
 
-    $html  = "<select name='attachments[{$post->ID}][mdb-lv-media-state]'>";
+    $html  = "<select id='mdb-lv-media-state' name='attachments[{$post->ID}][mdb-lv-media-state]'>";
     $html .= sprintf( '<option value="%1$s">%2$s</option>', MEDIA_STATE_UNKNOWN, __( 'unbekannt/nicht erfasst', 'mdb_lv' ) );
     $html .= sprintf( '<option value="%1$s">%2$s</option>', MEDIA_STATE_NO_CREDIT, __( 'keine Angaben notwendig', 'mdb_lv' ) );
     $html .= sprintf( '<option value="%1$s">%2$s</option>', MEDIA_STATE_SIMPLE_CREDIT, __( 'einfache Namensnennung (ggf. mit Urheberlink)', 'mdb_lv' ) );
@@ -103,18 +107,14 @@ function mdb_lv_attachement_fields_to_edit( $form_fields, $post )
     $form_fields[ 'mdb-lv-by-link' ] = array(
 		'label' => __( 'Link zum Urheber', LOCALIZED ),
 		'input' => 'html',
-		'html' 	=> "<input type='text' size='128' class='widefat' value='" . esc_url( $by_link ) . "' name='attachments[{$post->ID}][mdb-lv-by-link]'>",
+		'html' 	=> "<input type='url' size='128' class='widefat' value='" . esc_url( $by_link ) . "' name='attachments[{$post->ID}][mdb-lv-by-link]'>",
 	);
 
 	return $form_fields;
 }
 
 add_filter( 'attachment_fields_to_edit', 'mdb_lv_attachement_fields_to_edit', null, 2 );
-remove_filter( 'mdb_filter_attachement_fields_to_edit', 2 );
 
-if( function_exists( 'mdb_filter_attachement_fields_to_edit' )) :
-    remove_filter( 'mdb_filter_attachement_fields_to_edit', 2 );
-endif;
 
 
 /*
