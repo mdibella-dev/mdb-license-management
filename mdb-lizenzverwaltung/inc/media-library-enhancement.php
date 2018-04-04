@@ -15,9 +15,34 @@ defined( 'ABSPATH' ) OR exit;
 
 
 /**
- * Holt einen Datensatz zur einem Medium aus der Medien-Tabelle des Plugins
+ * Speichert einen Datensatz zu einem Medium in die Medien-Tabelle des Plugins
  *
- * @since 1.0.0
+ * @since 0.0.1
+ */
+
+function mdb_lv_set_media_record( $id )
+{
+    global $wpdb;
+
+    $table_name = $wpdb->prefix . 'mdb_lv_media';
+
+
+
+
+
+
+    
+    $table_data = $wpdb->get_results( "XXX * FROM $table_name WHERE media_id=$id", 'ARRAY_A' );
+
+    return $table_data[ 0 ];
+}
+
+
+
+/**
+ * Holt einen Datensatz zu einem Medium aus der Medien-Tabelle des Plugins
+ *
+ * @since 0.0.1
  */
 
 function mdb_lv_get_media_record( $id )
@@ -31,10 +56,11 @@ function mdb_lv_get_media_record( $id )
 }
 
 
+
 /**
  * Holt Lizenzinformationen aus der entsprechenden Tabelle des Plugins
  *
- * @since 1.0.0
+ * @since 0.0.1
  */
 
 function mdb_lv_get_license_record( $license_guid )
@@ -52,7 +78,7 @@ function mdb_lv_get_license_record( $license_guid )
 /**
  * Fügt in der Medienübersicht eine Spalte zu den Bildrechteinformationen hinzu
  *
- * @since 1.0.0
+ * @since 0.0.1
  * @return array $columns        modifizierte Spalten
  */
 
@@ -70,7 +96,7 @@ add_filter( 'manage_media_columns', 'mdb_lv_add_media_columns');
 /**
  * Stellt die Bildrechteinformation eines Mediums in der Medienübersicht dar
  *
- * @since 1.0.0
+ * @since 0.0.1
  */
 
 function mdb_lv_media_custom_column( $column, $id )
@@ -106,49 +132,43 @@ add_action( 'manage_media_custom_column', 'mdb_lv_media_custom_column', 10, 2 );
 /**
  * Fügt eine Reihe von zusätzlichen Eingabefelder für Dateien in der Mediathek hinzu
  *
- * @since 1.0.0
+ * @since 0.0.1
  * @return array $form_fields   modifizierte Formularfelder
  */
 
 function mdb_lv_attachement_fields_to_edit( $form_fields, $post )
 {
+    $data = mdb_lv_get_media_record( $post->ID );
+
+    extract( shortcode_atts( array(
+                             'media_id'     => $post->ID,
+                             'media_link'   => '',
+                             'media_state'  => 0,
+                             'license_guid' => '',
+                             'by_name'      => '',
+                             'by_link'      => '' ),
+                             $data ) );
+
+    /**
+     * 1. Status der Medienerfassung bzw. Angabe zur Art & Weise der Urheberrechtsangabe
+     */
+
     $html  = "<select id='mdb-lv-media-state' name='attachments[{$post->ID}][mdb-lv-media-state]'>";
     $html .= sprintf( '<option value="%1$s">%2$s</option>', MEDIA_STATE_UNKNOWN, __( 'unbekannt/nicht erfasst', 'mdb_lv' ) );
     $html .= sprintf( '<option value="%1$s">%2$s</option>', MEDIA_STATE_NO_CREDIT, __( 'keine Angaben notwendig', 'mdb_lv' ) );
-    $html .= sprintf( '<option value="%1$s">%2$s</option>', MEDIA_STATE_SIMPLE_CREDIT, __( 'einfache Namensnennung (ggf. mit Urheberlink)', 'mdb_lv' ) );
-    $html .= sprintf( '<option value="%1$s">%2$s</option>', MEDIA_STATE_LICENSED, __( 'Urheberrechtsangaben gemäß Bildlizenz', 'mdb_lv' ) );
+    $html .= sprintf( '<option value="%1$s">%2$s</option>', MEDIA_STATE_SIMPLE_CREDIT, __( 'einfache Namensnennung (ggf. mit Verlinkung)', 'mdb_lv' ) );
+    $html .= sprintf( '<option value="%1$s">%2$s</option>', MEDIA_STATE_LICENSED, __( 'Urheberrechtsangaben gemäß Lizenz', 'mdb_lv' ) );
     $html .= '</select>';
 
     $form_fields[ 'mdb-lv-media-state' ] = array(
-		'label' => __( 'Angaben zum Urheber', 'mdb_lv' ),
+		'label' => __( 'Art und Weise der Urheberrechtsangabe', 'mdb_lv' ),
 		'input' => 'html',
 		'html' 	=> $html,
 	);
 
 
-    $form_fields[ 'mdb-lv-media-link' ] = array(
-		'label' => __( 'Link zur Originaldatei', 'mdb_lv' ),
-		'input' => 'html',
-		'html' 	=> "<input type='url' size='128' class='widefat' value='" . esc_url( $media_link ) . "' name='attachments[{$post->ID}][mdb-lv-media-link]'>",
-	);
-
-
-	$form_fields[ 'mdb-lv-by-name' ] = array(
-		'label' => __( 'Urheber', 'mdb_lv' ),
-		'input' => 'html',
-		'html' 	=> "<input type='text' size='128' class='widefat' value='" . $by_name . "' name='attachments[{$post->ID}][mdb-lv-by-name]'>",
-	);
-
-    $form_fields[ 'mdb-lv-by-link' ] = array(
-		'label' => __( 'Link zum Urheber', 'mdb_lv' ),
-		'input' => 'html',
-		'html' 	=> "<input type='url' size='128' class='widefat' value='" . esc_url( $by_link ) . "' name='attachments[{$post->ID}][mdb-lv-by-link]'>",
-	);
-
-
-
     /**
-     * Lade Daten aus der Datentabelle
+     * 2. Auflistung der verfügbaren Lizenzen
      */
 
     global $wpdb;
@@ -170,6 +190,39 @@ function mdb_lv_attachement_fields_to_edit( $form_fields, $post )
 	);
 
 
+    /**
+     * 3. Benennung des Urhebers
+     */
+
+	$form_fields[ 'mdb-lv-by-name' ] = array(
+		'label' => __( 'Benennung des Urhebers', 'mdb_lv' ),
+		'input' => 'html',
+		'html' 	=> "<input type='text' size='128' class='widefat' value='" . $by_name . "' name='attachments[{$post->ID}][mdb-lv-by-name]'>",
+	);
+
+
+    /**
+     * 4. Link zur Webseite des Urhebers (wenn gefordert)
+     */
+
+    $form_fields[ 'mdb-lv-by-link' ] = array(
+		'label' => __( 'Link zum Urheber', 'mdb_lv' ),
+		'input' => 'html',
+		'html' 	=> "<input type='url' size='128' class='widefat' value='" . esc_url( $by_link ) . "' name='attachments[{$post->ID}][mdb-lv-by-link]'>",
+	);
+
+
+    /**
+     * 5. Link zum Original des Bildes zur eigenen Dokumentation
+     */
+
+    $form_fields[ 'mdb-lv-media-link' ] = array(
+        'label' => __( 'Link zur Originaldatei', 'mdb_lv' ),
+        'input' => 'html',
+        'html' 	=> "<input type='url' size='128' class='widefat' value='" . esc_url( $media_link ) . "' name='attachments[{$post->ID}][mdb-lv-media-link]'>",
+    );
+
+
 	return $form_fields;
 }
 
@@ -177,9 +230,25 @@ add_filter( 'attachment_fields_to_edit', 'mdb_lv_attachement_fields_to_edit', nu
 
 
 
-/*
-function mdb_filter_attachement_fields_to_save( $post, $attachment )
+/**
+ * Speichert die Werte der zusätzlichen Eingabefelder in die Datenbank ab
+ *
+ * @since 0.0.1
+ * @return array $form_fields   modifizierte Formularfelder
+ */
+
+function mdb_lv_attachement_fields_to_save( $post, $attachment )
 {
+    // gespeicherte Daten
+    $data = mdb_lv_get_media_record( $post['ID'] );
+
+    echo $post['by_link'];
+
+var_dump( $data );
+var_dump( $attachment );
+exit;
+/*
+
 	// 1. Credit
 	if( isset( $attachment[ 'media-meta-credit' ] ) ) :
 		update_post_meta( $post['ID'], '_media-meta-credit', $attachment['media-meta-credit'] );
@@ -190,7 +259,9 @@ function mdb_filter_attachement_fields_to_save( $post, $attachment )
 		update_post_meta( $post['ID'], '_media-meta-source', $attachment['media-meta-source'] );
 	endif;
 
+    */
+
 	return $post;
 }
 
-add_filter( 'attachment_fields_to_save', 'mdb_filter_attachement_fields_to_save', null, 2 ); */
+add_filter( 'attachment_fields_to_save', 'mdb_lv_attachement_fields_to_save', null, 2 );
