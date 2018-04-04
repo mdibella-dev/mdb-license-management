@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) OR exit;
  * @since 1.0.0
  */
 
-function get_media_record( $id )
+function mdb_lv_get_media_record( $id )
 {
     global $wpdb;
 
@@ -37,7 +37,7 @@ function get_media_record( $id )
  * @since 1.0.0
  */
 
-function get_license_record( $license_guid )
+function mdb_lv_get_license_record( $license_guid )
 {
     global $wpdb;
 
@@ -57,13 +57,13 @@ function get_license_record( $license_guid )
  */
 
 
-function add_media_columns( $columns )
+function mdb_lv_add_media_columns( $columns )
 {
     $columns[ 'mdb_lv_credits' ] = __( 'Bildrechte', 'mdb_lv' );
     return $columns;
 }
 
-add_filter( 'manage_media_columns', 'add_media_columns');
+add_filter( 'manage_media_columns', 'mdb_lv_add_media_columns');
 
 
 
@@ -73,10 +73,10 @@ add_filter( 'manage_media_columns', 'add_media_columns');
  * @since 1.0.0
  */
 
-function media_custom_column( $column, $id )
+function mdb_lv_media_custom_column( $column, $id )
 {
     if( $column == 'mdb_lv_credits' ) :
-        $data = get_media_record( $id );
+        $data = mdb_lv_get_media_record( $id );
 
         switch( $data[ 'media_state' ] ) :
             case MEDIA_STATE_UNKNOWN:
@@ -92,14 +92,14 @@ function media_custom_column( $column, $id )
             break;
 
             case MEDIA_STATE_LICENSED:
-                $data2 = get_license_record( $data[ 'license_guid' ] );
+                $data2 = mdb_lv_get_license_record( $data[ 'license_guid' ] );
                 echo sprintf( __( '%1$s<br>%2$s', 'mdb_lv' ), $data[ 'by_name' ], $data2[ 'license_term' ] );
             break;
         endswitch;
     endif;
 }
 
-add_action( 'manage_media_custom_column', 'media_custom_column', 10, 2 );
+add_action( 'manage_media_custom_column', 'mdb_lv_media_custom_column', 10, 2 );
 
 
 
