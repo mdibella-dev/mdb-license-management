@@ -19,10 +19,10 @@ class MDB_main_table extends WP_List_Table
     function get_columns()
     {
         $columns = array(
-                    'license_term'        => __( 'Lizenz', 'mdb_lv' ),
-                    'license_description' => __( 'Beschreibung', 'mdb_lv' ),
-                    'license_link'        => __( 'Lizenztext', 'mdb_lv' )
-                );
+            'license_term'        => __( 'Lizenz', 'mdb_lv' ),
+            'license_description' => __( 'Beschreibung', 'mdb_lv' ),
+            'license_link'        => __( 'Lizenztext', 'mdb_lv' )
+            );
 
         return $columns;
     }
@@ -62,10 +62,11 @@ class MDB_main_table extends WP_List_Table
             break;
 
             case 'license_link':
-                return sprintf( '<a href="%1$s" title="%2$s" target="_blank">%3$s</a>',
-                                $item[ $column_name ],
-                                __( 'Link zum Lizenztext', 'mdb_lv' ),
-                                __( 'Anzeigen', 'mdb_lv' )
+                return sprintf(
+                        '<a href="%1$s" title="%2$s" target="_blank">%3$s</a>',
+                        $item[ $column_name ],
+                        __( 'Link zum Lizenztext', 'mdb_lv' ),
+                        __( 'Anzeigen', 'mdb_lv' )
                         );
             break;
 
@@ -74,15 +75,3 @@ class MDB_main_table extends WP_List_Table
         endswitch;
     }
 }
-
-
-
-function admin_header()
-{
-    echo '<style type="text/css">';
-    echo '.wp-list-table .column-license_term { width: 15%; }';
-    echo '.wp-list-table .column-license_link { width: 10%; text-align: center}';
-    echo '</style>';
-}
-
-add_action( 'admin_head', 'admin_header', 10, 0 );

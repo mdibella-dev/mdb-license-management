@@ -7,3 +7,7 @@
 .compat-attachment-fields select#mdb-lv-license-guid {
     min-width: 30%;
 }
+
+
+.wp-list-table .column-license_term { width: 15%; }
+.wp-list-table .column-license_link { width: 10%; }

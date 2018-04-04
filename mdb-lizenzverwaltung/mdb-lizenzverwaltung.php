@@ -82,12 +82,12 @@ function mdb_lv_plugin_activation()
                 if( $file_row != 1 ) :  // erste Zeile mit Titelfeldern ignorieren
                     $table_format = array( '%s', '%s', '%s', '%s', '%s' );
                     $table_data   = array(
-                                    'license_guid'        => $file_data[0],
-                                    'license_term'        => $file_data[1],
-                                    'license_description' => $file_data[2],
-                                    'license_link'        => $file_data[3],
-                                    'license_version'     => $file_data[4]
-                                    );
+                        'license_guid'        => $file_data[0],
+                        'license_term'        => $file_data[1],
+                        'license_description' => $file_data[2],
+                        'license_link'        => $file_data[3],
+                        'license_version'     => $file_data[4]
+                        );
 
                     $wpdb->insert( $table_name, $table_data, $table_format );
                 endif;

@@ -135,7 +135,10 @@ function mdb_lv_show_indexing_tab()
             echo '<p>';
             foreach( $data as $image ) :
                 mdb_lv_indexing( $image->ID );
-                echo( sprintf( __( 'Bearbeite Bild mit ID #%1$s: %2$s', 'mdb_lv'), $image->ID, $image->post_title ) );
+                echo( sprintf(
+                        __( 'Bearbeite Bild mit ID #%1$s: %2$s', 'mdb_lv'),
+                        $image->ID,
+                        $image->post_title ) );
                 echo '<br>';
             endforeach;
             echo '</p>';

@@ -59,13 +59,13 @@ function mdb_lv_indexing( $id )
     $table_name   = $wpdb->prefix . 'mdb_lv_media';
     $table_format = array( '%d', '%s', '%s', '%s', '%s' );
     $table_data   = array(
-                    'media_id'     => $id,
-                    'media_link'   => $media_link,
-                    'media_state'  => $media_state,
-                    'license_guid' => $license_guid,
-                    'by_name'      => $by_name,
-                    'by_link'      => ''
-                    );
+        'media_id'     => $id,
+        'media_link'   => $media_link,
+        'media_state'  => $media_state,
+        'license_guid' => $license_guid,
+        'by_name'      => $by_name,
+        'by_link'      => ''
+        );
 
     $wpdb->insert( $table_name, $table_data, $table_format );
 }
