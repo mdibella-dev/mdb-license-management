@@ -1,9 +1,24 @@
 <?php
+/**
+ * Funktionen zur Erweiterung der Mediathek
+ *
+ * @author Marco Di Bella <mdb@marcodibella.de>
+ * @package mdb-lv
+ * @since 0.0.1
+ * @version 0.0.1
+ */
 
 
 // Check & Quit
 defined( 'ABSPATH' ) OR exit;
 
+
+
+/**
+ * Holt einen Datensatz zur einem Medium aus der Medien-Tabelle des Plugins
+ *
+ * @since 1.0.0
+ */
 
 function get_media_record( $id )
 {
@@ -15,6 +30,12 @@ function get_media_record( $id )
     return $table_data[ 0 ];
 }
 
+
+/**
+ * Holt Lizenzinformationen aus der entsprechenden Tabelle des Plugins
+ *
+ * @since 1.0.0
+ */
 
 function get_license_record( $license_guid )
 {
@@ -28,7 +49,16 @@ function get_license_record( $license_guid )
 
 
 
-function add_media_columns( $columns ) {
+/**
+ * Fügt in der Medienübersicht eine Spalte zu den Bildrechteinformationen hinzu
+ *
+ * @since 1.0.0
+ * @return array $columns        modifizierte Spalten
+ */
+
+
+function add_media_columns( $columns )
+{
     $columns[ 'mdb_lv_credits' ] = __( 'Bildrechte', 'mdb_lv' );
     return $columns;
 }
@@ -36,6 +66,12 @@ function add_media_columns( $columns ) {
 add_filter( 'manage_media_columns', 'add_media_columns');
 
 
+
+/**
+ * Stellt die Bildrechteinformation eines Mediums in der Medienübersicht dar
+ *
+ * @since 1.0.0
+ */
 
 function media_custom_column( $column, $id )
 {
@@ -67,12 +103,11 @@ add_action( 'manage_media_custom_column', 'media_custom_column', 10, 2 );
 
 
 
-
 /**
  * Fügt eine Reihe von zusätzlichen Eingabefelder für Dateien in der Mediathek hinzu
  *
  * @since 1.0.0
- * @return array $form_fields modifizierte Formularfelder
+ * @return array $form_fields   modifizierte Formularfelder
  */
 
 function mdb_lv_attachement_fields_to_edit( $form_fields, $post )
