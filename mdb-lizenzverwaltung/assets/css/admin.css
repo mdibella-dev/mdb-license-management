@@ -1,3 +1,9 @@
 .compat-attachment-fields tr {
     margin: 1em 0;
 }
+
+
+.compat-attachment-fields select#mdb-lv-media-state,
+.compat-attachment-fields select#mdb-lv-license-guid {
+    min-width: 30%;
+}
