@@ -6,6 +6,7 @@ jQuery(function($) {
         $('.compat-field-mdb-lv-by-link').hide();
         $('.compat-field-mdb-lv-by-name').hide();
         $('.compat-field-mdb-lv-license-guid').hide();
+        $('.compat-field-mdb-lv-media-link').hide();
 
         if( val > 0 ) {
             $('.compat-field-mdb-lv-media-link').show();
@@ -22,9 +23,10 @@ jQuery(function($) {
     }
 
     $(document).ready( function() {
+        mdb_lv_setFormFields();
 
         $('#mdb-lv-media-state').click( function() {
-            mdb_lv_setFormFields()
+            mdb_lv_setFormFields();
         });
     } );
 } );

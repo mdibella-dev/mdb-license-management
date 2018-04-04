@@ -31,6 +31,7 @@ require_once( __DIR__ . '/inc/indexing.php' );
 require_once( __DIR__ . '/inc/mainpage.php' );
 
 
+
 /**
  * Zentrale Aktivierungsfunktion für das Plugin
  *
@@ -74,7 +75,7 @@ function mdb_lv_plugin_activation()
          * Preset laden
          */
 
-        if( ( $file_handle = fopen( __DIR__ . "/preset.csv", "r" ) ) !== FALSE ) :
+        if( ( $file_handle = fopen( __DIR__ . "/assets/csv/preset.csv", "r" ) ) !== FALSE ) :
             $file_row = 1;
 
             while( ( $file_data = fgetcsv( $file_handle, 1000, ",", "'" ) ) !== FALSE ) :
@@ -137,7 +138,8 @@ register_activation_hook( __FILE__, 'mdb_lv_plugin_activation' );
 
 function mdb_lv_plugin_scripts( $hook )
 {
-    wp_enqueue_script( 'mdb_lizenzverwaltung', plugin_dir_url( __FILE__ ) . 'js.js', array( 'jquery' ) );
+    wp_enqueue_style( 'mdb_lizenzverwaltung', plugin_dir_url( __FILE__ ) . 'assets/css/admin.css' );
+    wp_enqueue_script( 'mdb_lizenzverwaltung', plugin_dir_url( __FILE__ ) . 'assets/js/admin.js', array( 'jquery' ) );
 }
 
 add_action( 'admin_enqueue_scripts', 'mdb_lv_plugin_scripts' );
