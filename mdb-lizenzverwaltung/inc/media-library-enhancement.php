@@ -15,58 +15,7 @@ defined( 'ABSPATH' ) OR exit;
 
 
 /**
- * Aktualisiert den Datensatz eines Mediums in der Medien-Tabelle des Plugins
- *
- * @since 0.0.1
- */
-
-function mdb_lv_update_media_record( $table_data )
-{
-    global $wpdb;
-
-    $table_name   = $wpdb->prefix . 'mdb_lv_media';
-    $table_where  = array( 'media_id' => $table_data[ 'media_id' ] );
-    $wpdb->update( $table_name, $table_data, $table_where );
-}
-
-
-
-/**
- * Holt einen Datensatz zu einem Medium aus der Medien-Tabelle des Plugins
- *
- * @since 0.0.1
- */
-
-function mdb_lv_get_media_record( $id )
-{
-    global $wpdb;
-
-    $table_name = $wpdb->prefix . 'mdb_lv_media';
-    $table_data = $wpdb->get_results( "SELECT * FROM $table_name WHERE media_id=$id", 'ARRAY_A' );
-    return $table_data[ 0 ];
-}
-
-
-
-/**
- * Holt Lizenzinformationen aus der entsprechenden Tabelle des Plugins
- *
- * @since 0.0.1
- */
-
-function mdb_lv_get_license_record( $license_guid )
-{
-    global $wpdb;
-
-    $table_name = $wpdb->prefix . 'mdb_lv_licenses';
-    $table_data = $wpdb->get_results( "SELECT * FROM $table_name WHERE license_guid='$license_guid'", 'ARRAY_A' );
-    return $table_data[ 0 ];
-}
-
-
-
-/**
- * Fügt in der Medienübersicht eine Spalte zu den Bildrechteinformationen hinzu
+ * Fügt in der Medienübersicht eine Spalte zum Urheberrecht hinzu
  *
  * @since 0.0.1
  * @return array $columns        modifizierte Spalten
@@ -75,7 +24,7 @@ function mdb_lv_get_license_record( $license_guid )
 
 function mdb_lv_add_media_columns( $columns )
 {
-    $columns[ 'mdb_lv_credits' ] = __( 'Rechteinhaber', 'mdb_lv' );
+    $columns[ 'mdb_lv_credits' ] = __( 'Urheberrecht', 'mdb_lv' );
     return $columns;
 }
 
@@ -84,7 +33,7 @@ add_filter( 'manage_media_columns', 'mdb_lv_add_media_columns');
 
 
 /**
- * Stellt die Bildrechteinformation eines Mediums in der Medienübersicht dar
+ * Stellt  in der Medienübersicht die Spalte zum Urheberrecht dar
  *
  * @since 0.0.1
  */
@@ -291,7 +240,11 @@ add_action( 'add_attachment', 'mdb_lv_add_attachment');
 
 
 
-
+/**
+ * Löscht ein Medium aus der Medien-Tabelle des Plugins
+ *
+ * @since 0.0.1
+ */
 
 function mdb_lv_delete_attachment( $id )
 {
