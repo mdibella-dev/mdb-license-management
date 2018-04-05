@@ -13,6 +13,7 @@
 defined( 'ABSPATH' ) OR exit;
 
 
+
 /**
  * Integriert die Hauptseite in das 'Medien'-Menü
  *
