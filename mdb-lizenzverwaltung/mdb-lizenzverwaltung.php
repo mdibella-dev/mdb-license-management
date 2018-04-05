@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) OR exit;
 
 // Wichtige Konstanten
 define( 'LICENSE_GUID_CC0', '0001' );
-define( 'LICENSE_GUID_DREAMSTIME_RF', '0056' );
+define( 'LICENSE_GUID_DREAMSTIME_RF', 'L054' );
 
 define( 'MEDIA_STATE_UNKNOWN', 0 );
 define( 'MEDIA_STATE_NO_CREDIT', 1 );
