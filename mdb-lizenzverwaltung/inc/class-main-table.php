@@ -29,7 +29,6 @@ class MDB_main_table extends WP_List_Table
         return $columns;
     }
 
-
     function prepare_items()
     {
         /**
@@ -38,7 +37,7 @@ class MDB_main_table extends WP_List_Table
 
         $columns  = $this->get_columns();
         $hidden   = array();
-        $sortable = array();
+        $sortable = array(); //$this->get_sortable_columns();
 
         $this->_column_headers = array($columns, $hidden, $sortable);
 
@@ -48,9 +47,7 @@ class MDB_main_table extends WP_List_Table
         global $wpdb;
 
         $table_name  = $wpdb->prefix . 'mdb_lv_licenses';
-        $table_data  = $wpdb->get_results( "SELECT license_term, license_description, license_link FROM $table_name", 'ARRAY_A' );
-
-
+        $table_data  = $wpdb->get_results( "SELECT * FROM $table_name", 'ARRAY_A' );
         $this->items = $table_data;
     }
 
