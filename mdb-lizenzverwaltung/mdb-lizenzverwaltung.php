@@ -9,7 +9,6 @@ Text Domain:     mdb_lv
 */
 
 
-
 // Check & Quit
 defined( 'ABSPATH' ) OR exit;
 
@@ -25,6 +24,8 @@ define( 'MEDIA_STATE_LICENSED', 3 );
 
 
 // Dateien einbinden
+require_once( __DIR__ . '/inc/core.php' );
+require_once( __DIR__ . '/inc/api.php' );
 require_once( __DIR__ . '/inc/class-main-table.php' );
 require_once( __DIR__ . '/inc/media-library-enhancement.php' );
 require_once( __DIR__ . '/inc/indexing.php' );
