@@ -1,2 +1,2 @@
-# mdb-image-rights
+# mdb-lizenzverwaltung
 WordPress-Plugin zur Implementierung einer Bildrechteverwaltung.
