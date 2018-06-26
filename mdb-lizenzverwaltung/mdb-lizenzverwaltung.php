@@ -137,11 +137,30 @@ register_activation_hook( __FILE__, 'mdb_lv_plugin_activation' );
  * @since 0.0.1
  */
 
-function mdb_lv_plugin_scripts( $hook )
+function mdb_lv_plugin_scripts()
 {
     wp_enqueue_style( 'mdb_lizenzverwaltung', plugin_dir_url( __FILE__ ) . 'assets/css/admin.css' );
     wp_enqueue_script( 'mdb_lizenzverwaltung', plugin_dir_url( __FILE__ ) . 'assets/js/admin.js', array( 'jquery' ), false, true );
 }
 
 add_action( 'admin_enqueue_scripts', 'mdb_lv_plugin_scripts' );
-add_action( 'post-plupload-upload-ui', 'mdb_lv_plugin_scripts' );
+
+
+
+function mdb_lv_upload()
+{
+    echo '
+<script type="text/javascript">
+
+    $(document).ready( function() {
+        mdb_lv_setFormFields();
+
+        $( "#mdb-lv-media-state" ).click( function() {
+            alert("Hello! I am an alert box!!");
+            mdb_lv_setFormFields();
+        } );
+    } );
+</script>';
+}
+
+add_action( 'post-plupload-upload-ui', 'mdb_lv_upload' );

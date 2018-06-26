@@ -25,13 +25,9 @@ jQuery(function($) {
     $(document).ready( function() {
         mdb_lv_setFormFields();
 
-        $( '#mdb-lv-media-state' ).bind( "click", function() {
-            alert( "User clicked on 'foo.'" );
-        });
-/*
         $( '#mdb-lv-media-state' ).click( function() {
             alert("Hello! I am an alert box!!");
             mdb_lv_setFormFields();
-        } );*/
+        } );
     } );
 } );
