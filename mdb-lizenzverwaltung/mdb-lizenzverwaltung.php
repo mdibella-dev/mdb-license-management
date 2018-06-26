@@ -140,7 +140,8 @@ register_activation_hook( __FILE__, 'mdb_lv_plugin_activation' );
 function mdb_lv_plugin_scripts( $hook )
 {
     wp_enqueue_style( 'mdb_lizenzverwaltung', plugin_dir_url( __FILE__ ) . 'assets/css/admin.css' );
-    wp_enqueue_script( 'mdb_lizenzverwaltung', plugin_dir_url( __FILE__ ) . 'assets/js/admin.js', array( 'jquery' ) );
+    wp_enqueue_script( 'mdb_lizenzverwaltung', plugin_dir_url( __FILE__ ) . 'assets/js/admin.js', array( 'jquery' ), false, true );
 }
 
 add_action( 'admin_enqueue_scripts', 'mdb_lv_plugin_scripts' );
+add_action( 'post-plupload-upload-ui', 'mdb_lv_plugin_scripts' );
