@@ -3,6 +3,8 @@ jQuery(function($) {
     function mdb_lv_setFormFields() {
         val = $( '#mdb-lv-media-state' ).val();
 
+        $( '.compat-field-mdb-lv-media-state' ).css( 'display', 'none' );
+
         $( '.compat-field-mdb-lv-by-link' ).hide();
         $( '.compat-field-mdb-lv-by-name' ).hide();
         $( '.compat-field-mdb-lv-license-guid' ).hide();
@@ -23,11 +25,14 @@ jQuery(function($) {
     }
 
     $(document).ready( function() {
-        mdb_lv_setFormFields();
 
-        $( '#mdb-lv-media-state' ).click( function() {
-            alert("Hello! I am an alert box!!");
-            mdb_lv_setFormFields();
-        } );
+        if( wp.media ) {
+            wp.media.view.Modal.prototype.on( 'on', function() {
+                mdb_lv_setFormFields();
+                console.log( 'media modal on' );
+            });
+        }
+
+        //mdb_lv_setFormFields();
     } );
 } );
