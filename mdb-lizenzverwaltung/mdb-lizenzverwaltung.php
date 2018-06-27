@@ -149,18 +149,19 @@ add_action( 'admin_enqueue_scripts', 'mdb_lv_plugin_scripts' );
 
 function mdb_lv_upload()
 {
-    echo '
-<script type="text/javascript">
+    $currentScreen = get_current_screen();
 
-    $(document).ready( function() {
-        mdb_lv_setFormFields();
+    if( 'upload' === $currentScreen->id ) :
 
-        $( "#mdb-lv-media-state" ).click( function() {
-            alert("Hello! I am an alert box!!");
-            mdb_lv_setFormFields();
-        } );
-    } );
-</script>';
+        global $mode;
+
+        if( 'grid' === $mode ) :
+
+            wp_enqueue_script( 'add-class-to-media-library-grid-elements', plugin_dir_url( __FILE__ ) . 'assets/js/admin.js', array( 'jquery' ) ); //Edit to match the file location
+
+        endif;
+
+    endif;
 }
 
-add_action( 'post-plupload-upload-ui', 'mdb_lv_upload' );
+add_action( 'admin_enqueue_scripts', 'mdb_lv_upload' );
