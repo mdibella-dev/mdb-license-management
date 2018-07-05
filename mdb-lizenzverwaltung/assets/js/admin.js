@@ -26,8 +26,8 @@ jQuery(function($) {
         }
     }
 */
-
     $(document).ready( function() {
+    //    mdb_lv_setFormFields();
     } );
 
 
@@ -42,7 +42,10 @@ jQuery(function($) {
 	wp.media.view.AttachmentCompat = wp.media.view.AttachmentCompat.extend( {
 
         events: {
-            'click select#mdb-lv-media-state': 'do_action'
+            'click select#mdb-lv-media-state': 'do_action',
+            'change input':    'save',
+            'change select':   'save',
+            'change textarea': 'save'
         },
 
         render: function() {
