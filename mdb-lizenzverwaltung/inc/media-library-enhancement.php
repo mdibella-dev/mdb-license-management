@@ -21,7 +21,6 @@ defined( 'ABSPATH' ) OR exit;
  * @return array $columns        modifizierte Spalten
  */
 
-
 function mdb_lv_add_media_columns( $columns )
 {
     $columns[ 'mdb_lv_credits' ] = __( 'Urheberrecht', 'mdb_lv' );
@@ -118,8 +117,8 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
 
     global $wpdb;
 
-    $table_name  = $wpdb->prefix . 'mdb_lv_licenses';
-    $table_data  = $wpdb->get_results( "SELECT license_guid, license_term FROM $table_name", 'ARRAY_A' );
+    $table_name = $wpdb->prefix . 'mdb_lv_licenses';
+    $table_data = $wpdb->get_results( "SELECT license_guid, license_term FROM $table_name", 'ARRAY_A' );
 
     $html  = "<select id='mdb-lv-license-guid' name='attachments[{$post->ID}][mdb-lv-license-guid]'>";
     $html .= sprintf(
