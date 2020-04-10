@@ -13,7 +13,11 @@ Text Domain:     mdb_lv
 defined( 'ABSPATH' ) OR exit;
 
 
-// Wichtige Konstanten
+
+/**
+ * Konstanten
+ **/
+
 define( 'LICENSE_GUID_CC0', '0001' );
 define( 'LICENSE_GUID_DREAMSTIME_RF', 'L054' );
 
@@ -23,7 +27,11 @@ define( 'MEDIA_STATE_SIMPLE_CREDIT', 2 );
 define( 'MEDIA_STATE_LICENSED', 3 );
 
 
-// Dateien einbinden
+
+/**
+ * Funktionsbibliothek einbinden
+ **/
+
 require_once( __DIR__ . '/inc/core.php' );
 require_once( __DIR__ . '/inc/api.php' );
 require_once( __DIR__ . '/inc/class-main-table.php' );
