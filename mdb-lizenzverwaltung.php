@@ -32,19 +32,30 @@ define( 'MEDIA_STATE_LICENSED', 3 );
  * Funktionsbibliothek einbinden
  **/
 
+/** Klassen **/
+
+require_once( __DIR__ . '/inc/classes/class-stockimage.php' );
+require_once( __DIR__ . '/inc/classes/class-stockimage-dreamstime.php' );
+require_once( __DIR__ . '/inc/classes/class-stockimage-shutterstock.php' );
+require_once( __DIR__ . '/inc/classes/class-stockimage-gettyimages.php' );
+require_once( __DIR__ . '/inc/classes/class-stockimage-pxhere.php' );
+require_once( __DIR__ . '/inc/classes/class-stockimage-flickr.php' );
+
+
 require_once( __DIR__ . '/inc/core.php' );
 require_once( __DIR__ . '/inc/api.php' );
 require_once( __DIR__ . '/inc/class-main-table.php' );
 require_once( __DIR__ . '/inc/media-library-enhancement.php' );
 require_once( __DIR__ . '/inc/indexing.php' );
 require_once( __DIR__ . '/inc/mainpage.php' );
+require_once( __DIR__ . '/inc/sandbox.php' );
 
 
 
 /**
  * Zentrale Aktivierungsfunktion für das Plugin
  *
- * @since 0.0.1
+ * @since   0.0.1
  */
 
 function mdb_lv_plugin_activation()
@@ -142,7 +153,7 @@ register_activation_hook( __FILE__, 'mdb_lv_plugin_activation' );
 /**
  * Lädt Plugin-Scripts
  *
- * @since 0.0.1
+ * @since   0.0.1
  */
 
 function mdb_lv_upload()
