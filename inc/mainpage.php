@@ -44,6 +44,7 @@ function mdb_lv_show_mainpage()
 <div class="wrap">
 <h1 class="wp-heading-inline"><?php _e( 'Lizenzverwaltung', 'mdb_lv' )?></h1>
 <?php
+
     $active_tab = 'tab-01';
 
     if( isset( $_GET[ 'tab' ] ) ) :
@@ -68,6 +69,8 @@ function mdb_lv_show_mainpage()
     switch( $active_tab ) :
         case 'tab-01' :
             mdb_lv_show_indexing_tab();
+    sandbox();
+            
         break;
 
         case 'tab-02' :
