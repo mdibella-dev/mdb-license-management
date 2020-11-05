@@ -93,11 +93,11 @@ function mdb_lv_show_licenses_tab()
 {
 ?>
 <h2><?php echo __( 'Verfügbare Lizenzen', 'mdb_lv' )?></h2>
-<?php
-    $maintable = new MDB_main_table();
-    $maintable->prepare_items();
-    $maintable->display();
-}
+        <?php
+            $maintable = new MDB_main_table();
+            $maintable->prepare_items();
+            $maintable->display();
+        }
 
 
 
