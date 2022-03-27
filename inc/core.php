@@ -2,10 +2,8 @@
 /**
  * Core-Funktionen
  *
- * @author Marco Di Bella <mdb@marcodibella.de>
+ * @author  Marco Di Bella <mdb@marcodibella.de>
  * @package mdb-lv
- * @since 0.0.1
- * @version 0.0.1
  */
 
 
@@ -40,6 +38,7 @@ function mdb_lv_get_media_record( $id ) {
 
     $table_name = $wpdb->prefix . 'mdb_lv_media';
     $table_data = $wpdb->get_results( "SELECT * FROM $table_name WHERE media_id=$id", 'ARRAY_A' );
+
     return $table_data[ 0 ];
 }
 
@@ -56,5 +55,6 @@ function mdb_lv_get_license_record( $license_guid ) {
 
     $table_name = $wpdb->prefix . 'mdb_lv_licenses';
     $table_data = $wpdb->get_results( "SELECT * FROM $table_name WHERE license_guid='$license_guid'", 'ARRAY_A' );
+
     return $table_data[ 0 ];
 }

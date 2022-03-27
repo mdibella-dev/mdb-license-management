@@ -2,10 +2,8 @@
 /**
  * Funktionen zur Erweiterung der Mediathek
  *
- * @author Marco Di Bella <mdb@marcodibella.de>
+ * @author  Marco Di Bella <mdb@marcodibella.de>
  * @package mdb-lv
- * @since 0.0.1
- * @version 0.0.1
  */
 
 

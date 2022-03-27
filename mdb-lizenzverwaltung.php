@@ -49,7 +49,10 @@ function mdb_lv_plugin_activation()
     require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 
 
-    // Tabelle für Lizenzen
+    /**
+     * 1. Tabelle für Lizenzen
+     */
+
     $charset_collate = $wpdb->get_charset_collate();
     $table_name      = $wpdb->prefix . 'mdb_lv_licenses';
 
@@ -94,7 +97,9 @@ function mdb_lv_plugin_activation()
     endif;
 
 
-    // Tabelle für Medien
+    /**
+     * 2. Tabelle für Medien
+     */
     $table_name = $wpdb->prefix . 'mdb_lv_media';
 
     if( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) != $table_name) :

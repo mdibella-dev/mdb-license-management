@@ -1,5 +1,9 @@
 <?php
-
+/**
+ *
+ * @author  Marco Di Bella <mdb@marcodibella.de>
+ * @package mdb-lv
+ */
 
 defined( 'ABSPATH' ) or exit;
 
