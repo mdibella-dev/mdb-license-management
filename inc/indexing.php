@@ -24,16 +24,18 @@ function mdb_lv_indexing( $id ) {
     $license_guid = '';
 
 
-    // Kompatibilität:  Suche nach Medien-Credits die über das Theme "mdb-bs-rdg"/"mdb-rechtsdepesche" angelegt worden sind
+    /**
+     * Kompatibilität:  Suche nach Medien-Credits die über das Theme "mdb-bs-rdg"/"mdb-rechtsdepesche" angelegt worden sind
+     */
 
     // _media-meta-source => media_link
     if( in_array( '_media-meta-source', get_post_custom_keys( $id ) ) ) :
         $media_link = get_post_meta( $id, '_media-meta-source', true );
 
-        if( strpos( strtolower( $media_link), 'dreamstime' ) !== false ) :
+        if( false !== strpos( strtolower( $media_link), 'dreamstime' ) ) :
             $license_guid = LICENSE_GUID_DREAMSTIME_RF;
             $media_state  = MEDIA_STATE_LICENSED;
-        elseif( strpos( strtolower( $media_link), 'pixabay' ) !== false ) :
+        elseif( false !== strpos( strtolower( $media_link), 'pixabay' ) ) :
             $license_guid = LICENSE_GUID_CC0;
             $media_state  = MEDIA_STATE_LICENSED;
         endif;
@@ -45,7 +47,10 @@ function mdb_lv_indexing( $id ) {
     endif;
 
 
-    // Tabelle beschreiben
+    /**
+     * Tabelle beschreiben
+     */
+     
     $table_name   = $wpdb->prefix . 'mdb_lv_media';
     $table_format = array( '%d', '%s', '%s', '%s', '%s', '%s' );
     $table_data   = array(
@@ -55,7 +60,7 @@ function mdb_lv_indexing( $id ) {
         'license_guid' => $license_guid,
         'by_name'      => $by_name,
         'by_link'      => ''
-        );
+    );
 
     $wpdb->insert( $table_name, $table_data, $table_format );
 }

@@ -73,11 +73,13 @@ function mdb_lv_plugin_activation()
 
 
         // Preset laden
-        if( ( $file_handle = fopen( __DIR__ . "/assets/csv/preset.csv", "r" ) ) !== FALSE ) :
+        if( false !== ( $file_handle = fopen( __DIR__ . "/assets/csv/preset.csv", "r" ) ) ) :
             $file_row = 1;
 
-            while( ( $file_data = fgetcsv( $file_handle, 1000, ",", "'" ) ) !== FALSE ) :
-                if( $file_row != 1 ) :  // erste Zeile mit Titelfeldern ignorieren
+            while( false !== ( $file_data = fgetcsv( $file_handle, 1000, ",", "'" ) ) ) :
+
+                // Ab zweiter Zeile; erste Zeile mit Titelfeldern ignorieren
+                if( 1 != $file_row ) :
                     $table_format = array( '%s', '%s', '%s', '%s', '%s' );
                     $table_data   = array(
                         'license_guid'        => $file_data[0],
@@ -85,13 +87,13 @@ function mdb_lv_plugin_activation()
                         'license_description' => $file_data[2],
                         'license_link'        => $file_data[3],
                         'license_version'     => $file_data[4]
-                        );
-
+                    );
                     $wpdb->insert( $table_name, $table_data, $table_format );
                 endif;
 
                 $file_row++;
             endwhile;
+            
             fclose( $file_handle );
         endif;
     endif;

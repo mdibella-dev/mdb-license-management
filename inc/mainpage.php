@@ -89,11 +89,11 @@ function mdb_lv_show_mainpage() {
 function mdb_lv_show_licenses_tab() {
 ?>
 <h2><?php echo __( 'Verfügbare Lizenzen', 'mdb_lv' )?></h2>
-        <?php
-            $maintable = new MDB_main_table();
-            $maintable->prepare_items();
-            $maintable->display();
-        }
+<?php
+    $maintable = new MDB_main_table();
+    $maintable->prepare_items();
+    $maintable->display();
+}
 
 
 
@@ -134,7 +134,8 @@ function mdb_lv_show_indexing_tab() {
                 echo( sprintf(
                         __( 'Bearbeite Bild mit ID #%1$s: %2$s', 'mdb_lv'),
                         $image->ID,
-                        $image->post_title ) );
+                        $image->post_title )
+                    );
                 echo '<br>';
             endforeach;
             echo '</p>';
