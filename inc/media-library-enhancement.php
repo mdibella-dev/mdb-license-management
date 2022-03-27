@@ -14,8 +14,10 @@ defined( 'ABSPATH' ) or exit;
 /**
  * Fügt in der Medienübersicht eine Spalte zum Urheberrecht hinzu
  *
- * @since 0.0.1
- * @return array $columns        modifizierte Spalten
+ * @since   0.0.1
+ *
+ * @param   array $columns
+ * @return  array modifizierte Spalten
  */
 
 function mdb_lv_add_media_columns( $columns ) {
@@ -28,9 +30,12 @@ add_filter( 'manage_media_columns', 'mdb_lv_add_media_columns');
 
 
 /**
- * Stellt  in der Medienübersicht die Spalte zum Urheberrecht dar
+ * Stellt in der Medienübersicht die Spalte zum Urheberrecht dar
  *
- * @since 0.0.1
+ * @since   0.0.1
+ *
+ * @param   string $column     die darzustellende Seite
+ * @param   int    $id         der Datensatz in der Medientabelle
  */
 
 function mdb_lv_media_custom_column( $column, $id ) {
@@ -56,7 +61,7 @@ function mdb_lv_media_custom_column( $column, $id ) {
                 echo sprintf( __( '%1$s<br>%2$s', 'mdb_lv' ), $data[ 'by_name' ], $data2[ 'license_term' ] );
             break;
         endswitch;
-        
+
     endif;
 }
 
@@ -65,10 +70,13 @@ add_action( 'manage_media_custom_column', 'mdb_lv_media_custom_column', 10, 2 );
 
 
 /**
- * Fügt eine Reihe von zusätzlichen Eingabefelder für Dateien in der Mediathek hinzu
+ * Fügt eine Reihe von zusätzlichen Formularfelder für Dateien in der Mediathek hinzu
  *
- * @since 0.0.1
- * @return array $form_fields   modifizierte Formularfelder
+ * @since   0.0.1
+ *
+ * @param   array   $form_fields    die Formularfelder des Medienanhangs
+ * @param   WP_Post $post           das Medienanhangsobjekt
+ * @return  array                   modifizierte Formularfelder
  */
 
 function mdb_lv_attachment_fields_to_edit( $form_fields, $post ) {
@@ -170,10 +178,12 @@ add_filter( 'attachment_fields_to_edit', 'mdb_lv_attachment_fields_to_edit', nul
 
 
 /**
- * Speichert die Werte der zusätzlichen Eingabefelder in die Datenbank ab
+ * Speichert die Werte der zusätzlichen Formularfelder in der Datenbank ab
  *
  * @since 0.0.1
- * @return array $form_fields   modifizierte Formularfelder
+ *
+ * @param   array $post
+ * @return  array
  */
 
 function mdb_lv_attachment_fields_to_save( $post, $attachment ) {
@@ -198,6 +208,8 @@ add_filter( 'attachment_fields_to_save', 'mdb_lv_attachment_fields_to_save', nul
  * nachdem ein Medium in die Mediathek geladen wurde
  *
  * @since 0.0.1
+ *
+ * @param   int $id     die ID des Medienanhangs
  */
 
 function mdb_lv_add_attachment( $id ) {
@@ -229,6 +241,8 @@ add_action( 'add_attachment', 'mdb_lv_add_attachment');
  * Löscht ein Medium aus der Medien-Tabelle des Plugins
  *
  * @since 0.0.1
+ *
+ * @param   int $id     die ID des Medienanhangs
  */
 
 function mdb_lv_delete_attachment( $id ) {

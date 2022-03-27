@@ -14,7 +14,9 @@ defined( 'ABSPATH' ) or exit;
 /**
  * Aktualisiert den Datensatz eines Mediums in der Medien-Tabelle des Plugins
  *
- * @since 0.0.1
+ * @since   0.0.1
+ *
+ * @param   array $table_data
  */
 
 function mdb_lv_update_media_record( $table_data ) {
@@ -31,6 +33,9 @@ function mdb_lv_update_media_record( $table_data ) {
  * Holt einen Datensatz zu einem Medium aus der Medien-Tabelle des Plugins
  *
  * @since 0.0.1
+ *
+ * @param   int   $id
+ * @return  array der angeforderte Datensatz
  */
 
 function mdb_lv_get_media_record( $id ) {
@@ -48,6 +53,9 @@ function mdb_lv_get_media_record( $id ) {
  * Holt Lizenzinformationen aus der entsprechenden Tabelle des Plugins
  *
  * @since 0.0.1
+ *
+ * @param   int   $license_guid
+ * @return  array der angeforderte Datensatz
  */
 
 function mdb_lv_get_license_record( $license_guid ) {

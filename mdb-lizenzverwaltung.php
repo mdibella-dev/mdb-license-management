@@ -4,7 +4,7 @@ Plugin Name:     Marco Di Bella - Lizenzverwaltung
 Author:          Marco Di Bella
 Author URI:      https://www.marcodibella.de
 Description:     Ergänzt die Mediathek um Funktionen zur Verwaltung von Copyright-Lizenzen sowie zur Erstellung und Abfrage entsprechender Credits.
-Version:         0.0.1
+Version:         1.0.0
 Text Domain:     mdb_lv
 */
 
@@ -42,8 +42,7 @@ require_once( __DIR__ . '/inc/mainpage.php' );
  * @since 0.0.1
  */
 
-function mdb_lv_plugin_activation()
-{
+function mdb_lv_plugin_activation() {
     global $wpdb;
 
     require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
@@ -93,7 +92,7 @@ function mdb_lv_plugin_activation()
 
                 $file_row++;
             endwhile;
-            
+
             fclose( $file_handle );
         endif;
     endif;

@@ -14,7 +14,10 @@ defined( 'ABSPATH' ) or exit;
 /**
  * Benennt die Lizenz eines Mediums (ggf. mit Link)
  *
- * @since 0.0.1
+ * @since   0.0.1
+ *
+ * @param   int    $id
+ * @return  string die Ausgabe
  */
 
 function mdb_lv_get_license( $id ) {
@@ -46,7 +49,10 @@ function mdb_lv_get_license( $id ) {
 /**
  * Gibt den Urheber eines Mediums (ggf. mit Link)
  *
- * @since 0.0.1
+ * @since   0.0.1
+ *
+ * @param   int    $id
+ * @return  string die Ausgabe
  */
 
 function mdb_lv_get_byline( $id ) {

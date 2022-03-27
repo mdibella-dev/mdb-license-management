@@ -13,6 +13,10 @@ defined( 'ABSPATH' ) or exit;
 
 /**
  * Liest ein Medium (attachement) aus und bereitet einen Eintrag für die Medientabelle vor
+ *
+ * @since   0.0.1
+ *
+ * @param   int $id
  */
 
 function mdb_lv_indexing( $id ) {
@@ -50,7 +54,7 @@ function mdb_lv_indexing( $id ) {
     /**
      * Tabelle beschreiben
      */
-     
+
     $table_name   = $wpdb->prefix . 'mdb_lv_media';
     $table_format = array( '%d', '%s', '%s', '%s', '%s', '%s' );
     $table_data   = array(

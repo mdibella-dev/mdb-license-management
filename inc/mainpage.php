@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) or exit;
 /**
  * Integriert die Hauptseite in das 'Medien'-Menü
  *
- * @since 0.0.1
+ * @since   0.0.1
  */
 
 function mdb_lv_add_mainpage() {
@@ -34,8 +34,8 @@ add_action( 'admin_menu', 'mdb_lv_add_mainpage' );
 /**
  * Anzeige der Hauptseite
  *
- * @since 0.0.1
- * @source http://qnimate.com/add-tabs-using-wordpress-settings-api/
+ * @since   0.0.1
+ * @source  http://qnimate.com/add-tabs-using-wordpress-settings-api/
  */
 
 function mdb_lv_show_mainpage() {
@@ -83,7 +83,7 @@ function mdb_lv_show_mainpage() {
 /**
  * Anzeige des Tabs 'Verfügbare Lizenzen'
  *
- * @since 0.0.1
+ * @since   0.0.1
  */
 
 function mdb_lv_show_licenses_tab() {
@@ -100,7 +100,7 @@ function mdb_lv_show_licenses_tab() {
 /**
  * Anzeige des Tabs 'Indizierung der Medien'
  *
- * @since 0.0.1
+ * @since   0.0.1
  */
 
 function mdb_lv_show_indexing_tab() {
