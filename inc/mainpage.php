@@ -20,11 +20,13 @@ defined( 'ABSPATH' ) or exit;
  */
 
 function mdb_lv_add_mainpage() {
-    add_media_page( __( 'Lizenzverwaltung', 'mdb_lv' ),
-                    __( 'Lizenzverwaltung', 'mdb_lv' ),
-                    'manage_options',
-                    'mdb_lizenzverwaltung',
-                    'mdb_lv_show_mainpage' );
+    add_media_page(
+        __( 'Lizenzverwaltung', 'mdb_lv' ),
+        __( 'Lizenzverwaltung', 'mdb_lv' ),
+        'manage_options',
+        'mdb_lizenzverwaltung',
+        'mdb_lv_show_mainpage'
+    );
 }
 
 add_action( 'admin_menu', 'mdb_lv_add_mainpage' );

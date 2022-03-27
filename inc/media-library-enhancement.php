@@ -20,8 +20,7 @@ defined( 'ABSPATH' ) or exit;
  * @return array $columns        modifizierte Spalten
  */
 
-function mdb_lv_add_media_columns( $columns )
-{
+function mdb_lv_add_media_columns( $columns ) {
     $columns[ 'mdb_lv_credits' ] = __( 'Urheberrecht', 'mdb_lv' );
     return $columns;
 }
@@ -36,8 +35,7 @@ add_filter( 'manage_media_columns', 'mdb_lv_add_media_columns');
  * @since 0.0.1
  */
 
-function mdb_lv_media_custom_column( $column, $id )
-{
+function mdb_lv_media_custom_column( $column, $id ) {
     if( $column == 'mdb_lv_credits' ) :
         $data = mdb_lv_get_media_record( $id );
 
@@ -73,8 +71,7 @@ add_action( 'manage_media_custom_column', 'mdb_lv_media_custom_column', 10, 2 );
  * @return array $form_fields   modifizierte Formularfelder
  */
 
-function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
-{
+function mdb_lv_attachment_fields_to_edit( $form_fields, $post ) {
     $data = mdb_lv_get_media_record( $post->ID );
     extract( $data );
 
@@ -110,6 +107,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
 		'html'  => $html,
 	    );
 
+
     /**
      * 2. Auflistung der verfügbaren Lizenzen
      */
@@ -143,6 +141,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
 		'html' 	=> $html,
 	    );
 
+
     /**
      * 3. Benennung des Urhebers
      */
@@ -153,6 +152,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
 		'html'  => "<input type='text' size='128' class='widefat' value='" . $by_name . "' name='attachments[{$post->ID}][mdb-lv-by-name]'>",
 	    );
 
+
     /**
      * 4. Link zur Webseite des Urhebers (wenn gefordert)
      */
@@ -162,6 +162,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
 		'input' => 'html',
 		'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $by_link ) . "' name='attachments[{$post->ID}][mdb-lv-by-link]'>",
 	    );
+
 
     /**
      * 5. Link zum Original des Bildes zur eigenen Dokumentation
@@ -187,8 +188,7 @@ add_filter( 'attachment_fields_to_edit', 'mdb_lv_attachment_fields_to_edit', nul
  * @return array $form_fields   modifizierte Formularfelder
  */
 
-function mdb_lv_attachment_fields_to_save( $post, $attachment )
-{
+function mdb_lv_attachment_fields_to_save( $post, $attachment ) {
     $data[ 'media_id' ]     = $post[ 'ID' ];
     $data[ 'media_link' ]   = $attachment[ 'mdb-lv-media-link' ];
     $data[ 'media_state' ]  = $attachment[ 'mdb-lv-media-state' ];
@@ -212,8 +212,7 @@ add_filter( 'attachment_fields_to_save', 'mdb_lv_attachment_fields_to_save', nul
  * @since 0.0.1
  */
 
-function mdb_lv_add_attachment( $id )
-{
+function mdb_lv_add_attachment( $id ) {
     $mime = get_post_mime_type( $id );
 
     if( strpos( $mime, 'image' ) === 0 ) :
@@ -244,8 +243,7 @@ add_action( 'add_attachment', 'mdb_lv_add_attachment');
  * @since 0.0.1
  */
 
-function mdb_lv_delete_attachment( $id )
-{
+function mdb_lv_delete_attachment( $id ) {
     global $wpdb;
 
     $table_name  = $wpdb->prefix . 'mdb_lv_media';

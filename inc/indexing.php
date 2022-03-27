@@ -17,8 +17,7 @@ defined( 'ABSPATH' ) or exit;
  * Liest ein Medium (attachement) aus und bereitet einen Eintrag für die Medientabelle vor
  */
 
-function mdb_lv_indexing( $id )
-{
+function mdb_lv_indexing( $id ) {
     global $wpdb;
 
     $media_link   = '';
