@@ -12,12 +12,13 @@ defined( 'ABSPATH' ) or exit;
 
 
 /**
- * Integriert die Hauptseite in das 'Medien'-Menü
+ * Integriert die Hauptseite in das 'Medien'-Menü.
  *
- * @since   0.0.1
+ * @since 0.0.1
  */
 
-function mdb_lv_add_mainpage() {
+function mdb_lv_add_mainpage()
+{
     add_media_page(
         __( 'Lizenzverwaltung', 'mdb_lv' ),
         __( 'Lizenzverwaltung', 'mdb_lv' ),
@@ -32,21 +33,24 @@ add_action( 'admin_menu', 'mdb_lv_add_mainpage' );
 
 
 /**
- * Anzeige der Hauptseite
+ * Anzeige der Hauptseite.
  *
- * @since   0.0.1
- * @source  http://qnimate.com/add-tabs-using-wordpress-settings-api/
+ * @since  0.0.1
+ * @source http://qnimate.com/add-tabs-using-wordpress-settings-api/
  */
 
-function mdb_lv_show_mainpage() {
+function mdb_lv_show_mainpage()
+{
 ?>
 <div class="wrap">
-<h1 class="wp-heading-inline"><?php _e( 'Lizenzverwaltung', 'mdb_lv' )?></h1>
+<h1 class="wp-heading-inline"><?php echo __( 'Lizenzverwaltung', 'mdb_lv' )?></h1>
 <?php
     $active_tab = 'tab-01';
 
-    if( isset( $_GET[ 'tab' ] ) ) :
-        switch( $_GET[ 'tab' ] ) :
+    if( isset( $_GET['tab'] ) ) :
+
+        switch( $_GET['tab'] ) :
+
             // Tab mit Indizierungsfunktionen
             case 'tab-01' :
                 $active_tab = 'tab-01';
@@ -56,12 +60,14 @@ function mdb_lv_show_mainpage() {
             case 'tab-02' :
                 $active_tab = 'tab-02';
             break;
+
         endswitch;
+
     endif;
 ?>
 <h2 class="nav-tab-wrapper">
-<a href="?page=mdb_lizenzverwaltung&tab=tab-01" class="nav-tab <?php if( $active_tab == 'tab-01'){ echo 'nav-tab-active'; } ?>"><?php _e( 'Indizierung', 'mdb_lv'); ?></a>
-<a href="?page=mdb_lizenzverwaltung&tab=tab-02" class="nav-tab <?php if( $active_tab == 'tab-02'){ echo 'nav-tab-active'; } ?>"><?php _e( 'Verfügbare Lizenzen', 'mdb_lv'); ?></a>
+<a href="?page=mdb_lizenzverwaltung&tab=tab-01" class="nav-tab <?php if( $active_tab == 'tab-01'){ echo 'nav-tab-active'; } ?>"><?php echo __( 'Indizierung', 'mdb_lv'); ?></a>
+<a href="?page=mdb_lizenzverwaltung&tab=tab-02" class="nav-tab <?php if( $active_tab == 'tab-02'){ echo 'nav-tab-active'; } ?>"><?php echo __( 'Verfügbare Lizenzen', 'mdb_lv'); ?></a>
 </h2>
 <?php
     switch( $active_tab ) :
@@ -81,9 +87,9 @@ function mdb_lv_show_mainpage() {
 
 
 /**
- * Anzeige des Tabs 'Verfügbare Lizenzen'
+ * Anzeige des Tabs 'Verfügbare Lizenzen'.
  *
- * @since   0.0.1
+ * @since 0.0.1
  */
 
 function mdb_lv_show_licenses_tab() {
@@ -98,9 +104,9 @@ function mdb_lv_show_licenses_tab() {
 
 
 /**
- * Anzeige des Tabs 'Indizierung der Medien'
+ * Anzeige des Tabs 'Indizierung der Medien'.
  *
- * @since   0.0.1
+ * @since 0.0.1
  */
 
 function mdb_lv_show_indexing_tab() {
@@ -125,7 +131,7 @@ function mdb_lv_show_indexing_tab() {
         echo '<input type="submit" class="button" value="Starten">';
         echo '</form>';
 
-        if( $_POST[ 'mdb_lv_index' ] == 'go' ):
+        if( $_POST['mdb_lv_index'] == 'go' ):
             $data = $wpdb->get_results( "SELECT ID, post_title FROM $wpdb->posts WHERE (post_type='attachment') AND (post_mime_type LIKE '%%image%%')" );
 
             echo '<p>';
@@ -144,5 +150,4 @@ function mdb_lv_show_indexing_tab() {
             echo '</p>';
         endif;
     endif;
-
 }

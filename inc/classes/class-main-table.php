@@ -6,6 +6,7 @@
  * @package mdb-lv
  * @see     http://wpengineer.com/2426/wp_list_table-a-step-by-step-guide/
  * @see     https://wp.smashingmagazine.com/2011/11/native-admin-tables-wordpress/
+ * @todo    Kommentierung!!
  */
 
 defined( 'ABSPATH' ) or exit;
@@ -26,7 +27,7 @@ class MDB_main_table extends WP_List_Table {
             'license_term'        => __( 'Lizenz', 'mdb_lv' ),
             'license_description' => __( 'Beschreibung', 'mdb_lv' ),
             'license_link'        => __( 'Lizenztext', 'mdb_lv' )
-            );
+        );
 
         return $columns;
     }
@@ -52,13 +53,13 @@ class MDB_main_table extends WP_List_Table {
         switch( $column_name ) :
             case 'license_term':
             case 'license_description':
-                return $item[ $column_name ];
+                return $item[$column_name];
             break;
 
             case 'license_link':
                 return sprintf(
                     '<a href="%1$s" title="%2$s" target="_blank">%3$s</a>',
-                    $item[ $column_name ],
+                    $item[$column_name],
                     __( 'Link zum Lizenztext', 'mdb_lv' ),
                     __( 'Anzeigen', 'mdb_lv' )
                 );

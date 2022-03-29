@@ -11,13 +11,14 @@ __Tested up to:__ WordPress 5.9
 
 
 ## Changelog
-*Changed/Removed/Added/Fixed*
+*Geändert/Entfernt/Hinzugefügt/Fixed*
 
 
 ### 1.0.0
-**Changed:** Comments  
-**Changed:** Folder structure    
-**Changed:** Conditions now in YODA-style   
+**Geändert:** plugin.php ist jetzt der neue Startpunkt  
+**Geändert:** Kommentierung  
+**Geändert:** Verzeichnisstruktur    
+**Geändert:** Conditions sind nun im YODA-Stil   
 
 
 ### 0.0.1
