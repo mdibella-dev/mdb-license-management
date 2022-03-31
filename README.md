@@ -14,7 +14,7 @@ __Tested up to:__ WordPress 5.9
 *Geändert/Entfernt/Hinzugefügt/Fixed*
 
 
-### 1.0.0
+### main (1.0.0)
 **Geändert:** plugin.php ist jetzt der neue Startpunkt  
 **Geändert:** Kommentierung  
 **Geändert:** Verzeichnisstruktur    
