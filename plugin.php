@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name:     Marco Di Bella - Lizenzverwaltung
-Author:          Marco Di Bella
-Author URI:      https://www.marcodibella.de
-Description:     Ergänzt die Mediathek um Funktionen zur Verwaltung von Copyright-Lizenzen sowie zur Erstellung und Abfrage entsprechender Credits.
-Version:         1.0.0
-Text Domain:     mdb_lv
-*/
+ * Plugin Name:     Marco Di Bella - Lizenzverwaltung
+ * Author:          Marco Di Bella
+ * Author URI:      https://www.marcodibella.de
+ * Description:     Ergänzt die Mediathek um Funktionen zur Verwaltung von Copyright-Lizenzen sowie zur Erstellung und Abfrage entsprechender Credits.
+ * Version:         1.0.0
+ * Text Domain:     mdb_lv
+ */
 
 
 

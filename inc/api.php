@@ -2,7 +2,7 @@
 /**
  * API für Themeintegration
  *
- * @author  Marco Di Bella <mdb@marcodibella.de>
+ * @author  Marco Di Bella
  * @package mdb-lv
  */
 
