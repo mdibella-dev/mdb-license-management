@@ -9,6 +9,8 @@ __Requires at least:__ 5.0
 
 __Tested up to:__ WordPress 6.1
 
+__License:__ MIT License
+
 
 ## Changelog
 *New / Improve / Bugfix*

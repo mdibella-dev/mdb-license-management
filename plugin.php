@@ -5,6 +5,7 @@
  * Description:     Adds functions to the WordPress media library for managing copyright licenses and creating and querying corresponding credits.
  * Author:          Marco Di Bella
  * Author URI:      https://www.marcodibella.de
+ * License:         MIT License
  * Version:         0.0.3
  * Text Domain:     mdb-license-management
  *
