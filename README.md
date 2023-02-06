@@ -3,7 +3,7 @@ Plugin, for establishing a rudimentary image rights management, which is integra
 
 __Contributors:__ mdibella-dev
 
-__Tags:__  translation-ready, creative-commons, license
+__Tags:__  translation-ready, creative-commons, license-management, wordpress-plugin, unfinished
 
 __Requires at least:__ 5.0
 
