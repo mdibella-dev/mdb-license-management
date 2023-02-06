@@ -6,7 +6,7 @@ jQuery(function($) {
 
     var lv_AttachmentCompat = wp.media.view.AttachmentCompat;
 
-	wp.media.view.AttachmentCompat = wp.media.view.AttachmentCompat.extend( {
+    wp.media.view.AttachmentCompat = wp.media.view.AttachmentCompat.extend( {
 
         events: {
             'click select#mdb-lv-media-state': 'do_action',

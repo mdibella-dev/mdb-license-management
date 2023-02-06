@@ -92,6 +92,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     $data = mdb_lv_get_media_record( $post->ID );
     extract( $data );
 
+
     // Status of the media registration or indication of the type & manner of the copyright indication.
     $states = array(
         array( MEDIA_STATE_NO_CREDIT, __( 'no copyright information necessary', 'mdb-license-management' ) ),
@@ -118,10 +119,10 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     $html .= '</select>';
 
     $form_fields['mdb-lv-media-state'] = array(
-		'label' => __( 'Method and manner of the copyright information', 'mdb-license-management' ),
-		'input' => 'html',
-		'html'  => $html,
-	);
+        'label' => __( 'Method and manner of the copyright information', 'mdb-license-management' ),
+        'input' => 'html',
+        'html'  => $html,
+    );
 
 
     // Listing of available licenses
@@ -150,25 +151,25 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     $html .= '</select>';
 
     $form_fields['mdb-lv-license-guid'] = array(
-		'label' => __( 'License', 'mdb-license-management' ),
-		'input' => 'html',
-		'html' 	=> $html,
+        'label' => __( 'License', 'mdb-license-management' ),
+        'input' => 'html',
+        'html'     => $html,
     );
 
 
     // Naming of the creator
-	$form_fields['mdb-lv-by-name'] = array(
-		'label' => __( 'Naming of the creator', 'mdb-license-management' ),
-		'input' => 'html',
-		'html'  => "<input type='text' size='128' class='widefat' value='" . $by_name . "' name='attachments[{$post->ID}][mdb-lv-by-name]'>",
+    $form_fields['mdb-lv-by-name'] = array(
+        'label' => __( 'Naming of the creator', 'mdb-license-management' ),
+        'input' => 'html',
+        'html'  => "<input type='text' size='128' class='widefat' value='" . $by_name . "' name='attachments[{$post->ID}][mdb-lv-by-name]'>",
     );
 
 
     // Link to the creator's website (if required)
     $form_fields['mdb-lv-by-link'] = array(
-		'label' => __( 'Link to the creator', 'mdb-license-management' ),
-		'input' => 'html',
-		'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $by_link ) . "' name='attachments[{$post->ID}][mdb-lv-by-link]'>",
+        'label' => __( 'Link to the creator', 'mdb-license-management' ),
+        'input' => 'html',
+        'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $by_link ) . "' name='attachments[{$post->ID}][mdb-lv-by-link]'>",
     );
 
 
@@ -179,7 +180,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
         'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $media_link ) . "' name='attachments[{$post->ID}][mdb-lv-media-link]'>",
     );
 
-	return $form_fields;
+    return $form_fields;
 }
 
 add_filter( 'attachment_fields_to_edit', __NAMESPACE__ . '\mdb_lv_attachment_fields_to_edit', null, 2 );
@@ -208,7 +209,7 @@ function mdb_lv_attachment_fields_to_save( $post, $attachment )
 
     mdb_lv_update_media_record( $data );
 
-	return $post;
+    return $post;
 }
 
 add_filter( 'attachment_fields_to_save', __NAMESPACE__ . '\mdb_lv_attachment_fields_to_save', null, 2 );
