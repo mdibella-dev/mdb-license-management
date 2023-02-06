@@ -25,13 +25,13 @@ defined( 'ABSPATH' ) or exit;
  * @return array The modified columns.
  */
 
-function mdb_lv_add_media_columns( $columns )
+function media_library_add_custom_column( $columns )
 {
     $columns['mdb_lv_credits'] = __( 'Copyright', 'mdb-license-management' );
     return $columns;
 }
 
-add_filter( 'manage_media_columns', 'mdb_lv_add_media_columns');
+add_filter( 'manage_media_columns', __NAMESPACE__ . '\media_library_add_custom_column');
 
 
 
@@ -44,7 +44,7 @@ add_filter( 'manage_media_columns', 'mdb_lv_add_media_columns');
  * @param int    $id     The record ID of a medium in the media table of the plugin.
  */
 
-function mdb_lv_media_custom_column( $column, $id )
+function media_library_show_custom_column( $column, $id )
 {
     if( 'mdb_lv_credits' == $column  ) :
 
@@ -72,7 +72,7 @@ function mdb_lv_media_custom_column( $column, $id )
     endif;
 }
 
-add_action( 'manage_media_custom_column', __NAMESPACE__ . '\mdb_lv_media_custom_column', 10, 2 );
+add_action( 'manage_media_custom_column', __NAMESPACE__ . '\media_library_show_custom_column', 10, 2 );
 
 
 
@@ -87,7 +87,7 @@ add_action( 'manage_media_custom_column', __NAMESPACE__ . '\mdb_lv_media_custom_
  * @return array The modified form fields.
  */
 
-function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
+function media_library_add_attachment_fields( $form_fields, $post )
 {
     $data = get_media_record( $post->ID );
     extract( $data );
@@ -188,7 +188,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     return $form_fields;
 }
 
-add_filter( 'attachment_fields_to_edit', __NAMESPACE__ . '\mdb_lv_attachment_fields_to_edit', null, 2 );
+add_filter( 'attachment_fields_to_edit', __NAMESPACE__ . '\media_library_add_attachment_fields', null, 2 );
 
 
 
@@ -203,7 +203,7 @@ add_filter( 'attachment_fields_to_edit', __NAMESPACE__ . '\mdb_lv_attachment_fie
  * @return array The $post array.
  */
 
-function mdb_lv_attachment_fields_to_save( $post, $attachment )
+function media_library_save_attachment_fields( $post, $attachment )
 {
     $data['media_id']     = $post['ID'];
     $data['media_link']   = $attachment['mdb-lv-media-link'];
@@ -217,7 +217,7 @@ function mdb_lv_attachment_fields_to_save( $post, $attachment )
     return $post;
 }
 
-add_filter( 'attachment_fields_to_save', __NAMESPACE__ . '\mdb_lv_attachment_fields_to_save', null, 2 );
+add_filter( 'attachment_fields_to_save', __NAMESPACE__ . '\media_library_save_attachment_fields', null, 2 );
 
 
 
@@ -229,7 +229,7 @@ add_filter( 'attachment_fields_to_save', __NAMESPACE__ . '\mdb_lv_attachment_fie
  * @param int $id The media attachment ID.
  */
 
-function mdb_lv_add_attachment( $id )
+function media_library_add_attachment_handler( $id )
 {
     $mime = get_post_mime_type( $id );
 
@@ -251,7 +251,7 @@ function mdb_lv_add_attachment( $id )
     endif;
 }
 
-add_action( 'add_attachment', __NAMESPACE__ . '\mdb_lv_add_attachment');
+add_action( 'add_attachment', __NAMESPACE__ . '\media_library_add_attachment_handler');
 
 
 
@@ -263,7 +263,7 @@ add_action( 'add_attachment', __NAMESPACE__ . '\mdb_lv_add_attachment');
  * @param int $id The media attachment ID.
  */
 
-function mdb_lv_delete_attachment( $id )
+function media_library_delete_attachment_handler( $id )
 {
     global $wpdb;
 
@@ -272,4 +272,4 @@ function mdb_lv_delete_attachment( $id )
     $wpdb->delete( $table_name, $table_where );
 }
 
-add_action( 'delete_attachment', __NAMESPACE__ . '\mdb_lv_delete_attachment');
+add_action( 'delete_attachment', __NAMESPACE__ . '\media_library_delete_attachment_handler');
