@@ -33,7 +33,7 @@ function mdb_lv_get_license( $id )
     if( $media['license_guid'] ) :
         $license = mdb_lv_get_license_record( $media['license_guid'] );
 
-        if( '' ! == $license['license_link'] ) :
+        if( '' !== $license['license_link'] ) :
             $output = sprintf(
                 '<a href="%1$s" target="_blank" rel="nofollow" name="%2$s">[%2$s]</a>',
                 $license['license_link'],
