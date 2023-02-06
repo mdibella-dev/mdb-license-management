@@ -18,7 +18,7 @@ __Tested up to:__ WordPress 6.1
 
 
 ### 0.0.3
-* New: /core folder with all provided core and API functions.
+* New: Add /core folder with all provided core and API functions.
 * New: Add namespace mdb_license_management.
 * New: backend.php
 * New: Translation support.
