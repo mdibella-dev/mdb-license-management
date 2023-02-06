@@ -30,6 +30,7 @@ __Tested up to:__ WordPress 6.1
 * Improve: Documentation style and language.
 * Improve: Including of core and class files.
 * Improve: text domain.
+* Improve: Remove compatibility to old implementations.
 * Improve: Primary language is EN.
 
 
