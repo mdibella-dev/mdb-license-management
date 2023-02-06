@@ -24,8 +24,8 @@ defined( 'ABSPATH' ) or exit;
 function mdb_lv_add_mainpage()
 {
     add_media_page(
-        __( 'Lizenzverwaltung', 'mdb-license-management' ),
-        __( 'Lizenzverwaltung', 'mdb-license-management' ),
+        __( 'License Management', 'mdb-license-management' ),
+        __( 'License Management', 'mdb-license-management' ),
         'manage_options',
         'mdb_lizenzverwaltung',
         'mdb_lv_show_mainpage'
@@ -71,8 +71,8 @@ function mdb_lv_show_mainpage()
     endif;
 ?>
 <h2 class="nav-tab-wrapper">
-<a href="?page=mdb_lizenzverwaltung&tab=tab-01" class="nav-tab <?php if( $active_tab == 'tab-01'){ echo 'nav-tab-active'; } ?>"><?php echo __( 'Indizierung', 'mdb-license-management'); ?></a>
-<a href="?page=mdb_lizenzverwaltung&tab=tab-02" class="nav-tab <?php if( $active_tab == 'tab-02'){ echo 'nav-tab-active'; } ?>"><?php echo __( 'Verfügbare Lizenzen', 'mdb-license-management'); ?></a>
+<a href="?page=mdb_lizenzverwaltung&tab=tab-01" class="nav-tab <?php if( $active_tab == 'tab-01'){ echo 'nav-tab-active'; } ?>"><?php echo __( 'Indexing', 'mdb-license-management'); ?></a>
+<a href="?page=mdb_lizenzverwaltung&tab=tab-02" class="nav-tab <?php if( $active_tab == 'tab-02'){ echo 'nav-tab-active'; } ?>"><?php echo __( 'Available licenses', 'mdb-license-management'); ?></a>
 </h2>
 <?php
     switch( $active_tab ) :
