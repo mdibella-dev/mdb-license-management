@@ -101,29 +101,3 @@ function mdb_lv_plugin_activation() {
 }
 
 register_activation_hook( __FILE__, 'mdb_lv_plugin_activation' );
-
-
-
-/**
- * Lädt Plugin-Scripts
- *
- * @since 0.0.1
- */
-
-function mdb_lv_upload() {
-    $currentScreen = get_current_screen();
-
-    if( 'upload' === $currentScreen->id ) :
-
-        global $mode;
-
-        if( 'grid' === $mode ) :
-
-            wp_enqueue_style( 'mdb_lizenzverwaltung', plugin_dir_url( __FILE__ ) . 'assets/css/admin.css' );
-            wp_enqueue_script( 'mdb_lizenzverwaltung', plugin_dir_url( __FILE__ ) . 'assets/js/admin.js', array( 'jquery' ), false, true );
-        endif;
-
-    endif;
-}
-
-add_action( 'admin_enqueue_scripts', 'mdb_lv_upload' );
