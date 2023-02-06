@@ -48,7 +48,7 @@ function mdb_lv_media_custom_column( $column, $id )
 {
     if( 'mdb_lv_credits' == $column  ) :
 
-        $data = mdb_lv_get_media_record( $id );
+        $data = get_media_record( $id );
 
         switch( $data['media_state'] ) :
             case MEDIA_STATE_UNKNOWN:
@@ -64,7 +64,7 @@ function mdb_lv_media_custom_column( $column, $id )
             break;
 
             case MEDIA_STATE_LICENSED:
-                $data2 = mdb_lv_get_license_record( $data['license_guid'] );
+                $data2 = get_license_record( $data['license_guid'] );
                 echo $data['by_name'] . '<br>' . $data2['license_term'];
             break;
         endswitch;
@@ -89,7 +89,7 @@ add_action( 'manage_media_custom_column', __NAMESPACE__ . '\mdb_lv_media_custom_
 
 function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
 {
-    $data = mdb_lv_get_media_record( $post->ID );
+    $data = get_media_record( $post->ID );
     extract( $data );
 
 
@@ -207,7 +207,7 @@ function mdb_lv_attachment_fields_to_save( $post, $attachment )
     $data['by_name']      = $attachment['mdb-lv-by-name'];
     $data['by_link']      = $attachment['mdb-lv-by-link'];
 
-    mdb_lv_update_media_record( $data );
+    update_media_record( $data );
 
     return $post;
 }

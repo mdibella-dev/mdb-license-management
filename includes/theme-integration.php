@@ -27,11 +27,11 @@ defined( 'ABSPATH' ) or exit;
 
 function mdb_lv_get_license( $id )
 {
-    $media  = mdb_lv_get_media_record( $id );
+    $media  = get_media_record( $id );
     $output = '';
 
     if( $media['license_guid'] ) :
-        $license = mdb_lv_get_license_record( $media['license_guid'] );
+        $license = get_license_record( $media['license_guid'] );
 
         if( '' !== $license['license_link'] ) :
             $output = sprintf(
@@ -64,7 +64,7 @@ function mdb_lv_get_license( $id )
 
 function mdb_lv_get_byline( $id )
 {
-    $media  = mdb_lv_get_media_record( $id );
+    $media  = get_media_record( $id );
     $output = '';
 
     if( '' !== $media['by_name'] ) :

@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) or exit;
  * @param array $table_data The data to be updated.
  */
 
-function mdb_lv_update_media_record( $table_data )
+function update_media_record( $table_data )
 {
     global $wpdb;
 
@@ -44,7 +44,7 @@ function mdb_lv_update_media_record( $table_data )
  * @return array The requested data set.
  */
 
-function mdb_lv_get_media_record( $id )
+function get_media_record( $id )
 {
     global $wpdb;
 
@@ -66,7 +66,7 @@ function mdb_lv_get_media_record( $id )
  * @return array The requested data set.
  */
 
-function mdb_lv_get_license_record( $license_guid )
+function get_license_record( $license_guid )
 {
     global $wpdb;
 
