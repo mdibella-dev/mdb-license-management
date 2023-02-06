@@ -16,9 +16,11 @@ defined( 'ABSPATH' ) or exit;
 
 
 /**
- * Reads out a medium (attachment) and prepares a (largely empty) entry for the media table.
+ * Reads out a media (attachment) and prepares a (largely empty) entry for the media table.
  *
  * @since 0.0.1
+ *
+ * @todo Checking if a media is already in the media table.
  *
  * @param int $id The ID of the medium.
  */
