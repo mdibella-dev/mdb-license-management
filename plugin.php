@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name:     Marco Di Bella &mdash; License management
+ * Plugin Name:     Marco Di Bella &mdash; License Management
  * Plugin URI:
  * Description:     Adds functions to the WordPress media library for managing copyright licenses and creating and querying corresponding credits.
  * Author:          Marco Di Bella

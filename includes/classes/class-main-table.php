@@ -34,9 +34,9 @@ class MDB_main_table extends WP_List_Table {
 
     function get_columns() {
         $columns = array(
-            'license_term'        => __( 'Lizenz', 'mdb-license-management' ),
-            'license_description' => __( 'Beschreibung', 'mdb-license-management' ),
-            'license_link'        => __( 'Lizenztext', 'mdb-license-management' )
+            'license_term'        => __( 'License', 'mdb-license-management' ),
+            'license_description' => __( 'Description', 'mdb-license-management' ),
+            'license_link'        => __( 'Source link', 'mdb-license-management' )
         );
 
         return $columns;
@@ -70,8 +70,8 @@ class MDB_main_table extends WP_List_Table {
                 return sprintf(
                     '<a href="%1$s" title="%2$s" target="_blank">%3$s</a>',
                     $item[$column_name],
-                    __( 'Link zum Lizenztext', 'mdb-license-management' ),
-                    __( 'Anzeigen', 'mdb-license-management' )
+                    __( 'Source link', 'mdb-license-management' ),
+                    __( 'View', 'mdb-license-management' )
                 );
             break;
 

@@ -48,7 +48,7 @@ function mdb_lv_show_mainpage()
 {
 ?>
 <div class="wrap">
-<h1 class="wp-heading-inline"><?php echo __( 'Lizenzverwaltung', 'mdb-license-management' )?></h1>
+<h1 class="wp-heading-inline"><?php echo __( 'License Management', 'mdb-license-management' )?></h1>
 <?php
     $active_tab = 'tab-01';
 
@@ -100,7 +100,7 @@ function mdb_lv_show_mainpage()
 function mdb_lv_show_licenses_tab()
 {
 ?>
-<h2><?php echo __( 'Verfügbare Lizenzen', 'mdb-license-management' )?></h2>
+<h2><?php echo __( 'Available licenses', 'mdb-license-management' )?></h2>
 <?php
     $maintable = new MDB_main_table();
     $maintable->prepare_items();
@@ -118,24 +118,24 @@ function mdb_lv_show_licenses_tab()
 function mdb_lv_show_indexing_tab()
 {
 ?>
-<h2><?php echo __( 'Indizierung der Medien', 'mdb-license-management' )?></h2>
+<h2><?php echo __( 'Indexing the media', 'mdb-license-management' )?></h2>
 <?php
     global $wpdb;
            $total = $wpdb->get_var( "SELECT COUNT(ID) FROM $wpdb->posts WHERE (post_type='attachment') AND (post_mime_type LIKE '%%image%%')" );
 
     if( $total == 0 ) :
         echo '<p>';
-        echo __( 'In der Mediathek befinden sich derzeit keine Bilder.', 'mdb-license-management' );
+        echo __( 'There are currently no images in the media library.', 'mdb-license-management' );
         echo '</p>';
     else :
         echo '<p>';
-        echo sprintf( __( 'In der Mediathek befinden sich derzeit %1$s Bilder.', 'mdb-license-management' ), $total );
+        echo sprintf( __( 'The media library currently contains %1$s image(s).', 'mdb-license-management' ), $total );
         echo '<br>';
-        echo __( 'Bevor Sie mit der Erfassung der Bildlizenzen fortfahren, führen Sie bitte einmalig den Indizierungsvorgang durch.', 'mdb-license-management' );
+        echo __( 'Before proceeding with the acquisition of image licenses, please perform the indexing process once.', 'mdb-license-management' );
         echo '</p>';
         echo '<form action="" method="post">';
         echo '<input name="mdb_lv_index" type="hidden" value="go">';
-        echo '<input type="submit" class="button" value="'. __( 'Starten', 'mdb-license-management' ) . '">';
+        echo '<input type="submit" class="button" value="'. __( 'Start', 'mdb-license-management' ) . '">';
         echo '</form>';
 
         if( $_POST['mdb_lv_index'] == 'go' ):
@@ -145,7 +145,7 @@ function mdb_lv_show_indexing_tab()
             foreach( $data as $image ) :
                 mdb_lv_indexing( $image->ID );
                 echo( sprintf(
-                        __( 'Bearbeite Bild mit ID #%1$s: %2$s', 'mdb-license-management'),
+                        __( 'Process image with ID #%1$s: %2$s', 'mdb-license-management'),
                         $image->ID,
                         $image->post_title )
                     );
@@ -153,7 +153,7 @@ function mdb_lv_show_indexing_tab()
             endforeach;
             echo '</p>';
             echo '</p>';
-            echo __( 'Indizierungsvorgang beendet.', 'mdb-license-management' );
+            echo __( 'Indexing process completed.', 'mdb-license-management' );
             echo '</p>';
         endif;
     endif;

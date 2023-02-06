@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) or exit;
 
 function mdb_lv_add_media_columns( $columns )
 {
-    $columns['mdb_lv_credits'] = __( 'Urheberrecht', 'mdb-license-management' );
+    $columns['mdb_lv_credits'] = __( 'Copyright', 'mdb-license-management' );
     return $columns;
 }
 
@@ -52,11 +52,11 @@ function mdb_lv_media_custom_column( $column, $id )
 
         switch( $data['media_state'] ) :
             case MEDIA_STATE_UNKNOWN:
-                echo __( 'unbekannt', 'mdb-license-management' );
+                echo __( 'unknown', 'mdb-license-management' );
             break;
 
             case MEDIA_STATE_NO_CREDIT:
-                echo __( 'keine Angaben notwendig', 'mdb-license-management' );
+                echo __( 'no copyright information necessary', 'mdb-license-management' );
             break;
 
             case MEDIA_STATE_SIMPLE_CREDIT:
@@ -65,7 +65,7 @@ function mdb_lv_media_custom_column( $column, $id )
 
             case MEDIA_STATE_LICENSED:
                 $data2 = mdb_lv_get_license_record( $data['license_guid'] );
-                echo sprintf( __( '%1$s<br>%2$s', 'mdb_lv' ), $data['by_name'], $data2['license_term'] );
+                echo $data['by_name'] . '<br>' . $data2['license_term'];
             break;
         endswitch;
 
@@ -94,15 +94,15 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
 
     // Status of the media registration or indication of the type & manner of the copyright indication.
     $states = array(
-        array( MEDIA_STATE_NO_CREDIT, __( 'keine Angaben notwendig', 'mdb-license-management' ) ),
-        array( MEDIA_STATE_SIMPLE_CREDIT, __( 'einfache Namensnennung (ggf. mit Verlinkung)', 'mdb-license-management' ) ),
-        array( MEDIA_STATE_LICENSED, __( 'Urheberrechtsangaben gemäß Lizenz', 'mdb-license-management' ) )
+        array( MEDIA_STATE_NO_CREDIT, __( 'no copyright information necessary', 'mdb-license-management' ) ),
+        array( MEDIA_STATE_SIMPLE_CREDIT, __( 'simple naming (with linking if necessary)', 'mdb-license-management' ) ),
+        array( MEDIA_STATE_LICENSED, __( 'copyright information according to license', 'mdb-license-management' ) )
     );
 
     $html  = "<select id='mdb-lv-media-state' name='attachments[{$post->ID}][mdb-lv-media-state]'>";
     $html .= sprintf(
         '<option value="0" disabled %2$s>%1$s</option>',
-        __( '--- bitte auswählen ---', 'mdb_lv' ),
+        __( '--- please select ---', 'mdb-license-management' ),
         ( MEDIA_STATE_UNKNOWN == $media_state )? 'selected' : ''
     );
 
@@ -118,7 +118,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     $html .= '</select>';
 
     $form_fields['mdb-lv-media-state'] = array(
-		'label' => __( 'Art und Weise der Urheberrechtsangabe', 'mdb-license-management' ),
+		'label' => __( 'Method and manner of the copyright information', 'mdb-license-management' ),
 		'input' => 'html',
 		'html'  => $html,
 	);
@@ -134,7 +134,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     $html .= sprintf(
         '<option value="%1$s" disabled %3$s>%2$s</option>',
         '0',
-        __( '--- bitte auswählen ---', 'mdb-license-management' ),
+        __( '--- please select ---', 'mdb-license-management' ),
         ( 0 == $license_guid )? 'selected' : ''
     );
 
@@ -150,23 +150,23 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     $html .= '</select>';
 
     $form_fields['mdb-lv-license-guid'] = array(
-		'label' => __( 'Lizenz', 'mdb-license-management' ),
+		'label' => __( 'License', 'mdb-license-management' ),
 		'input' => 'html',
 		'html' 	=> $html,
     );
 
 
-    // Naming of the author
+    // Naming of the creator
 	$form_fields['mdb-lv-by-name'] = array(
-		'label' => __( 'Benennung des Urhebers', 'mdb-license-management' ),
+		'label' => __( 'Naming of the creator', 'mdb-license-management' ),
 		'input' => 'html',
 		'html'  => "<input type='text' size='128' class='widefat' value='" . $by_name . "' name='attachments[{$post->ID}][mdb-lv-by-name]'>",
     );
 
 
-    // Link to the author's website (if required)
+    // Link to the creator's website (if required)
     $form_fields['mdb-lv-by-link'] = array(
-		'label' => __( 'Link zum Urheber', 'mdb-license-management' ),
+		'label' => __( 'Link to the creator', 'mdb-license-management' ),
 		'input' => 'html',
 		'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $by_link ) . "' name='attachments[{$post->ID}][mdb-lv-by-link]'>",
     );
@@ -174,7 +174,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
 
     // Link to the original image for your own documentation
     $form_fields[ 'mdb-lv-media-link' ] = array(
-        'label' => __( 'Link zur Originaldatei', 'mdb-license-management' ),
+        'label' => __( 'Link to original file', 'mdb-license-management' ),
         'input' => 'html',
         'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $media_link ) . "' name='attachments[{$post->ID}][mdb-lv-media-link]'>",
     );
