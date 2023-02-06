@@ -142,6 +142,7 @@ function mdb_lv_show_indexing_tab()
             $data = $wpdb->get_results( "SELECT ID, post_title FROM $wpdb->posts WHERE (post_type='attachment') AND (post_mime_type LIKE '%%image%%')" );
 
             echo '<p>';
+            
             foreach( $data as $image ) :
                 mdb_lv_indexing( $image->ID );
                 echo( sprintf(
@@ -151,8 +152,9 @@ function mdb_lv_show_indexing_tab()
                     );
                 echo '<br>';
             endforeach;
+
             echo '</p>';
-            echo '</p>';
+            echo '<p>';
             echo __( 'Indexing process completed.', 'mdb-license-management' );
             echo '</p>';
         endif;
