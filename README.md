@@ -5,9 +5,9 @@ __Contributors:__ mdibella-dev
 
 __Tags:__  translation-ready, creative-commons, license
 
-__Requires at least:__ 5.0  
+__Requires at least:__ 5.0
 
-__Tested up to:__ WordPress 5.9  
+__Tested up to:__ WordPress 6.1  
 
 
 ## Changelog
@@ -15,11 +15,11 @@ __Tested up to:__ WordPress 5.9
 
 
 ### main (1.0.0)
-**Geändert:** plugin.php ist jetzt der neue Startpunkt  
-**Geändert:** Kommentierung  
-**Geändert:** Verzeichnisstruktur    
-**Geändert:** Conditions sind nun im YODA-Stil   
+**Geändert:** plugin.php ist jetzt der neue Startpunkt
+**Geändert:** Kommentierung
+**Geändert:** Verzeichnisstruktur
+**Geändert:** Conditions sind nun im YODA-Stil
 
 
 ### 0.0.1
-Initial commit  
+Initial commit
