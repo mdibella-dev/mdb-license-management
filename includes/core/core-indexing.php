@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) or exit;
  * @param int $id The ID of the medium.
  */
 
-function mdb_lv_indexing( $id )
+function process_media_indexing( $id )
 {
     global $wpdb;
 

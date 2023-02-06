@@ -144,7 +144,7 @@ function show_mainpage_indexing_tab()
             echo '<p>';
 
             foreach( $data as $image ) :
-                mdb_lv_indexing( $image->ID );
+                process_media_indexing( $image->ID );
                 echo( sprintf(
                         __( 'Process image with ID #%1$s: %2$s', 'mdb-license-management'),
                         $image->ID,
