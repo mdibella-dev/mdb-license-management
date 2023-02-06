@@ -56,12 +56,12 @@ function show_mainpage()
 
             switch( $_GET['tab'] ) :
 
-                // Tab mit Indizierungsfunktionen
+                // the 'indexing of media' tab
                 case 'tab-01' :
                     $active_tab = 'tab-01';
                 break;
 
-                // Tab mit Lizenzübersicht
+                // the 'available licenses' tab
                 case 'tab-02' :
                     $active_tab = 'tab-02';
                 break;
