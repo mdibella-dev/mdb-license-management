@@ -1,6 +1,6 @@
 <?php
 /**
- * Funktionen zur Erweiterung der Mediathek
+ * Functions for extending the media library.
  *
  * @author  Marco Di Bella
  * @package mdb-lv
@@ -16,11 +16,13 @@ defined( 'ABSPATH' ) or exit;
 
 
 /**
- * Fügt in der Medienübersicht eine Spalte zum Urheberrecht hinzu.
+ * Adds a column on copyright in the media overview.
  *
- * @since  0.0.1
- * @param  array $columns    Die in der Medienübersicht verfügbaren Spalten.
- * @return array             Die modifizierten Spalten.
+ * @since 0.0.1
+ *
+ * @param array $columns The columns available in the media overview.
+ *
+ * @return array The modified columns.
  */
 
 function mdb_lv_add_media_columns( $columns )
@@ -34,12 +36,12 @@ add_filter( 'manage_media_columns', 'mdb_lv_add_media_columns');
 
 
 /**
- * Stellt in der Medienübersicht die Spalte zum Urheberrecht dar
+ * Displays the copyright column in the media overview.
  *
  * @since 0.0.1
  *
- * @param string $column     Die darzustellende Seite
- * @param int    $id         Die ID des Datensatzes eines Mediums in der Medien-Tabelle des Plugins.
+ * @param string $column The page to be displayed.
+ * @param int    $id     The record ID of a medium in the media table of the plugin.
  */
 
 function mdb_lv_media_custom_column( $column, $id )
@@ -75,12 +77,14 @@ add_action( 'manage_media_custom_column', __NAMESPACE__ . '\mdb_lv_media_custom_
 
 
 /**
- * Fügt eine Reihe von zusätzlichen Formularfelder für Dateien in der Mediathek hinzu.
+ * Adds a number of additional form fields for files in the library.
  *
  * @since  0.0.1
- * @param  array   $form_fields    Die verfügbaren Formularfelder des Medienanhangs.
- * @param  WP_Post $post           Das Medienanhangsobjekt.
- * @return array                   Die modifizierten Formularfelder.
+ *
+ * @param array   $form_fields The available form fields of the media attachment.
+ * @param WP_Post $post        The media attachment.
+ *
+ * @return array The modified form fields.
  */
 
 function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
@@ -88,7 +92,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     $data = mdb_lv_get_media_record( $post->ID );
     extract( $data );
 
-    // Status der Medienerfassung bzw. Angabe zur Art & Weise der Urheberrechtsangabe
+    // Status of the media registration or indication of the type & manner of the copyright indication.
     $states = array(
         array( MEDIA_STATE_NO_CREDIT, __( 'keine Angaben notwendig', 'mdb_lv' ) ),
         array( MEDIA_STATE_SIMPLE_CREDIT, __( 'einfache Namensnennung (ggf. mit Verlinkung)', 'mdb_lv' ) ),
@@ -120,7 +124,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
 	);
 
 
-    // Auflistung der verfügbaren Lizenzen
+    // Listing of available licenses
     global $wpdb;
 
     $table_name = $wpdb->prefix . 'mdb_lv_licenses';
@@ -152,7 +156,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     );
 
 
-    // Benennung des Urhebers
+    // Naming of the author
 	$form_fields['mdb-lv-by-name'] = array(
 		'label' => __( 'Benennung des Urhebers', 'mdb_lv' ),
 		'input' => 'html',
@@ -160,7 +164,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     );
 
 
-    // Link zur Webseite des Urhebers (wenn gefordert)
+    // Link to the author's website (if required)
     $form_fields['mdb-lv-by-link'] = array(
 		'label' => __( 'Link zum Urheber', 'mdb_lv' ),
 		'input' => 'html',
@@ -168,7 +172,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     );
 
 
-    // Link zum Original des Bildes zur eigenen Dokumentation
+    // Link to the original image for your own documentation
     $form_fields[ 'mdb-lv-media-link' ] = array(
         'label' => __( 'Link zur Originaldatei', 'mdb_lv' ),
         'input' => 'html',
@@ -183,12 +187,14 @@ add_filter( 'attachment_fields_to_edit', __NAMESPACE__ . '\mdb_lv_attachment_fie
 
 
 /**
- * Speichert die Werte der zusätzlichen Formularfelder in der Datenbank ab.
+ * Stores the values of the additional form fields in the database.
  *
- * @since  0.0.1
- * @param  array $post          Ein Array mit Beitragsdaten.
- * @param  array $attachment    Ein Array mit Metadaten zum Anhang.
- * @return array                Das $post-Array.
+ * @since 0.0.1
+ *
+ * @param array $post       An array with post data.
+ * @param array $attachment An array of metadata about the attachment.
+ *
+ * @return array The $post array.
  */
 
 function mdb_lv_attachment_fields_to_save( $post, $attachment )
@@ -210,10 +216,11 @@ add_filter( 'attachment_fields_to_save', __NAMESPACE__ . '\mdb_lv_attachment_fie
 
 
 /**
- * Erzeugt einen neuen Datensatz in der Medien-Tabelle des Plugins, nachdem ein Medium in die Mediathek geladen wurde.
+ * Creates a new record in the media table of the plugin after a media has been loaded into the media library.
  *
  * @since 0.0.1
- * @param int $id     Die ID des Medienanhangs.
+ *
+ * @param int $id The media attachment ID.
  */
 
 function mdb_lv_add_attachment( $id )
@@ -243,10 +250,11 @@ add_action( 'add_attachment', __NAMESPACE__ . '\mdb_lv_add_attachment');
 
 
 /**
- * Löscht ein Medium aus der Medien-Tabelle des Plugins.
+ * Deletes a media from the media table of the plugin.
  *
  * @since 0.0.1
- * @param int $id     Die ID des Medienanhangs.
+ *
+ * @param int $id The media attachment ID.
  */
 
 function mdb_lv_delete_attachment( $id )

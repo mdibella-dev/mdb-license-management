@@ -1,11 +1,9 @@
 <?php
 /**
- * Klasse zur Anzeige der Lizenzübersicht
+ * Class for displaying the license overview.
  *
  * @author  Marco Di Bella
- * @package mdb-lv
- * @see     http://wpengineer.com/2426/wp_list_table-a-step-by-step-guide/
- * @see     https://wp.smashingmagazine.com/2011/11/native-admin-tables-wordpress/
+ * @package mdb-license-management
  */
 
 namespace mdb_license_management;
@@ -17,12 +15,20 @@ defined( 'ABSPATH' ) or exit;
 
 
 
+/** Include files */
 
 if( ! class_exists( 'WP_List_Table' ) ) :
     require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 endif;
 
 
+
+/**
+ * MDB_main_table
+ *
+ * @see http://wpengineer.com/2426/wp_list_table-a-step-by-step-guide/
+ * @see https://wp.smashingmagazine.com/2011/11/native-admin-tables-wordpress/
+ */
 
 class MDB_main_table extends WP_List_Table {
 
@@ -44,7 +50,7 @@ class MDB_main_table extends WP_List_Table {
             array(),                    // sortable
         );
 
-        // Lade Daten aus der Datentabelle
+        // Load data from the data table
         global $wpdb;
 
         $table_name  = $wpdb->prefix . 'mdb_lv_licenses';
@@ -70,7 +76,7 @@ class MDB_main_table extends WP_List_Table {
             break;
 
             default:
-                // Datenausgabe bei Fehlern
+                // Data output in case of errors
                 return print_r( $item, true ) ;
         endswitch;
     }

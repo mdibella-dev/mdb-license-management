@@ -1,9 +1,9 @@
 <?php
 /**
- * Core-Funktionen
+ * Functions for processing data sets.
  *
  * @author  Marco Di Bella
- * @package mdb-lv
+ * @package mdb-license-management
  */
 
 namespace mdb_license_management;
@@ -16,10 +16,11 @@ defined( 'ABSPATH' ) or exit;
 
 
 /**
- * Aktualisiert den Datensatz eines Mediums in der Medien-Tabelle des Plugins.
+ * Updates the record of a media in the media table of the plugin.
  *
  * @since 0.0.1
- * @param array $table_data    Die zu aktualiserenden Daten.
+ *
+ * @param array $table_data The data to be updated.
  */
 
 function mdb_lv_update_media_record( $table_data )
@@ -34,11 +35,13 @@ function mdb_lv_update_media_record( $table_data )
 
 
 /**
- * Holt einen Datensatz zu einem Medium aus der Medien-Tabelle des Plugins.
+ * Fetches a record for a media from the media table of the plugin.
  *
- * @since  0.0.1
- * @param  int    $id   Die ID des Datensatzes eines Mediums in der Medien-Tabelle des Plugins.
- * @return array        Der angeforderte Datensatz.
+ * @since 0.0.1
+ *
+ * @param int $id The ID of the record of a media in the media table of the plugin.
+ *
+ * @return array The requested data set.
  */
 
 function mdb_lv_get_media_record( $id )
@@ -54,12 +57,13 @@ function mdb_lv_get_media_record( $id )
 
 
 /**
- * Holt Lizenzinformationen aus der entsprechenden Tabelle des Plugins.
+ * Fetches license information from the corresponding table of the plugin.
  *
  * @since 0.0.1
  *
- * @param  int    $license_guid    Die ID des Lizenzeintrags in der entsprechenden Tabelle des Plugins.
- * @return array                   Der angeforderte Datensatz.
+ * @param int $license_guid The ID of the license entry in the corresponding table of the plugin.
+ *
+ * @return array The requested data set.
  */
 
 function mdb_lv_get_license_record( $license_guid )

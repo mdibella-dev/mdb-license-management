@@ -1,9 +1,9 @@
 <?php
 /**
- * Indizierungsfunktion
+ * Indexing function.
  *
  * @author  Marco Di Bella
- * @package mdb-lv
+ * @package mdb-license-management
  */
 
 namespace mdb_license_management;
@@ -16,10 +16,11 @@ defined( 'ABSPATH' ) or exit;
 
 
 /**
- * Liest ein Medium (attachement) aus und bereitet einen Eintrag für die Medien-Tabelle vor.
+ * Reads out a medium (attachment) and prepares an entry for the media table.
  *
  * @since 0.0.1
- * @param int    $id   Die ID des Mediums.
+ *
+ * @param int $id The ID of the medium.
  */
 
 function mdb_lv_indexing( $id )
@@ -33,7 +34,7 @@ function mdb_lv_indexing( $id )
 
 
     /**
-     * Kompatibilität:  Suche nach Medien-Credits die über das Theme "mdb-bs-rdg"/"mdb-rechtsdepesche" angelegt worden sind
+     * Compatibility: search for media credits created via the theme "mdb-bs-rdg"/"mdb-rechtsdepesche
      */
 
     // _media-meta-source => media_link
@@ -56,7 +57,7 @@ function mdb_lv_indexing( $id )
 
 
     /**
-     * Tabelle beschreiben
+     * Fill table
      */
 
     $table_name   = $wpdb->prefix . 'mdb_lv_media';

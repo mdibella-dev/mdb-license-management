@@ -1,9 +1,9 @@
 <?php
 /**
- * API für Themeintegration
+ * API for theme integration.
  *
  * @author  Marco Di Bella
- * @package mdb-lv
+ * @package mdb-license-management
  */
 
 namespace mdb_license_management;
@@ -16,11 +16,13 @@ defined( 'ABSPATH' ) or exit;
 
 
 /**
- * Benennt die Lizenz eines Mediums (ggf. mit Link)
+ * Names the license of a medium (with link if necessary).
  *
- * @since  0.0.1
- * @param  int    $id   Die ID des Datensatzes eines Mediums in der Medien-Tabelle des Plugins.
- * @return string       Ausgabe der Lizenzangaben.
+ * @since 0.0.1
+ *
+ * @param int $id The ID of the record of a media in the media table of the plugin.
+ *
+ * @return string Output of the license details.
  */
 
 function mdb_lv_get_license( $id )
@@ -51,11 +53,13 @@ function mdb_lv_get_license( $id )
 
 
 /**
- * Gibt den Urheber eines Mediums (ggf. mit Link)
+ * Gives the author of a medium (with link, if applicable).
  *
- * @since  0.0.1
- * @param  int    $id   Die ID des Datensatzes eines Mediums in der Medien-Tabelle des Plugins.
- * @return string       Ausgabe der Urheberangaben.
+ * @since 0.0.1
+ *
+ * @param int $id The ID of the record of a media in the media table of the plugin.
+ *
+ * @return string Output of the author details.
  */
 
 function mdb_lv_get_byline( $id )
