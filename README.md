@@ -32,6 +32,7 @@ __Tested up to:__ WordPress 6.1
 * Improve: text domain.
 * Improve: Remove compatibility to old implementations.
 * Improve: Primary language is EN.
+* Bugfix: Change handle names in backend.php
 
 
 ### 0.0.2

@@ -32,12 +32,12 @@ function plugin_backend_scripts()
         if( 'grid' === $mode ) :
 
             wp_enqueue_style(
-                'mdb_lizenzverwaltung',
+                'mdb_license_management-backend-style',
                 PLUGIN_DIR . 'assets/css/admin.css'
             );
 
             wp_enqueue_script(
-                'mdb_lizenzverwaltung',
+                'mdb_license_management-backend-script',
                 PLUGIN_DIR . 'assets/js/admin.js',
                 'jquery',
                 PLUGIN_VERSION,
