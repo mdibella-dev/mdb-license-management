@@ -44,9 +44,7 @@ function plugin_activation()
     require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 
 
-    /**
-     * 1. table for licenses
-     */
+    /** 1. table for licenses */
 
     $charset_collate = $wpdb->get_charset_collate();
     $table_name      = $wpdb->prefix . TABLE_LICENSES;
@@ -73,7 +71,7 @@ function plugin_activation()
 
             while( false !== ( $file_data = fgetcsv( $file_handle, 1000, ",", "'" ) ) ) :
 
-                // from second line; ignore first line with title fields
+                // ignore first line with title fields
                 if( 1 != $file_row ) :
                     $table_format = array( '%s', '%s', '%s', '%s', '%s' );
                     $table_data   = array(
@@ -94,9 +92,8 @@ function plugin_activation()
     endif;
 
 
-    /**
-     * 2. table for media
-     */
+    /** 2. table for media */
+
     $table_name = $wpdb->prefix . TABLE_MEDIA;
 
     if( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) != $table_name) :
