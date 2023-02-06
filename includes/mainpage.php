@@ -77,11 +77,11 @@ function show_mainpage()
     <?php
         switch( $active_tab ) :
             case 'tab-01' :
-                show_indexing_tab();
+                show_mainpage_indexing_tab();
             break;
 
             case 'tab-02' :
-                show_licenses_tab();
+                show_mainpage_licenses_tab();
             break;
         endswitch
     ?>
@@ -97,7 +97,7 @@ function show_mainpage()
  * @since 0.0.1
  */
 
-function show_licenses_tab()
+function show_mainpage_licenses_tab()
 {
 ?>
 <h2><?php echo __( 'Available licenses', 'mdb-license-management' )?></h2>
@@ -115,7 +115,7 @@ function show_licenses_tab()
  * @since 0.0.1
  */
 
-function show_indexing_tab()
+function show_mainpage_indexing_tab()
 {
 ?>
 <h2><?php echo __( 'Indexing the media', 'mdb-license-management' )?></h2>
