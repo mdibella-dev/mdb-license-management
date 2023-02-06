@@ -1,11 +1,15 @@
 <?php
 /*
- * Plugin Name:     Marco Di Bella - Lizenzverwaltung
+ * Plugin Name:     Marco Di Bella &mdash; License management
+ * Plugin URI:
+ * Description:     Adds functions to the WordPress media library for managing copyright licenses and creating and querying corresponding credits.
  * Author:          Marco Di Bella
  * Author URI:      https://www.marcodibella.de
- * Description:     Ergänzt die Mediathek um Funktionen zur Verwaltung von Copyright-Lizenzen sowie zur Erstellung und Abfrage entsprechender Credits.
- * Version:         1.0.0
- * Text Domain:     mdb_lv
+ * Version:         0.0.2
+ * Text Domain:     mdb-license-management
+ *
+ * @author  Marco Di Bella
+ * @package mdb-license-management
  */
 
 
@@ -14,7 +18,7 @@ defined( 'ABSPATH' ) or exit;
 
 
 
-/** Wichtige Konstanten */
+/** Variables and definitions */
 
 define( 'LICENSE_GUID_CC0', '0001' );
 define( 'LICENSE_GUID_DREAMSTIME_RF', 'L054' );
@@ -25,7 +29,7 @@ define( 'MEDIA_STATE_SIMPLE_CREDIT', 2 );
 define( 'MEDIA_STATE_LICENSED', 3 );
 
 
-/** Dateien einbinden */
+/** Include files */
 
 require_once( __DIR__ . '/includes/classes/class-main-table.php' );
 require_once( __DIR__ . '/includes/core.php' );
