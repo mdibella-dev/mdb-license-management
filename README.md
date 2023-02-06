@@ -1,5 +1,5 @@
 # mdb-lizenzverwaltung
-Plugin to integrate an image rights management into the media library of WordPress.
+Plugin, for establishing a rudimentary image rights management, which is integrated into the media library of WordPress.
 
 __Contributors:__ mdibella-dev
 
@@ -32,6 +32,7 @@ __Tested up to:__ WordPress 6.1
 * Improve: text domain.
 * Improve: Remove compatibility to old implementations.
 * Improve: Primary language is EN.
+* Improve: Change repository name.
 * Bugfix: Change handle names in backend.php
 
 
