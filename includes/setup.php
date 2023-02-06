@@ -45,7 +45,7 @@ function plugin_activation()
 
 
     /**
-     * 1. Tabelle für Lizenzen
+     * 1. table for licenses
      */
 
     $charset_collate = $wpdb->get_charset_collate();
@@ -53,7 +53,7 @@ function plugin_activation()
 
     if( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) != $table_name) :
 
-        // Tabelle installieren
+        // install table
         $sql = "CREATE TABLE $table_name (
             license_guid varchar(4) DEFAULT '' NOT NULL,
             license_term varchar(50) DEFAULT '' NOT NULL,
@@ -67,13 +67,13 @@ function plugin_activation()
         dbDelta( $sql );
 
 
-        // Preset laden
+        // load presets
         if( false !== ( $file_handle = fopen( __DIR__ . "/assets/csv/preset.csv", "r" ) ) ) :
             $file_row = 1;
 
             while( false !== ( $file_data = fgetcsv( $file_handle, 1000, ",", "'" ) ) ) :
 
-                // Ab zweiter Zeile; erste Zeile mit Titelfeldern ignorieren
+                // from second line; ignore first line with title fields
                 if( 1 != $file_row ) :
                     $table_format = array( '%s', '%s', '%s', '%s', '%s' );
                     $table_data   = array(
@@ -95,13 +95,13 @@ function plugin_activation()
 
 
     /**
-     * 2. Tabelle für Medien
+     * 2. table for media
      */
     $table_name = $wpdb->prefix . 'mdb_lv_media';
 
     if( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) != $table_name) :
 
-        // Tabelle installieren
+        // install table
         $sql = "CREATE TABLE $table_name (
             media_id bigint(20) UNSIGNED NOT NULL,
             media_link varchar(255) DEFAULT '' NOT NULL,
