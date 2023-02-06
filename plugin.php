@@ -40,8 +40,6 @@ define( __NAMESPACE__ . '\MENU_SLUG', 'mdb_license_management' );
 
 
 
-
-
 /** Include files */
 
 require_once( PLUGIN_DIR . 'includes/classes/index.php' );
