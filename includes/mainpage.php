@@ -28,7 +28,7 @@ function mdb_lv_add_mainpage()
         __( 'License Management', 'mdb-license-management' ),
         'manage_options',
         'mdb_lizenzverwaltung',
-        __NAMESPACE__ . '\mdb_lv_show_mainpage'
+        __NAMESPACE__ . '\show_mainpage'
     );
 }
 
@@ -44,7 +44,7 @@ add_action( 'admin_menu', __NAMESPACE__ . '\mdb_lv_add_mainpage' );
  * @source http://qnimate.com/add-tabs-using-wordpress-settings-api/
  */
 
-function mdb_lv_show_mainpage()
+function show_mainpage()
 {
 ?>
 <div class="wrap">
@@ -77,11 +77,11 @@ function mdb_lv_show_mainpage()
     <?php
         switch( $active_tab ) :
             case 'tab-01' :
-                mdb_lv_show_indexing_tab();
+                show_indexing_tab();
             break;
 
             case 'tab-02' :
-                mdb_lv_show_licenses_tab();
+                show_licenses_tab();
             break;
         endswitch
     ?>
@@ -97,7 +97,7 @@ function mdb_lv_show_mainpage()
  * @since 0.0.1
  */
 
-function mdb_lv_show_licenses_tab()
+function show_licenses_tab()
 {
 ?>
 <h2><?php echo __( 'Available licenses', 'mdb-license-management' )?></h2>
@@ -115,7 +115,7 @@ function mdb_lv_show_licenses_tab()
  * @since 0.0.1
  */
 
-function mdb_lv_show_indexing_tab()
+function show_indexing_tab()
 {
 ?>
 <h2><?php echo __( 'Indexing the media', 'mdb-license-management' )?></h2>
