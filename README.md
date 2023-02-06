@@ -1,4 +1,4 @@
-# mdb-lizenzverwaltung
+# Marco Di Bella &mdash; License Management
 Plugin, for establishing a rudimentary image rights management, which is integrated into the media library of WordPress.
 
 __Contributors:__ mdibella-dev
