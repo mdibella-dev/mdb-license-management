@@ -47,4 +47,4 @@ __License:__ MIT License
 
 
 ### 0.0.1
-Initial commit
+* Initial commit
