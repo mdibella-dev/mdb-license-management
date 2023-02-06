@@ -1,5 +1,5 @@
 # mdb-lizenzverwaltung
-Plugin zur Integration einer Bildrechteverwaltung in die Mediathek von WordPress.
+Plugin to integrate an image rights management into the media library of WordPress.
 
 __Contributors:__ mdibella-dev
 
@@ -7,18 +7,23 @@ __Tags:__  translation-ready, creative-commons, license
 
 __Requires at least:__ 5.0
 
-__Tested up to:__ WordPress 6.1  
+__Tested up to:__ WordPress 6.1
 
 
 ## Changelog
-*Geändert/Entfernt/Hinzugefügt/Fixed*
+*New / Improve / Bugfix*
 
 
-### main (1.0.0)
-**Geändert:** plugin.php ist jetzt der neue Startpunkt
-**Geändert:** Kommentierung
-**Geändert:** Verzeichnisstruktur
-**Geändert:** Conditions sind nun im YODA-Stil
+### main
+* Improve: Rename /inc to /includes.
+* Improve: Changelog style and language.
+
+
+### 0.0.2
+* Improve: plugin.php is the new starting point now.
+* Improve: Documentation.
+* Improve: Directory structure.
+* Improve: Conditions are now in the YODA style.
 
 
 ### 0.0.1
