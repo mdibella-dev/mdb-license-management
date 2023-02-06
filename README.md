@@ -20,6 +20,7 @@ __Tested up to:__ WordPress 6.1
 * New: backend.php
 * New: Translation support.
 * New: PLUGIN_DIR, PLUGIN_URL, PLUGIN_VERSION.
+* New: German translation.
 * Improve: Rename /inc to /includes.
 * Improve: Changelog style and language.
 * Improve: Documentation style and language.
