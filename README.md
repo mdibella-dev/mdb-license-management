@@ -17,6 +17,7 @@ __Tested up to:__ WordPress 6.1
 ### main
 * New: /core folder with all provided core and API functions.
 * New: Add namespace mdb_license_management.
+* New: PLUGIN_DIR, PLUGIN_URL, PLUGIN_VERSION.
 * Improve: Rename /inc to /includes.
 * Improve: Changelog style and language.
 
