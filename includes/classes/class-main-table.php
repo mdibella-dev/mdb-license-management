@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) or exit;
 
 /** Include files */
 
-if( ! class_exists( 'WP_List_Table' ) ) :
+if( ! class_exists( '\WP_List_Table' ) ) :
     require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 endif;
 
@@ -30,7 +30,7 @@ endif;
  * @see https://wp.smashingmagazine.com/2011/11/native-admin-tables-wordpress/
  */
 
-class MDB_main_table extends WP_List_Table {
+class MDB_main_table extends \WP_List_Table {
 
     function get_columns() {
         $columns = array(
