@@ -15,13 +15,15 @@ defined( 'ABSPATH' ) or exit;
 
 
 
+
 /**
  * Zentrale Aktivierungsfunktion für das Plugin
  *
  * @since 0.0.1
  */
 
-function mdb_lv_plugin_activation() {
+function plugin_activation()
+{
     global $wpdb;
 
     require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
@@ -100,4 +102,4 @@ function mdb_lv_plugin_activation() {
     endif;
 }
 
-register_activation_hook( __FILE__, 'mdb_lv_plugin_activation' );
+register_activation_hook( __FILE__, __NAMESPACE__ . '\plugin_activation' );
