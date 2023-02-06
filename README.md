@@ -23,6 +23,7 @@ __Tested up to:__ WordPress 6.1
 * Improve: Rename /inc to /includes.
 * Improve: Changelog style and language.
 * Improve: Documentation style and language.
+* Improve: Including of core and class files.
 
 
 ### 0.0.2

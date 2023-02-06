@@ -39,10 +39,9 @@ define( 'MEDIA_STATE_LICENSED', 3 );
 
 /** Include files */
 
-require_once( PLUGIN_DIR . 'includes/classes/class-main-table.php' );
-require_once( PLUGIN_DIR . 'includes/core/core-indexing.php' );
-require_once( PLUGIN_DIR . 'includes/core/core-media-record.php' );
-require_once( PLUGIN_DIR . 'includes/core/core-media-library.php' );
+require_once( PLUGIN_DIR . 'includes/classes/index.php' );
+require_once( PLUGIN_DIR . 'includes/core/index.php' );
+
 require_once( PLUGIN_DIR . 'includes/theme-integration.php' );
 require_once( PLUGIN_DIR . 'includes/mainpage.php' );
 require_once( PLUGIN_DIR . 'includes/backend.php' );
