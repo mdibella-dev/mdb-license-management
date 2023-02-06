@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) or exit;
  * @return string Output of the license details.
  */
 
-function license_management_get_license( $id )
+function api_get_license( $id )
 {
     $media  = get_media_record( $id );
     $output = '';
@@ -62,7 +62,7 @@ function license_management_get_license( $id )
  * @return string Output of the author details.
  */
 
-function license_management_get_byline( $id )
+function api_get_byline( $id )
 {
     $media  = get_media_record( $id );
     $output = '';
