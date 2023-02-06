@@ -27,9 +27,6 @@ define( __NAMESPACE__ . '\PLUGIN_VERSION', '0.0.3' );
 define( __NAMESPACE__ . '\PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( __NAMESPACE__ . '\PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
-define( 'LICENSE_GUID_CC0', '0001' );
-define( 'LICENSE_GUID_DREAMSTIME_RF', 'L054' );
-
 define( 'MEDIA_STATE_UNKNOWN', 0 );
 define( 'MEDIA_STATE_NO_CREDIT', 1 );
 define( 'MEDIA_STATE_SIMPLE_CREDIT', 2 );

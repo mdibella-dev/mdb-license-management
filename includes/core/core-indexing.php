@@ -34,29 +34,6 @@ function mdb_lv_indexing( $id )
 
 
     /**
-     * Compatibility: search for media credits created via the theme "mdb-bs-rdg"/"mdb-rechtsdepesche
-     */
-
-    // _media-meta-source => media_link
-    if( in_array( '_media-meta-source', get_post_custom_keys( $id ) ) ) :
-        $media_link = get_post_meta( $id, '_media-meta-source', true );
-
-        if( false !== strpos( strtolower( $media_link), 'dreamstime' ) ) :
-            $license_guid = LICENSE_GUID_DREAMSTIME_RF;
-            $media_state  = MEDIA_STATE_LICENSED;
-        elseif( false !== strpos( strtolower( $media_link), 'pixabay' ) ) :
-            $license_guid = LICENSE_GUID_CC0;
-            $media_state  = MEDIA_STATE_LICENSED;
-        endif;
-    endif;
-
-    // _media-meta-credit => media_credit
-    if( in_array( '_media-meta-credit', get_post_custom_keys( $id ) ) ) :
-        $by_name = get_post_meta( $id, '_media-meta-credit', true );
-    endif;
-
-
-    /**
      * Fill table
      */
 
