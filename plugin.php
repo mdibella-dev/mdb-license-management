@@ -27,12 +27,12 @@ define( 'MEDIA_STATE_LICENSED', 3 );
 
 /** Dateien einbinden */
 
-require_once( __DIR__ . '/inc/classes/class-main-table.php' );
-require_once( __DIR__ . '/inc/core.php' );
-require_once( __DIR__ . '/inc/api.php' );
-require_once( __DIR__ . '/inc/media-library-enhancement.php' );
-require_once( __DIR__ . '/inc/indexing.php' );
-require_once( __DIR__ . '/inc/mainpage.php' );
+require_once( __DIR__ . '/includes/classes/class-main-table.php' );
+require_once( __DIR__ . '/includes/core.php' );
+require_once( __DIR__ . '/includes/api.php' );
+require_once( __DIR__ . '/includes/media-library-enhancement.php' );
+require_once( __DIR__ . '/includes/indexing.php' );
+require_once( __DIR__ . '/includes/mainpage.php' );
 
 
 
