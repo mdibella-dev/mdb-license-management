@@ -93,11 +93,12 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     extract( $data );
 
 
-    // Status of the media registration or indication of the type & manner of the copyright indication.
+    /** Field 1 - status of the media registration or indication of the type & manner of the copyright indication */
+
     $states = array(
-        array( MEDIA_STATE_NO_CREDIT, __( 'no copyright information necessary', 'mdb-license-management' ) ),
-        array( MEDIA_STATE_SIMPLE_CREDIT, __( 'simple naming (with linking if necessary)', 'mdb-license-management' ) ),
-        array( MEDIA_STATE_LICENSED, __( 'copyright information according to license', 'mdb-license-management' ) )
+        MEDIA_STATE_NO_CREDIT     => __( 'no copyright information necessary', 'mdb-license-management' ),
+        MEDIA_STATE_SIMPLE_CREDIT => __( 'simple naming (with linking if necessary)', 'mdb-license-management' ),
+        MEDIA_STATE_LICENSED      => __( 'copyright information according to license', 'mdb-license-management' ),
     );
 
     $html  = "<select id='mdb-lv-media-state' name='attachments[{$post->ID}][mdb-lv-media-state]'>";
@@ -107,12 +108,12 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
         ( MEDIA_STATE_UNKNOWN == $media_state )? 'selected' : ''
     );
 
-    foreach ( $states as $state ) :
+    foreach ( $states as $state => $description ) :
         $html .= sprintf(
             '<option value="%1$s" %3$s>%2$s</option>',
-            $state[0],
-            $state[1],
-            ( $state[0] == $media_state )? 'selected' : ''
+            $state,
+            $description,
+            ( $state == $media_state )? 'selected' : ''
         );
     endforeach;
 
@@ -125,7 +126,8 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     );
 
 
-    // Listing of available licenses
+    /** Field 2 - listing of available licenses */
+
     global $wpdb;
 
     $table_name = $wpdb->prefix . TABLE_LICENSES;
@@ -157,7 +159,8 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     );
 
 
-    // Naming of the creator
+    /** Field 3 - naming of the creator */
+
     $form_fields['mdb-lv-by-name'] = array(
         'label' => __( 'Naming of the creator', 'mdb-license-management' ),
         'input' => 'html',
@@ -165,7 +168,8 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     );
 
 
-    // Link to the creator's website (if required)
+    /** Field 4 - link to the creator's website (if required) */
+
     $form_fields['mdb-lv-by-link'] = array(
         'label' => __( 'Link to the creator', 'mdb-license-management' ),
         'input' => 'html',
@@ -173,7 +177,8 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     );
 
 
-    // Link to the original image for your own documentation
+    /** Field 5 - link to the original image for your own documentation */
+
     $form_fields[ 'mdb-lv-media-link' ] = array(
         'label' => __( 'Link to original file', 'mdb-license-management' ),
         'input' => 'html',
