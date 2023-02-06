@@ -13,7 +13,6 @@
  */
 
 
-
 defined( 'ABSPATH' ) or exit;
 
 
@@ -32,9 +31,9 @@ define( 'MEDIA_STATE_LICENSED', 3 );
 /** Include files */
 
 require_once( __DIR__ . '/includes/classes/class-main-table.php' );
-require_once( __DIR__ . '/includes/core.php' );
-require_once( __DIR__ . '/includes/api.php' );
+require_once( __DIR__ . '/includes/core/core-indexing.php' );
+require_once( __DIR__ . '/includes/core/core-media-record.php' );
+require_once( __DIR__ . '/includes/core/core-license.php' );
 require_once( __DIR__ . '/includes/media-library-enhancement.php' );
-require_once( __DIR__ . '/includes/indexing.php' );
 require_once( __DIR__ . '/includes/mainpage.php' );
 require_once( __DIR__ . '/includes/setup.php' );

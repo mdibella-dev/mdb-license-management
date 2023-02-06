@@ -15,6 +15,7 @@ __Tested up to:__ WordPress 6.1
 
 
 ### main
+* New: /core folder with all provided core and API functions.
 * Improve: Rename /inc to /includes.
 * Improve: Changelog style and language.
 

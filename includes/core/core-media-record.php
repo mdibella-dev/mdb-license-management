@@ -6,7 +6,6 @@
  * @package mdb-lv
  */
 
-
 defined( 'ABSPATH' ) or exit;
 
 
