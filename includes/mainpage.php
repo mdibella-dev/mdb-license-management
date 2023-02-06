@@ -32,7 +32,7 @@ function mdb_lv_add_mainpage()
     );
 }
 
-add_action( 'admin_menu', 'mdb_lv_add_mainpage' );
+add_action( 'admin_menu', __NAMESPACE__ . '\mdb_lv_add_mainpage' );
 
 
 

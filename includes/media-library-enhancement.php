@@ -70,7 +70,7 @@ function mdb_lv_media_custom_column( $column, $id )
     endif;
 }
 
-add_action( 'manage_media_custom_column', 'mdb_lv_media_custom_column', 10, 2 );
+add_action( 'manage_media_custom_column', __NAMESPACE__ . '\mdb_lv_media_custom_column', 10, 2 );
 
 
 
@@ -178,7 +178,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
 	return $form_fields;
 }
 
-add_filter( 'attachment_fields_to_edit', 'mdb_lv_attachment_fields_to_edit', null, 2 );
+add_filter( 'attachment_fields_to_edit', __NAMESPACE__ . '\mdb_lv_attachment_fields_to_edit', null, 2 );
 
 
 
@@ -205,7 +205,7 @@ function mdb_lv_attachment_fields_to_save( $post, $attachment )
 	return $post;
 }
 
-add_filter( 'attachment_fields_to_save', 'mdb_lv_attachment_fields_to_save', null, 2 );
+add_filter( 'attachment_fields_to_save', __NAMESPACE__ . '\mdb_lv_attachment_fields_to_save', null, 2 );
 
 
 
@@ -238,7 +238,7 @@ function mdb_lv_add_attachment( $id )
     endif;
 }
 
-add_action( 'add_attachment', 'mdb_lv_add_attachment');
+add_action( 'add_attachment', __NAMESPACE__ . '\mdb_lv_add_attachment');
 
 
 
@@ -258,4 +258,4 @@ function mdb_lv_delete_attachment( $id )
     $wpdb->delete( $table_name, $table_where );
 }
 
-add_action( 'delete_attachment', 'mdb_lv_delete_attachment');
+add_action( 'delete_attachment', __NAMESPACE__ . '\mdb_lv_delete_attachment');
