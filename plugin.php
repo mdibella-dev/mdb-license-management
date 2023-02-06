@@ -14,6 +14,9 @@
 
 namespace mdb_license_management;
 
+
+/** Prevent direct access */
+
 defined( 'ABSPATH' ) or exit;
 
 
