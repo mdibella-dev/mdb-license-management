@@ -127,7 +127,7 @@ function mdb_lv_attachment_fields_to_edit( $form_fields, $post )
     // Listing of available licenses
     global $wpdb;
 
-    $table_name = $wpdb->prefix . 'mdb_lv_licenses';
+    $table_name = $wpdb->prefix . TABLE_LICENSES;
     $table_data = $wpdb->get_results( "SELECT license_guid, license_term FROM $table_name", 'ARRAY_A' );
 
     $html  = "<select id='mdb-lv-license-guid' name='attachments[{$post->ID}][mdb-lv-license-guid]'>";
@@ -230,7 +230,7 @@ function mdb_lv_add_attachment( $id )
     if( 0 === strpos( $mime, 'image' ) ) :
         global $wpdb;
 
-        $table_name   = $wpdb->prefix . 'mdb_lv_media';
+        $table_name   = $wpdb->prefix . TABLE_MEDIA;
         $table_format = array( '%d', '%s', '%d', '%s', '%s', '%s' );
         $table_data   = array(
             'media_id'     => $id,
@@ -261,7 +261,7 @@ function mdb_lv_delete_attachment( $id )
 {
     global $wpdb;
 
-    $table_name  = $wpdb->prefix . 'mdb_lv_media';
+    $table_name  = $wpdb->prefix . TABLE_MEDIA;
     $table_where = array( 'media_id' => $id );
     $wpdb->delete( $table_name, $table_where );
 }

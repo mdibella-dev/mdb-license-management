@@ -60,7 +60,7 @@ function mdb_lv_indexing( $id )
      * Fill table
      */
 
-    $table_name   = $wpdb->prefix . 'mdb_lv_media';
+    $table_name   = $wpdb->prefix . TABLE_MEDIA;
     $table_format = array( '%d', '%s', '%s', '%s', '%s', '%s' );
     $table_data   = array(
         'media_id'     => $id,
