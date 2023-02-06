@@ -8,6 +8,8 @@
  * @see     https://wp.smashingmagazine.com/2011/11/native-admin-tables-wordpress/
  */
 
+namespace mdb_license_management;
+
 defined( 'ABSPATH' ) or exit;
 
 

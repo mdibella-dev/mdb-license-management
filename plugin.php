@@ -12,6 +12,7 @@
  * @package mdb-license-management
  */
 
+namespace mdb_license_management;
 
 defined( 'ABSPATH' ) or exit;
 
