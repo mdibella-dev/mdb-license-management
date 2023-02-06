@@ -23,7 +23,7 @@ __Tested up to:__ WordPress 6.1
 * New: backend.php
 * New: Translation support.
 * New: PLUGIN_DIR, PLUGIN_URL, PLUGIN_VERSION.
-* New: TABLE_MEDIA, TABLE_LICENSES.
+* New: TABLE_MEDIA, TABLE_LICENSES, MENU_SLUG.
 * New: German translation.
 * Improve: Rename /inc to /includes.
 * Improve: Changelog style and language.
@@ -33,6 +33,7 @@ __Tested up to:__ WordPress 6.1
 * Improve: Remove compatibility to old implementations.
 * Improve: Primary language is EN.
 * Improve: Change repository name.
+* Improve: Various code simplifications.
 * Bugfix: Change handle names in backend.php
 
 
