@@ -31,8 +31,19 @@ function plugin_backend_scripts()
 
         if( 'grid' === $mode ) :
 
-            wp_enqueue_style( 'mdb_lizenzverwaltung', plugin_dir_url( __FILE__ ) . 'assets/css/admin.css' );
-            wp_enqueue_script( 'mdb_lizenzverwaltung', plugin_dir_url( __FILE__ ) . 'assets/js/admin.js', array( 'jquery' ), false, true );
+            wp_enqueue_style(
+                'mdb_lizenzverwaltung',
+                PLUGIN_DIR . 'assets/css/admin.css'
+            );
+
+            wp_enqueue_script(
+                'mdb_lizenzverwaltung',
+                PLUGIN_DIR . 'assets/js/admin.js',
+                'jquery',
+                PLUGIN_VERSION,
+                true
+            );
+
         endif;
 
     endif;
