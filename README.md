@@ -1,50 +1,39 @@
 # Marco Di Bella &mdash; License Management
-Plugin, for establishing a rudimentary image rights management, which is integrated into the media library of WordPress.
+A Plugin for establishing a rudimentary image rights management, which is integrated into the media library of WordPress.
 
-__Contributors:__ mdibella-dev
+<br>
 
-__Tags:__  translation-ready, creative-commons, license-management, wordpress-plugin, unfinished
+## Development Info
 
-__Requires at least:__ 5.0
+### Contributors
+[Marco Di Bella ](https://github.com/mdibella-dev)
 
-__Tested up to:__ WordPress 6.1
+### Tags
+translation-ready, creative-commons, license-management, wordpress-plugin, unfinished
 
-__License:__ MIT License
+### Requires at least
 
+* WordPress 5.0
+
+### Tested up to
+
+* WordPress 6.2 RC4
+
+<br>
 
 ## Changelog
-*New / Improve / Bugfix*
+
+### Latest changes to the main branch
+
+* Extract changelog from README.md
 
 
-### main
+### Previous changes
 
+See [CHANGELOG.md](https://github.com/mdibella-dev/mdb-license-management/blob/main/CHANGELOG.md).
 
-### 0.0.3
-* New: Add /core folder with all provided core and API functions.
-* New: Add namespace mdb_license_management.
-* New: Add backend.php
-* New: Add translation support.
-* New: PLUGIN_DIR, PLUGIN_URL, PLUGIN_VERSION.
-* New: TABLE_MEDIA, TABLE_LICENSES, MENU_SLUG.
-* New: German translation.
-* Improve: Rename /inc to /includes.
-* Improve: Changelog style and language.
-* Improve: Documentation style and language.
-* Improve: Including of core and class files.
-* Improve: text domain.
-* Improve: Remove compatibility to old implementations.
-* Improve: Primary language is EN.
-* Improve: Change repository name.
-* Improve: Various code simplifications.
-* Bugfix: Change handle names in backend.php
+<br>
 
+## License
 
-### 0.0.2
-* Improve: plugin.php is the new starting point now.
-* Improve: Documentation.
-* Improve: Directory structure.
-* Improve: Conditions are now in the YODA style.
-
-
-### 0.0.1
-* Initial commit
+This package ist released under the **MIT License**. See [LICENSE.md](https://github.com/mdibella-dev/mdb-license-management/blob/main/LICENSE.md) for further details.
