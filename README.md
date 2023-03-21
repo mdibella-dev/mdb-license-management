@@ -14,6 +14,7 @@ translation-ready, creative-commons, license-management, wordpress-plugin, unfin
 ### Requires at least
 
 * WordPress 5.0
+* ACF 5.0
 
 ### Tested up to
 
