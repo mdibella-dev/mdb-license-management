@@ -49,10 +49,16 @@ function get_media_record( $id )
 {
     global $wpdb;
 
-    $table_name = $wpdb->prefix . TABLE_MEDIA;
-    $table_data = $wpdb->get_results( "SELECT * FROM $table_name WHERE media_id=$id", 'ARRAY_A' );
 
-    return $table_data[0];
+
+    $table_name = $wpdb->prefix . TABLE_MEDIA;
+    $result     = $wpdb->get_results( "SELECT * FROM $table_name WHERE media_id=$id", 'ARRAY_A' );
+
+    if( null == $result ) :
+        return null;
+    else :
+        return $result[0];
+    endif;
 }
 
 
@@ -72,7 +78,11 @@ function get_license_record( $license_guid )
     global $wpdb;
 
     $table_name = $wpdb->prefix . TABLE_LICENSES;
-    $table_data = $wpdb->get_results( "SELECT * FROM $table_name WHERE license_guid='$license_guid'", 'ARRAY_A' );
+    $result     = $wpdb->get_results( "SELECT * FROM $table_name WHERE license_guid='$license_guid'", 'ARRAY_A' );
 
-    return $table_data[0];
+    if( null == $result ) :
+        return null;
+    else :
+        return $result[0];
+    endif;
 }

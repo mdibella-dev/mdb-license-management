@@ -26,7 +26,8 @@ translation-ready, creative-commons, license-management, wordpress-plugin, unfin
 
 ### Latest changes to the main branch
 
-* Extract changelog from README.md
+* Improve: Extract changelog from README.md
+* Bugfix: Fix "Trying to access array offset on value of type null"
 
 
 ### Previous changes

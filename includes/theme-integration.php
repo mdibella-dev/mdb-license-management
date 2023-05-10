@@ -30,21 +30,25 @@ function api_get_license( $id )
     $media  = get_media_record( $id );
     $output = '';
 
-    if( $media['license_guid'] ) :
-        $license = get_license_record( $media['license_guid'] );
+    if( null != $media ) :
 
-        if( '' !== $license['license_link'] ) :
-            $output = sprintf(
-                '<a href="%1$s" target="_blank" rel="nofollow" name="%2$s">[%2$s]</a>',
-                $license['license_link'],
-                $license['license_term']
-            );
-        else :
-            $output = sprintf(
-                '[%1$s]',
-                $license['license_term']
-            );
+        if( $media['license_guid'] and ( null != ( $license = get_license_record( $media['license_guid'] ) ) ) ) :
+            //$license = get_license_record( $media['license_guid'] );
+
+            if( '' !== $license['license_link'] ) :
+                $output = sprintf(
+                    '<a href="%1$s" target="_blank" rel="nofollow" name="%2$s">[%2$s]</a>',
+                    $license['license_link'],
+                    $license['license_term']
+                );
+            else :
+                $output = sprintf(
+                    '[%1$s]',
+                    $license['license_term']
+                );
+            endif;
         endif;
+
     endif;
 
     return $output;
@@ -67,16 +71,22 @@ function api_get_byline( $id )
     $media  = get_media_record( $id );
     $output = '';
 
-    if( '' !== $media['by_name'] ) :
-        if( '' !== $media['by_link'] ) :
-            $output = sprintf(
-                '<a href="%1$s" target="_blank" rel="nofollow" name="%2$s">%2$s</a>',
-                $media['by_link'],
-                $media['by_name']
-            );
-        else :
-            $output = $media['by_name'];
+    if( null != $media ) :
+
+        if( '' !== $media['by_name'] ) :
+
+            if( '' !== $media['by_link'] ) :
+                $output = sprintf(
+                    '<a href="%1$s" target="_blank" rel="nofollow" name="%2$s">%2$s</a>',
+                    $media['by_link'],
+                    $media['by_name']
+                );
+            else :
+                $output = $media['by_name'];
+            endif;
+
         endif;
+
     endif;
 
     return $output;
