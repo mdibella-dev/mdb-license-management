@@ -33,12 +33,12 @@ function plugin_backend_scripts()
 
             wp_enqueue_style(
                 'mdb_license_management-backend-style',
-                PLUGIN_DIR . 'assets/css/admin.css'
+                PLUGIN_URL . 'assets/css/admin.css'
             );
 
             wp_enqueue_script(
                 'mdb_license_management-backend-script',
-                PLUGIN_DIR . 'assets/js/admin.js',
+                PLUGIN_URL . 'assets/js/admin.js',
                 'jquery',
                 PLUGIN_VERSION,
                 true

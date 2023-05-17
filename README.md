@@ -28,6 +28,7 @@ translation-ready, creative-commons, license-management, wordpress-plugin, unfin
 
 * Improve: Extract changelog from README.md
 * Bugfix: Fix "Trying to access array offset on value of type null"
+* Bugfix: Fix wrong path var in backend.php
 
 
 ### Previous changes
