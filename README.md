@@ -18,7 +18,7 @@ translation-ready, creative-commons, license-management, wordpress-plugin, unfin
 
 ### Tested up to
 
-* WordPress 6.2 RC4
+* WordPress 6.2
 
 <br>
 
@@ -29,6 +29,7 @@ translation-ready, creative-commons, license-management, wordpress-plugin, unfin
 * Improve: Extract changelog from README.md
 * Bugfix: Fix "Trying to access array offset on value of type null"
 * Bugfix: Fix wrong path var in backend.php
+* Bugfix: Fix uncaught PHP error
 
 
 ### Previous changes
