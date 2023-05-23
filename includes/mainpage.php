@@ -123,7 +123,7 @@ function show_mainpage_indexing_tab()
     global $wpdb;
            $total = $wpdb->get_var( "SELECT COUNT(ID) FROM $wpdb->posts WHERE (post_type='attachment') AND (post_mime_type LIKE '%%image%%')" );
 
-    if( $total == 0 ) :
+    if( 0 == $total ) :
         echo '<p>';
         echo __( 'There are currently no images in the media library.', 'mdb-license-management' );
         echo '</p>';
