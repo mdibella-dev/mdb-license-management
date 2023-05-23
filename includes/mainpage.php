@@ -138,7 +138,7 @@ function show_mainpage_indexing_tab()
         echo '<input type="submit" class="button" value="'. __( 'Start', 'mdb-license-management' ) . '">';
         echo '</form>';
 
-        if( $_POST['mdb_lv_index'] == 'go' ):
+        if( isset( $_POST['mdb_lv_index'] ) and ( 'go' == $_POST['mdb_lv_index'] ) ):
             $data = $wpdb->get_results( "SELECT ID, post_title FROM $wpdb->posts WHERE (post_type='attachment') AND (post_mime_type LIKE '%%image%%')" );
 
             echo '<p>';
