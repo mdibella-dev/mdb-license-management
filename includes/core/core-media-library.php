@@ -90,100 +90,105 @@ add_action( 'manage_media_custom_column', __NAMESPACE__ . '\media_library_show_c
 function media_library_add_attachment_fields( $form_fields, $post )
 {
     $data = get_media_record( $post->ID );
-    extract( $data );
+
+    if( null != $data ) :
+
+        extract( $data );
 
 
-    /** Field 1 - status of the media registration or indication of the type & manner of the copyright indication */
+        /** Field 1 - status of the media registration or indication of the type & manner of the copyright indication */
 
-    $states = array(
-        MEDIA_STATE_NO_CREDIT     => __( 'no copyright information necessary', 'mdb-license-management' ),
-        MEDIA_STATE_SIMPLE_CREDIT => __( 'simple naming (with linking if necessary)', 'mdb-license-management' ),
-        MEDIA_STATE_LICENSED      => __( 'copyright information according to license', 'mdb-license-management' ),
-    );
-
-    $html  = "<select id='mdb-lv-media-state' name='attachments[{$post->ID}][mdb-lv-media-state]'>";
-    $html .= sprintf(
-        '<option value="0" disabled %2$s>%1$s</option>',
-        __( '--- please select ---', 'mdb-license-management' ),
-        ( MEDIA_STATE_UNKNOWN == $media_state )? 'selected' : ''
-    );
-
-    foreach ( $states as $state => $description ) :
-        $html .= sprintf(
-            '<option value="%1$s" %3$s>%2$s</option>',
-            $state,
-            $description,
-            ( $state == $media_state )? 'selected' : ''
+        $states = array(
+            MEDIA_STATE_NO_CREDIT     => __( 'no copyright information necessary', 'mdb-license-management' ),
+            MEDIA_STATE_SIMPLE_CREDIT => __( 'simple naming (with linking if necessary)', 'mdb-license-management' ),
+            MEDIA_STATE_LICENSED      => __( 'copyright information according to license', 'mdb-license-management' ),
         );
-    endforeach;
 
-    $html .= '</select>';
-
-    $form_fields['mdb-lv-media-state'] = array(
-        'label' => __( 'Method and manner of the copyright information', 'mdb-license-management' ),
-        'input' => 'html',
-        'html'  => $html,
-    );
-
-
-    /** Field 2 - listing of available licenses */
-
-    global $wpdb;
-
-    $table_name = $wpdb->prefix . TABLE_LICENSES;
-    $table_data = $wpdb->get_results( "SELECT license_guid, license_term FROM $table_name", 'ARRAY_A' );
-
-    $html  = "<select id='mdb-lv-license-guid' name='attachments[{$post->ID}][mdb-lv-license-guid]'>";
-    $html .= sprintf(
-        '<option value="%1$s" disabled %3$s>%2$s</option>',
-        '0',
-        __( '--- please select ---', 'mdb-license-management' ),
-        ( 0 == $license_guid )? 'selected' : ''
-    );
-
-    foreach ( $table_data as $data ) :
+        $html  = "<select id='mdb-lv-media-state' name='attachments[{$post->ID}][mdb-lv-media-state]'>";
         $html .= sprintf(
-            '<option value="%1$s" %3$s>%2$s</option>',
-            $data['license_guid'],
-            $data['license_term'],
-            ( $data['license_guid'] == $license_guid )? 'selected' : ''
+            '<option value="0" disabled %2$s>%1$s</option>',
+            __( '--- please select ---', 'mdb-license-management' ),
+            ( MEDIA_STATE_UNKNOWN == $media_state )? 'selected' : ''
         );
-    endforeach;
 
-    $html .= '</select>';
+        foreach ( $states as $state => $description ) :
+            $html .= sprintf(
+                '<option value="%1$s" %3$s>%2$s</option>',
+                $state,
+                $description,
+                ( $state == $media_state )? 'selected' : ''
+            );
+        endforeach;
 
-    $form_fields['mdb-lv-license-guid'] = array(
-        'label' => __( 'License', 'mdb-license-management' ),
-        'input' => 'html',
-        'html'     => $html,
-    );
+        $html .= '</select>';
 
-
-    /** Field 3 - naming of the creator */
-
-    $form_fields['mdb-lv-by-name'] = array(
-        'label' => __( 'Naming of the creator', 'mdb-license-management' ),
-        'input' => 'html',
-        'html'  => "<input type='text' size='128' class='widefat' value='" . $by_name . "' name='attachments[{$post->ID}][mdb-lv-by-name]'>",
-    );
-
-
-    /** Field 4 - link to the creator's website (if required) */
-
-    $form_fields['mdb-lv-by-link'] = array(
-        'label' => __( 'Link to the creator', 'mdb-license-management' ),
-        'input' => 'html',
-        'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $by_link ) . "' name='attachments[{$post->ID}][mdb-lv-by-link]'>",
-    );
+        $form_fields['mdb-lv-media-state'] = array(
+            'label' => __( 'Method and manner of the copyright information', 'mdb-license-management' ),
+            'input' => 'html',
+            'html'  => $html,
+        );
 
 
-    /** Field 5 - link to the original image for your own documentation */
+        /** Field 2 - listing of available licenses */
 
-    $form_fields[ 'mdb-lv-media-link' ] = array(
-        'label' => __( 'Link to original file', 'mdb-license-management' ),
-        'input' => 'html',
-        'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $media_link ) . "' name='attachments[{$post->ID}][mdb-lv-media-link]'>",
-    );
+        global $wpdb;
+
+        $table_name = $wpdb->prefix . TABLE_LICENSES;
+        $table_data = $wpdb->get_results( "SELECT license_guid, license_term FROM $table_name", 'ARRAY_A' );
+
+        $html  = "<select id='mdb-lv-license-guid' name='attachments[{$post->ID}][mdb-lv-license-guid]'>";
+        $html .= sprintf(
+            '<option value="%1$s" disabled %3$s>%2$s</option>',
+            '0',
+            __( '--- please select ---', 'mdb-license-management' ),
+            ( 0 == $license_guid )? 'selected' : ''
+        );
+
+        foreach ( $table_data as $data ) :
+            $html .= sprintf(
+                '<option value="%1$s" %3$s>%2$s</option>',
+                $data['license_guid'],
+                $data['license_term'],
+                ( $data['license_guid'] == $license_guid )? 'selected' : ''
+            );
+        endforeach;
+
+        $html .= '</select>';
+
+        $form_fields['mdb-lv-license-guid'] = array(
+            'label' => __( 'License', 'mdb-license-management' ),
+            'input' => 'html',
+            'html'     => $html,
+        );
+
+
+        /** Field 3 - naming of the creator */
+
+        $form_fields['mdb-lv-by-name'] = array(
+            'label' => __( 'Naming of the creator', 'mdb-license-management' ),
+            'input' => 'html',
+            'html'  => "<input type='text' size='128' class='widefat' value='" . $by_name . "' name='attachments[{$post->ID}][mdb-lv-by-name]'>",
+        );
+
+
+        /** Field 4 - link to the creator's website (if required) */
+
+        $form_fields['mdb-lv-by-link'] = array(
+            'label' => __( 'Link to the creator', 'mdb-license-management' ),
+            'input' => 'html',
+            'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $by_link ) . "' name='attachments[{$post->ID}][mdb-lv-by-link]'>",
+        );
+
+
+        /** Field 5 - link to the original image for your own documentation */
+
+        $form_fields[ 'mdb-lv-media-link' ] = array(
+            'label' => __( 'Link to original file', 'mdb-license-management' ),
+            'input' => 'html',
+            'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $media_link ) . "' name='attachments[{$post->ID}][mdb-lv-media-link]'>",
+        );
+
+    endif;
 
     return $form_fields;
 }
