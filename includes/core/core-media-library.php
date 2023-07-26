@@ -50,24 +50,31 @@ function media_library_show_custom_column( $column, $id )
 
         $data = get_media_record( $id );
 
-        switch( $data['media_state'] ) :
-            case MEDIA_STATE_UNKNOWN:
-                echo __( 'unknown', 'mdb-license-management' );
-            break;
+        if( ( null != $data ) and ( true == is_array( $data ) ) ) :
 
-            case MEDIA_STATE_NO_CREDIT:
-                echo __( 'no copyright information necessary', 'mdb-license-management' );
-            break;
+            switch( $data['media_state'] ) :
+                case MEDIA_STATE_UNKNOWN:
+                    echo __( 'unknown', 'mdb-license-management' );
+                break;
 
-            case MEDIA_STATE_SIMPLE_CREDIT:
-                echo $data['by_name'];
-            break;
+                case MEDIA_STATE_NO_CREDIT:
+                    echo __( 'no copyright information necessary', 'mdb-license-management' );
+                break;
 
-            case MEDIA_STATE_LICENSED:
-                $data2 = get_license_record( $data['license_guid'] );
-                echo $data['by_name'] . '<br>' . $data2['license_term'];
-            break;
-        endswitch;
+                case MEDIA_STATE_SIMPLE_CREDIT:
+                    echo $data['by_name'];
+                break;
+
+                case MEDIA_STATE_LICENSED:
+                    $data2 = get_license_record( $data['license_guid'] );
+
+                    if( ( null != $data2 ) and ( true == is_array( $data2 ) ) ) :
+                        echo $data['by_name'] . '<br>' . $data2['license_term'];
+                    endif;
+                break;
+            endswitch;
+
+        endif;
 
     endif;
 }
@@ -91,7 +98,7 @@ function media_library_add_attachment_fields( $form_fields, $post )
 {
     $data = get_media_record( $post->ID );
 
-    if( null != $data ) :
+    if( ( null != $data ) and ( true == is_array( $data ) ) ) :
 
         extract( $data );
 

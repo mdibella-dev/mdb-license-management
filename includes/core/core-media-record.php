@@ -49,8 +49,6 @@ function get_media_record( $id )
 {
     global $wpdb;
 
-
-
     $table_name = $wpdb->prefix . TABLE_MEDIA;
     $result     = $wpdb->get_results( "SELECT * FROM $table_name WHERE media_id=$id", 'ARRAY_A' );
 
