@@ -4,6 +4,17 @@
 
 <br>
 
+### 0.0.4
+Released: 03-08-2023
+
+* Improve: Extract changelog from README.md
+* Improve: Change namespace to mdb_license_management\media_library
+* Bugfix: Fix "Trying to access array offset on value of type null"
+* Bugfix: Fix wrong path var in backend.php
+* Bugfix: Fix uncaught PHP error
+* Bugfix: Fix PHP warning (mainpage.php)
+
+
 ### 0.0.3
 Released: 06-02-2023
 

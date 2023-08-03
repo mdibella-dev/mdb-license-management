@@ -26,12 +26,6 @@ translation-ready, creative-commons, license-management, wordpress-plugin, unfin
 
 ### Latest changes to the main branch
 
-* Improve: Extract changelog from README.md
-* Bugfix: Fix "Trying to access array offset on value of type null"
-* Bugfix: Fix wrong path var in backend.php
-* Bugfix: Fix uncaught PHP error
-* Bugfix: Fix PHP warning (mainpage.php)
-
 
 ### Previous changes
 

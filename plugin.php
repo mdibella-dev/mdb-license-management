@@ -6,7 +6,7 @@
  * Author:          Marco Di Bella
  * Author URI:      https://www.marcodibella.de
  * License:         MIT License
- * Version:         0.0.3
+ * Version:         0.0.4
  * Text Domain:     mdb-license-management
  *
  * @author  Marco Di Bella
@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) or exit;
 
 /** Variables and definitions */
 
-define( __NAMESPACE__ . '\PLUGIN_VERSION', '0.0.3' );
+define( __NAMESPACE__ . '\PLUGIN_VERSION', '0.0.4' );
 define( __NAMESPACE__ . '\PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( __NAMESPACE__ . '\PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
