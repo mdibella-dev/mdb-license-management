@@ -3,7 +3,7 @@
  * Functions for extending the media library.
  *
  * @author  Marco Di Bella
- * @package mdb-lv
+ * @package mdb-license-management
  */
 
 namespace mdb_license_management\media_library;
