@@ -47,7 +47,7 @@ function plugin_activation()
     /** 1. table for licenses */
 
     $charset_collate = $wpdb->get_charset_collate();
-    $table_name      = $wpdb->prefix . TABLE_LICENSES;
+    $table_name      = $wpdb->prefix . table_licenses;
 
     if( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) != $table_name) :
 
@@ -94,7 +94,7 @@ function plugin_activation()
 
     /** 2. table for media */
 
-    $table_name = $wpdb->prefix . TABLE_MEDIA;
+    $table_name = $wpdb->prefix . table_media;
 
     if( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) != $table_name) :
 

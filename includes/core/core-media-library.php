@@ -10,6 +10,9 @@ namespace mdb_license_management\media_library;
 
 use mdb_license_management;
 
+use const mdb_license_management\table_licenses as table_licenses;
+use const mdb_license_management\table_media as table_media;
+
 
 /** Prevent direct access */
 
@@ -55,19 +58,19 @@ function show_custom_column( $column, $id )
         if( ( null != $data ) and ( true == is_array( $data ) ) ) :
 
             switch( $data['media_state'] ) :
-                case MEDIA_STATE_UNKNOWN:
+                case \MEDIA_STATE_UNKNOWN:
                     echo __( 'unknown', 'mdb-license-management' );
                 break;
 
-                case MEDIA_STATE_NO_CREDIT:
+                case \MEDIA_STATE_NO_CREDIT:
                     echo __( 'no copyright information necessary', 'mdb-license-management' );
                 break;
 
-                case MEDIA_STATE_SIMPLE_CREDIT:
+                case \MEDIA_STATE_SIMPLE_CREDIT:
                     echo $data['by_name'];
                 break;
 
-                case MEDIA_STATE_LICENSED:
+                case \MEDIA_STATE_LICENSED:
                     $data2 = mdb_license_management\get_license_record( $data['license_guid'] );
 
                     if( ( null != $data2 ) and ( true == is_array( $data2 ) ) ) :
@@ -108,16 +111,16 @@ function add_attachment_fields( $form_fields, $post )
         /** Field 1 - status of the media registration or indication of the type & manner of the copyright indication */
 
         $states = array(
-            MEDIA_STATE_NO_CREDIT     => __( 'no copyright information necessary', 'mdb-license-management' ),
-            MEDIA_STATE_SIMPLE_CREDIT => __( 'simple naming (with linking if necessary)', 'mdb-license-management' ),
-            MEDIA_STATE_LICENSED      => __( 'copyright information according to license', 'mdb-license-management' ),
+            \MEDIA_STATE_NO_CREDIT     => __( 'no copyright information necessary', 'mdb-license-management' ),
+            \MEDIA_STATE_SIMPLE_CREDIT => __( 'simple naming (with linking if necessary)', 'mdb-license-management' ),
+            \MEDIA_STATE_LICENSED      => __( 'copyright information according to license', 'mdb-license-management' ),
         );
 
         $html  = "<select id='mdb-lv-media-state' name='attachments[{$post->ID}][mdb-lv-media-state]'>";
         $html .= sprintf(
             '<option value="0" disabled %2$s>%1$s</option>',
             __( '--- please select ---', 'mdb-license-management' ),
-            ( MEDIA_STATE_UNKNOWN == $media_state )? 'selected' : ''
+            ( \MEDIA_STATE_UNKNOWN == $media_state )? 'selected' : ''
         );
 
         foreach ( $states as $state => $description ) :
@@ -142,7 +145,7 @@ function add_attachment_fields( $form_fields, $post )
 
         global $wpdb;
 
-        $table_name = $wpdb->prefix . TABLE_LICENSES;
+        $table_name = $wpdb->prefix . table_licenses;
         $table_data = $wpdb->get_results( "SELECT license_guid, license_term FROM $table_name", 'ARRAY_A' );
 
         $html  = "<select id='mdb-lv-license-guid' name='attachments[{$post->ID}][mdb-lv-license-guid]'>";
@@ -250,7 +253,7 @@ function add_attachment_handler( $id )
     if( 0 === strpos( $mime, 'image' ) ) :
         global $wpdb;
 
-        $table_name   = $wpdb->prefix . TABLE_MEDIA;
+        $table_name   = $wpdb->prefix . table_media;
         $table_format = array( '%d', '%s', '%d', '%s', '%s', '%s' );
         $table_data   = array(
             'media_id'     => $id,
@@ -281,7 +284,7 @@ function delete_attachment_handler( $id )
 {
     global $wpdb;
 
-    $table_name  = $wpdb->prefix . TABLE_MEDIA;
+    $table_name  = $wpdb->prefix . table_media;
     $table_where = array( 'media_id' => $id );
     $wpdb->delete( $table_name, $table_where );
 }

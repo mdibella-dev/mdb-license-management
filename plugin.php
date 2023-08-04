@@ -33,8 +33,8 @@ define( 'MEDIA_STATE_NO_CREDIT', 1 );
 define( 'MEDIA_STATE_SIMPLE_CREDIT', 2 );
 define( 'MEDIA_STATE_LICENSED', 3 );
 
-define( __NAMESPACE__ . '\TABLE_MEDIA', 'mdb_lv_media' );
-define( __NAMESPACE__ . '\TABLE_LICENSES', 'mdb_lv_licenses' );
+const table_media    = 'mdb_lv_media';
+const table_licenses = 'mdb_lv_licenses';
 
 define( __NAMESPACE__ . '\MENU_SLUG', 'mdb_license_management' );
 

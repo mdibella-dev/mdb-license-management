@@ -53,7 +53,7 @@ class MDB_main_table extends \WP_List_Table {
         // Load data from the data table
         global $wpdb;
 
-        $table_name  = $wpdb->prefix . TABLE_LICENSES;
+        $table_name  = $wpdb->prefix . table_licenses;
         $table_data  = $wpdb->get_results( "SELECT * FROM $table_name", 'ARRAY_A' );
         $this->items = $table_data;
     }

@@ -29,7 +29,7 @@ function process_media_indexing( $id )
 {
     global $wpdb;
 
-    $table_name   = $wpdb->prefix . TABLE_MEDIA;
+    $table_name   = $wpdb->prefix . table_media;
     $table_format = array( '%d', '%s', '%s', '%s', '%s', '%s' );
     $table_data   = array(
         'media_id'     => $id,

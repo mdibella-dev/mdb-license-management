@@ -27,7 +27,7 @@ function update_media_record( $table_data )
 {
     global $wpdb;
 
-    $table_name  = $wpdb->prefix . TABLE_MEDIA;
+    $table_name  = $wpdb->prefix . table_media;
     $table_where = array( 'media_id' => $table_data['media_id'] );
 
     $wpdb->update( $table_name, $table_data, $table_where );
@@ -49,7 +49,7 @@ function get_media_record( $id )
 {
     global $wpdb;
 
-    $table_name = $wpdb->prefix . TABLE_MEDIA;
+    $table_name = $wpdb->prefix . table_media;
     $result     = $wpdb->get_results( "SELECT * FROM $table_name WHERE media_id=$id", 'ARRAY_A' );
 
     if( null == $result ) :
@@ -75,7 +75,7 @@ function get_license_record( $license_guid )
 {
     global $wpdb;
 
-    $table_name = $wpdb->prefix . TABLE_LICENSES;
+    $table_name = $wpdb->prefix . table_licenses;
     $result     = $wpdb->get_results( "SELECT * FROM $table_name WHERE license_guid='$license_guid'", 'ARRAY_A' );
 
     if( null == $result ) :
