@@ -8,6 +8,8 @@
 
 namespace mdb_license_management\media_library;
 
+use mdb_license_management;
+
 
 /** Prevent direct access */
 
@@ -48,7 +50,7 @@ function show_custom_column( $column, $id )
 {
     if( 'mdb_lv_credits' == $column  ) :
 
-        $data = get_media_record( $id );
+        $data = mdb_license_management\get_media_record( $id );
 
         if( ( null != $data ) and ( true == is_array( $data ) ) ) :
 
@@ -66,7 +68,7 @@ function show_custom_column( $column, $id )
                 break;
 
                 case MEDIA_STATE_LICENSED:
-                    $data2 = get_license_record( $data['license_guid'] );
+                    $data2 = mdb_license_management\get_license_record( $data['license_guid'] );
 
                     if( ( null != $data2 ) and ( true == is_array( $data2 ) ) ) :
                         echo $data['by_name'] . '<br>' . $data2['license_term'];
@@ -96,7 +98,7 @@ add_action( 'manage_media_custom_column', __NAMESPACE__ . '\show_custom_column',
 
 function add_attachment_fields( $form_fields, $post )
 {
-    $data = get_media_record( $post->ID );
+    $data = mdb_license_management\get_media_record( $post->ID );
 
     if( ( null != $data ) and ( true == is_array( $data ) ) ) :
 
@@ -224,7 +226,7 @@ function save_attachment_fields( $post, $attachment )
     $data['by_name']      = $attachment['mdb-lv-by-name'];
     $data['by_link']      = $attachment['mdb-lv-by-link'];
 
-    update_media_record( $data );
+    mdb_license_management\update_media_record( $data );
 
     return $post;
 }
