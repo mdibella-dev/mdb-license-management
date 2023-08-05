@@ -6,12 +6,7 @@
  * @package mdb-license-management
  */
 
-namespace mdb_license_management\media_library;
-
-use mdb_license_management;
-
-use const mdb_license_management\table_licenses as table_licenses;
-use const mdb_license_management\table_media as table_media;
+namespace mdb_license_management;
 
 
 /** Prevent direct access */
@@ -45,43 +40,48 @@ add_filter( 'manage_media_columns', __NAMESPACE__ . '\add_custom_column');
  *
  * @since 0.0.1
  *
- * @param string $column The page to be displayed.
- * @param int    $id     The record ID of a medium in the media table of the plugin.
+ * @param string $column The column to be displayed.
+ * @param int    $id     The post_ID of the media attachment.
  */
 
 function show_custom_column( $column, $id )
 {
     if( 'mdb_lv_credits' == $column  ) :
 
-        $data = mdb_license_management\get_media_record( $id );
+        $record = new Media_Record( $id );
 
-        if( ( null != $data ) and ( true == is_array( $data ) ) ) :
 
-            switch( $data['media_state'] ) :
-                case \MEDIA_STATE_UNKNOWN:
-                    echo __( 'unknown', 'mdb-license-management' );
-                break;
+        switch( $data['media_state'] ) :
 
-                case \MEDIA_STATE_NO_CREDIT:
-                    echo __( 'no copyright information necessary', 'mdb-license-management' );
-                break;
+            case MEDIA_STATE_NO_CREDIT:
+                echo __( 'no copyright information necessary', 'mdb-license-management' );
+            break;
 
-                case \MEDIA_STATE_SIMPLE_CREDIT:
-                    echo $data['by_name'];
-                break;
+            case MEDIA_STATE_SIMPLE_CREDIT:
+                echo $record->get_by_name();
+            break;
 
-                case \MEDIA_STATE_LICENSED:
-                    $data2 = mdb_license_management\get_license_record( $data['license_guid'] );
+            case MEDIA_STATE_LICENSED:
 
-                    if( ( null != $data2 ) and ( true == is_array( $data2 ) ) ) :
-                        echo $data['by_name'] . '<br>' . $data2['license_term'];
-                    endif;
-                break;
-            endswitch;
 
-        endif;
+
+                $data2 = mdb_license_management\get_license_record( $data['license_guid'] );
+
+                if( ( null != $data2 ) and ( true == is_array( $data2 ) ) ) :
+                    echo $data['by_name'] . '<br>' . $data2['license_term'];
+                endif;
+            break;
+
+
+            case MEDIA_STATE_UNKNOWN:
+            default:
+                echo __( 'unknown', 'mdb-license-management' );
+            break;
+
+        endswitch;
 
     endif;
+
 }
 
 add_action( 'manage_media_custom_column', __NAMESPACE__ . '\show_custom_column', 10, 2 );
@@ -118,16 +118,16 @@ function add_attachment_fields( $form_fields, $post )
     /** Field 1 - status of the media registration or indication of the type & manner of the copyright indication */
 
     $states = array(
-        \MEDIA_STATE_NO_CREDIT     => __( 'no copyright information necessary', 'mdb-license-management' ),
-        \MEDIA_STATE_SIMPLE_CREDIT => __( 'simple naming (with linking if necessary)', 'mdb-license-management' ),
-        \MEDIA_STATE_LICENSED      => __( 'copyright information according to license', 'mdb-license-management' ),
+        MEDIA_STATE_NO_CREDIT     => __( 'no copyright information necessary', 'mdb-license-management' ),
+        MEDIA_STATE_SIMPLE_CREDIT => __( 'simple naming (with linking if necessary)', 'mdb-license-management' ),
+        MEDIA_STATE_LICENSED      => __( 'copyright information according to license', 'mdb-license-management' ),
     );
 
     $html  = "<select id='mdb-lv-media-state' name='attachments[{$post->ID}][mdb-lv-media-state]'>";
     $html .= sprintf(
         '<option value="0" disabled %2$s>%1$s</option>',
         __( '--- please select ---', 'mdb-license-management' ),
-        ( \MEDIA_STATE_UNKNOWN == $media_state )? 'selected' : ''
+        ( MEDIA_STATE_UNKNOWN == $media_state )? 'selected' : ''
     );
 
     foreach ( $states as $state => $description ) :
@@ -220,22 +220,23 @@ add_filter( 'attachment_fields_to_edit', __NAMESPACE__ . '\add_attachment_fields
  *
  * @since 0.0.1
  *
- * @param array $post       An array with post data.
- * @param array $attachment An array of metadata about the attachment.
+ * @param array $post           An array with post data.
+ * @param array $attachment     An array of metadata about the attachment.
  *
- * @return array The $post array.
+ * @return array    The $post array.
  */
 
 function save_attachment_fields( $post, $attachment )
 {
-    $data['media_id']     = $post['ID'];
-    $data['media_link']   = $attachment['mdb-lv-media-link'];
-    $data['media_state']  = $attachment['mdb-lv-media-state'];
-    $data['license_guid'] = $attachment['mdb-lv-license-guid'];
-    $data['by_name']      = $attachment['mdb-lv-by-name'];
-    $data['by_link']      = $attachment['mdb-lv-by-link'];
+    $record = new Media_Record( $post['ID'] );
 
-    mdb_license_management\update_media_record( $data );
+    $record->set_media_link( $attachment['mdb-lv-media-link'] );
+    $record->set_media_state( $attachment['mdb-lv-media-state'] );
+    $record->set_license_guid( $attachment['mdb-lv-license-guid'] );
+    $record->set_by_name( $attachment['mdb-lv-by-name'] );
+    $record->set_by_link( $attachment['mdb-lv-by-link'] );
+
+    $record->update_table_record();
 
     return $post;
 }
@@ -249,9 +250,9 @@ add_filter( 'attachment_fields_to_save', __NAMESPACE__ . '\save_attachment_field
  *
  * @since 0.0.1
  *
- * @param int $id The media attachment ID.
+ * @param int $id   The media attachment ID.
  */
-
+/*
 function add_attachment_handler( $id )
 {
     $mime = get_post_mime_type( $id );
@@ -275,7 +276,7 @@ function add_attachment_handler( $id )
 }
 
 add_action( 'add_attachment', __NAMESPACE__ . '\add_attachment_handler');
-
+*/
 
 
 /**
@@ -283,16 +284,14 @@ add_action( 'add_attachment', __NAMESPACE__ . '\add_attachment_handler');
  *
  * @since 0.0.1
  *
- * @param int $id The media attachment ID.
+ * @param int $id   The media attachment ID
  */
 
 function delete_attachment_handler( $id )
 {
-    global $wpdb;
+    $record = new Media_Record( $id );
 
-    $table_name  = $wpdb->prefix . table_media;
-    $table_where = array( 'media_id' => $id );
-    $wpdb->delete( $table_name, $table_where );
+    $record->remove_table_record();
 }
 
 add_action( 'delete_attachment', __NAMESPACE__ . '\delete_attachment_handler');
