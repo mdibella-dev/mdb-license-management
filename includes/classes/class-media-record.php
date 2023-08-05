@@ -83,7 +83,7 @@ class Media_Record {
         // check if attachment exist
         // what happens if not?
 
-        $media_id = $attachment_post_ID;
+        $this->media_id = $attachment_post_ID;
 
         if( false == $this->get_table_record() ) :
             $this->update_table_record();
