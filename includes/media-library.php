@@ -156,7 +156,7 @@ function add_attachment_fields( $form_fields, $post ) {
     $form_fields['mdb-lv-by-name'] = [
         'label' => __( 'Naming of the creator', 'mdb-license-management' ),
         'input' => 'html',
-        'html'  => "<input type='text' size='128' class='widefat' value='" . $record->get_by_name() . "' name='attachments[{$post->ID}][mdb-lv-by-name]'>",
+        'html'  => "<input type='text' size='128' class='widefat' value='" . esc_html( $record->get_by_name() ) . "' name='attachments[{$post->ID}][mdb-lv-by-name]'>",
     ];
 
 
@@ -198,11 +198,11 @@ add_filter( 'attachment_fields_to_edit', __NAMESPACE__ . '\add_attachment_fields
 function save_attachment_fields( $post, $attachment ) {
     $record = new Media_Record( $post['ID'] );
 
-    $record->set_media_link( $attachment['mdb-lv-media-link'] );
+    $record->set_media_link( sanitize_url( $attachment['mdb-lv-media-link'] ) );
     $record->set_media_state( $attachment['mdb-lv-media-state'] );
     $record->set_license_guid( $attachment['mdb-lv-license-guid'] );
-    $record->set_by_name( $attachment['mdb-lv-by-name'] );
-    $record->set_by_link( $attachment['mdb-lv-by-link'] );
+    $record->set_by_name( sanitize_text_field( $attachment['mdb-lv-by-name'] ) );
+    $record->set_by_link( sanitize_url( $attachment['mdb-lv-by-link'] ) );
 
     $record->update_table_record();
 
