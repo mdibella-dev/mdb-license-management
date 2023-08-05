@@ -217,7 +217,7 @@ class Media_Record {
         global $wpdb;
 
         $query = $wpdb->prepare(
-            "SELECT * FROM %1$s WHERE `media_id` = %2$d",
+            "SELECT * FROM %s WHERE media_id=%d",
             [
                 $wpdb->prefix . TABLE_MEDIA,
                 $this->media_id
@@ -247,7 +247,7 @@ class Media_Record {
      * @see Media_Record::__construct()
      */
 
-    protected function update_table_record() {
+    public function update_table_record() {
         global $wpdb;
 
         $wpdb->insert(
@@ -276,7 +276,7 @@ class Media_Record {
      * Removes the corresponding record from the media table
      */
 
-    protected function remove_table_record() {
+    public function remove_table_record() {
         global $wpdb;
 
         $wpdb->delete(
