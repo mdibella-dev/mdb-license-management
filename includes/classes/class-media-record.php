@@ -51,7 +51,7 @@ class Media_Record {
      * @var string
      */
 
-    private $license_guid = 0;
+    private $license_guid = '';
 
 
     /**
@@ -75,7 +75,7 @@ class Media_Record {
     /**
      * Constructor
      *
-     * @param int $attachment_post_ID   The post_ID of the attachment (media object).
+     * @param int $attachment_post_ID The post_ID of the attachment (media object).
      */
 
     public function __construct( $attachment_post_ID ) {
@@ -94,7 +94,7 @@ class Media_Record {
     /**
      * Sets the original URL of the media.
      *
-     * @param string $media_link    The URL
+     * @param string $media_link The URL
      */
 
     public function set_media_link( $media_link ) {
@@ -105,7 +105,7 @@ class Media_Record {
     /**
      * Gets the orginal URL of the media.
      *
-     * @return string   The URL
+     * @return string The URL
      */
 
     public function get_media_link() {
@@ -116,7 +116,7 @@ class Media_Record {
     /**
      * Sets the credit line of the media creator.
      *
-     * @param string $by_name    The credit line
+     * @param string $by_name The credit line
      */
 
     public function set_by_name( $by_name ) {
@@ -127,7 +127,7 @@ class Media_Record {
     /**
      * Gets the credit line of the media creator.
      *
-     * @return string   The credit line
+     * @return string The credit line
      */
 
     public function get_by_name() {
@@ -138,7 +138,7 @@ class Media_Record {
     /**
      * Sets the URL to the media creator's portfolio page.
      *
-     * @param string $by_link    The URL
+     * @param string $by_link The URL
      */
 
     public function set_by_link( $by_link ) {
@@ -149,7 +149,7 @@ class Media_Record {
     /**
      * Gets the URL to the media creator's portfolio page.
      *
-     * @return string   The URL
+     * @return string The URL
      */
 
     public function get_by_link() {
@@ -159,6 +159,8 @@ class Media_Record {
 
     /**
      * Gets the corresponding in the media table and synchronizes the classes' variables
+     *
+     * @return bool true on success, otherwise false
      */
 
     private function get_table_record() {
