@@ -94,7 +94,7 @@ class Media_Record {
     /**
      * Sets the original URL of the media.
      *
-     * @param string $media_link The URL
+     * @param string $media_link
      */
 
     public function set_media_link( $media_link ) {
@@ -114,9 +114,59 @@ class Media_Record {
 
 
     /**
+     * Sets the media state.
+     *
+     * @param int $media_state
+     */
+
+    public function set_media_state( $media_state ) {
+
+        if( true == array_key_exists( $media_state, MEDIA_STATES ) ) :
+            $this->media_state = $media_state;
+        endif;
+    }
+
+
+    /**
+     * Gets the media state.
+     *
+     * @return int The media state.
+     */
+
+    public function get_media_state() {
+        return $this->media_state;
+    }
+
+
+    /**
+     * Sets the license guid.
+     *
+     * @param string $license_guid
+     */
+
+    public function set_license_guid( $license_guid ) {
+
+        if( true == array_key_exists( $license_guid, LICENSES ) ) :
+            $this->license_guid = $license_guid;
+        endif;
+    }
+
+
+    /**
+     * Gets the license guid.
+     *
+     * @return string The license guid
+     */
+
+    public function get_license_guid() {
+        return $this->license_guid;
+    }
+
+
+    /**
      * Sets the credit line of the media creator.
      *
-     * @param string $by_name The credit line
+     * @param string $by_name
      */
 
     public function set_by_name( $by_name ) {
@@ -138,7 +188,7 @@ class Media_Record {
     /**
      * Sets the URL to the media creator's portfolio page.
      *
-     * @param string $by_link The URL
+     * @param string $by_link
      */
 
     public function set_by_link( $by_link ) {
