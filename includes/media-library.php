@@ -50,35 +50,29 @@ function show_custom_column( $column, $id )
 
         $record = new Media_Record( $id );
 
+        if( true == array_key_exists( $record->get_media_state(), MEDIA_STATES ) ) :
 
-        switch( $data['media_state'] ) :
+            switch( $record->get_media_state() ) :
 
-            case MEDIA_STATE_NO_CREDIT:
-                echo __( 'no copyright information necessary', 'mdb-license-management' );
-            break;
+                case MEDIA_STATE_SIMPLE_CREDIT:
+                    echo $record->get_by_name();
+                break;
 
-            case MEDIA_STATE_SIMPLE_CREDIT:
-                echo $record->get_by_name();
-            break;
+                case MEDIA_STATE_LICENSED:
+                    if( true == array_key_exists( $record->get_license_guid(), LICENSES ) ) :
+                        echo $record->get_by_name . '<br>' . $license[$record->get_license_guid()]['license_term'];
+                    else :
+                        echo MEDIA_STATE[MEDIA_STATE_UNKNOWN];
+                    endif;
+                break;
 
-            case MEDIA_STATE_LICENSED:
+                default:
+                    echo MEDIA_STATE[$record->get_media_state()];
+                break;
 
+            endswitch;
 
-
-                $data2 = mdb_license_management\get_license_record( $data['license_guid'] );
-
-                if( ( null != $data2 ) and ( true == is_array( $data2 ) ) ) :
-                    echo $data['by_name'] . '<br>' . $data2['license_term'];
-                endif;
-            break;
-
-
-            case MEDIA_STATE_UNKNOWN:
-            default:
-                echo __( 'unknown', 'mdb-license-management' );
-            break;
-
-        endswitch;
+        endif;
 
     endif;
 
@@ -99,114 +93,91 @@ add_action( 'manage_media_custom_column', __NAMESPACE__ . '\show_custom_column',
  * @return array The modified form fields.
  */
 
-function add_attachment_fields( $form_fields, $post )
-{
-    $data = mdb_license_management\get_media_record( $post->ID );
+function add_attachment_fields( $form_fields, $post ) {
 
-    if( null == $data ) :
-        $data['media_id']     = $post->ID;
-        $data['media_link']   = '';
-        $data['media_state']  = '';
-        $data['license_guid'] = '';
-        $data['by_name']      = '';
-        $data['by_link']      = '';
-    endif;
-
-    extract( $data );
+    $record = new Media_Record( $post->ID );
 
 
     /** Field 1 - status of the media registration or indication of the type & manner of the copyright indication */
-
-    $states = array(
-        MEDIA_STATE_NO_CREDIT     => __( 'no copyright information necessary', 'mdb-license-management' ),
-        MEDIA_STATE_SIMPLE_CREDIT => __( 'simple naming (with linking if necessary)', 'mdb-license-management' ),
-        MEDIA_STATE_LICENSED      => __( 'copyright information according to license', 'mdb-license-management' ),
-    );
 
     $html  = "<select id='mdb-lv-media-state' name='attachments[{$post->ID}][mdb-lv-media-state]'>";
     $html .= sprintf(
         '<option value="0" disabled %2$s>%1$s</option>',
         __( '--- please select ---', 'mdb-license-management' ),
-        ( MEDIA_STATE_UNKNOWN == $media_state )? 'selected' : ''
+        ( MEDIA_STATE_UNKNOWN == $record->get_media_state() )? 'selected' : ''
     );
 
-    foreach ( $states as $state => $description ) :
+    foreach ( MEDIA_STATES as $state => $description ) :
         $html .= sprintf(
             '<option value="%1$s" %3$s>%2$s</option>',
             $state,
             $description,
-            ( $state == $media_state )? 'selected' : ''
+            ( $state == $record->get_media_state() )? 'selected' : ''
         );
     endforeach;
 
     $html .= '</select>';
 
-    $form_fields['mdb-lv-media-state'] = array(
+    $form_fields['mdb-lv-media-state'] = [
         'label' => __( 'Method and manner of the copyright information', 'mdb-license-management' ),
         'input' => 'html',
         'html'  => $html,
-    );
+    ];
 
 
     /** Field 2 - listing of available licenses */
-
-    global $wpdb;
-
-    $table_name = $wpdb->prefix . table_licenses;
-    $table_data = $wpdb->get_results( "SELECT license_guid, license_term FROM $table_name", 'ARRAY_A' );
 
     $html  = "<select id='mdb-lv-license-guid' name='attachments[{$post->ID}][mdb-lv-license-guid]'>";
     $html .= sprintf(
         '<option value="%1$s" disabled %3$s>%2$s</option>',
         '0',
         __( '--- please select ---', 'mdb-license-management' ),
-        ( 0 == $license_guid )? 'selected' : ''
+        ( '' == $record->get_license_guid() )? 'selected' : ''
     );
 
-    foreach ( $table_data as $data ) :
+    foreach ( $licenses as $license_guid => $license ) :
         $html .= sprintf(
             '<option value="%1$s" %3$s>%2$s</option>',
-            $data['license_guid'],
-            $data['license_term'],
-            ( $data['license_guid'] == $license_guid )? 'selected' : ''
+            $license['license_guid'],
+            $license['license_term'],
+            ( $license_guid == $record->get_license_guid() )? 'selected' : ''
         );
     endforeach;
 
     $html .= '</select>';
 
-    $form_fields['mdb-lv-license-guid'] = array(
+    $form_fields['mdb-lv-license-guid'] = [
         'label' => __( 'License', 'mdb-license-management' ),
         'input' => 'html',
         'html'  => $html,
-    );
+    ];
 
 
     /** Field 3 - naming of the creator */
 
-    $form_fields['mdb-lv-by-name'] = array(
+    $form_fields['mdb-lv-by-name'] = [
         'label' => __( 'Naming of the creator', 'mdb-license-management' ),
         'input' => 'html',
-        'html'  => "<input type='text' size='128' class='widefat' value='" . $by_name . "' name='attachments[{$post->ID}][mdb-lv-by-name]'>",
-    );
+        'html'  => "<input type='text' size='128' class='widefat' value='" . $record->by_name() . "' name='attachments[{$post->ID}][mdb-lv-by-name]'>",
+    ];
 
 
     /** Field 4 - link to the creator's website (if required) */
 
-    $form_fields['mdb-lv-by-link'] = array(
+    $form_fields['mdb-lv-by-link'] = [
         'label' => __( 'Link to the creator', 'mdb-license-management' ),
         'input' => 'html',
-        'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $by_link ) . "' name='attachments[{$post->ID}][mdb-lv-by-link]'>",
-    );
+        'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $record->get_by_link() ) . "' name='attachments[{$post->ID}][mdb-lv-by-link]'>",
+    ];
 
 
     /** Field 5 - link to the original image for your own documentation */
 
-    $form_fields[ 'mdb-lv-media-link' ] = array(
+    $form_fields[ 'mdb-lv-media-link' ] = [
         'label' => __( 'Link to original file', 'mdb-license-management' ),
         'input' => 'html',
-        'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $media_link ) . "' name='attachments[{$post->ID}][mdb-lv-media-link]'>",
-    );
-
+        'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $record->get_media_link() ) . "' name='attachments[{$post->ID}][mdb-lv-media-link]'>",
+    ];
 
     return $form_fields;
 }
@@ -220,10 +191,10 @@ add_filter( 'attachment_fields_to_edit', __NAMESPACE__ . '\add_attachment_fields
  *
  * @since 0.0.1
  *
- * @param array $post           An array with post data.
- * @param array $attachment     An array of metadata about the attachment.
+ * @param array $post       An array with post data.
+ * @param array $attachment An array of metadata about the attachment.
  *
- * @return array    The $post array.
+ * @return array The $post array.
  */
 
 function save_attachment_fields( $post, $attachment )
@@ -246,11 +217,11 @@ add_filter( 'attachment_fields_to_save', __NAMESPACE__ . '\save_attachment_field
 
 
 /**
- * Creates a new record in the media table of the plugin after a media has been loaded into the media library.
+ * Creates a new record in the media table of the plugin after a media has been loaded into the media library (possible deprecated)
  *
  * @since 0.0.1
  *
- * @param int $id   The media attachment ID.
+ * @param int $id The media attachment ID.
  */
 /*
 function add_attachment_handler( $id )
