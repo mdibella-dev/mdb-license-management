@@ -40,7 +40,6 @@ const TABLE_MEDIA    = 'mdb_lv_media';
 
 /** Include files */
 
-require_once( PLUGIN_DIR . 'includes/classes/index.php' );
 require_once( PLUGIN_DIR . 'includes/core/index.php' );
 
 require_once( PLUGIN_DIR . 'includes/theme-integration.php' );
