@@ -59,7 +59,7 @@ function get_license( $id ) {
  *
  * @param int $id The attachment's post_ID.
  *
- * @return string Output of the author details.
+ * @return string Output of the credits.
  */
 
 function get_byline( $id ) {
