@@ -21,8 +21,7 @@ defined( 'ABSPATH' ) or exit;
  * @since 0.0.3
  */
 
-function plugin_init()
-{
+function plugin_init() {
     // Load text domain, use relative path to the plugin's language folder
     load_plugin_textdomain( 'mdb-license-management', false, plugin_basename( PLUGIN_DIR ) . '/languages' );
 }
@@ -37,8 +36,7 @@ add_action( 'init', __NAMESPACE__ . '\plugin_init', 9 );
  * @since 0.0.1
  */
 
-function plugin_activation()
-{
+function plugin_activation() {
     global $wpdb;
 
     require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
@@ -76,8 +74,7 @@ register_activation_hook( __FILE__, __NAMESPACE__ . '\plugin_activation' );
  * @since 0.0.3
  */
 
-function plugin_uninstall()
-{
+function plugin_uninstall() {
     // Do something!
     // Delete options!
     // Delete custom tables!

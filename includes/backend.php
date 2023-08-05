@@ -21,8 +21,7 @@ defined( 'ABSPATH' ) or exit;
  * @since 0.0.3
  */
 
-function plugin_backend_scripts()
-{
+function plugin_backend_scripts() {
     $currentScreen = get_current_screen();
 
     if( 'upload' === $currentScreen->id ) :

@@ -25,8 +25,7 @@ defined( 'ABSPATH' ) or exit;
  * @return array The modified columns.
  */
 
-function add_custom_column( $columns )
-{
+function add_custom_column( $columns ) {
     $columns['mdb_lv_credits'] = __( 'Copyright', 'mdb-license-management' );
     return $columns;
 }
@@ -44,8 +43,7 @@ add_filter( 'manage_media_columns', __NAMESPACE__ . '\add_custom_column');
  * @param int    $id     The post_ID of the media attachment.
  */
 
-function show_custom_column( $column, $id )
-{
+function show_custom_column( $column, $id ) {
     if( 'mdb_lv_credits' == $column  ) :
 
         $record = new Media_Record( $id );
@@ -197,8 +195,7 @@ add_filter( 'attachment_fields_to_edit', __NAMESPACE__ . '\add_attachment_fields
  * @return array The $post array.
  */
 
-function save_attachment_fields( $post, $attachment )
-{
+function save_attachment_fields( $post, $attachment ) {
     $record = new Media_Record( $post['ID'] );
 
     $record->set_media_link( $attachment['mdb-lv-media-link'] );
@@ -224,8 +221,7 @@ add_filter( 'attachment_fields_to_save', __NAMESPACE__ . '\save_attachment_field
  * @param int $id The media attachment ID.
  */
 /*
-function add_attachment_handler( $id )
-{
+function add_attachment_handler( $id ) {
     $mime = get_post_mime_type( $id );
 
     if( 0 === strpos( $mime, 'image' ) ) :
@@ -258,8 +254,7 @@ add_action( 'add_attachment', __NAMESPACE__ . '\add_attachment_handler');
  * @param int $id   The media attachment ID
  */
 
-function delete_attachment_handler( $id )
-{
+function delete_attachment_handler( $id ) {
     $record = new Media_Record( $id );
 
     $record->remove_table_record();
