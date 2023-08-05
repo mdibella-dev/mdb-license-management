@@ -60,12 +60,12 @@ function show_custom_column( $column, $id ) {
                     if( true == array_key_exists( $record->get_license_guid(), LICENSES ) ) :
                         echo $record->get_by_name . '<br>' . $license[$record->get_license_guid()]['license_term'];
                     else :
-                        echo MEDIA_STATE[MEDIA_STATE_UNKNOWN];
+                        echo MEDIA_STATES[MEDIA_STATE_UNKNOWN];
                     endif;
                 break;
 
                 default:
-                    echo MEDIA_STATE[$record->get_media_state()];
+                    echo MEDIA_STATES[$record->get_media_state()];
                 break;
 
             endswitch;
