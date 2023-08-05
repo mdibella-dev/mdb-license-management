@@ -42,12 +42,11 @@ function plugin_activation() {
     require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 
 
-    /** 2. table for media */
-
     $table_name = $wpdb->prefix . table_media;
 
     if( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) != $table_name) :
 
+        // add prepare 
         // install table
         $sql = "CREATE TABLE $table_name (
             media_id bigint(20) UNSIGNED NOT NULL,
