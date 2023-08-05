@@ -136,7 +136,7 @@ function add_attachment_fields( $form_fields, $post ) {
     foreach ( LICENSES as $license_guid => $license ) :
         $html .= sprintf(
             '<option value="%1$s" %3$s>%2$s</option>',
-            $license['license_guid'],
+            $license_guid,
             $license['license_term'],
             ( $license_guid == $record->get_license_guid() )? 'selected' : ''
         );
