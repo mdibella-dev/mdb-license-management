@@ -156,7 +156,7 @@ function add_attachment_fields( $form_fields, $post ) {
     $form_fields['mdb-lv-by-name'] = [
         'label' => __( 'Naming of the creator', 'mdb-license-management' ),
         'input' => 'html',
-        'html'  => "<input type='text' size='128' class='widefat' value='" . $record->by_name() . "' name='attachments[{$post->ID}][mdb-lv-by-name]'>",
+        'html'  => "<input type='text' size='128' class='widefat' value='" . $record->get_by_name() . "' name='attachments[{$post->ID}][mdb-lv-by-name]'>",
     ];
 
 
