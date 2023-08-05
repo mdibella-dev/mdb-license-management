@@ -217,7 +217,7 @@ class Media_Record {
         global $wpdb;
 
         $query = $wpdb->prepare(
-            "SELECT * FROM %s WHERE media_id=%d",
+            'SELECT * FROM `%s` WHERE media_id=%d',
             [
                 $wpdb->prefix . TABLE_MEDIA,
                 $this->media_id
