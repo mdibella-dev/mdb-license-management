@@ -105,7 +105,7 @@ function add_attachment_fields( $form_fields, $post ) {
         ( MEDIA_STATE_UNKNOWN == $record->get_media_state() )? 'selected' : ''
     );
 
-    foreach ( MEDIA_STATES as $state => $description ) :
+    foreach( MEDIA_STATES as $state => $description ) :
         $html .= sprintf(
             '<option value="%1$s" %3$s>%2$s</option>',
             $state,
@@ -133,7 +133,7 @@ function add_attachment_fields( $form_fields, $post ) {
         ( '' == $record->get_license_guid() )? 'selected' : ''
     );
 
-    foreach ( LICENSES as $license_guid => $license ) :
+    foreach( LICENSES as $license_guid => $license ) :
         $html .= sprintf(
             '<option value="%1$s" %3$s>%2$s</option>',
             $license_guid,
@@ -211,39 +211,6 @@ function save_attachment_fields( $post, $attachment ) {
 
 add_filter( 'attachment_fields_to_save', __NAMESPACE__ . '\save_attachment_fields', null, 2 );
 
-
-
-/**
- * Creates a new record in the media table of the plugin after a media has been loaded into the media library (possible deprecated)
- *
- * @since 0.0.1
- *
- * @param int $id The media attachment ID.
- */
-/*
-function add_attachment_handler( $id ) {
-    $mime = get_post_mime_type( $id );
-
-    if( 0 === strpos( $mime, 'image' ) ) :
-        global $wpdb;
-
-        $table_name   = $wpdb->prefix . table_media;
-        $table_format = array( '%d', '%s', '%d', '%s', '%s', '%s' );
-        $table_data   = array(
-            'media_id'     => $id,
-            'media_link'   => '',
-            'media_state'  => 0,
-            'license_guid' => '',
-            'by_name'      => '',
-            'by_link'      => ''
-        );
-
-        $wpdb->insert( $table_name, $table_data, $table_format );
-    endif;
-}
-
-add_action( 'add_attachment', __NAMESPACE__ . '\add_attachment_handler');
-*/
 
 
 /**
