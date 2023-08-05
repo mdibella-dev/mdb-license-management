@@ -36,8 +36,6 @@ define( 'MEDIA_STATE_LICENSED', 3 );
 const TABLE_LICENSES = 'mdb_lv_licenses';
 const TABLE_MEDIA    = 'mdb_lv_media';
 
-define( __NAMESPACE__ . '\MENU_SLUG', 'mdb_license_management' );
-
 
 
 /** Include files */
@@ -46,6 +44,5 @@ require_once( PLUGIN_DIR . 'includes/classes/index.php' );
 require_once( PLUGIN_DIR . 'includes/core/index.php' );
 
 require_once( PLUGIN_DIR . 'includes/theme-integration.php' );
-require_once( PLUGIN_DIR . 'includes/mainpage.php' );
 require_once( PLUGIN_DIR . 'includes/backend.php' );
 require_once( PLUGIN_DIR . 'includes/setup.php' );
