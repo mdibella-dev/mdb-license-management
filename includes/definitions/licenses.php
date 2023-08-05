@@ -14,7 +14,7 @@ namespace mdb_license_management;
 defined( 'ABSPATH' ) or exit;
 
 
-const licenses = [
+const LICENSES = [
     'L001' => [
         'license_term'        => 'CC0 1.0',
         'license_description' => 'Creative Commons – kein Copyright wenn möglich („no Copyright“)',
