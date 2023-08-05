@@ -22,9 +22,9 @@ defined( 'ABSPATH' ) or exit;
  */
 
 function plugin_backend_scripts() {
-    $currentScreen = get_current_screen();
+    $current_screen = get_current_screen();
 
-    if( 'upload' === $currentScreen->id ) :
+    if( 'upload' === $current_screen->id ) :
 
         global $mode;
 
@@ -32,13 +32,17 @@ function plugin_backend_scripts() {
 
             wp_enqueue_style(
                 'mdb_license_management-backend-style',
-                PLUGIN_URL . 'assets/css/admin.css'
+                PLUGIN_URL . 'assets/css/admin.css',
+                [],
+                PLUGIN_VERSION
             );
 
             wp_enqueue_script(
                 'mdb_license_management-backend-script',
                 PLUGIN_URL . 'assets/js/admin.js',
-                'jquery',
+                [
+                    'jquery'
+                ],
                 PLUGIN_VERSION,
                 true
             );
