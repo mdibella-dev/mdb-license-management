@@ -1,6 +1,6 @@
 <?php
 /**
- * API for theme integration.
+ * API for theme integration (deprecated)
  *
  * @author  Marco Di Bella
  * @package mdb-license-management
