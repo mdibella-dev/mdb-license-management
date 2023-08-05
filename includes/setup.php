@@ -72,12 +72,16 @@ register_activation_hook( __FILE__, __NAMESPACE__ . '\plugin_activation' );
  * The uninstall function for the plugin.
  *
  * @since 0.0.3
+ *
+ * @todo a routine to delete the media table.
  */
 
 function plugin_uninstall() {
     // Do something!
     // Delete options!
     // Delete custom tables!
+
+
 }
 
 register_uninstall_hook( __FILE__, __NAMESPACE__ . '\plugin_uninstall' );
