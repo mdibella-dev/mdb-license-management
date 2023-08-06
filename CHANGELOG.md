@@ -4,6 +4,20 @@
 
 <br>
 
+### 1.0.0
+Released: 06-08-2023
+
+* New: Add minified scripts and styles
+* New: Add class MediaRecord
+* Improve: Complete overhaul of the plugin files and structure
+* Improve: Update German translation
+* Improve: Replace license table with constant array
+* Improve: Add more sanitizing/escaping
+* Improve: Remove media indexing
+* Improve: Remove admin menu pages
+* Bugfix: Fix scripting in attachment pages
+
+
 ### 0.0.4
 Released: 03-08-2023
 
