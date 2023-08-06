@@ -252,25 +252,38 @@ class Media_Record {
     public function update_table_record() {
         global $wpdb;
 
-        $wpdb->insert(
-            $wpdb->prefix . TABLE_MEDIA,
-            [
-                'media_id'     => $this->media_id,
-                'media_link'   => $this->media_link,
-                'media_state'  => $this->media_state,
-                'license_guid' => $this->license_guid,
-                'by_name'      => $this->by_name,
-                'by_link'      => $this->by_link,
-            ],
-            [
-                '%d',
-                '%s',
-                '%d',
-                '%s',
-                '%s',
-                '%s'
-            ]
-        );
+        $data = [
+            'media_id'     => $this->media_id,
+            'media_link'   => $this->media_link,
+            'media_state'  => $this->media_state,
+            'license_guid' => $this->license_guid,
+            'by_name'      => $this->by_name,
+            'by_link'      => $this->by_link,
+        ];
+
+        $format = [
+            '%d',
+            '%s',
+            '%d',
+            '%s',
+            '%s',
+            '%s'
+        ];
+
+
+        if( false == $this->get_table_record() ) :
+            $wpdb->insert(
+                $wpdb->prefix . TABLE_MEDIA,
+                $data,
+                $format
+            );
+        else :
+            $wpdb->replace(
+                $wpdb->prefix . TABLE_MEDIA,
+                $data,
+                $format
+            );
+        endif;
     }
 
 
