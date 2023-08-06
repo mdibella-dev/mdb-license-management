@@ -9,7 +9,7 @@ A Plugin for establishing a rudimentary image rights management, which is integr
 [Marco Di Bella ](https://github.com/mdibella-dev)
 
 ### Tags
-translation-ready, creative-commons, license-management, wordpress-plugin, unfinished
+translation-ready, creative-commons, license-management, wordpress-plugin
 
 ### Requires at least
 
