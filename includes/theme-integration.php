@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) or exit;
 
 function get_license( $id ) {
     $output       = '';
-    $record       = Media_Record( $id );
+    $record       = new Media_Record( $id );
     $license_guid = $record->get_license_guid();
 
     if( ! empty( $license_guid ) and ( true == array_key_exists( $license_guid, LICENSES ) ) ) :
@@ -64,7 +64,7 @@ function get_license( $id ) {
 
 function get_byline( $id ) {
     $output = '';
-    $record = Media_Record( $id );
+    $record = new Media_Record( $id );
 
     if( ! empty( $record->by_name ) ) :
 
