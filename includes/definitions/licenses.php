@@ -14,7 +14,7 @@ namespace mdb_license_management;
 defined( 'ABSPATH' ) or exit;
 
 
-define( 'LICENSES', [
+define( __NAMESPACE__ . '\LICENSES', [
     'L001' => [
         'license_term'        => 'CC0 1.0',
         'license_description' => __( 'Creative Commons – no Copyright', 'mdb-license-management' ),
