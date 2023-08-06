@@ -14,7 +14,8 @@ Released: 06-08-2023
 * Improve: Replace license table with constant array
 * Improve: Add more sanitizing/escaping
 * Improve: Remove media indexing
-* Improve: Remove admin menu pages
+* Improve: Remove admin menu
+* Improve: Remove listing of all available licenses
 * Bugfix: Fix scripting in attachment pages
 
 
