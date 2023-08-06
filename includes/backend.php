@@ -24,8 +24,6 @@ defined( 'ABSPATH' ) or exit;
 function plugin_backend_scripts() {
     $current_screen = get_current_screen();
 
-    error_log(print_r($current_screen, true));
-
     if( ( 'upload' === $current_screen->id ) or ( 'attachment' === $current_screen->id ) ):
 
         /**
