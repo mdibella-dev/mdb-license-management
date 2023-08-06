@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Marco Di Bella &mdash; License Management\n"
-"POT-Creation-Date: 2023-08-06 12:33+0200\n"
+"POT-Creation-Date: 2023-08-06 13:17+0200\n"
 "PO-Revision-Date: 2023-02-06 12:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -26,279 +26,291 @@ msgid "Creative Commons – no Copyright"
 msgstr ""
 
 #: includes/definitions/licenses.php:26
-msgid "Creative Commons – Attribution 4.0"
-msgstr ""
-
-#: includes/definitions/licenses.php:32
-msgid "Creative Commons – Attribution 3.0"
-msgstr ""
-
-#: includes/definitions/licenses.php:38
-msgid "Creative Commons – Attribution 3.0 (Austria)"
-msgstr ""
-
-#: includes/definitions/licenses.php:44
-msgid "Creative Commons – Attribution 3.0 (Swiss)"
-msgstr ""
-
-#: includes/definitions/licenses.php:50
-msgid "Creative Commons – Attribution 3.0 (Germany)"
-msgstr ""
-
-#: includes/definitions/licenses.php:56
-msgid "Creative Commons – Attribution 2.5"
-msgstr ""
-
-#: includes/definitions/licenses.php:62
-msgid "Creative Commons – Attribution 2.0"
-msgstr ""
-
-#: includes/definitions/licenses.php:68
-msgid "Creative Commons – Attribution 2.0 (Austria)"
-msgstr ""
-
-#: includes/definitions/licenses.php:74
-msgid "Creative Commons – Attribution 2.0 (Germany)"
-msgstr ""
-
-#: includes/definitions/licenses.php:80
-msgid "Creative Commons – Attribution 1.0"
-msgstr ""
-
-#: includes/definitions/licenses.php:86
-msgid "Creative Commons – Attribution-ShareAlike 4.0"
-msgstr ""
-
-#: includes/definitions/licenses.php:92
-msgid "Creative Commons – Attribution-ShareAlike 3.0"
-msgstr ""
-
-#: includes/definitions/licenses.php:98
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Austria)"
-msgstr ""
-
-#: includes/definitions/licenses.php:104
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Brasil)"
-msgstr ""
-
-#: includes/definitions/licenses.php:110
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Swiss)"
-msgstr ""
-
-#: includes/definitions/licenses.php:116
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (China)"
-msgstr ""
-
-#: includes/definitions/licenses.php:122
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Germany)"
-msgstr ""
-
-#: includes/definitions/licenses.php:128
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Spain)"
-msgstr ""
-
-#: includes/definitions/licenses.php:134
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Greece)"
-msgstr ""
-
-#: includes/definitions/licenses.php:140
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Hongkong)"
-msgstr ""
-
-#: includes/definitions/licenses.php:146
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Italy)"
-msgstr ""
-
-#: includes/definitions/licenses.php:152
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Portugal)"
-msgstr ""
-
-#: includes/definitions/licenses.php:158
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Taiwan)"
-msgstr ""
-
-#: includes/definitions/licenses.php:164
-msgid "Creative Commons – Attribution-ShareAlike 2.5"
-msgstr ""
-
-#: includes/definitions/licenses.php:170
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Australia)"
-msgstr ""
-
-#: includes/definitions/licenses.php:176
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Brasil)"
-msgstr ""
-
-#: includes/definitions/licenses.php:182
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Canada)"
-msgstr ""
-
-#: includes/definitions/licenses.php:188
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Swiss)"
-msgstr ""
-
-#: includes/definitions/licenses.php:194
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Columbia)"
-msgstr ""
-
-#: includes/definitions/licenses.php:200
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (China)"
-msgstr ""
-
-#: includes/definitions/licenses.php:206
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Spain)"
-msgstr ""
-
-#: includes/definitions/licenses.php:212
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Italy)"
-msgstr ""
-
-#: includes/definitions/licenses.php:218
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Mexico)"
-msgstr ""
-
-#: includes/definitions/licenses.php:224
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Portugal)"
-msgstr ""
-
-#: includes/definitions/licenses.php:230
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Taiwan)"
-msgstr ""
-
-#: includes/definitions/licenses.php:236
-msgid "Creative Commons – Attribution-ShareAlike 2.0"
-msgstr ""
-
-#: includes/definitions/licenses.php:242
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Austria)"
-msgstr ""
-
-#: includes/definitions/licenses.php:248
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Australia)"
-msgstr ""
-
-#: includes/definitions/licenses.php:254
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Brasil)"
-msgstr ""
-
-#: includes/definitions/licenses.php:260
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Canada)"
-msgstr ""
-
-#: includes/definitions/licenses.php:266
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Germany)"
-msgstr ""
-
-#: includes/definitions/licenses.php:272
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Spain)"
-msgstr ""
-
-#: includes/definitions/licenses.php:278
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Italy)"
-msgstr ""
-
-#: includes/definitions/licenses.php:284
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Korea)"
-msgstr ""
-
-#: includes/definitions/licenses.php:290
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Taiwan)"
-msgstr ""
-
-#: includes/definitions/licenses.php:296
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (England and Wales)"
-msgstr ""
-
-#: includes/definitions/licenses.php:302
-msgid "Creative Commons – Attribution-ShareAlike 1.0"
-msgstr ""
-
-#: includes/definitions/licenses.php:308
-msgid "GNU Free Documentation License 1.3"
-msgstr ""
-
-#: includes/definitions/licenses.php:314
-msgid "GNU Free Documentation License 1.2"
-msgstr ""
-
-#: includes/definitions/licenses.php:320
-msgid "GNU Free Documentation License 1.1"
-msgstr ""
-
-#: includes/definitions/licenses.php:326
-msgid "Licence Art Libre 1.3 (LAL/FAL)"
-msgstr ""
-
-#: includes/definitions/licenses.php:332
-msgid "Licence Art Libre 1.1 (LAL/FAL)"
-msgstr ""
-
-#: includes/definitions/licenses.php:338
 msgid "Dreamstime – Royalty Free (RF)"
 msgstr ""
 
-#: includes/definitions/licenses.php:344
+#: includes/definitions/licenses.php:32
 msgid "Dreamstime – Royalty Free - editorial use only"
 msgstr ""
 
-#: includes/definitions/licenses.php:350
+#: includes/definitions/licenses.php:38
 msgid "Freeimages license"
 msgstr ""
 
-#: includes/definitions/licenses.php:356
+#: includes/definitions/licenses.php:44
 msgid "Public domain"
 msgstr ""
 
-#: includes/definitions/licenses.php:362
+#: includes/definitions/licenses.php:51
+msgid "Creative Commons – Attribution 4.0"
+msgstr ""
+
+#: includes/definitions/licenses.php:57
+msgid "Creative Commons – Attribution 3.0"
+msgstr ""
+
+#: includes/definitions/licenses.php:63
+msgid "Creative Commons – Attribution 3.0 (Austria)"
+msgstr ""
+
+#: includes/definitions/licenses.php:69
+msgid "Creative Commons – Attribution 3.0 (Swiss)"
+msgstr ""
+
+#: includes/definitions/licenses.php:75
+msgid "Creative Commons – Attribution 3.0 (Germany)"
+msgstr ""
+
+#: includes/definitions/licenses.php:81
+msgid "Creative Commons – Attribution 2.5"
+msgstr ""
+
+#: includes/definitions/licenses.php:87
+msgid "Creative Commons – Attribution 2.0"
+msgstr ""
+
+#: includes/definitions/licenses.php:93
+msgid "Creative Commons – Attribution 2.0 (Austria)"
+msgstr ""
+
+#: includes/definitions/licenses.php:99
+msgid "Creative Commons – Attribution 2.0 (Germany)"
+msgstr ""
+
+#: includes/definitions/licenses.php:105
+msgid "Creative Commons – Attribution 1.0"
+msgstr ""
+
+#: includes/definitions/licenses.php:111
+msgid "Creative Commons – Attribution-ShareAlike 4.0"
+msgstr ""
+
+#: includes/definitions/licenses.php:117
+msgid "Creative Commons – Attribution-ShareAlike 3.0"
+msgstr ""
+
+#: includes/definitions/licenses.php:123
+msgid "Creative Commons – Attribution-ShareAlike 3.0 (Austria)"
+msgstr ""
+
+#: includes/definitions/licenses.php:129
+msgid "Creative Commons – Attribution-ShareAlike 3.0 (Brasil)"
+msgstr ""
+
+#: includes/definitions/licenses.php:135
+msgid "Creative Commons – Attribution-ShareAlike 3.0 (Swiss)"
+msgstr ""
+
+#: includes/definitions/licenses.php:141
+msgid "Creative Commons – Attribution-ShareAlike 3.0 (China)"
+msgstr ""
+
+#: includes/definitions/licenses.php:147
+msgid "Creative Commons – Attribution-ShareAlike 3.0 (Germany)"
+msgstr ""
+
+#: includes/definitions/licenses.php:153
+msgid "Creative Commons – Attribution-ShareAlike 3.0 (Spain)"
+msgstr ""
+
+#: includes/definitions/licenses.php:159
+msgid "Creative Commons – Attribution-ShareAlike 3.0 (Greece)"
+msgstr ""
+
+#: includes/definitions/licenses.php:165
+msgid "Creative Commons – Attribution-ShareAlike 3.0 (Hongkong)"
+msgstr ""
+
+#: includes/definitions/licenses.php:171
+msgid "Creative Commons – Attribution-ShareAlike 3.0 (Italy)"
+msgstr ""
+
+#: includes/definitions/licenses.php:177
+msgid "Creative Commons – Attribution-ShareAlike 3.0 (Portugal)"
+msgstr ""
+
+#: includes/definitions/licenses.php:183
+msgid "Creative Commons – Attribution-ShareAlike 3.0 (Taiwan)"
+msgstr ""
+
+#: includes/definitions/licenses.php:189
+msgid "Creative Commons – Attribution-ShareAlike 2.5"
+msgstr ""
+
+#: includes/definitions/licenses.php:195
+msgid "Creative Commons – Attribution-ShareAlike 2.5 (Australia)"
+msgstr ""
+
+#: includes/definitions/licenses.php:201
+msgid "Creative Commons – Attribution-ShareAlike 2.5 (Brasil)"
+msgstr ""
+
+#: includes/definitions/licenses.php:207
+msgid "Creative Commons – Attribution-ShareAlike 2.5 (Canada)"
+msgstr ""
+
+#: includes/definitions/licenses.php:213
+msgid "Creative Commons – Attribution-ShareAlike 2.5 (Swiss)"
+msgstr ""
+
+#: includes/definitions/licenses.php:219
+msgid "Creative Commons – Attribution-ShareAlike 2.5 (Columbia)"
+msgstr ""
+
+#: includes/definitions/licenses.php:225
+msgid "Creative Commons – Attribution-ShareAlike 2.5 (China)"
+msgstr ""
+
+#: includes/definitions/licenses.php:231
+msgid "Creative Commons – Attribution-ShareAlike 2.5 (Spain)"
+msgstr ""
+
+#: includes/definitions/licenses.php:237
+msgid "Creative Commons – Attribution-ShareAlike 2.5 (Italy)"
+msgstr ""
+
+#: includes/definitions/licenses.php:243
+msgid "Creative Commons – Attribution-ShareAlike 2.5 (Mexico)"
+msgstr ""
+
+#: includes/definitions/licenses.php:249
+msgid "Creative Commons – Attribution-ShareAlike 2.5 (Portugal)"
+msgstr ""
+
+#: includes/definitions/licenses.php:255
+msgid "Creative Commons – Attribution-ShareAlike 2.5 (Taiwan)"
+msgstr ""
+
+#: includes/definitions/licenses.php:261
+msgid "Creative Commons – Attribution-ShareAlike 2.0"
+msgstr ""
+
+#: includes/definitions/licenses.php:267
+msgid "Creative Commons – Attribution-ShareAlike 2.0 (Austria)"
+msgstr ""
+
+#: includes/definitions/licenses.php:273
+msgid "Creative Commons – Attribution-ShareAlike 2.0 (Australia)"
+msgstr ""
+
+#: includes/definitions/licenses.php:279
+msgid "Creative Commons – Attribution-ShareAlike 2.0 (Brasil)"
+msgstr ""
+
+#: includes/definitions/licenses.php:285
+msgid "Creative Commons – Attribution-ShareAlike 2.0 (Canada)"
+msgstr ""
+
+#: includes/definitions/licenses.php:291
+msgid "Creative Commons – Attribution-ShareAlike 2.0 (Germany)"
+msgstr ""
+
+#: includes/definitions/licenses.php:297
+msgid "Creative Commons – Attribution-ShareAlike 2.0 (Spain)"
+msgstr ""
+
+#: includes/definitions/licenses.php:303
+msgid "Creative Commons – Attribution-ShareAlike 2.0 (Italy)"
+msgstr ""
+
+#: includes/definitions/licenses.php:309
+msgid "Creative Commons – Attribution-ShareAlike 2.0 (Korea)"
+msgstr ""
+
+#: includes/definitions/licenses.php:315
+msgid "Creative Commons – Attribution-ShareAlike 2.0 (Taiwan)"
+msgstr ""
+
+#: includes/definitions/licenses.php:321
+msgid "Creative Commons – Attribution-ShareAlike 2.0 (England and Wales)"
+msgstr ""
+
+#: includes/definitions/licenses.php:327
+msgid "Creative Commons – Attribution-ShareAlike 1.0"
+msgstr ""
+
+#: includes/definitions/licenses.php:333
+msgid "GNU Free Documentation License 1.3"
+msgstr ""
+
+#: includes/definitions/licenses.php:339
+msgid "GNU Free Documentation License 1.2"
+msgstr ""
+
+#: includes/definitions/licenses.php:345
+msgid "GNU Free Documentation License 1.1"
+msgstr ""
+
+#: includes/definitions/licenses.php:351
+msgid "Licence Art Libre 1.3 (LAL/FAL)"
+msgstr ""
+
+#: includes/definitions/licenses.php:357
+msgid "Licence Art Libre 1.1 (LAL/FAL)"
+msgstr ""
+
+#: includes/definitions/licenses.php:363
 msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5"
 msgstr ""
 
-#: includes/definitions/licenses.php:368
+#: includes/definitions/licenses.php:369
 msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Australia)"
 msgstr ""
 
-#: includes/definitions/licenses.php:374
+#: includes/definitions/licenses.php:375
 msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Brasil)"
 msgstr ""
 
-#: includes/definitions/licenses.php:380
+#: includes/definitions/licenses.php:381
 msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Canada)"
 msgstr ""
 
-#: includes/definitions/licenses.php:386
+#: includes/definitions/licenses.php:387
 msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Swiss)"
 msgstr ""
 
-#: includes/definitions/licenses.php:392
+#: includes/definitions/licenses.php:393
 msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (China)"
 msgstr ""
 
-#: includes/definitions/licenses.php:398
+#: includes/definitions/licenses.php:399
 msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Columbia)"
 msgstr ""
 
-#: includes/definitions/licenses.php:404
+#: includes/definitions/licenses.php:405
 msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Spain)"
 msgstr ""
 
-#: includes/definitions/licenses.php:410
+#: includes/definitions/licenses.php:411
 msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Italy)"
 msgstr ""
 
-#: includes/definitions/licenses.php:416
+#: includes/definitions/licenses.php:417
 msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Mexico)"
 msgstr ""
 
-#: includes/definitions/licenses.php:422
+#: includes/definitions/licenses.php:423
 msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Portugal)"
 msgstr ""
 
-#: includes/definitions/licenses.php:428
+#: includes/definitions/licenses.php:429
 msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Sweden)"
 msgstr ""
 
-#: includes/definitions/licenses.php:434
+#: includes/definitions/licenses.php:435
 msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Taiwan)"
+msgstr ""
+
+#: includes/definitions/licenses.php:441
+msgid "Pixabay license"
+msgstr ""
+
+#: includes/definitions/licenses.php:447
+msgid "Pexels license"
+msgstr ""
+
+#: includes/definitions/licenses.php:453
+msgid "Unsplash license"
 msgstr ""
 
 #: includes/definitions/media-states.php:25

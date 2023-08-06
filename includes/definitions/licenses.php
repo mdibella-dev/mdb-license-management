@@ -21,6 +21,31 @@ define( 'LICENSES', [
         'license_link'        => 'https://creativecommons.org/publicdomain/zero/1.0/',
         'license_version'     => '1.0',
     ],
+    'L054' => [
+        'license_term'        => 'Dreamstime RF',
+        'license_description' => __( 'Dreamstime – Royalty Free (RF)', 'mdb-license-management' ),
+        'license_link'        => 'https://www.dreamstime.com/about-stock-image-licenses',
+        'license_version'     => '',
+    ],
+    'L055' => [
+        'license_term'        => 'Dreamstime RF/Editorial',
+        'license_description' => __( 'Dreamstime – Royalty Free - editorial use only', 'mdb-license-management' ),
+        'license_link'        => 'https://www.dreamstime.com/about-stock-image-licenses',
+        'license_version'     => '',
+    ],
+    'L056' => [
+        'license_term'        => 'Freeimages',
+        'license_description' => __( 'Freeimages license', 'mdb-license-management' ),
+        'license_link'        => 'https://de.freeimages.com/license',
+        'license_version'     => '',
+    ],
+    'L057' => [
+        'license_term'        => 'Public domain',
+        'license_description' => __( 'Public domain', 'mdb-license-management' ),
+        'license_link'        => '',
+        'license_version'     => '',
+    ],
+
     'L002' => [
         'license_term'        => 'CC BY 4.0',
         'license_description' => __( 'Creative Commons – Attribution 4.0', 'mdb-license-management' ),
@@ -333,30 +358,6 @@ define( 'LICENSES', [
         'license_link'        => 'http://artlibre.org/licence/lal/de/',
         'license_version'     => '1.1',
     ],
-    'L054' => [
-        'license_term'        => 'Dreamstime RF',
-        'license_description' => __( 'Dreamstime – Royalty Free (RF)', 'mdb-license-management' ),
-        'license_link'        => 'https://www.dreamstime.com/about-stock-image-licenses',
-        'license_version'     => '',
-    ],
-    'L055' => [
-        'license_term'        => 'Dreamstime RF/Editorial',
-        'license_description' => __( 'Dreamstime – Royalty Free - editorial use only', 'mdb-license-management' ),
-        'license_link'        => 'https://www.dreamstime.com/about-stock-image-licenses',
-        'license_version'     => '',
-    ],
-    'L056' => [
-        'license_term'        => 'Freeimages',
-        'license_description' => __( 'Freeimages license', 'mdb-license-management' ),
-        'license_link'        => 'https://de.freeimages.com/license',
-        'license_version'     => '',
-    ],
-    'L057' => [
-        'license_term'        => 'Public domain',
-        'license_description' => __( 'Public domain', 'mdb-license-management' ),
-        'license_link'        => '',
-        'license_version'     => '',
-    ],
     'L058' => [
         'license_term'        => 'CC BY-NC-SA 2.5',
         'license_description' => __( 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5', 'mdb-license-management' ),
@@ -434,5 +435,23 @@ define( 'LICENSES', [
         'license_description' => __( 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Taiwan)', 'mdb-license-management' ),
         'license_link'        => 'https://creativecommons.org/licenses/by-nc-sa/2.5/tw/',
         'license_version'     => '2.5',
+    ],
+    'L071' => [
+        'license_term'        => 'Pixabay',
+        'license_description' => __( 'Pixabay license', 'mdb-license-management' ),
+        'license_link'        => 'https://pixabay.com/service/license-summary/',
+        'license_version'     => '',
+    ],
+    'L072' => [
+        'license_term'        => 'Pexels',
+        'license_description' => __( 'Pexels license', 'mdb-license-management' ),
+        'license_link'        => 'https://www.pexels.com/de-de/lizenz/',
+        'license_version'     => '',
+    ],
+    'L072' => [
+        'license_term'        => 'Unsplash',
+        'license_description' => __( 'Unsplash license', 'mdb-license-management' ),
+        'license_link'        => 'https://unsplash.com/de/lizenz',
+        'license_version'     => '',
     ],
 ] );
