@@ -8,6 +8,9 @@
 
 namespace mdb_license_management\theme_integration;
 
+use mdb_license_management\Media_Record as Media_Record;
+use const mdb_license_management\LICENSES as LICENSES;
+
 
 /** Prevent direct access */
 
@@ -66,16 +69,16 @@ function get_byline( $id ) {
     $output = '';
     $record = new Media_Record( $id );
 
-    if( ! empty( $record->by_name ) ) :
+    if( ! empty( $record->get_by_name()) ) :
 
-        if( ! empty( $record->by_link ) ) :
+        if( ! empty( $record->get_by_link() ) ) :
             $output = sprintf(
                 '<a href="%1$s" target="_blank" rel="nofollow" name="%2$s">%2$s</a>',
-                $record->by_link,
-                $record->by_name
+                $record->get_by_link(),
+                $record->get_by_name()
             );
         else :
-            $output = $record->by_name;
+            $output = $record->get_by_name();
         endif;
 
     endif;
