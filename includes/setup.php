@@ -46,7 +46,7 @@ function plugin_activation() {
 
     if( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) != $table_name) :
 
-        // add prepare 
+        // add prepare
         // install table
         $sql = "CREATE TABLE $table_name (
             media_id bigint(20) UNSIGNED NOT NULL,
@@ -79,7 +79,6 @@ function plugin_uninstall() {
     // Do something!
     // Delete options!
     // Delete custom tables!
-
 
 }
 
