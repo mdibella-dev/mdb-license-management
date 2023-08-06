@@ -9,6 +9,7 @@ Released: 06-08-2023
 
 * New: Add minified scripts and styles
 * New: Add class MediaRecord
+* New: Add support for Pixabay, Pexels and Unsplash license
 * Improve: Complete overhaul of the plugin files and structure
 * Improve: Update German translation
 * Improve: Replace license table with constant array
