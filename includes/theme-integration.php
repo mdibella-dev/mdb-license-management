@@ -1,12 +1,15 @@
 <?php
 /**
- * API for theme integration.
+ * API for theme integration (deprecated)
  *
  * @author  Marco Di Bella
  * @package mdb-license-management
  */
 
-namespace mdb_license_management;
+namespace mdb_license_management\theme_integration;
+
+use mdb_license_management\Media_Record as Media_Record;
+use const mdb_license_management\LICENSES as LICENSES;
 
 
 /** Prevent direct access */
@@ -16,37 +19,33 @@ defined( 'ABSPATH' ) or exit;
 
 
 /**
- * Names the license of a medium (with link if necessary).
+ * Names the license of a media (with link if applicable).
  *
  * @since 0.0.1
  *
- * @param int $id The ID of the record of a media in the media table of the plugin.
+ * @param int $id The attachment's post_ID.
  *
  * @return string Output of the license details.
  */
 
-function api_get_license( $id )
-{
-    $media  = get_media_record( $id );
-    $output = '';
+function get_license( $id ) {
+    $output       = '';
+    $record       = new Media_Record( $id );
+    $license_guid = $record->get_license_guid();
 
-    if( null != $media ) :
+    if( ! empty( $license_guid ) and ( true == array_key_exists( $license_guid, LICENSES ) ) ) :
 
-        if( $media['license_guid'] and ( null != ( $license = get_license_record( $media['license_guid'] ) ) ) ) :
-            //$license = get_license_record( $media['license_guid'] );
-
-            if( '' !== $license['license_link'] ) :
-                $output = sprintf(
-                    '<a href="%1$s" target="_blank" rel="nofollow" name="%2$s">[%2$s]</a>',
-                    $license['license_link'],
-                    $license['license_term']
-                );
-            else :
-                $output = sprintf(
-                    '[%1$s]',
-                    $license['license_term']
-                );
-            endif;
+        if( ! empty( LICENSES[$license_guid]['license_link'] ) ) :
+            $output = sprintf(
+                '<a href="%1$s" target="_blank" rel="nofollow" name="%2$s">[%2$s]</a>',
+                LICENSES[$license_guid]['license_link'],
+                LICENSES[$license_guid]['license_term']
+            );
+        else :
+            $output = sprintf(
+                '[%1$s]',
+                LICENSES[$license_guid]['license_term']
+            );
         endif;
 
     endif;
@@ -57,34 +56,29 @@ function api_get_license( $id )
 
 
 /**
- * Gives the author of a medium (with link, if applicable).
+ * Returns the creator's credit line (with link to his portfolio, if applicable).
  *
  * @since 0.0.1
  *
- * @param int $id The ID of the record of a media in the media table of the plugin.
+ * @param int $id The attachment's post_ID.
  *
- * @return string Output of the author details.
+ * @return string Output of the credits.
  */
 
-function api_get_byline( $id )
-{
-    $media  = get_media_record( $id );
+function get_byline( $id ) {
     $output = '';
+    $record = new Media_Record( $id );
 
-    if( null != $media ) :
+    if( ! empty( $record->get_by_name()) ) :
 
-        if( '' !== $media['by_name'] ) :
-
-            if( '' !== $media['by_link'] ) :
-                $output = sprintf(
-                    '<a href="%1$s" target="_blank" rel="nofollow" name="%2$s">%2$s</a>',
-                    $media['by_link'],
-                    $media['by_name']
-                );
-            else :
-                $output = $media['by_name'];
-            endif;
-
+        if( ! empty( $record->get_by_link() ) ) :
+            $output = sprintf(
+                '<a href="%1$s" target="_blank" rel="nofollow" name="%2$s">%2$s</a>',
+                $record->get_by_link(),
+                $record->get_by_name()
+            );
+        else :
+            $output = $record->get_by_name();
         endif;
 
     endif;

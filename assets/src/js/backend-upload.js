@@ -1,9 +1,5 @@
 jQuery(function($) {
 
-    /**
-     * Für MediaGrid
-     */
-
     var lv_AttachmentCompat = wp.media.view.AttachmentCompat;
 
     wp.media.view.AttachmentCompat = wp.media.view.AttachmentCompat.extend( {
