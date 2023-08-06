@@ -60,12 +60,12 @@ function show_custom_column( $column, $id ) {
                     if( true == array_key_exists( $record->get_license_guid(), LICENSES ) ) :
                         echo $record->get_by_name() . '<br>' . LICENSES[$record->get_license_guid()]['license_term'];
                     else :
-                        echo MEDIA_STATES[MEDIA_STATE_UNKNOWN];
+                        echo __( MEDIA_STATES[MEDIA_STATE_UNKNOWN], 'mdb-license-management' );
                     endif;
                 break;
 
                 default:
-                    echo MEDIA_STATES[$record->get_media_state()];
+                    echo __( MEDIA_STATES[$record->get_media_state()], 'mdb-license-management' );
                 break;
 
             endswitch;
@@ -109,7 +109,7 @@ function add_attachment_fields( $form_fields, $post ) {
         $html .= sprintf(
             '<option value="%1$s" %3$s>%2$s</option>',
             $state,
-            $description,
+            __( $description, 'mdb-license-management' ),
             ( $state == $record->get_media_state() )? 'selected' : ''
         );
     endforeach;
