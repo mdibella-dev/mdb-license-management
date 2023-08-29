@@ -33,22 +33,22 @@ function get_license( $id ) {
     $record       = new Media_Record( $id );
     $license_guid = $record->get_license_guid();
 
-    if( ! empty( $license_guid ) and ( true == array_key_exists( $license_guid, LICENSES ) ) ) :
+    if( ! empty( $license_guid ) and ( true == array_key_exists( $license_guid, LICENSES ) ) ) {
 
-        if( ! empty( LICENSES[$license_guid]['license_link'] ) ) :
+        if( ! empty( LICENSES[$license_guid]['license_link'] ) ) {
             $output = sprintf(
                 '<a href="%1$s" target="_blank" rel="nofollow" name="%2$s">[%2$s]</a>',
                 LICENSES[$license_guid]['license_link'],
                 LICENSES[$license_guid]['license_term']
             );
-        else :
+        } else {
             $output = sprintf(
                 '[%1$s]',
                 LICENSES[$license_guid]['license_term']
             );
-        endif;
+        }
 
-    endif;
+    }
 
     return $output;
 }
@@ -69,19 +69,19 @@ function get_byline( $id ) {
     $output = '';
     $record = new Media_Record( $id );
 
-    if( ! empty( $record->get_by_name()) ) :
+    if( ! empty( $record->get_by_name()) ) {
 
-        if( ! empty( $record->get_by_link() ) ) :
+        if( ! empty( $record->get_by_link() ) ) {
             $output = sprintf(
                 '<a href="%1$s" target="_blank" rel="nofollow" name="%2$s">%2$s</a>',
                 $record->get_by_link(),
                 $record->get_by_name()
             );
-        else :
+        } else {
             $output = $record->get_by_name();
-        endif;
+        }
 
-    endif;
+    }
 
     return $output;
 }

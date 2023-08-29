@@ -85,9 +85,9 @@ class Media_Record {
 
         $this->media_id = $attachment_post_ID;
 
-        if( false == $this->get_table_record() ) :
+        if( false == $this->get_table_record() ) {
             $this->update_table_record();
-        endif;
+        }
     }
 
 
@@ -121,9 +121,9 @@ class Media_Record {
 
     public function set_media_state( $media_state ) {
 
-        if( true == array_key_exists( $media_state, MEDIA_STATES ) ) :
+        if( true == array_key_exists( $media_state, MEDIA_STATES ) ) {
             $this->media_state = $media_state;
-        endif;
+        }
     }
 
 
@@ -146,9 +146,9 @@ class Media_Record {
 
     public function set_license_guid( $license_guid ) {
 
-        if( true == array_key_exists( $license_guid, LICENSES ) ) :
+        if( true == array_key_exists( $license_guid, LICENSES ) ) {
             $this->license_guid = $license_guid;
-        endif;
+        }
     }
 
 
@@ -219,9 +219,9 @@ class Media_Record {
         $table_name = $wpdb->prefix . TABLE_MEDIA;
         $result     = $wpdb->get_results( "SELECT * FROM $table_name WHERE media_id=$this->media_id", 'ARRAY_A' );
 
-        if( null == $result ) :
+        if( null == $result ) {
             return false;
-        endif;
+        }
 
         $this->media_link   = $result[0]['media_link'];
         $this->media_state  = $result[0]['media_state'];
@@ -262,19 +262,19 @@ class Media_Record {
         ];
 
 
-        if( false == $this->get_table_record() ) :
+        if( false == $this->get_table_record() ) {
             $wpdb->insert(
                 $wpdb->prefix . TABLE_MEDIA,
                 $data,
                 $format
             );
-        else :
+        } else {
             $wpdb->replace(
                 $wpdb->prefix . TABLE_MEDIA,
                 $data,
                 $format
             );
-        endif;
+        }
     }
 
 

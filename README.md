@@ -26,6 +26,8 @@ translation-ready, creative-commons, license-management, wordpress-plugin
 
 ### Latest changes to the main branch
 
+* Improve: Coding style: Replace control structure
+
 
 ### Previous changes
 

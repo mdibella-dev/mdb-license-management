@@ -44,7 +44,7 @@ function plugin_activation() {
 
     $table_name = $wpdb->prefix . table_media;
 
-    if( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) != $table_name) :
+    if( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) != $table_name) {
 
         // add prepare
         // install table
@@ -60,7 +60,7 @@ function plugin_activation() {
             COLLATE utf8_general_ci;";
 
         dbDelta( $sql );
-    endif;
+    }
 }
 
 register_activation_hook( __FILE__, __NAMESPACE__ . '\plugin_activation' );
