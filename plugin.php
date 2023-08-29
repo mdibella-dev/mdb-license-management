@@ -35,14 +35,14 @@ const TABLE_MEDIA    = 'mdb_lv_media';
 
 /** Include files */
 
-require_once( PLUGIN_DIR . 'includes/definitions/media-states.php' );
-require_once( PLUGIN_DIR . 'includes/definitions/licenses.php' );
+require_once PLUGIN_DIR . 'includes/definitions/media-states.php';
+require_once PLUGIN_DIR . 'includes/definitions/licenses.php';
 
-require_once( PLUGIN_DIR . 'includes/classes/class-media-record.php' );
+require_once PLUGIN_DIR . 'includes/classes/class-media-record.php';
 
-require_once( PLUGIN_DIR . 'includes/media-library/upload.php' );
-require_once( PLUGIN_DIR . 'includes/media-library/attachment.php' );
+require_once PLUGIN_DIR . 'includes/media-library/upload.php';
+require_once PLUGIN_DIR . 'includes/media-library/attachment.php';
 
-require_once( PLUGIN_DIR . 'includes/theme-integration.php' );
-require_once( PLUGIN_DIR . 'includes/backend.php' );
-require_once( PLUGIN_DIR . 'includes/setup.php' );
+require_once PLUGIN_DIR . 'includes/theme-integration.php';
+require_once PLUGIN_DIR . 'includes/backend.php';
+require_once PLUGIN_DIR . 'includes/setup.php';
