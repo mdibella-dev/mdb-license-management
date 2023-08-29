@@ -219,16 +219,7 @@ class Media_Record {
         $table_name = $wpdb->prefix . TABLE_MEDIA;
         $result     = $wpdb->get_results( "SELECT * FROM $table_name WHERE media_id=$this->media_id", 'ARRAY_A' );
 
-    /*    $query = $wpdb->prepare(
-            "SELECT * FROM {$table_name} WHERE `media_link`=%d",
-            [
-                $this->media_id
-            ]
-        );
-
-        $result = $wpdb->get_results( $query, 'ARRAY_A' );
-*/
-       if( null == $result ) :
+        if( null == $result ) :
             return false;
         endif;
 
