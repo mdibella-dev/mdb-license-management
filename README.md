@@ -14,7 +14,6 @@ translation-ready, creative-commons, license-management, wordpress-plugin
 ### Requires at least
 
 * WordPress 5.0
-* ACF 5.0
 
 ### Tested up to
 
@@ -26,6 +25,7 @@ translation-ready, creative-commons, license-management, wordpress-plugin
 
 ### Latest changes to the main branch
 
+* Improve: Correct information in README
 
 ### Previous changes
 
