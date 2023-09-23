@@ -44,36 +44,32 @@ add_filter( 'manage_media_columns', __NAMESPACE__ . '\add_custom_column');
  */
 
 function show_custom_column( $column, $id ) {
-    if( 'mdb_lv_credits' == $column  ) :
+    if ( 'mdb_lv_credits' == $column  ) {
 
         $record = new Media_Record( $id );
 
-        if( true == array_key_exists( $record->get_media_state(), MEDIA_STATES ) ) :
+        if ( true == array_key_exists( $record->get_media_state(), MEDIA_STATES ) ) {
 
-            switch( $record->get_media_state() ) :
+            switch ( $record->get_media_state() ) {
 
-                case MEDIA_STATE_SIMPLE_CREDIT:
+                case MEDIA_STATE_SIMPLE_CREDIT :
                     echo $record->get_by_name();
                     break;
 
-                case MEDIA_STATE_LICENSED:
-                    if( true == array_key_exists( $record->get_license_guid(), LICENSES ) ) :
+                case MEDIA_STATE_LICENSED :
+                    if ( true == array_key_exists( $record->get_license_guid(), LICENSES ) ) {
                         echo $record->get_by_name() . '<br>' . LICENSES[$record->get_license_guid()]['license_term'];
-                    else :
+                    } else {
                         echo __( MEDIA_STATES[MEDIA_STATE_UNKNOWN], 'mdb-license-management' );
-                    endif;
+                    }
                     break;
 
-                default:
+                default :
                     echo __( MEDIA_STATES[$record->get_media_state()], 'mdb-license-management' );
                     break;
-
-            endswitch;
-
-        endif;
-
-    endif;
-
+            }
+        }
+    }
 }
 
 add_action( 'manage_media_custom_column', __NAMESPACE__ . '\show_custom_column', 10, 2 );

@@ -40,14 +40,14 @@ function add_attachment_fields( $form_fields, $post ) {
         ( MEDIA_STATE_UNKNOWN == $record->get_media_state() )? 'selected' : ''
     );
 
-    foreach( MEDIA_STATES as $state => $description ) :
+    foreach( MEDIA_STATES as $state => $description ) {
         $html .= sprintf(
             '<option value="%1$s" %3$s>%2$s</option>',
             $state,
             __( $description, 'mdb-license-management' ),
             ( $state == $record->get_media_state() )? 'selected' : ''
         );
-    endforeach;
+    }
 
     $html .= '</select>';
 
@@ -68,14 +68,14 @@ function add_attachment_fields( $form_fields, $post ) {
         ( '' == $record->get_license_guid() )? 'selected' : ''
     );
 
-    foreach( LICENSES as $license_guid => $license ) :
+    foreach( LICENSES as $license_guid => $license ) {
         $html .= sprintf(
             '<option value="%1$s" %3$s>%2$s</option>',
             $license_guid,
             $license['license_term'],
             ( $license_guid == $record->get_license_guid() )? 'selected' : ''
         );
-    endforeach;
+    }
 
     $html .= '</select>';
 
