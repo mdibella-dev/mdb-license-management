@@ -52,11 +52,11 @@ function show_custom_column( $column, $id ) {
 
             switch ( $record->get_media_state() ) {
 
-                case MEDIA_STATE_SIMPLE_CREDIT :
+                case MEDIA_STATE_SIMPLE_CREDIT:
                     echo $record->get_by_name();
                     break;
 
-                case MEDIA_STATE_LICENSED :
+                case MEDIA_STATE_LICENSED:
                     if ( true == array_key_exists( $record->get_license_guid(), LICENSES ) ) {
                         echo $record->get_by_name() . '<br>' . LICENSES[$record->get_license_guid()]['license_term'];
                     } else {
@@ -64,7 +64,7 @@ function show_custom_column( $column, $id ) {
                     }
                     break;
 
-                default :
+                default:
                     echo __( MEDIA_STATES[$record->get_media_state()], 'mdb-license-management' );
                     break;
             }
