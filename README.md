@@ -23,12 +23,6 @@ translation-ready, creative-commons, license-management, wordpress-plugin
 
 ## Changelog
 
-### Latest changes to the main branch
-
-* Improve: Correct information in README
-
-### Previous changes
-
 See [CHANGELOG.md](https://github.com/mdibella-dev/mdb-license-management/blob/main/CHANGELOG.md).
 
 <br>
