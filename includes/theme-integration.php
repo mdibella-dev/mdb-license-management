@@ -36,7 +36,7 @@ function get_license( $id ) {
     if ( ! empty( $license_guid ) and ( true == array_key_exists( $license_guid, LICENSES ) ) ) {
         if ( ! empty( LICENSES[$license_guid]['license_link'] ) ) {
             $output = sprintf(
-                '<a href="%1$s" target="_blank" rel="nofollow" name="%2$s">[%2$s]</a>',
+                '<a href="%1$s" target="_blank" rel="noopener" name="%2$s">[%2$s]</a>',
                 LICENSES[$license_guid]['license_link'],
                 LICENSES[$license_guid]['license_term']
             );
@@ -69,7 +69,7 @@ function get_byline( $id ) {
     if ( ! empty( $record->get_by_name()) ) {
         if ( ! empty( $record->get_by_link() ) ) {
             $output = sprintf(
-                '<a href="%1$s" target="_blank" rel="nofollow" name="%2$s">%2$s</a>',
+                '<a href="%1$s" target="_blank" rel="noopener" name="%2$s">%2$s</a>',
                 $record->get_by_link(),
                 $record->get_by_name()
             );

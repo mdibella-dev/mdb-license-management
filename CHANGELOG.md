@@ -6,6 +6,7 @@ _New / Improve / Bugfix_
 ### Latest changes to the main branch
 
 - Improve: Correct information in README
+- Improve: Remove nofollow
 
 <br>
 
