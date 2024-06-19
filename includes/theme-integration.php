@@ -53,7 +53,7 @@ function get_license( $id ) {
 
 
 /**
- * Returns the creator's credit line (with link to his portfolio, if applicable).
+ * Returns the creator's credit line.
  *
  * @since 0.0.1
  *
@@ -63,20 +63,7 @@ function get_license( $id ) {
  */
 
 function get_byline( $id ) {
-    $output = '';
     $record = new Media_Record( $id );
 
-    if ( ! empty( $record->get_by_name()) ) {
-        if ( ! empty( $record->get_by_link() ) ) {
-            $output = sprintf(
-                '<a href="%1$s" target="_blank" rel="noopener" name="%2$s">%2$s</a>',
-                $record->get_by_link(),
-                $record->get_by_name()
-            );
-        } else {
-            $output = $record->get_by_name();
-        }
-    }
-
-    return $output;
+    return $record->get_by_name();
 }
