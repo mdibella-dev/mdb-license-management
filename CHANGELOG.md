@@ -5,8 +5,15 @@ _New / Improve / Bugfix_
 
 ### Latest changes to the main branch
 
-- Improve: Correct information in README
+<br>
+
+### 1.1.0
+Released: 06-08-2023
+
 - Improve: Remove nofollow
+- Improve: Media list
+- Fix information in README
+- Fix "Function _load_textdomain_just_in_time was called incorrectly" error
 
 <br>
 
@@ -25,6 +32,7 @@ Released: 06-08-2023
 - Improve: Remove listing of all available licenses
 - Bugfix: Fix scripting in attachment pages
 
+<br>
 
 ### 0.0.4
 Released: 03-08-2023
@@ -36,6 +44,7 @@ Released: 03-08-2023
 - Bugfix: Fix uncaught PHP error
 - Bugfix: Fix PHP warning (mainpage.php)
 
+<br>
 
 ### 0.0.3
 Released: 06-02-2023
@@ -58,6 +67,7 @@ Released: 06-02-2023
 - Improve: Various code simplifications
 - Bugfix: Change handle names in backend.php
 
+<br>
 
 ### 0.0.2
 Released: 27-03-2022
@@ -67,6 +77,7 @@ Released: 27-03-2022
 - Improve: Directory structure
 - Improve: Conditions are now in the YODA style
 
+<br>
 
 ### 0.0.1
 Released: 21-08-2018
