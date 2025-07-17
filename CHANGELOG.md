@@ -8,7 +8,7 @@ _New / Improve / Bugfix_
 <br>
 
 ### 1.1.0
-Released: 06-08-2023
+Released: 17-07-2025
 
 - Improve: Remove nofollow
 - Improve: Media list
