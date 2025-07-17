@@ -6,7 +6,7 @@
  * Author:          Marco Di Bella
  * Author URI:      https://www.marcodibella.de
  * License:         MIT License
- * Version:         1.0.0
+ * Version:         1.1.0
  * Text Domain:     mdb-license-management
  *
  * @author  Marco Di Bella
