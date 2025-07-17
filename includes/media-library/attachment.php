@@ -40,11 +40,11 @@ function add_attachment_fields( $form_fields, $post ) {
         ( MEDIA_STATE_UNKNOWN == $record->get_media_state() )? 'selected' : ''
     );
 
-    foreach( MEDIA_STATES as $state => $description ) {
+    foreach( MEDIA_STATES as $state ) {
         $html .= sprintf(
             '<option value="%1$s" %3$s>%2$s</option>',
             $state,
-            __( $description, 'mdb-license-management' ),
+            get_media_state_description( $state ),
             ( $state == $record->get_media_state() )? 'selected' : ''
         );
     }
