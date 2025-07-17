@@ -50,23 +50,12 @@ function show_custom_column( $column, $id ) {
 
         if ( true == array_key_exists( $record->get_media_state(), MEDIA_STATES ) ) {
 
-            switch ( $record->get_media_state() ) {
-
-                case MEDIA_STATE_SIMPLE_CREDIT:
-                    echo $record->get_by_name();
-                    break;
-
-                case MEDIA_STATE_LICENSED:
-                    if ( true == array_key_exists( $record->get_license_guid(), LICENSES ) ) {
-                        echo $record->get_by_name() . '<br>' . LICENSES[$record->get_license_guid()]['license_term'];
-                    } else {
-                        echo __( MEDIA_STATES[MEDIA_STATE_UNKNOWN], 'mdb-license-management' );
-                    }
-                    break;
-
-                default:
-                    echo __( MEDIA_STATES[$record->get_media_state()], 'mdb-license-management' );
-                    break;
+            if ( MEDIA_STATE_SIMPLE_CREDIT == $record->get_media_state() ) {
+                echo $record->get_by_name();
+            } elseif ( ( MEDIA_STATE_LICENSED == $record->get_media_state() ) and ( true == array_key_exists( $record->get_license_guid(), LICENSES ) ) ) {
+                echo $record->get_by_name() . '<br>' . LICENSES[$record->get_license_guid()]['license_term'];
+            } else {
+                echo '—';
             }
         }
     }
