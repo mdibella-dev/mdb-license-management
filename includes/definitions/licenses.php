@@ -45,7 +45,6 @@ define( __NAMESPACE__ . '\LICENSES', [
         'license_link'        => '',
         'license_version'     => '',
     ],
-
     'L002' => [
         'license_term'        => 'CC BY 4.0',
         'license_description' => 'Creative Commons – Attribution 4.0',
