@@ -1,63 +1,88 @@
 # Changelog
 
-_New / Improve / Bugfix_
+All notable changes to this project will be documented in this file.
 
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-### Latest changes to the main branch
+## [Unreleased]
+
+### Changed
+
+- Add changelog file style
 
 <br>
 
-### 1.1.0
-Released: 17-07-2025
+## [1.1.0] - 2025-07-17
 
-- Improve: Remove nofollow
-- Improve: Media list
+### Changed
+
+- Remove nofollow
+- Media list
+
+### Fixed
+
 - Fix information in README
 - Fix "Function _load_textdomain_just_in_time was called incorrectly" error
 
 <br>
 
-### 1.0.0
-Released: 06-08-2023
+## [1.0.0] - 2023-08-06
 
-- New: Add minified scripts and styles
-- New: Add class MediaRecord
-- New: Add support for Pixabay, Pexels and Unsplash license
-- Improve: Complete overhaul of the plugin files and structure
-- Improve: Update German translation
-- Improve: Replace license table with constant array
-- Improve: Add more sanitizing/escaping
-- Improve: Remove media indexing
-- Improve: Remove admin menu
-- Improve: Remove listing of all available licenses
-- Bugfix: Fix scripting in attachment pages
+### Added
 
-<br>
+- Add minified scripts and styles
+- Add class MediaRecord
+- Add support for Pixabay, Pexels and Unsplash license
 
-### 0.0.4
-Released: 03-08-2023
+### Changed
 
-- Improve: Extract changelog from README.md
-- Improve: Change namespace to mdb_license_management\media_library
-- Bugfix: Fix "Trying to access array offset on value of type null"
-- Bugfix: Fix wrong path var in backend.php
-- Bugfix: Fix uncaught PHP error
-- Bugfix: Fix PHP warning (mainpage.php)
+- Complete overhaul of the plugin files and structure
+- Update German translation
+- Replace license table with constant array
+- Add more sanitizing/escaping
+- Remove media indexing
+- Remove admin menu
+- Remove listing of all available licenses
+
+### Fixed
+
+- Fix scripting in attachment pages
 
 <br>
 
-### 0.0.3
-Released: 06-02-2023
+## [0.0.4] - 2023-08-03
 
-- New: Add /core folder with all provided core and API functions
-- New: Add namespace mdb_license_management
-- New: Add backend.php
-- New: Add translation support
+### Changed
+
+- Extract changelog from README.md
+- Change namespace to mdb_license_management\media_library
+
+### Fixed
+
+- Fix "Trying to access array offset on value of type null"
+- Fix wrong path var in backend.php
+- Fix uncaught PHP error
+- Fix PHP warning (mainpage.php)
+
+<br>
+
+## [0.0.3] - 2023-02-06
+
+### Added
+
+- Add /core folder with all provided core and API functions
+- Add namespace mdb_license_management
+- Add backend.php
+- Add translation support
 - New: PLUGIN_DIR, PLUGIN_URL, PLUGIN_VERSION
 - New: TABLE_MEDIA, TABLE_LICENSES, MENU_SLUG
 - New: German translation
-- Improve: Rename /inc to /includes
-- Improve: Changelog style and language
+
+### Changed
+
+- Rename /inc to /includes
+- Improve Changelog style and language
 - Improve: Documentation style and language
 - Improve: Including of core and class files
 - Improve: text domain
@@ -65,21 +90,24 @@ Released: 06-02-2023
 - Improve: Primary language is EN
 - Improve: Change repository name
 - Improve: Various code simplifications
+
+### Fixed
+
 - Bugfix: Change handle names in backend.php
 
 <br>
 
-### 0.0.2
-Released: 27-03-2022
+## [0.0.2] - 20022-03-27
 
-- Improve: plugin.php is the new starting point now
+### Changed
+
+- Improve: plugin.php is now the new starting point
 - Improve: Documentation
 - Improve: Directory structure
 - Improve: Conditions are now in the YODA style
 
 <br>
 
-### 0.0.1
-Released: 21-08-2018
+## [0.0.1] - 2018-08-21
 
 - Initial commit
