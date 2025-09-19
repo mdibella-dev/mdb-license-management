@@ -40,7 +40,7 @@ require_once PLUGIN_DIR . 'includes/definitions/licenses.php';
 
 require_once PLUGIN_DIR . 'includes/classes/class-media-record.php';
 
-require_once PLUGIN_DIR . 'includes/media-library/upload.php';
+require_once PLUGIN_DIR . 'includes/media-library/media-list-table.php';
 require_once PLUGIN_DIR . 'includes/media-library/attachment.php';
 
 require_once PLUGIN_DIR . 'includes/theme-integration.php';
