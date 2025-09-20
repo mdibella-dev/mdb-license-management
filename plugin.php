@@ -35,6 +35,8 @@ const TABLE_MEDIA    = 'mdb_lv_media';
 
 /** Include files */
 
+require_once PLUGIN_DIR . 'includes/taxonomies/index.php';
+
 require_once PLUGIN_DIR . 'includes/definitions/media-states.php';
 require_once PLUGIN_DIR . 'includes/definitions/licenses.php';
 
