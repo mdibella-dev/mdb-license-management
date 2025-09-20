@@ -79,10 +79,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improve: Documentation style and language
 - Improve: Including of core and class files
 - Improve: text domain
-- Improve: Remove compatibility to old implementations
 - Improve: Primary language is EN
 - Improve: Change repository name
 - Improve: Various code simplifications
+
+### Removed
+- Remove compatibility to older implementations
 
 ### Fixed
 - Bugfix: Change handle names in backend.php
