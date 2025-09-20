@@ -41,6 +41,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update German translation
 - Replace license table with constant array
 - Add more sanitizing/escaping
+
+### Removed
+
 - Remove media indexing
 - Remove admin menu
 - Remove listing of all available licenses
