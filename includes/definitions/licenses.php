@@ -1,6 +1,6 @@
 <?php
 /**
- * Definition of supported licenses.
+ * Definition of supported licenses. (Deprecated)
  *
  * @author  Marco Di Bella
  * @package mdb-license-management
