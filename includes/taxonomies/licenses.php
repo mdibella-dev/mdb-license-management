@@ -62,7 +62,6 @@ return [
             'term'        => 'CC BY 2.0',
             'description' => 'Creative Commons – Attribution 2.0',
             'link'        => 'https://creativecommons.org/licenses/by/2.0/'
-
         ],
         [
             'slug'        => 'l009',
