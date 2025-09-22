@@ -74,6 +74,8 @@ function register() {
  * Inserts a preset of licenses as new terms to the taxonomy.
  *
  * @since 2.0.0
+ *
+ * @todo Add an error routine in case licenses.php does not exist.
  */
 
 function setup() {
