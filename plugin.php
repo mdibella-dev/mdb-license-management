@@ -29,18 +29,23 @@ define( __NAMESPACE__ . '\PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( __NAMESPACE__ . '\PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 
+
 const TABLE_LICENSES = 'mdb_lv_licenses';
 const TABLE_MEDIA    = 'mdb_lv_media';
+
+
+const LICENSE_METAKEY_LINK = 'mdb_lm_license_link';
 
 
 /** Include files */
 
 require_once PLUGIN_DIR . 'includes/taxonomies/index.php';
+require_once PLUGIN_DIR . 'includes/classes/index.php';
 
 require_once PLUGIN_DIR . 'includes/definitions/media-states.php';
 require_once PLUGIN_DIR . 'includes/definitions/licenses.php';
 
-require_once PLUGIN_DIR . 'includes/classes/class-media-record.php';
+
 
 require_once PLUGIN_DIR . 'includes/media-library/upload.php';
 require_once PLUGIN_DIR . 'includes/media-library/attachment.php';

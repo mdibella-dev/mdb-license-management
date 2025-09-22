@@ -7,7 +7,8 @@
  */
 
 
-namespace mdb_license_management\taxonomies\media_license;
+namespace mdb_license_management;
+
 
 
 /** Prevent direct access */
@@ -517,14 +518,19 @@ function setup() {
     ];
 
     foreach ( $licenses as $license ) {
-        wp_insert_term(
+
+       $result = wp_insert_term(
             $license['term'],
             'media_license',
             [
                 'description' => $license['description'],
-                'slug' => $license['slug']
+                'slug'        => $license['slug']
             ]
         );
+/*
+        if ( ! is_wp_error( $result ) ) {
+            update_post_meta( $result['term_id'], LICENSE_METAKEY_LINK, $license['link'] );
+        }*/
     }
 }
 
