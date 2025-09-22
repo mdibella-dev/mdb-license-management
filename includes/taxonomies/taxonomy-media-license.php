@@ -28,16 +28,16 @@ defined( 'ABSPATH' ) or exit;
 function register() {
 
     $labels = [
-        'name'                  => __( 'License', 'mdb-license-management' ),
-        'singular_name'         => __( 'License', 'mdb-license-management' ),
+        'name'                  => __( 'Media license', 'mdb-license-management' ),
+        'singular_name'         => __( 'Media icense', 'mdb-license-management' ),
         'menu_name'             => __( 'Media licenses', 'mdb-license-management' ),
-        'all_items'             => __( 'All license', 'mdb-license-management' ),
+        'all_items'             => __( 'All licenses', 'mdb-license-management' ),
         'edit_item'             => __( 'Edit license', 'mdb-license-management' ),
         'view_item'             => __( 'View license', 'mdb-license-management' ),
         'add_new_item'          => __( 'New license', 'mdb-license-management' ),
         'search_items'          => __( 'Search licenses', 'mdb-license-management' ),
-        'choose_from_most_used' => __( 'Popular license', 'mdb-license-management' ),
-        'not_found'             => __( 'No license found', 'mdb-license-management' ),
+        'choose_from_most_used' => __( 'Popular licenses', 'mdb-license-management' ),
+        'not_found'             => __( 'Nothing found', 'mdb-license-management' ),
     ];
 
     $args = [
