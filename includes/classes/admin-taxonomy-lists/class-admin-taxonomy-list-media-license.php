@@ -44,7 +44,6 @@ class Admin_Taxonomy_List_Media_License extends \wordpress_helper\Admin_Taxonomy
 
     public function manage_columns( $default ) {
         $columns = [
-            'cb'            => $default['cb'],
             'name'          => $default['name'],
             'description'   => $default['description'],
             'link'          => 'link'
@@ -70,7 +69,7 @@ class Admin_Taxonomy_List_Media_License extends \wordpress_helper\Admin_Taxonomy
             case 'link':
                 $link = get_term_meta( $term_id, LICENSE_METAKEY_LINK, true );
 
-                if ( ! empty( $link ) ) {
+               if ( ! empty( $link ) ) {
                     $output = $link;
                 }
                 else {
