@@ -48,7 +48,7 @@ class Admin_Taxonomy_List_Media_License extends \wordpress_helper\Admin_Taxonomy
         $columns = [
             'name'          => $default['name'],
             'description'   => $default['description'],
-            'link'          => __( 'Link to the license text', 'mdb-license-management' )
+            'link'          => __( 'License text', 'mdb-license-management' )
         ];
         return $columns;
     }
@@ -72,7 +72,11 @@ class Admin_Taxonomy_List_Media_License extends \wordpress_helper\Admin_Taxonomy
                 $link = get_term_meta( $term_id, LICENSE_METAKEY_LINK, true );
 
                if ( ! empty( $link ) ) {
-                    $output = $link;
+                    $output = sprintf(
+                        '<a href="%1$s" target="_blank">%2$s</a>',
+                        $link,
+                        __( 'Read license text', 'mdb-license-management' )
+                    );
                 }
                 else {
                     $output = '&mdash;';
