@@ -37,6 +37,29 @@ class Admin_Taxonomy_List_Media_License extends \wordpress_helper\Admin_Taxonomy
 
 
     /**
+     * Filters the action links displayed for each term in the taxonomy list table.
+     *
+     * @see https://wordpress.stackexchange.com/questions/78211/remove-quick-edit-for-custom-post-type
+     * @see https://developer.wordpress.org/reference/hooks/taxonomy_row_actions/
+     *
+     * @param array   $actions  An array of action links to be displayed
+     * @param WP_Term $term     A term object.
+     *
+     * @return array The modified list of action links
+     */
+
+    public function manage_row_actions( $actions, $tag ) {
+        unset( $actions['edit'] );
+        unset( $actions['delete'] );
+        unset( $actions['view'] );
+        unset( $actions['quick edit'] );
+        unset( $actions['inline hide-if-no-js'] );
+        return $actions;
+    }
+
+
+
+    /**
      * Determines the columns of the admin taxonomy list.
      *
      * @param array $default The defaults for columns
