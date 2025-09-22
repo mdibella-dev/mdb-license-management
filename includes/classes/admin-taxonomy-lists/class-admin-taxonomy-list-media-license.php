@@ -7,7 +7,9 @@
  */
 
 
-namespace mdb_license_management;
+namespace mdb_license_management\classes;
+
+use const mdb_license_management\LICENSE_METAKEY_LINK as LICENSE_METAKEY_LINK;
 
 
 /** Prevent direct access */
@@ -46,7 +48,7 @@ class Admin_Taxonomy_List_Media_License extends \wordpress_helper\Admin_Taxonomy
         $columns = [
             'name'          => $default['name'],
             'description'   => $default['description'],
-            'link'          => 'link'
+            'link'          => __( 'Link to the license text', 'mdb-license-management' )
         ];
         return $columns;
     }

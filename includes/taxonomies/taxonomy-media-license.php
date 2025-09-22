@@ -7,7 +7,9 @@
  */
 
 
-namespace mdb_license_management;
+namespace mdb_license_management\taxonomies;
+
+use const mdb_license_management\LICENSE_METAKEY_LINK as LICENSE_METAKEY_LINK;
 
 
 
