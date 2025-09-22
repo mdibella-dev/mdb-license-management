@@ -114,7 +114,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Admin_Taxonomy_List' ) ) {
          */
 
         public function pre_get_posts( $query ) {
-        if ( is_admin() and $query->is_main_query() /*and ( $this->get_taxonomy() === $query->get( 'post_type' ) )*/ ) {
+        if ( is_admin() and $query->is_main_query() ) {
                 $this->manage_sorting( $query );
             }
         }
