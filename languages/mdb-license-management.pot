@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Marco Di Bella &mdash; License Management\n"
-"POT-Creation-Date: 2025-09-22 12:15+0200\n"
+"POT-Creation-Date: 2025-09-23 15:05+0200\n"
 "PO-Revision-Date: 2023-02-06 12:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,8 +20,16 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: includes/classes/admin-taxonomy-lists/class-admin-taxonomy-list-media-license.php:51
-msgid "Link to the license text"
+#: includes/classes/admin-taxonomy-lists/class-admin-taxonomy-list-media-license.php:74
+msgid "License text"
+msgstr ""
+
+#: includes/classes/admin-taxonomy-lists/class-admin-taxonomy-list-media-license.php:75
+msgid "Number of media"
+msgstr ""
+
+#: includes/classes/admin-taxonomy-lists/class-admin-taxonomy-list-media-license.php:102
+msgid "Read license text"
 msgstr ""
 
 #: includes/definitions/media-states.php:47
@@ -50,8 +58,6 @@ msgid "Method and manner of the copyright information"
 msgstr ""
 
 #: includes/media-library/attachment.php:83
-#: includes/taxonomies/taxonomy-media-license.php:31
-#: includes/taxonomies/taxonomy-media-license.php:32
 msgid "License"
 msgstr ""
 
@@ -71,40 +77,30 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
+#: includes/taxonomies/taxonomy-media-license.php:31
+#: includes/taxonomies/taxonomy-media-license.php:32
+#: includes/taxonomies/taxonomy-media-license.php:41
+msgid "Media license"
+msgstr ""
+
 #: includes/taxonomies/taxonomy-media-license.php:33
 msgid "Media licenses"
 msgstr ""
 
 #: includes/taxonomies/taxonomy-media-license.php:34
-msgid "All license"
+msgid "All licenses"
 msgstr ""
 
 #: includes/taxonomies/taxonomy-media-license.php:35
-msgid "Edit license"
-msgstr ""
-
-#: includes/taxonomies/taxonomy-media-license.php:36
-msgid "View license"
-msgstr ""
-
-#: includes/taxonomies/taxonomy-media-license.php:37
-msgid "New license"
-msgstr ""
-
-#: includes/taxonomies/taxonomy-media-license.php:38
 msgid "Search licenses"
 msgstr ""
 
-#: includes/taxonomies/taxonomy-media-license.php:39
-msgid "Popular license"
+#: includes/taxonomies/taxonomy-media-license.php:36
+msgid "Popular licenses"
 msgstr ""
 
-#: includes/taxonomies/taxonomy-media-license.php:40
-msgid "No license found"
-msgstr ""
-
-#: includes/taxonomies/taxonomy-media-license.php:44
-msgid "Media license"
+#: includes/taxonomies/taxonomy-media-license.php:37
+msgid "Nothing found"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
