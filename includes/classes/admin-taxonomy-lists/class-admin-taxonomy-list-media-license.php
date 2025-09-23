@@ -71,7 +71,8 @@ class Admin_Taxonomy_List_Media_License extends \wordpress_helper\Admin_Taxonomy
         $columns = [
             'name'          => $default['name'],
             'description'   => $default['description'],
-            'link'          => __( 'License text', 'mdb-license-management' )
+            'link'          => __( 'License text', 'mdb-license-management' ),
+            'number'   => __( 'Number of media', 'mdb-license-management' ),
         ];
         return $columns;
     }
@@ -94,10 +95,10 @@ class Admin_Taxonomy_List_Media_License extends \wordpress_helper\Admin_Taxonomy
             case 'link':
                 $link = get_term_meta( $term_id, LICENSE_METAKEY_LINK, true );
 
-               if ( ! empty( $link ) ) {
+                if ( ! empty( $link ) ) {
                     $output = sprintf(
                         '<a href="%1$s" target="_blank">%2$s</a>',
-                        $link,
+                        esc_url( $link ),
                         __( 'Read license text', 'mdb-license-management' )
                     );
                 }
@@ -105,45 +106,32 @@ class Admin_Taxonomy_List_Media_License extends \wordpress_helper\Admin_Taxonomy
                     $output = '&mdash;';
                 }
                 break;
-/*
 
-            case 'count-session':
+            case 'number':
                 $posts = get_posts( [
-                    'post_type'   => 'session',
+                    'post_type'   => 'attachment',
                     'post_status' => 'any',
                     'numberposts' => -1,
                     'tax_query'   => [[
-                        'taxonomy' => 'location',
+                        'taxonomy' => 'media_license',
                         'terms'    => $term_id,
                     ]],
                 ] );
-                $term   = get_term( $term_id, 'location' );
-                $output = sprintf(
-                    '<a href="/wp-admin/edit.php?location=%2$s&post_type=session" title="%3$s">%1$s</a>',
-                    sizeof( $posts ),
-                    $term->slug,
-                    __( 'View all sessions at this location', 'cm-theme-core' )
-                );
+                $term  = get_term( $term_id, 'media_license' );
+                $count = sizeof( $posts );
+
+                if ( 0 !== $count ) {
+                    $args = [
+                        'media_license' => $term->slug,
+                        'post_type'     => 'attachment'
+                    ];
+
+                    $output = "<a href='" . esc_url( add_query_arg( $args, 'upload.php' ) ) . "'>$count</a>";
+                }
+                else {
+                    $output = '0';
+                }
                 break;
-
-            case 'count-space':
-                $posts = get_posts( [
-                    'post_type'   => 'exhibition_space',
-                    'post_status' => 'any',
-                    'numberposts' => -1,
-                    'tax_query'   => [[
-                        'taxonomy' => 'location',
-                        'terms'    => $term_id,
-                    ]],
-                ] );
-                $term   = get_term( $term_id, 'location' );
-                $output = sprintf(
-                    '<a href="/wp-admin/edit.php?location=%2$s&post_type=exhibition_space" title="%3$s">%1$s</a>',
-                    sizeof( $posts ),
-                    $term->slug,
-                    __( 'View all exhibition spaces in this location', 'cm-theme-core' )
-                );
-                break; */
 
             default:
                 break;
