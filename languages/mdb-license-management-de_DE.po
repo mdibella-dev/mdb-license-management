@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Marco Di Bella &mdash; License Management\n"
-"POT-Creation-Date: 2025-09-24 13:09+0200\n"
-"PO-Revision-Date: 2025-09-24 13:11+0200\n"
+"POT-Creation-Date: 2025-09-24 13:43+0200\n"
+"PO-Revision-Date: 2025-09-24 13:43+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -20,15 +20,15 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: includes/classes/class-media-license-list.php:74
+#: includes/classes/class-media-license-list.php:73
 msgid "License text"
 msgstr "Lizenztext"
 
-#: includes/classes/class-media-license-list.php:75
+#: includes/classes/class-media-license-list.php:74
 msgid "Number of media"
 msgstr "Anzahl an Medien"
 
-#: includes/classes/class-media-license-list.php:102
+#: includes/classes/class-media-license-list.php:101
 msgid "Read license text"
 msgstr "Lizenztext lesen"
 
@@ -76,8 +76,8 @@ msgid "Link to original file"
 msgstr "Link zur Originaldatei"
 
 #: includes/media-library/upload.php:29
-msgid "Copyright"
-msgstr "Urheber/Lizenz"
+msgid "Creator"
+msgstr "Urheber"
 
 #: includes/taxonomies/taxonomy-media-license.php:31
 #: includes/taxonomies/taxonomy-media-license.php:33
@@ -124,6 +124,9 @@ msgstr "Marco Di Bella"
 #. Author URI of the plugin/theme
 msgid "https://www.marcodibella.de"
 msgstr "https://www.marcodibella.de"
+
+#~ msgid "Copyright"
+#~ msgstr "Urheber/Lizenz"
 
 #~ msgid "Media license"
 #~ msgstr "Medienlizenz"
