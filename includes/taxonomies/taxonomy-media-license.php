@@ -51,6 +51,10 @@ function register() {
             'slug'          => 'media_license',
             'with_front'    => true,
         ],
+        'capabilities'          => [
+            'assign_terms' => 'manage_options',
+            'edit_terms'   => 'god',
+        ],
         'show_admin_column'     => true,
         'show_in_rest'          => true,
         'show_tagcloud'         => true,
