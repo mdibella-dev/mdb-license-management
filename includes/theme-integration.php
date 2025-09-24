@@ -8,8 +8,8 @@
 
 namespace mdb_license_management\theme_integration;
 
-use mdb_license_management\Media_Record as Media_Record;
-use const mdb_license_management\LICENSES as LICENSES;
+use mdb_license_management\Media_Record;
+use const mdb_license_management\LICENSES;
 
 
 /** Prevent direct access */
