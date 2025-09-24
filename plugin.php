@@ -32,6 +32,7 @@ define( __NAMESPACE__ . '\PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 const TABLE_LICENSES = 'mdb_lv_licenses';
 const TABLE_MEDIA    = 'mdb_lv_media';
 
+const MENU_SLUG      = 'mdb_lm_available_licenses';
 
 /** Include files */
 
@@ -39,9 +40,13 @@ require_once PLUGIN_DIR . 'includes/definitions/media-states.php';
 require_once PLUGIN_DIR . 'includes/definitions/licenses.php';
 
 require_once PLUGIN_DIR . 'includes/classes/class-media-record.php';
+require_once PLUGIN_DIR . 'includes/classes/class-license-list-table.php';
 
 require_once PLUGIN_DIR . 'includes/media-library/media-list-table.php';
 require_once PLUGIN_DIR . 'includes/media-library/attachment.php';
+
+require_once PLUGIN_DIR . 'includes/admin/page-available-licenses.php';
+
 
 require_once PLUGIN_DIR . 'includes/theme-integration.php';
 require_once PLUGIN_DIR . 'includes/backend.php';

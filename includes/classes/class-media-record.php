@@ -1,13 +1,15 @@
 <?php
 /**
- * Class Media Record
+ * Class Media_Record
  *
  * @author  Marco Di Bella
  * @package mdb-license-management
  */
 
+namespace mdb_license_management\classes;
 
-namespace mdb_license_management;
+use const mdb_license_management\MEDIA_STATE_UNKNOWN;
+use const mdb_license_management\TABLE_MEDIA;
 
 
 /** Prevent direct access */

@@ -8,6 +8,8 @@
 
 namespace mdb_license_management;
 
+use mdb_license_management\classes\Media_Record;
+
 
 /** Prevent direct access */
 

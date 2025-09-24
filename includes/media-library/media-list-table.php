@@ -8,6 +8,9 @@
 
 namespace mdb_license_management;
 
+use const mdb_license_management\MEDIA_STATE_LICENSED;
+use mdb_license_management\classes\Media_Record;
+
 
 /** Prevent direct access */
 
