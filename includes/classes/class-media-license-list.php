@@ -1,6 +1,6 @@
 <?php
 /**
- * Class Admin_Taxonomy_List_Media_License
+ * Class Media_License_List
  *
  * @author  Marco Di Bella
  * @package mdb-license-management
@@ -9,7 +9,7 @@
 
 namespace mdb_license_management\classes;
 
-use const mdb_license_management\LICENSE_METAKEY_LINK as LICENSE_METAKEY_LINK;
+use const mdb_license_management\LICENSE_METAKEY_LINK;
 
 
 /** Prevent direct access */
@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) or exit;
  * @since 2.1.0
  */
 
-class Admin_Taxonomy_List_Media_License extends \wordpress_helper\Admin_Taxonomy_List {
+class Media_License_List extends \wordpress_helper\Admin_Taxonomy_List {
 
     /**
      * The post type.
@@ -142,4 +142,4 @@ class Admin_Taxonomy_List_Media_License extends \wordpress_helper\Admin_Taxonomy
 }
 
 
-new Admin_Taxonomy_List_Media_License();
+new Media_License_List();
