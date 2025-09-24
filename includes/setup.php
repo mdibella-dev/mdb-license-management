@@ -44,10 +44,13 @@ function plugin_activation() {
 
     $table_name = $wpdb->prefix . table_media;
 
-    if ( $table_name !== $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) ) {
 
-        // add prepare
-        // install table
+    if ( $table_name == $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) ) {
+
+        // Add an update procedure here (looping through all media_ids aso)
+        // !! Make sure taxonomy media_license already exist to this point!
+
+        /*
         $sql = "CREATE TABLE $table_name (
             media_id bigint(20) UNSIGNED NOT NULL,
             media_link varchar(255) DEFAULT '' NOT NULL,
@@ -60,6 +63,10 @@ function plugin_activation() {
             COLLATE utf8_general_ci;";
 
         dbDelta( $sql );
+        */
+
+        // Remove existing table
+
     }
 }
 
