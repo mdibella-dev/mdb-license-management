@@ -6,7 +6,6 @@
  * @package mdb-license-management
  */
 
-
 namespace mdb_license_management\classes;
 
 use const mdb_license_management\LICENSE_METAKEY_LINK;
