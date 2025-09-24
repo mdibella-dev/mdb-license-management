@@ -2,7 +2,7 @@
 /**
  * Class License_List_Table
  *
- * @see http://wpengineer.com/2426/wp_list_table-a-step-by-step-guide/
+ * @see https://wpengineer.com/2426/wp_list_table-a-step-by-step-guide/
  * @see https://wp.smashingmagazine.com/2011/11/native-admin-tables-wordpress/
  *
  * @author  Marco Di Bella
