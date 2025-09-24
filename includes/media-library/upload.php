@@ -26,7 +26,7 @@ defined( 'ABSPATH' ) or exit;
  */
 
 function add_custom_column( $columns ) {
-    $columns['mdb_lv_credits'] = __( 'Copyright', 'mdb-license-management' );
+    $columns['mdb_lv_credits'] = __( 'Creator', 'mdb-license-management' );
     return $columns;
 }
 
@@ -50,11 +50,10 @@ function show_custom_column( $column, $id ) {
 
         if ( true == array_key_exists( $record->get_media_state(), MEDIA_STATES ) ) {
 
-            if ( MEDIA_STATE_SIMPLE_CREDIT == $record->get_media_state() ) {
+            if ( ( $record->get_media_state() >= MEDIA_STATE_SIMPLE_CREDIT ) and ! empty( trim( $record->get_by_name() ) ) ) {
                 echo $record->get_by_name();
-            } elseif ( ( MEDIA_STATE_LICENSED == $record->get_media_state() ) and ( true == array_key_exists( $record->get_license_guid(), LICENSES ) ) ) {
-                echo $record->get_by_name() . '<br>' . LICENSES[$record->get_license_guid()]['license_term'];
-            } else {
+            }
+            else {
                 echo '—';
             }
         }
