@@ -27,7 +27,15 @@ if( ! class_exists( 'WP_List_Table' ) ) {
 
 class License_List_Table extends \WP_List_Table {
 
-    function get_columns() {
+    /**
+     * Gets a list of columns.
+     *
+     * @see https://developer.wordpress.org/reference/classes/wp_list_table/get_columns/
+     *
+     * @return array
+     */
+
+    public function get_columns() {
         $columns = [
             'license_term'        => __( 'Name', 'mdb-license-management' ),
             'license_description' => __( 'Description', 'mdb-license-management' ),
@@ -39,49 +47,115 @@ class License_List_Table extends \WP_List_Table {
     }
 
 
+    /**
+     * Gets a list of sortable columns.
+     *
+     * @see https://developer.wordpress.org/reference/classes/wp_list_table/get_sortable_columns/
+     *
+     * @return array
+     */
+
+    protected function get_sortable_columns() {
+        return [
+            'license_term'        => ['license_term', true ],
+            'license_description' => ['license_description'],
+         //   'license_count'       => ['license_count']
+        ];
+    }
+
+
+    /**
+     * Prepares the list of items for displaying.
+     *
+     * @see https://developer.wordpress.org/reference/classes/wp_list_table/prepare_items/
+     */
+
     function prepare_items() {
         $this->_column_headers = [
-            $this->get_columns(),   // columns
-            [],                     // hidden
-            [],                     // sortable
+            $this->get_columns(),            // columns
+            [],                              // hidden
+            $this->get_sortable_columns()    // sortable
         ];
 
-        // Lade Daten aus der Datentabelle
+        // Prepare sorting
+        if ( ! empty( $_REQUEST['orderby'] ) ) {
+            $orderby = trim( wp_unslash( $_REQUEST['orderby'] ) );
+        }
+        else {
+            $orderby = 'license_term';
+        }
+
+        if ( ! empty( $_REQUEST['order'] ) ) {
+            $order = trim( wp_unslash( $_REQUEST['order'] ) );
+        }
+        else {
+            $order = 'asc';
+        }
+
+        // Retrieving the data from the database
         global $wpdb;
 
         $table_name  = $wpdb->prefix . TABLE_LICENSES;
-        $table_data  = $wpdb->get_results( "SELECT * FROM $table_name", 'ARRAY_A' );
+        $table_data  = $wpdb->get_results( "SELECT * FROM $table_name ORDER BY $orderby $order", 'ARRAY_A' );
         $this->items = $table_data;
     }
 
 
-    function column_default( $item, $column_name ) {
+    /**
+     * Handles the license_term column output.
+     *
+     * @param array $item The row item
+     *
+     * @return string The output
+     */
 
-        $output = '';
+    function column_license_term( $item ) {
+        return '<strong>' . $item['license_term'] . '</strong>';
+    }
 
-        switch ( $column_name ) {
-            case 'license_term':
-                $output = '<strong>' . $item[$column_name] . '</strong>';
-                break;
 
-            case 'license_link':
-                $output = sprintf(
-                    '<a href="%1$s" title="%2$s" target="_blank">%3$s</a>',
-                    $item[$column_name],
-                    __( 'Link to License Text', 'mdb-license-management' ),
-                    __( 'Read License Text', 'mdb-license-management' )
-                );
-                break;
+    /**
+     * Handles the license_link column output.
+     *
+     * @param array $item The row item
+     *
+     * @return string The output
+     */
 
-            case 'license_count':
-                $output = 'coming soon';
-                break;
+    function column_license_link( $item ) {
+        return sprintf(
+            '<a href="%1$s" title="%2$s" target="_blank">%3$s</a>',
+            esc_url( $item['license_link']),
+            __( 'Link to License Text', 'mdb-license-management' ),
+            __( 'Read License Text', 'mdb-license-management' )
+        );
+    }
 
-            default:
-                $output = $item[$column_name];
-                break;
-        }
 
-        return $output;
+    /**
+     * Handles the license_description column output.
+     *
+     * @param array $item The row item
+     *
+     * @return string The output
+     */
+
+    function column_license_description( $item ) {
+        return $item['license_description'];
+    }
+
+
+    /**
+     * Handles the license_count column output
+     *
+     * Currently a placeholder!
+     *
+     * @param array $item The row item
+     *
+     * @return string The output
+     */
+
+    function column_license_count( $item ) {
+        return '0';
     }
 }
