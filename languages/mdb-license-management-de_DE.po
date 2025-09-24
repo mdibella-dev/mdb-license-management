@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Marco Di Bella &mdash; License Management\n"
-"POT-Creation-Date: 2025-09-23 15:05+0200\n"
-"PO-Revision-Date: 2025-09-23 15:07+0200\n"
+"POT-Creation-Date: 2025-09-24 13:09+0200\n"
+"PO-Revision-Date: 2025-09-24 13:11+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -20,15 +20,15 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: includes/classes/admin-taxonomy-lists/class-admin-taxonomy-list-media-license.php:74
+#: includes/classes/class-media-license-list.php:74
 msgid "License text"
 msgstr "Lizenztext"
 
-#: includes/classes/admin-taxonomy-lists/class-admin-taxonomy-list-media-license.php:75
+#: includes/classes/class-media-license-list.php:75
 msgid "Number of media"
 msgstr "Anzahl an Medien"
 
-#: includes/classes/admin-taxonomy-lists/class-admin-taxonomy-list-media-license.php:102
+#: includes/classes/class-media-license-list.php:102
 msgid "Read license text"
 msgstr "Lizenztext lesen"
 
@@ -58,6 +58,8 @@ msgid "Method and manner of the copyright information"
 msgstr "Art und Weise der Urheberrechtsinformation"
 
 #: includes/media-library/attachment.php:83
+#: includes/taxonomies/taxonomy-media-license.php:32
+#: includes/taxonomies/taxonomy-media-license.php:41
 msgid "License"
 msgstr "Lizenz"
 
@@ -78,14 +80,9 @@ msgid "Copyright"
 msgstr "Urheber/Lizenz"
 
 #: includes/taxonomies/taxonomy-media-license.php:31
-#: includes/taxonomies/taxonomy-media-license.php:32
-#: includes/taxonomies/taxonomy-media-license.php:41
-msgid "Media license"
-msgstr "Medienlizenz"
-
 #: includes/taxonomies/taxonomy-media-license.php:33
-msgid "Media licenses"
-msgstr "Medienlizenzen"
+msgid "Licenses"
+msgstr "Lizenzen"
 
 #: includes/taxonomies/taxonomy-media-license.php:34
 msgid "All licenses"
@@ -93,15 +90,15 @@ msgstr "Alle Lizenzen"
 
 #: includes/taxonomies/taxonomy-media-license.php:35
 msgid "Search licenses"
-msgstr ""
+msgstr "Lizenzen durchsuchen"
 
 #: includes/taxonomies/taxonomy-media-license.php:36
 msgid "Popular licenses"
-msgstr ""
+msgstr "Populäre Lizenzen"
 
 #: includes/taxonomies/taxonomy-media-license.php:37
 msgid "Nothing found"
-msgstr ""
+msgstr "Nichts gefunden"
 
 #. Plugin Name of the plugin/theme
 msgid "Marco Di Bella &mdash; License Management"
@@ -127,6 +124,12 @@ msgstr "Marco Di Bella"
 #. Author URI of the plugin/theme
 msgid "https://www.marcodibella.de"
 msgstr "https://www.marcodibella.de"
+
+#~ msgid "Media license"
+#~ msgstr "Medienlizenz"
+
+#~ msgid "Media licenses"
+#~ msgstr "Medienlizenzen"
 
 #~ msgid "Creative Commons – no Copyright"
 #~ msgstr "Creative Commons – kein Copyright"

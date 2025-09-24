@@ -9,7 +9,7 @@
 
 namespace mdb_license_management\taxonomies;
 
-use const mdb_license_management\LICENSE_METAKEY_LINK as LICENSE_METAKEY_LINK;
+use const mdb_license_management\LICENSE_METAKEY_LINK;
 
 
 
@@ -28,9 +28,9 @@ defined( 'ABSPATH' ) or exit;
 function register() {
 
     $labels = [
-        'name'                  => __( 'Media license', 'mdb-license-management' ),
-        'singular_name'         => __( 'Media license', 'mdb-license-management' ),
-        'menu_name'             => __( 'Media licenses', 'mdb-license-management' ),
+        'name'                  => __( 'Licenses', 'mdb-license-management' ),
+        'singular_name'         => __( 'License', 'mdb-license-management' ),
+        'menu_name'             => __( 'Licenses', 'mdb-license-management' ),
         'all_items'             => __( 'All licenses', 'mdb-license-management' ),
         'search_items'          => __( 'Search licenses', 'mdb-license-management' ),
         'choose_from_most_used' => __( 'Popular licenses', 'mdb-license-management' ),
@@ -38,7 +38,7 @@ function register() {
     ];
 
     $args = [
-        'label'                 => __( 'Media license', 'mdb-license-management' ),
+        'label'                 => __( 'License', 'mdb-license-management' ),
         'labels'                => $labels,
         'public'                => true,
         'publicly_queryable'    => true,
