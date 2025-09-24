@@ -69,10 +69,10 @@ class Admin_Taxonomy_List_Media_License extends \wordpress_helper\Admin_Taxonomy
 
     public function manage_columns( $default ) {
         $columns = [
-            'name'          => $default['name'],
-            'description'   => $default['description'],
-            'link'          => __( 'License text', 'mdb-license-management' ),
-            'number'   => __( 'Number of media', 'mdb-license-management' ),
+            'name'        => $default['name'],
+            'description' => $default['description'],
+            'link'        => __( 'License text', 'mdb-license-management' ),
+            'number'      => __( 'Number of media', 'mdb-license-management' ),
         ];
         return $columns;
     }
@@ -112,10 +112,10 @@ class Admin_Taxonomy_List_Media_License extends \wordpress_helper\Admin_Taxonomy
                     'post_type'   => 'attachment',
                     'post_status' => 'any',
                     'numberposts' => -1,
-                    'tax_query'   => [[
+                    'tax_query'   => [ [
                         'taxonomy' => 'media_license',
                         'terms'    => $term_id,
-                    ]],
+                    ] ],
                 ] );
                 $term  = get_term( $term_id, 'media_license' );
                 $count = sizeof( $posts );
