@@ -8,8 +8,11 @@
 
 namespace mdb_license_management\classes;
 
-use const mdb_license_management\MEDIA_STATE_UNKNOWN;
-use const mdb_license_management\TABLE_MEDIA;
+use const mdb_license_management\ {
+    MEDIA_STATE_UNKNOWN,
+    TABLE_MEDIA,
+    LICENSES
+};
 
 
 /** Prevent direct access */
