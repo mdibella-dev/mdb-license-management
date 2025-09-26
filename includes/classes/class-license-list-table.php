@@ -39,8 +39,8 @@ class License_List_Table extends \WP_List_Table {
         $columns = [
             'license_name'        => __( 'Name', 'mdb-license-management' ),
             'license_description' => __( 'Description', 'mdb-license-management' ),
-            'license_link'        => __( 'License Text', 'mdb-license-management' ),
-            'license_count'       => __( 'Number of Items', 'mdb-license-management' )
+            'license_link'        => __( 'License text', 'mdb-license-management' ),
+            'license_count'       => __( 'Number of items', 'mdb-license-management' )
         ];
 
         return $columns;
@@ -59,7 +59,7 @@ class License_List_Table extends \WP_List_Table {
         return [
             'license_name'        => ['license_name', true ],
             'license_description' => ['license_description'],
-         //   'license_count'       => ['license_count']
+            'license_count'       => ['license_count']
         ];
     }
 
@@ -126,8 +126,8 @@ class License_List_Table extends \WP_List_Table {
         return sprintf(
             '<a href="%1$s" title="%2$s" target="_blank">%3$s</a>',
             esc_url( $item['license_link']),
-            __( 'Link to License Text', 'mdb-license-management' ),
-            __( 'Read License Text', 'mdb-license-management' )
+            __( 'Link to license text', 'mdb-license-management' ),
+            __( 'Read license text', 'mdb-license-management' )
         );
     }
 

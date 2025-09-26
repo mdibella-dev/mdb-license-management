@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Marco Di Bella &mdash; License Management\n"
-"POT-Creation-Date: 2023-08-06 13:17+0200\n"
-"PO-Revision-Date: 2023-08-06 13:18+0200\n"
+"POT-Creation-Date: 2025-09-26 15:09+0200\n"
+"PO-Revision-Date: 2025-09-26 15:12+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -10,447 +10,98 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.7\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: plugin.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: includes/definitions/licenses.php:20
-msgid "Creative Commons – no Copyright"
-msgstr "Creative Commons – kein Copyright"
-
-#: includes/definitions/licenses.php:26
-msgid "Dreamstime – Royalty Free (RF)"
-msgstr "Dreamstime – Royalty Free (RF)"
-
-#: includes/definitions/licenses.php:32
-msgid "Dreamstime – Royalty Free - editorial use only"
-msgstr "Dreamstime – Royalty Free - Nur für redaktionelle Zwecke"
-
-#: includes/definitions/licenses.php:38
-msgid "Freeimages license"
-msgstr "Freeimages-Lizenz"
-
-#: includes/definitions/licenses.php:44
-msgid "Public domain"
-msgstr "Public domain/Gemeinfrei"
-
-#: includes/definitions/licenses.php:51
-msgid "Creative Commons – Attribution 4.0"
-msgstr "Creative Commons – Namensnennung 4.0"
-
-#: includes/definitions/licenses.php:57
-msgid "Creative Commons – Attribution 3.0"
-msgstr "Creative Commons – Namensnennung 3.0"
-
-#: includes/definitions/licenses.php:63
-msgid "Creative Commons – Attribution 3.0 (Austria)"
-msgstr "Creative Commons – Namensnennung 3.0 (Österreich)"
-
-#: includes/definitions/licenses.php:69
-msgid "Creative Commons – Attribution 3.0 (Swiss)"
-msgstr "Creative Commons – Namensnennung 3.0 (Schweiz)"
-
-#: includes/definitions/licenses.php:75
-msgid "Creative Commons – Attribution 3.0 (Germany)"
-msgstr "Creative Commons – Namensnennung 3.0 (Deutschland)"
-
-#: includes/definitions/licenses.php:81
-msgid "Creative Commons – Attribution 2.5"
-msgstr "Creative Commons – Namensnennung 2.5"
-
-#: includes/definitions/licenses.php:87
-msgid "Creative Commons – Attribution 2.0"
-msgstr "Creative Commons – Namensnennung 2.0"
-
-#: includes/definitions/licenses.php:93
-msgid "Creative Commons – Attribution 2.0 (Austria)"
-msgstr "Creative Commons – Namensnennung 2.0 (Österreich)"
-
-#: includes/definitions/licenses.php:99
-msgid "Creative Commons – Attribution 2.0 (Germany)"
-msgstr "Creative Commons – Namensnennung 2.0 (Deutschland)"
-
-#: includes/definitions/licenses.php:105
-msgid "Creative Commons – Attribution 1.0"
-msgstr "Creative Commons – Namensnennung 1.0"
-
-#: includes/definitions/licenses.php:111
-msgid "Creative Commons – Attribution-ShareAlike 4.0"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 4.0"
-
-#: includes/definitions/licenses.php:117
-msgid "Creative Commons – Attribution-ShareAlike 3.0"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 3.0"
-
-#: includes/definitions/licenses.php:123
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Austria)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 3.0 "
-"(Österreich)"
-
-#: includes/definitions/licenses.php:129
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Brasil)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 3.0 "
-"(Brasilien)"
-
-#: includes/definitions/licenses.php:135
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Swiss)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 3.0 "
-"(Schweiz)"
-
-#: includes/definitions/licenses.php:141
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (China)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 3.0 "
-"(China)"
-
-#: includes/definitions/licenses.php:147
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Germany)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 3.0 "
-"(Deutschland)"
-
-#: includes/definitions/licenses.php:153
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Spain)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 3.0 "
-"(Spanien)"
-
-#: includes/definitions/licenses.php:159
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Greece)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 3.0 "
-"(Griechenland)"
-
-#: includes/definitions/licenses.php:165
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Hongkong)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 3.0 "
-"(Hongkong)"
-
-#: includes/definitions/licenses.php:171
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Italy)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 3.0 "
-"(Italien)"
-
-#: includes/definitions/licenses.php:177
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Portugal)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 3.0 "
-"(Portugal)"
-
-#: includes/definitions/licenses.php:183
-msgid "Creative Commons – Attribution-ShareAlike 3.0 (Taiwan)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 3.0 "
-"(Taiwan)"
-
-#: includes/definitions/licenses.php:189
-msgid "Creative Commons – Attribution-ShareAlike 2.5"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.5"
-
-#: includes/definitions/licenses.php:195
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Australia)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.5 "
-"(Australia)"
-
-#: includes/definitions/licenses.php:201
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Brasil)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.5 "
-"(Brasil)"
-
-#: includes/definitions/licenses.php:207
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Canada)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.5 "
-"(Kanada)"
-
-#: includes/definitions/licenses.php:213
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Swiss)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.5 "
-"(Schweiz)"
-
-#: includes/definitions/licenses.php:219
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Columbia)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.5 "
-"(Kolumbien)"
-
-#: includes/definitions/licenses.php:225
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (China)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.5 "
-"(China)"
-
-#: includes/definitions/licenses.php:231
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Spain)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.5 "
-"(Spanien)"
-
-#: includes/definitions/licenses.php:237
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Italy)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.5 "
-"(Italien)"
-
-#: includes/definitions/licenses.php:243
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Mexico)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.5 "
-"(Mexiko)"
-
-#: includes/definitions/licenses.php:249
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Portugal)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.5 "
-"(Portugal)"
-
-#: includes/definitions/licenses.php:255
-msgid "Creative Commons – Attribution-ShareAlike 2.5 (Taiwan)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.5 "
-"(Taiwan)"
-
-#: includes/definitions/licenses.php:261
-msgid "Creative Commons – Attribution-ShareAlike 2.0"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.0"
-
-#: includes/definitions/licenses.php:267
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Austria)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.0 "
-"(Österreich)"
-
-#: includes/definitions/licenses.php:273
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Australia)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.0 "
-"(Australien)"
-
-#: includes/definitions/licenses.php:279
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Brasil)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.0 "
-"(Brasilien)"
-
-#: includes/definitions/licenses.php:285
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Canada)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.0 "
-"(Kanada)"
-
-#: includes/definitions/licenses.php:291
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Germany)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.0 "
-"(Deutschland)"
-
-#: includes/definitions/licenses.php:297
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Spain)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.0 "
-"(Spanien)"
-
-#: includes/definitions/licenses.php:303
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Italy)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.0 "
-"(Italien)"
-
-#: includes/definitions/licenses.php:309
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Korea)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.0 "
-"(Korea)"
-
-#: includes/definitions/licenses.php:315
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (Taiwan)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.0 "
-"(Taiwan)"
-
-#: includes/definitions/licenses.php:321
-msgid "Creative Commons – Attribution-ShareAlike 2.0 (England and Wales)"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 2.0 "
-"(England und Wales)"
-
-#: includes/definitions/licenses.php:327
-msgid "Creative Commons – Attribution-ShareAlike 1.0"
-msgstr ""
-"Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen 1.0"
-
-#: includes/definitions/licenses.php:333
-msgid "GNU Free Documentation License 1.3"
-msgstr "GNU-Lizenz für freie Dokumentation 1.3"
-
-#: includes/definitions/licenses.php:339
-msgid "GNU Free Documentation License 1.2"
-msgstr "GNU-Lizenz für freie Dokumentation 1.2"
-
-#: includes/definitions/licenses.php:345
-msgid "GNU Free Documentation License 1.1"
-msgstr "GNU-Lizenz für freie Dokumentation 1.1"
-
-#: includes/definitions/licenses.php:351
-msgid "Licence Art Libre 1.3 (LAL/FAL)"
-msgstr "Licence Art Libre 1.3 (LAL/FAL)"
-
-#: includes/definitions/licenses.php:357
-msgid "Licence Art Libre 1.1 (LAL/FAL)"
-msgstr "Licence Art Libre 1.1 (LAL/FAL)"
-
-#: includes/definitions/licenses.php:363
-msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5"
-msgstr ""
-"Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
-"gleichen Bedingungen 2.5"
-
-#: includes/definitions/licenses.php:369
-msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Australia)"
-msgstr ""
-"Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
-"gleichen Bedingungen 2.5 (Australien)"
-
-#: includes/definitions/licenses.php:375
-msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Brasil)"
-msgstr ""
-"Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
-"gleichen Bedingungen 2.5 (Brasilien)"
-
-#: includes/definitions/licenses.php:381
-msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Canada)"
-msgstr ""
-"Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
-"gleichen Bedingungen 2.5 (Kanada)"
-
-#: includes/definitions/licenses.php:387
-msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Swiss)"
-msgstr ""
-"Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
-"gleichen Bedingungen 2.5 (Schweiz)"
-
-#: includes/definitions/licenses.php:393
-msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (China)"
-msgstr ""
-"Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
-"gleichen Bedingungen 2.5 (China)"
-
-#: includes/definitions/licenses.php:399
-msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Columbia)"
-msgstr ""
-"Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
-"gleichen Bedingungen 2.5 (Kolumbien)"
-
-#: includes/definitions/licenses.php:405
-msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Spain)"
-msgstr ""
-"Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
-"gleichen Bedingungen 2.5 (Spanien)"
-
-#: includes/definitions/licenses.php:411
-msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Italy)"
-msgstr ""
-"Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
-"gleichen Bedingungen 2.5 (Italien)"
-
-#: includes/definitions/licenses.php:417
-msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Mexico)"
-msgstr ""
-"Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
-"gleichen Bedingungen 2.5 (Mexiko)"
-
-#: includes/definitions/licenses.php:423
-msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Portugal)"
-msgstr ""
-"Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
-"gleichen Bedingungen 2.5 (Portugal)"
-
-#: includes/definitions/licenses.php:429
-msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Sweden)"
-msgstr ""
-"Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
-"gleichen Bedingungen 2.5 (Schweden)"
-
-#: includes/definitions/licenses.php:435
-msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Taiwan)"
-msgstr ""
-"Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
-"gleichen Bedingungen 2.5 (Taiwan)"
-
-#: includes/definitions/licenses.php:441
-msgid "Pixabay license"
-msgstr "Pixabay-Lizenz"
-
-#: includes/definitions/licenses.php:447
-msgid "Pexels license"
-msgstr "Pexels-Lizenz"
-
-#: includes/definitions/licenses.php:453
-msgid "Unsplash license"
-msgstr "Unsplash-Lizenz"
-
-#: includes/definitions/media-states.php:25
-msgid "unknown"
-msgstr "unbekannt"
-
-#: includes/definitions/media-states.php:26
+#: includes/admin/page-available-licenses.php:29
+#: includes/admin/page-available-licenses.php:30
+msgid "Licenses"
+msgstr "Lizenzen"
+
+#: includes/admin/page-available-licenses.php:52
+msgid "Available licenses"
+msgstr "Verfügbare Lizenzen"
+
+#: includes/classes/class-license-list-table.php:40
+msgid "Name"
+msgstr "Name"
+
+#: includes/classes/class-license-list-table.php:41
+msgid "Description"
+msgstr "Beschreibung"
+
+#: includes/classes/class-license-list-table.php:42
+msgid "License text"
+msgstr "Lizenztext"
+
+#: includes/classes/class-license-list-table.php:43
+msgid "Number of items"
+msgstr "Anzahl an Medien"
+
+#: includes/classes/class-license-list-table.php:129
+msgid "Link to license text"
+msgstr "Link zum Lizenttext"
+
+#: includes/classes/class-license-list-table.php:130
+msgid "Read license text"
+msgstr "Lizenztext lesen"
+
+#: includes/definitions/media-states.php:47
 msgid "no copyright information necessary"
 msgstr "keine Angaben zum Urheberrecht erforderlich"
 
-#: includes/definitions/media-states.php:27
+#: includes/definitions/media-states.php:51
 msgid "simple naming (with linking if necessary)"
 msgstr "einfache Benennung (ggf. mit Verlinkung)"
 
-#: includes/definitions/media-states.php:28
+#: includes/definitions/media-states.php:55
 msgid "copyright information according to license"
 msgstr "Urheberrechtsinformation gemäß Lizenz"
 
-#: includes/media-library.php:29
-msgid "Copyright"
-msgstr "Urheber/Lizenz"
+#: includes/definitions/media-states.php:60
+msgid "unknown"
+msgstr "unbekannt"
 
-#: includes/media-library.php:104 includes/media-library.php:132
+#: includes/media-library/attachment.php:41
+#: includes/media-library/attachment.php:69
 msgid "--- please select ---"
 msgstr "— bitte auswählen —"
 
-#: includes/media-library.php:120
+#: includes/media-library/attachment.php:57
 msgid "Method and manner of the copyright information"
 msgstr "Art und Weise der Urheberrechtsinformation"
 
-#: includes/media-library.php:148
+#: includes/media-library/attachment.php:85
+#: includes/media-library/media-list-table.php:33
 msgid "License"
 msgstr "Lizenz"
 
-#: includes/media-library.php:157
+#: includes/media-library/attachment.php:94
 msgid "Naming of the creator"
 msgstr "Benennung des Urhebers"
 
-#: includes/media-library.php:166
+#: includes/media-library/attachment.php:103
 msgid "Link to the creator"
 msgstr "Link zum Urheber"
 
-#: includes/media-library.php:175
+#: includes/media-library/attachment.php:112
 msgid "Link to original file"
 msgstr "Link zur Originaldatei"
+
+#: includes/media-library/media-list-table.php:32
+msgid "Creator"
+msgstr "Urheber"
+
+#: includes/media-library/media-list-table.php:34
+msgid "Uploaded by"
+msgstr "Hochgeladen von"
 
 #. Plugin Name of the plugin/theme
 msgid "Marco Di Bella &mdash; License Management"
@@ -477,8 +128,327 @@ msgstr "Marco Di Bella"
 msgid "https://www.marcodibella.de"
 msgstr "https://www.marcodibella.de"
 
-#~ msgid "Description"
-#~ msgstr "Beschreibung"
+#~ msgid "Creative Commons – no Copyright"
+#~ msgstr "Creative Commons – kein Copyright"
+
+#~ msgid "Dreamstime – Royalty Free (RF)"
+#~ msgstr "Dreamstime – Royalty Free (RF)"
+
+#~ msgid "Dreamstime – Royalty Free - editorial use only"
+#~ msgstr "Dreamstime – Royalty Free - Nur für redaktionelle Zwecke"
+
+#~ msgid "Freeimages license"
+#~ msgstr "Freeimages-Lizenz"
+
+#~ msgid "Public domain"
+#~ msgstr "Public domain/Gemeinfrei"
+
+#~ msgid "Creative Commons – Attribution 4.0"
+#~ msgstr "Creative Commons – Namensnennung 4.0"
+
+#~ msgid "Creative Commons – Attribution 3.0"
+#~ msgstr "Creative Commons – Namensnennung 3.0"
+
+#~ msgid "Creative Commons – Attribution 3.0 (Austria)"
+#~ msgstr "Creative Commons – Namensnennung 3.0 (Österreich)"
+
+#~ msgid "Creative Commons – Attribution 3.0 (Swiss)"
+#~ msgstr "Creative Commons – Namensnennung 3.0 (Schweiz)"
+
+#~ msgid "Creative Commons – Attribution 3.0 (Germany)"
+#~ msgstr "Creative Commons – Namensnennung 3.0 (Deutschland)"
+
+#~ msgid "Creative Commons – Attribution 2.5"
+#~ msgstr "Creative Commons – Namensnennung 2.5"
+
+#~ msgid "Creative Commons – Attribution 2.0"
+#~ msgstr "Creative Commons – Namensnennung 2.0"
+
+#~ msgid "Creative Commons – Attribution 2.0 (Austria)"
+#~ msgstr "Creative Commons – Namensnennung 2.0 (Österreich)"
+
+#~ msgid "Creative Commons – Attribution 2.0 (Germany)"
+#~ msgstr "Creative Commons – Namensnennung 2.0 (Deutschland)"
+
+#~ msgid "Creative Commons – Attribution 1.0"
+#~ msgstr "Creative Commons – Namensnennung 1.0"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 4.0"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "4.0"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 3.0"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "3.0"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 3.0 (Austria)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "3.0 (Österreich)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 3.0 (Brasil)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "3.0 (Brasilien)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 3.0 (Swiss)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "3.0 (Schweiz)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 3.0 (China)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "3.0 (China)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 3.0 (Germany)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "3.0 (Deutschland)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 3.0 (Spain)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "3.0 (Spanien)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 3.0 (Greece)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "3.0 (Griechenland)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 3.0 (Hongkong)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "3.0 (Hongkong)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 3.0 (Italy)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "3.0 (Italien)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 3.0 (Portugal)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "3.0 (Portugal)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 3.0 (Taiwan)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "3.0 (Taiwan)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.5"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.5"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.5 (Australia)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.5 (Australia)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.5 (Brasil)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.5 (Brasil)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.5 (Canada)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.5 (Kanada)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.5 (Swiss)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.5 (Schweiz)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.5 (Columbia)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.5 (Kolumbien)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.5 (China)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.5 (China)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.5 (Spain)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.5 (Spanien)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.5 (Italy)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.5 (Italien)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.5 (Mexico)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.5 (Mexiko)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.5 (Portugal)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.5 (Portugal)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.5 (Taiwan)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.5 (Taiwan)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.0"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.0"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.0 (Austria)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.0 (Österreich)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.0 (Australia)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.0 (Australien)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.0 (Brasil)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.0 (Brasilien)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.0 (Canada)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.0 (Kanada)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.0 (Germany)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.0 (Deutschland)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.0 (Spain)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.0 (Spanien)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.0 (Italy)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.0 (Italien)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.0 (Korea)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.0 (Korea)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.0 (Taiwan)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.0 (Taiwan)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 2.0 (England and Wales)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "2.0 (England und Wales)"
+
+#~ msgid "Creative Commons – Attribution-ShareAlike 1.0"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Weitergabe unter gleichen Bedingungen "
+#~ "1.0"
+
+#~ msgid "GNU Free Documentation License 1.3"
+#~ msgstr "GNU-Lizenz für freie Dokumentation 1.3"
+
+#~ msgid "GNU Free Documentation License 1.2"
+#~ msgstr "GNU-Lizenz für freie Dokumentation 1.2"
+
+#~ msgid "GNU Free Documentation License 1.1"
+#~ msgstr "GNU-Lizenz für freie Dokumentation 1.1"
+
+#~ msgid "Licence Art Libre 1.3 (LAL/FAL)"
+#~ msgstr "Licence Art Libre 1.3 (LAL/FAL)"
+
+#~ msgid "Licence Art Libre 1.1 (LAL/FAL)"
+#~ msgstr "Licence Art Libre 1.1 (LAL/FAL)"
+
+#~ msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
+#~ "gleichen Bedingungen 2.5"
+
+#~ msgid ""
+#~ "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Australia)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
+#~ "gleichen Bedingungen 2.5 (Australien)"
+
+#~ msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Brasil)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
+#~ "gleichen Bedingungen 2.5 (Brasilien)"
+
+#~ msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Canada)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
+#~ "gleichen Bedingungen 2.5 (Kanada)"
+
+#~ msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Swiss)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
+#~ "gleichen Bedingungen 2.5 (Schweiz)"
+
+#~ msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (China)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
+#~ "gleichen Bedingungen 2.5 (China)"
+
+#~ msgid ""
+#~ "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Columbia)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
+#~ "gleichen Bedingungen 2.5 (Kolumbien)"
+
+#~ msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Spain)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
+#~ "gleichen Bedingungen 2.5 (Spanien)"
+
+#~ msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Italy)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
+#~ "gleichen Bedingungen 2.5 (Italien)"
+
+#~ msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Mexico)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
+#~ "gleichen Bedingungen 2.5 (Mexiko)"
+
+#~ msgid ""
+#~ "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Portugal)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
+#~ "gleichen Bedingungen 2.5 (Portugal)"
+
+#~ msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Sweden)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
+#~ "gleichen Bedingungen 2.5 (Schweden)"
+
+#~ msgid "Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Taiwan)"
+#~ msgstr ""
+#~ "Creative Commons – Namensnennung, Nicht-kommerziell, Weitergabe unter "
+#~ "gleichen Bedingungen 2.5 (Taiwan)"
+
+#~ msgid "Pexels license"
+#~ msgstr "Pexels-Lizenz"
+
+#~ msgid "Unsplash license"
+#~ msgstr "Unsplash-Lizenz"
+
+#~ msgid "Copyright"
+#~ msgstr "Urheber/Lizenz"
 
 #~ msgid "Source link"
 #~ msgstr "Link zur Quelle"
