@@ -34,6 +34,7 @@ const TABLE_MEDIA    = 'mdb_lv_media';
 
 const MENU_SLUG      = 'mdb_lm_available_licenses';
 
+
 /** Include files */
 
 require_once PLUGIN_DIR . 'includes/definitions/media-states.php';
@@ -51,3 +52,10 @@ require_once PLUGIN_DIR . 'includes/admin/page-available-licenses.php';
 require_once PLUGIN_DIR . 'includes/theme-integration.php';
 require_once PLUGIN_DIR . 'includes/backend.php';
 require_once PLUGIN_DIR . 'includes/setup.php';
+
+
+/** Register hooks */
+
+register_activation_hook( __FILE__ , __NAMESPACE__ . '\plugin_activation' );
+register_deactivation_hook( __FILE__ , __NAMESPACE__ . '\plugin_deactivation' );
+register_uninstall_hook( __FILE__, __NAMESPACE__ . '\plugin_uninstall' );
