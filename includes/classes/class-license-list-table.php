@@ -80,15 +80,13 @@ class License_List_Table extends \WP_List_Table {
         // Prepare sorting
         if ( ! empty( $_REQUEST['orderby'] ) ) {
             $orderby = trim( wp_unslash( $_REQUEST['orderby'] ) );
-        }
-        else {
+        } else {
             $orderby = 'license_name';
         }
 
         if ( ! empty( $_REQUEST['order'] ) ) {
             $order = trim( wp_unslash( $_REQUEST['order'] ) );
-        }
-        else {
+        } else {
             $order = 'asc';
         }
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Definition of media states.
+ * Definition of media states. (deprecated)
  *
  * @author  Marco Di Bella
  * @package mdb-license-management
