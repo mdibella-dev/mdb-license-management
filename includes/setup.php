@@ -42,6 +42,11 @@ add_action( 'init', __NAMESPACE__ . '\plugin_init', 9 );
 
 function plugin_activation() {
 
+    if ( ! current_user_can( 'activate_plugins' ) ) {
+        return;
+    }
+
+
     require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 
     global $wpdb;
@@ -123,6 +128,11 @@ function plugin_activation() {
  */
 
 function plugin_deactivation() {
+
+    if ( ! current_user_can( 'activate_plugins' ) ) {
+        return;
+    }
+
     // Do something!
 }
 
@@ -137,6 +147,11 @@ function plugin_deactivation() {
  */
 
 function plugin_uninstall() {
+
+    if ( ! current_user_can( 'delete_plugins' ) ) {
+        return;
+    }
+
     // Do something!
     // Delete options!
     // Delete custom tables!

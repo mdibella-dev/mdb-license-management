@@ -37,10 +37,10 @@ class License_List_Table extends \WP_List_Table {
 
     public function get_columns() {
         $columns = [
-            'license_term'        => __( 'Name', 'mdb-license-management' ),
+            'license_name'        => __( 'Name', 'mdb-license-management' ),
             'license_description' => __( 'Description', 'mdb-license-management' ),
-            'license_link'        => __( 'License Text', 'mdb-license-management' ),
-            'license_count'       => __( 'Number of Items', 'mdb-license-management' )
+            'license_link'        => __( 'License text', 'mdb-license-management' ),
+            'license_count'       => __( 'Number of items', 'mdb-license-management' )
         ];
 
         return $columns;
@@ -57,9 +57,9 @@ class License_List_Table extends \WP_List_Table {
 
     protected function get_sortable_columns() {
         return [
-            'license_term'        => ['license_term', true ],
+            'license_name'        => ['license_name', true ],
             'license_description' => ['license_description'],
-         //   'license_count'       => ['license_count']
+            'license_count'       => ['license_count']
         ];
     }
 
@@ -80,15 +80,13 @@ class License_List_Table extends \WP_List_Table {
         // Prepare sorting
         if ( ! empty( $_REQUEST['orderby'] ) ) {
             $orderby = trim( wp_unslash( $_REQUEST['orderby'] ) );
-        }
-        else {
-            $orderby = 'license_term';
+        } else {
+            $orderby = 'license_name';
         }
 
         if ( ! empty( $_REQUEST['order'] ) ) {
             $order = trim( wp_unslash( $_REQUEST['order'] ) );
-        }
-        else {
+        } else {
             $order = 'asc';
         }
 
@@ -102,15 +100,15 @@ class License_List_Table extends \WP_List_Table {
 
 
     /**
-     * Handles the license_term column output.
+     * Handles the license_name column output.
      *
      * @param array $item The row item
      *
      * @return string The output
      */
 
-    function column_license_term( $item ) {
-        return '<strong>' . $item['license_term'] . '</strong>';
+    function column_license_name( $item ) {
+        return '<strong>' . $item['license_name'] . '</strong>';
     }
 
 
@@ -126,8 +124,8 @@ class License_List_Table extends \WP_List_Table {
         return sprintf(
             '<a href="%1$s" title="%2$s" target="_blank">%3$s</a>',
             esc_url( $item['license_link']),
-            __( 'Link to License Text', 'mdb-license-management' ),
-            __( 'Read License Text', 'mdb-license-management' )
+            __( 'Link to license text', 'mdb-license-management' ),
+            __( 'Read license text', 'mdb-license-management' )
         );
     }
 
