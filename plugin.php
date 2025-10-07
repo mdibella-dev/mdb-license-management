@@ -29,8 +29,11 @@ define( __NAMESPACE__ . '\PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( __NAMESPACE__ . '\PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 
-const TABLE_LICENSES = 'mdb_lv_licenses';
-const TABLE_MEDIA    = 'mdb_lv_media';
+//const TABLE_LICENSES = 'mdb_lv_licenses';
+//const TABLE_MEDIA    = 'mdb_lv_media';
+
+const TABLE_LICENSES = 'mdb_lm_license';
+const TABLE_CREDIT   = 'mdb_lm_credit';
 
 const MENU_SLUG      = 'mdb_lm_available_licenses';
 
@@ -51,6 +54,7 @@ require_once PLUGIN_DIR . 'includes/admin/page-available-licenses.php';
 
 require_once PLUGIN_DIR . 'includes/theme-integration.php';
 require_once PLUGIN_DIR . 'includes/backend.php';
+require_once PLUGIN_DIR . 'includes/database.php';
 require_once PLUGIN_DIR . 'includes/setup.php';
 
 
