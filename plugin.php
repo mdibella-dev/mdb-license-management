@@ -52,7 +52,7 @@ require_once PLUGIN_DIR . 'includes/media-library/attachment.php';
 require_once PLUGIN_DIR . 'includes/admin/page-available-licenses.php';
 
 
-require_once PLUGIN_DIR . 'includes/theme-integration.php';
+require_once PLUGIN_DIR . 'includes/deprecated.php';
 require_once PLUGIN_DIR . 'includes/backend.php';
 require_once PLUGIN_DIR . 'includes/database.php';
 require_once PLUGIN_DIR . 'includes/setup.php';
