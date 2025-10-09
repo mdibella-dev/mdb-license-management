@@ -16,7 +16,7 @@ function database_install() {
      *  Install necessary tables into the database.
      */
 
-    dbDelta( "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}mdb_lm_license (
+    dbDelta( "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}mdb_lm_licenses (
         license_guid VARCHAR(4) DEFAULT '' NOT NULL,
         license_name VARCHAR(50) DEFAULT '' NOT NULL,
         license_description TEXT DEFAULT '' NOT NULL,
@@ -26,7 +26,7 @@ function database_install() {
         )
         COLLATE $collate;" );
 
-    dbDelta( "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}mdb_lm_credit (
+    dbDelta( "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}mdb_lm_credits (
         media_id BIGINT(20) UNSIGNED DEFAULT 0 NOT NULL,
         media_source_url VARCHAR(255) DEFAULT '' NOT NULL,
         license_guid VARCHAR(4) DEFAULT '' NOT NULL,
@@ -47,7 +47,7 @@ function database_migrate() {
     if ( "{$wpdb->prefix}mdb_lv_media" == $wpdb->get_var( "SHOW TABLES LIKE '{$wpdb->prefix}mdb_lv_media'" ) ) {
 
         $wpdb->query(
-            "INSERT INTO {$wpdb->prefix}mdb_lm_credit (media_id, media_source_url, license_guid, creator_credit, creator_url)
+            "INSERT INTO {$wpdb->prefix}mdb_lm_credits (media_id, media_source_url, license_guid, creator_credit, creator_url)
              SELECT media_id, media_link, license_guid, by_name, by_link
              FROM {$wpdb->prefix}mdb_lv_media
              WHERE {$wpdb->prefix}mdb_lm_credit.media_id = {$wpdb->prefix}mdb_lv_media.media_id" );
@@ -67,7 +67,7 @@ function database_preset_credits() {
      global $wpdb;
 
      $wpdb->query(
-        "INSERT IGNORE INTO {$wpdb->prefix}mdb_lm_credit (media_id)
+        "INSERT IGNORE INTO {$wpdb->prefix}mdb_lm_credits (media_id)
          SELECT ID
          FROM {$wpdb->prefix}posts
          WHERE post_type='attachment'"
@@ -88,7 +88,7 @@ function database_preset_licenses() {
         foreach ( $preset['Licenses'] as $guid => $content ) {
 
         $wpdb->query( $wpdb->prepare(
-        "INSERT IGNORE INTO {$wpdb->prefix}mdb_lm_license
+        "INSERT IGNORE INTO {$wpdb->prefix}mdb_lm_licenses
         (license_guid, license_name, license_description, license_link, license_count)
         VALUES ( %s, %s, %s, %s, %d )",
         $guid,
@@ -100,7 +100,7 @@ function database_preset_licenses() {
 
 /* @see: https://developer.wordpress.org/reference/classes/wpdb/
 
-            $table_name   = $wpdb->prefix . 'mdb_lm_license';
+            $table_name   = $wpdb->prefix . 'mdb_lm_licenses';
             $table_format = ['%s', '%s', '%s', '%s', '%s'];
             $table_data   = [
                 'license_guid'        => $guid,
