@@ -8,7 +8,6 @@
 
 namespace mdb_license_management\admin\available_licenses;
 
-use const mdb_license_management\MENU_SLUG;
 use mdb_license_management\classes\License_List_Table;
 
 
@@ -29,7 +28,7 @@ function add_page() {
         __( 'Licenses', 'mdb-license-management' ),
         __( 'Licenses', 'mdb-license-management' ),
         'manage_options',
-        MENU_SLUG,
+        'mdb-lm-available-licenses',
         __NAMESPACE__ . '\show_page'
     );
 }

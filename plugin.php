@@ -29,8 +29,6 @@ define( __NAMESPACE__ . '\PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( __NAMESPACE__ . '\PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 
-const MENU_SLUG      = 'mdb_lm_available_licenses';
-
 
 /** Include files */
 
