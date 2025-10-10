@@ -8,8 +8,8 @@
 
 namespace mdb_license_management;
 
-use const mdb_license_management\MEDIA_STATE_LICENSED;
-use mdb_license_management\classes\Media_Record;
+use mdb_license_management\classes\Credit_Record;
+use mdb_license_management\classes\License_Record;
 
 
 /** Prevent direct access */
@@ -52,25 +52,28 @@ function handle_custom_columns( $column, $id ) {
 
     if ( in_array( $column, ['mdb_lm_creator', 'mdb_lm_license'] ) ) {
 
-        $record = new Media_Record( $id );
+        $record = new Credit_Record( $id );
 
         switch ( $column ) {
             case 'mdb_lm_creator':
-                $name = trim( $record->get_by_name() );
+                $creator_credit = trim( $record->get_creator_credit() );
 
-                if ( ! empty( $name) ) {
-                    echo $name;
+                if ( ! empty( $creator_credit ) ) {
+                    echo $creator_credit;
                 } else {
                     echo '—';
                 }
                 break;
 
             case 'mdb_lm_license':
-                if ( ( MEDIA_STATE_LICENSED == $record->get_media_state() ) and ( true == array_key_exists( $record->get_license_guid(), LICENSES ) ) ) {
+                $license = new License_Record( $record->get_license_guid() );
+                echo $license->get_license_name();
+                /*if ( ( MEDIA_STATE_LICENSED == $record->get_media_state() ) and ( true == array_key_exists( $record->get_license_guid(), LICENSES ) ) ) {
                     echo LICENSES[$record->get_license_guid()]['license_term'];
                 } else {
                     echo '—';
                 }
+                */
                 break;
         }
     }
@@ -109,20 +112,20 @@ add_action( 'manage_upload_sortable_columns', __NAMESPACE__ . '\manage_sortable_
  *
  * @todo not working!
  */
-
+/*
 function manage_pre_get_posts( $query ) {
-    if ( is_admin() and $query->is_main_query() ) { /*and ( 'attachment' === $query->get( 'post_type' ) ) ) {*/
+    if ( is_admin() and $query->is_main_query() ) { /*and ( 'attachment' === $query->get( 'post_type' ) ) ) {
 
         $orderby = $query->get( 'orderby' );
         $order   = $query->get( 'order' );
 
         switch ( $orderby ) {
             case 'mdb_lm_creator':
-                $query->set( 'orderby', 'mdb-lv-by-name' );
+                $query->set( 'orderby', 'mdb_lm_creator' );
                 break;
 
             case 'mdb_lm_license':
-                $query->set( 'orderby', 'mdb-lv-license-guid' );
+                $query->set( 'orderby', 'mdb-lm-license' );
                 break;
         }
 
@@ -132,3 +135,4 @@ function manage_pre_get_posts( $query ) {
 }
 
 add_action( "pre_get_posts", __NAMESPACE__ . '\manage_pre_get_posts' );
+*/
