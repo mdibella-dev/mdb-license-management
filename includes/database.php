@@ -20,7 +20,7 @@ function database_install() {
         license_guid VARCHAR(4) DEFAULT '' NOT NULL,
         license_name VARCHAR(50) DEFAULT '' NOT NULL,
         license_description TEXT DEFAULT '' NOT NULL,
-        license_link VARCHAR(255) DEFAULT '' NOT NULL,
+        license_url VARCHAR(255) DEFAULT '' NOT NULL,
         license_count SMALLINT UNSIGNED DEFAULT 0 NOT NULL,
         PRIMARY KEY (license_guid)
         )
@@ -50,7 +50,7 @@ function database_migrate() {
             "INSERT INTO {$wpdb->prefix}mdb_lm_credits (media_id, media_source_url, license_guid, creator_credit, creator_url)
              SELECT media_id, media_link, license_guid, by_name, by_link
              FROM {$wpdb->prefix}mdb_lv_media
-             WHERE {$wpdb->prefix}mdb_lm_credit.media_id = {$wpdb->prefix}mdb_lv_media.media_id" );
+             WHERE {$wpdb->prefix}mdb_lm_credits.media_id = {$wpdb->prefix}mdb_lv_media.media_id" );
 
 /*        $wpdb->query(
             "DROP TABLE {$wpdb->prefix}mdb_lv_media" ); */
@@ -87,29 +87,30 @@ function database_preset_licenses() {
 
         foreach ( $preset['Licenses'] as $guid => $content ) {
 
-        $wpdb->query( $wpdb->prepare(
-        "INSERT IGNORE INTO {$wpdb->prefix}mdb_lm_licenses
-        (license_guid, license_name, license_description, license_link, license_count)
-        VALUES ( %s, %s, %s, %s, %d )",
-        $guid,
-        $content['license_name'],
-        $content['license_description'],
-        $content['license_link'],
-        $content['license_count']
-        ) );
+            $wpdb->query( $wpdb->prepare(
+                "INSERT IGNORE INTO {$wpdb->prefix}mdb_lm_licenses
+                (license_guid, license_name, license_description, license_url, license_count)
+                VALUES ( %s, %s, %s, %s, %d )",
+                $guid,
+                $content['license_name'],
+                $content['license_description'],
+                $content['license_url'],
+                $content['license_count']
+                ) );
 
-/* @see: https://developer.wordpress.org/reference/classes/wpdb/
-
+/* @see: https://developer.wordpress.org/reference/classes/wpdb/ */
+/*
             $table_name   = $wpdb->prefix . 'mdb_lm_licenses';
             $table_format = ['%s', '%s', '%s', '%s', '%s'];
             $table_data   = [
                 'license_guid'        => $guid,
                 'license_name'        => $content['license_name'],
                 'license_description' => $content['license_description'],
-                'license_link'        => $content['license_link'],
+                'license_url'         => $content['license_url'],
                 'license_count'       => $content['license_count'],
             ];
-            $wpdb->insert( $table_name, $table_data, $table_format ); */
+            $wpdb->insert( $table_name, $table_data, $table_format );
+        */
         }
     } else {
         // do something
