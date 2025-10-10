@@ -1,6 +1,6 @@
 <?php
 /**
- * Class Media_Record
+ * Class Credit_Record
  *
  * @author  Marco Di Bella
  * @package mdb-license-management
@@ -8,11 +8,6 @@
 
 namespace mdb_license_management\classes;
 
-use const mdb_license_management\ {
-    MEDIA_STATE_UNKNOWN,
-    TABLE_MEDIA,
-    LICENSES
-};
 
 
 /** Prevent direct access */
@@ -21,7 +16,7 @@ defined( 'ABSPATH' ) or exit;
 
 
 
-class Media_Record {
+class Credit_Record {
 
     /**
      * The media id (post_id) of the corresponding attachment/table record.
@@ -38,16 +33,7 @@ class Media_Record {
      * @var string
      */
 
-    private $media_link = '';
-
-
-    /**
-     * The media state.
-     *
-     * @var int
-     */
-
-    private $media_state = MEDIA_STATE_UNKNOWN;
+    private $media_source_url = '';
 
 
     /**
@@ -65,7 +51,7 @@ class Media_Record {
      * @var string
      */
 
-    private $by_name = '';
+    private $creator_credit = '';
 
 
     /**
@@ -74,7 +60,7 @@ class Media_Record {
      * @var string
      */
 
-    private $by_link = '';
+    private $creator_url = '';
 
 
     /**
@@ -90,7 +76,7 @@ class Media_Record {
 
         $this->media_id = $attachment_post_ID;
 
-        if ( false == $this->get_table_record() ) {
+        if ( false === $this->get_table_record() ) {
             $this->update_table_record();
         }
     }
@@ -99,11 +85,11 @@ class Media_Record {
     /**
      * Sets the original URL of the media.
      *
-     * @param string $media_link
+     * @param string $url
      */
 
-    public function set_media_link( $media_link ) {
-        $this->media_link = sanitize_url( $media_link, [ 'http', 'https' ] );
+    public function set_media_source_url( $url ) {
+        $this->media_source_url = sanitize_url( $url, [ 'http', 'https' ] );
     }
 
 
@@ -113,33 +99,8 @@ class Media_Record {
      * @return string The URL
      */
 
-    public function get_media_link() {
-        return $this->media_link;
-    }
-
-
-    /**
-     * Sets the media state.
-     *
-     * @param int $media_state
-     */
-
-    public function set_media_state( $media_state ) {
-
-        if ( true == array_key_exists( $media_state, MEDIA_STATES ) ) {
-            $this->media_state = $media_state;
-        }
-    }
-
-
-    /**
-     * Gets the media state.
-     *
-     * @return int The media state.
-     */
-
-    public function get_media_state() {
-        return $this->media_state;
+    public function get_media_source_url() {
+        return $this->media_source_url;
     }
 
 
@@ -151,9 +112,11 @@ class Media_Record {
 
     public function set_license_guid( $license_guid ) {
 
-        if ( true == array_key_exists( $license_guid, LICENSES ) ) {
+         $this->license_guid = $license_guid;
+
+    /*    if ( true == array_key_exists( $license_guid, LICENSES ) ) {
             $this->license_guid = $license_guid;
-        }
+        } */
     }
 
 
@@ -171,11 +134,11 @@ class Media_Record {
     /**
      * Sets the credit line of the media creator.
      *
-     * @param string $by_name
+     * @param string $credit
      */
 
-    public function set_by_name( $by_name ) {
-        $this->by_name = $by_name;
+    public function set_creator_credit( $credit ) {
+        $this->creator_credit = $credit;
     }
 
 
@@ -185,19 +148,19 @@ class Media_Record {
      * @return string The credit line
      */
 
-    public function get_by_name() {
-        return $this->by_name;
+    public function get_creator_credit() {
+        return $this->creator_credit;
     }
 
 
     /**
      * Sets the URL to the media creator's portfolio page.
      *
-     * @param string $by_link
+     * @param string $url
      */
 
-    public function set_by_link( $by_link ) {
-        $this->by_link = sanitize_url( $by_link, [ 'http', 'https' ] );
+    public function set_creator_url( $url ) {
+        $this->creator_url = sanitize_url( $url, [ 'http', 'https' ] );
     }
 
 
@@ -207,8 +170,8 @@ class Media_Record {
      * @return string The URL
      */
 
-    public function get_by_link() {
-        return $this->by_link;
+    public function get_creator_url() {
+        return $this->creator_url;
     }
 
 
@@ -221,18 +184,16 @@ class Media_Record {
     private function get_table_record() {
         global $wpdb;
 
-        $table_name = $wpdb->prefix . TABLE_MEDIA;
-        $result     = $wpdb->get_results( "SELECT * FROM $table_name WHERE media_id=$this->media_id", 'ARRAY_A' );
+        $result = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}mdb_lm_credits WHERE media_id=$this->media_id", 'ARRAY_A' );
 
         if ( null == $result ) {
             return false;
         }
 
-        $this->media_link   = $result[0]['media_link'];
-        $this->media_state  = $result[0]['media_state'];
-        $this->license_guid = $result[0]['license_guid'];
-        $this->by_name      = $result[0]['by_name'];
-        $this->by_link      = $result[0]['by_link'];
+        $this->media_source_url = $result[0]['media_source_url'];
+        $this->license_guid     = $result[0]['license_guid'];
+        $this->creator_credit   = $result[0]['creator_credit'];
+        $this->creator_url      = $result[0]['creator_url'];
 
         return true;
     }
@@ -242,42 +203,39 @@ class Media_Record {
      * Updates the corresponding record in the media table.
      * If there is no record it creates a new record with the current settings.
      *
-     * @see Media_Record::__construct()
+     * @see Credit_Record::__construct()
      */
 
     public function update_table_record() {
         global $wpdb;
 
-        $data = [
-            'media_id'     => $this->media_id,
-            'media_link'   => $this->media_link,
-            'media_state'  => $this->media_state,
-            'license_guid' => $this->license_guid,
-            'by_name'      => $this->by_name,
-            'by_link'      => $this->by_link,
+        $table_name   = $wpdb->prefix . 'mdb_lm_credits';
+        $table_data   = [
+            'media_id'         => $this->media_id,
+            'media_source_url' => $this->media_source_url,
+            'license_guid'     => $this->license_guid,
+            'creator_credit'   => $this->creator_credit,
+            'creator_url'      => $this->creator_url
         ];
-
-        $format = [
+        $table_format = [
             '%d',
             '%s',
-            '%d',
             '%s',
             '%s',
             '%s'
         ];
 
-
-        if ( false == $this->get_table_record() ) {
+        if ( false === $this->get_table_record() ) {
             $wpdb->insert(
-                $wpdb->prefix . TABLE_MEDIA,
-                $data,
-                $format
+                $table_name,
+                $table_data,
+                $table_format
             );
         } else {
             $wpdb->replace(
-                $wpdb->prefix . TABLE_MEDIA,
-                $data,
-                $format
+                $table_name,
+                $table_data,
+                $table_format
             );
         }
     }
@@ -291,8 +249,10 @@ class Media_Record {
         global $wpdb;
 
         $wpdb->delete(
-            $wpdb->prefix . TABLE_MEDIA,
-            [ 'media_id' => $this->media_id ]
+            $wpdb->prefix . 'mdb_lm_credits',
+            [
+                'media_id' => $this->media_id
+            ]
         );
     }
 }
