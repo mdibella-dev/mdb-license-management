@@ -11,7 +11,6 @@
 
 namespace mdb_license_management\classes;
 
-use const mdb_license_management\TABLE_LICENSES;
 
 
 /** Prevent direct access */
@@ -39,7 +38,7 @@ class License_List_Table extends \WP_List_Table {
         $columns = [
             'license_name'        => __( 'Name', 'mdb-license-management' ),
             'license_description' => __( 'Description', 'mdb-license-management' ),
-            'license_link'        => __( 'License text', 'mdb-license-management' ),
+            'license_url'         => __( 'License text', 'mdb-license-management' ),
             'license_count'       => __( 'Number of items', 'mdb-license-management' )
         ];
 
@@ -78,23 +77,13 @@ class License_List_Table extends \WP_List_Table {
         ];
 
         // Prepare sorting
-        if ( ! empty( $_REQUEST['orderby'] ) ) {
-            $orderby = trim( wp_unslash( $_REQUEST['orderby'] ) );
-        } else {
-            $orderby = 'license_name';
-        }
-
-        if ( ! empty( $_REQUEST['order'] ) ) {
-            $order = trim( wp_unslash( $_REQUEST['order'] ) );
-        } else {
-            $order = 'asc';
-        }
+        $orderby = ( ! empty( $_REQUEST['orderby'] ) ) ? trim( wp_unslash( $_REQUEST['orderby'] ) ) : 'license_name';
+        $order   = ( ! empty( $_REQUEST['order'] ) ) ? trim( wp_unslash( $_REQUEST['order'] ) ) : 'asc';
 
         // Retrieving the data from the database
         global $wpdb;
 
-        $table_name  = $wpdb->prefix . TABLE_LICENSES;
-        $table_data  = $wpdb->get_results( "SELECT * FROM $table_name ORDER BY $orderby $order", 'ARRAY_A' );
+        $table_data  = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}mdb_lm_licenses ORDER BY $orderby $order", 'ARRAY_A' );
         $this->items = $table_data;
     }
 
@@ -113,17 +102,17 @@ class License_List_Table extends \WP_List_Table {
 
 
     /**
-     * Handles the license_link column output.
+     * Handles the license_url column output.
      *
      * @param array $item The row item
      *
      * @return string The output
      */
 
-    function column_license_link( $item ) {
+    function column_license_url( $item ) {
         return sprintf(
             '<a href="%1$s" title="%2$s" target="_blank">%3$s</a>',
-            esc_url( $item['license_link']),
+            esc_url( $item['license_url']),
             __( 'Link to license text', 'mdb-license-management' ),
             __( 'Read license text', 'mdb-license-management' )
         );
