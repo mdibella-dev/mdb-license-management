@@ -8,8 +8,9 @@
 
 namespace mdb_license_management\theme_integration;
 
-use mdb_license_management\classes\Media_Record;
-use const mdb_license_management\LICENSES;
+use mdb_license_management\classes\Credit_Record;
+use mdb_license_management\classes\License_Record;
+
 
 
 /** Prevent direct access */
@@ -30,14 +31,14 @@ defined( 'ABSPATH' ) or exit;
 
 function get_license( $id ) {
     $output       = '';
-    $record       = new Media_Record( $id );
+    $record       = new Credit_Record( $id );
     $license_guid = $record->get_license_guid();
-
+/*
     if ( ! empty( $license_guid ) and ( true == array_key_exists( $license_guid, LICENSES ) ) ) {
-        if ( ! empty( LICENSES[$license_guid]['license_link'] ) ) {
+        if ( ! empty( LICENSES[$license_guid]['license_url'] ) ) {
             $output = sprintf(
                 '<a href="%1$s" target="_blank" rel="noopener" name="%2$s">[%2$s]</a>',
-                LICENSES[$license_guid]['license_link'],
+                LICENSES[$license_guid]['license_url'],
                 LICENSES[$license_guid]['license_term']
             );
         } else {
@@ -46,7 +47,7 @@ function get_license( $id ) {
                 LICENSES[$license_guid]['license_term']
             );
         }
-    }
+    }*/
     return $output;
 }
 
@@ -63,7 +64,7 @@ function get_license( $id ) {
  */
 
 function get_byline( $id ) {
-    $record = new Media_Record( $id );
+    $record = new Credit_Record( $id );
 
-    return $record->get_by_name();
+    return $record->get_creator_credit();
 }
