@@ -21,7 +21,7 @@ function database_install() {
         license_name VARCHAR(50) DEFAULT '' NOT NULL,
         license_description TEXT DEFAULT '' NOT NULL,
         license_url VARCHAR(255) DEFAULT '' NOT NULL,
-        license_count SMALLINT UNSIGNED DEFAULT 0 NOT NULL,
+        media_count SMALLINT UNSIGNED DEFAULT 0 NOT NULL,
         PRIMARY KEY (license_guid)
         )
         COLLATE $collate;" );
@@ -89,28 +89,14 @@ function database_preset_licenses() {
 
             $wpdb->query( $wpdb->prepare(
                 "INSERT IGNORE INTO {$wpdb->prefix}mdb_lm_licenses
-                (license_guid, license_name, license_description, license_url, license_count)
+                (license_guid, license_name, license_description, license_url, media_count)
                 VALUES ( %s, %s, %s, %s, %d )",
                 $guid,
                 $content['license_name'],
                 $content['license_description'],
                 $content['license_url'],
-                $content['license_count']
+                $content['media_count']
                 ) );
-
-/* @see: https://developer.wordpress.org/reference/classes/wpdb/ */
-/*
-            $table_name   = $wpdb->prefix . 'mdb_lm_licenses';
-            $table_format = ['%s', '%s', '%s', '%s', '%s'];
-            $table_data   = [
-                'license_guid'        => $guid,
-                'license_name'        => $content['license_name'],
-                'license_description' => $content['license_description'],
-                'license_url'         => $content['license_url'],
-                'license_count'       => $content['license_count'],
-            ];
-            $wpdb->insert( $table_name, $table_data, $table_format );
-        */
         }
     } else {
         // do something

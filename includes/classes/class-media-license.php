@@ -64,7 +64,7 @@ class Media_License {
      * @var int
      */
 
-    private $license_count = 0;
+    private $media_count = 0;
 
 
     /**
@@ -136,8 +136,8 @@ class Media_License {
      * @return int The count
      */
 
-    public function get_license_count() {
-        return $this->count;
+    public function get_media_count() {
+        return $this->media_count;
     }
 
 
@@ -160,7 +160,7 @@ class Media_License {
         $this->license_name        = $result[0]['license_name'];
         $this->license_description = $result[0]['license_description'];
         $this->license_url         = $result[0]['license_url'];
-        $this->license_count       = $result[0]['license_count'];
+        $this->media_count         = $result[0]['media_count'];
 
         return true;
     }

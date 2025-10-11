@@ -39,7 +39,7 @@ class Media_License_List_Table extends \WP_List_Table {
             'license_name'        => __( 'Name', 'mdb-license-management' ),
             'license_description' => __( 'Description', 'mdb-license-management' ),
             'license_url'         => __( 'License text', 'mdb-license-management' ),
-            'license_count'       => __( 'Number of items', 'mdb-license-management' )
+            'media_count'         => __( 'Number of items', 'mdb-license-management' )
         ];
 
         return $columns;
@@ -58,7 +58,7 @@ class Media_License_List_Table extends \WP_List_Table {
         return [
             'license_name'        => ['license_name', true ],
             'license_description' => ['license_description'],
-            'license_count'       => ['license_count']
+            'media_count'         => ['media_count']
         ];
     }
 
@@ -133,7 +133,7 @@ class Media_License_List_Table extends \WP_List_Table {
 
 
     /**
-     * Handles the license_count column output
+     * Handles the media_count column output
      *
      * Currently a placeholder!
      *
@@ -142,7 +142,7 @@ class Media_License_List_Table extends \WP_List_Table {
      * @return string The output
      */
 
-    function column_license_count( $item ) {
+    function column_media_count( $item ) {
         return '0';
     }
 }
