@@ -18,9 +18,7 @@ function database_install() {
            $collate = $wpdb->get_charset_collate();
 
 
-    /**
-     * Install necessary tables into the database.
-     */
+    /** Install tables */
 
     dbDelta(
         "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}mdb_lm_licenses (
@@ -47,11 +45,7 @@ function database_install() {
     );
 
 
-    /**
-     * Preset credits table.
-     *
-     * Scan for attachments and add their post IDs as media_id to the table.
-     */
+    /** Preset credits table */
 
     $wpdb->query(
         "INSERT IGNORE INTO {$wpdb->prefix}mdb_lm_credits (media_id)
@@ -61,18 +55,14 @@ function database_install() {
     );
 
 
-    /**
-     * Presets licenses table.
-     *
-     * Import the preset data stored in licenses.json.
-     *
-     * @todo Add file version check
-     */
+    /** Preset licenses table */
 
     $file = file_get_contents( PLUGIN_DIR . 'assets/build/json/licenses.json', false );
 
     if ( false !== $file ) {
         $preset = json_decode( $file , true );
+
+        /** @todo Add file version check */
 
         foreach ( $preset['Licenses'] as $guid => $content ) {
 
@@ -108,8 +98,8 @@ function database_migrate() {
 
         $results = $wpdb->get_results(
             "SELECT {$wpdb->prefix}mdb_lv_media.media_id, {$wpdb->prefix}mdb_lv_media.media_link, {$wpdb->prefix}mdb_lv_media.license_guid, {$wpdb->prefix}mdb_lv_media.by_name, {$wpdb->prefix}mdb_lv_media.by_link
-             FROM {$wpdb->prefix}mdb_lv_media, {$wpdb->prefix}mdb_lm_credits
-             WHERE {$wpdb->prefix}mdb_lm_credits.media_id = {$wpdb->prefix}mdb_lv_media.media_id AND ( ( {$wpdb->prefix}mdb_lv_media.by_name != '' ) OR ( {$wpdb->prefix}mdb_lv_media.license_guid != '' ) )",
+            FROM {$wpdb->prefix}mdb_lv_media, {$wpdb->prefix}mdb_lm_credits
+            WHERE {$wpdb->prefix}mdb_lm_credits.media_id = {$wpdb->prefix}mdb_lv_media.media_id AND ( ( {$wpdb->prefix}mdb_lv_media.by_name != '' ) OR ( {$wpdb->prefix}mdb_lv_media.license_guid != '' ) )",
             'ARRAY_A'
         );
 
@@ -120,8 +110,8 @@ function database_migrate() {
         foreach ( $results as $result ) {
             $wpdb->query(
                "UPDATE {$wpdb->prefix}mdb_lm_credits
-                SET media_source_url = '{$result['media_link']}', license_guid = '{$result['license_guid']}', creator_credit = '{$result['by_name']}', creator_url = '{$result['by_link']}'
-                WHERE media_id = '{$result['media_id']}'"
+               SET media_source_url = '{$result['media_link']}', license_guid = '{$result['license_guid']}', creator_credit = '{$result['by_name']}', creator_url = '{$result['by_link']}'
+               WHERE media_id = '{$result['media_id']}'"
            );
         }
     }
