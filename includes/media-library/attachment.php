@@ -30,20 +30,19 @@ defined( 'ABSPATH' ) or exit;
 
 function add_attachment_fields( $form_fields, $post ) {
 
-    $record = new Media_Credit( $post->ID );
+    $credit = new Media_Credit( $post->ID );
 
 
+    /** Field 1 - listing of available licenses */
 
-    /** Field 2 - listing of available licenses */
-/*
-    $html  = "<select id='mdb-lv-license-guid' name='attachments[{$post->ID}][mdb-lv-license-guid]'>";
+    $html  = "<select id='license-guid' name='attachments[{$post->ID}][license-guid]'>";
     $html .= sprintf(
         '<option value="%1$s" disabled %3$s>%2$s</option>',
         '0',
         __( '--- please select ---', 'mdb-license-management' ),
-        ( '' == $record->get_license_guid() )? 'selected' : ''
+        ( '' == $credit->get_license_guid() )? '' : 'selected'
     );
-
+/*
     foreach( LICENSES as $license_guid => $license ) {
         $html .= sprintf(
             '<option value="%1$s" %3$s>%2$s</option>',
@@ -52,40 +51,40 @@ function add_attachment_fields( $form_fields, $post ) {
             ( $license_guid == $record->get_license_guid() )? 'selected' : ''
         );
     }
-
+*/
     $html .= '</select>';
 
-    $form_fields['mdb-lv-license-guid'] = [
+    $form_fields['mdb-license-guid'] = [
         'label' => __( 'License', 'mdb-license-management' ),
         'input' => 'html',
         'html'  => $html,
     ];
 
-*/
-    /** Field 3 - naming of the creator */
 
-    $form_fields['mdb-lv-by-name'] = [
+    /** Field 2 - naming of the creator */
+
+    $form_fields['creator-credit'] = [
         'label' => __( 'Naming of the creator', 'mdb-license-management' ),
         'input' => 'html',
-        'html'  => "<input type='text' size='128' class='widefat' value='" . esc_html( $record->get_creator_credit() ) . "' name='attachments[{$post->ID}][mdb-lv-by-name]'>",
+        'html'  => "<input type='text' size='128' class='widefat' value='" . esc_html( $credit->get_creator_credit() ) . "' name='attachments[{$post->ID}][creator-credit]'>",
     ];
 
 
-    /** Field 4 - link to the creator's website (if required) */
+    /** Field 3 - link to the creator's website (if required) */
 
-    $form_fields['mdb-lv-by-link'] = [
+    $form_fields['creator-url'] = [
         'label' => __( 'Link to the creator', 'mdb-license-management' ),
         'input' => 'html',
-        'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $record->get_creator_url() ) . "' name='attachments[{$post->ID}][mdb-lv-by-link]'>",
+        'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $credit->get_creator_url() ) . "' name='attachments[{$post->ID}][creator-url]'>",
     ];
 
 
-    /** Field 5 - link to the original image for your own documentation */
+    /** Field 4 - link to the original image for your own documentation */
 
-    $form_fields[ 'mdb-lv-media-link' ] = [
+    $form_fields[ 'media-source-url' ] = [
         'label' => __( 'Link to original file', 'mdb-license-management' ),
         'input' => 'html',
-        'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $record->get_media_source_url() ) . "' name='attachments[{$post->ID}][mdb-lv-media-link]'>",
+        'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $credit->get_media_source_url() ) . "' name='attachments[{$post->ID}][media-source-url]'>",
     ];
 
     return $form_fields;
