@@ -47,8 +47,6 @@ function plugin_activation() {
     }
 
     database_install();
-    database_preset_credits();
-    database_preset_licenses();
     database_migrate();
 }
 
