@@ -67,7 +67,7 @@ function handle_custom_columns( $column, $id ) {
 
             case 'mdb_lm_license':
             // !!!
-                $license = new Media_License( $record->get_license_guid() );
+                $license = new Media_License( $credit->get_license_guid() );
                 echo $license->get_license_name();
                 /*if ( ( MEDIA_STATE_LICENSED == $record->get_media_state() ) and ( true == array_key_exists( $record->get_license_guid(), LICENSES ) ) ) {
                     echo LICENSES[$record->get_license_guid()]['license_term'];
