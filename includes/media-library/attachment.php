@@ -8,7 +8,7 @@
 
 namespace mdb_license_management;
 
-use mdb_license_management\classes\Credit_Record;
+use mdb_license_management\classes\Media_Credit;
 
 
 /** Prevent direct access */
@@ -30,7 +30,7 @@ defined( 'ABSPATH' ) or exit;
 
 function add_attachment_fields( $form_fields, $post ) {
 
-    $record = new Credit_Record( $post->ID );
+    $record = new Media_Credit( $post->ID );
 
 
 
@@ -107,7 +107,7 @@ add_filter( 'attachment_fields_to_edit', __NAMESPACE__ . '\add_attachment_fields
  */
 
 function save_attachment_fields( $post, $attachment ) {
-    $record = new Credit_Record( $post['ID'] );
+    $record = new Media_Credit( $post['ID'] );
 
     $record->set_media_source_url( sanitize_url( $attachment['mdb-lv-media-link'] ) );
     $record->set_license_guid( $attachment['mdb-lv-license-guid'] );
@@ -132,7 +132,7 @@ add_filter( 'attachment_fields_to_save', __NAMESPACE__ . '\save_attachment_field
  */
 
 function delete_attachment_handler( $id ) {
-    $record = new Credit_Record( $id );
+    $record = new Media_Credit( $id );
 
     $record->remove_table_record();
 }

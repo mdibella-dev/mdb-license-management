@@ -8,8 +8,8 @@
 
 namespace mdb_license_management;
 
-use mdb_license_management\classes\Credit_Record;
-use mdb_license_management\classes\License_Record;
+use mdb_license_management\classes\Media_Credit;
+use mdb_license_management\classes\Media_License;
 
 
 /** Prevent direct access */
@@ -52,7 +52,7 @@ function handle_custom_columns( $column, $id ) {
 
     if ( in_array( $column, ['mdb_lm_creator', 'mdb_lm_license'] ) ) {
 
-        $record = new Credit_Record( $id );
+        $record = new Media_Credit( $id );
 
         switch ( $column ) {
             case 'mdb_lm_creator':
@@ -66,7 +66,7 @@ function handle_custom_columns( $column, $id ) {
                 break;
 
             case 'mdb_lm_license':
-                $license = new License_Record( $record->get_license_guid() );
+                $license = new Media_License( $record->get_license_guid() );
                 echo $license->get_license_name();
                 /*if ( ( MEDIA_STATE_LICENSED == $record->get_media_state() ) and ( true == array_key_exists( $record->get_license_guid(), LICENSES ) ) ) {
                     echo LICENSES[$record->get_license_guid()]['license_term'];

@@ -1,5 +1,5 @@
 <?php
 
-require_once 'class-credit-record.php';
-require_once 'class-license-record.php';
-require_once 'class-license-list-table.php';
+require_once 'class-media-credit.php';
+require_once 'class-media-license.php';
+require_once 'class-media-license-list-table.php';

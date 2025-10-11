@@ -1,6 +1,6 @@
 <?php
 /**
- * Class License_List_Table
+ * Class Media_License_List_Table
  *
  * @see https://wpengineer.com/2426/wp_list_table-a-step-by-step-guide/
  * @see https://wp.smashingmagazine.com/2011/11/native-admin-tables-wordpress/
@@ -24,7 +24,7 @@ if( ! class_exists( 'WP_List_Table' ) ) {
 }
 
 
-class License_List_Table extends \WP_List_Table {
+class Media_License_List_Table extends \WP_List_Table {
 
     /**
      * Gets a list of columns.

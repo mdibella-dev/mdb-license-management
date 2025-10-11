@@ -1,6 +1,6 @@
 <?php
 /**
- * Class License_Record
+ * Class Media_License
  *
  * @author  Marco Di Bella
  * @package mdb-license-management
@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) or exit;
 
 
 
-class License_Record {
+class Media_License {
 
     /**
      * The global unique identifier (guid) of the license.
@@ -170,7 +170,7 @@ class License_Record {
      * Updates the corresponding record in the license table.
      * // If there is no record it creates a new record with the current settings.
      *
-     * @see Credit_Record::__construct()
+     * @see Media_Credit::__construct()
      */
 
 

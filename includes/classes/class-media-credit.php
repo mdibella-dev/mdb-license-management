@@ -1,6 +1,6 @@
 <?php
 /**
- * Class Credit_Record
+ * Class Media_Credit
  *
  * @author  Marco Di Bella
  * @package mdb-license-management
@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) or exit;
 
 
 
-class Credit_Record {
+class Media_Credit {
 
     /**
      * The media id (post_id) of the corresponding attachment/table record.
@@ -203,7 +203,7 @@ class Credit_Record {
      * Updates the corresponding record in the media table.
      * If there is no record it creates a new record with the current settings.
      *
-     * @see Credit_Record::__construct()
+     * @see Media_Credit::__construct()
      */
 
     public function update_table_record() {

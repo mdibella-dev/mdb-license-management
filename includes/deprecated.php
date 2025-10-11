@@ -8,8 +8,8 @@
 
 namespace mdb_license_management\theme_integration;
 
-use mdb_license_management\classes\Credit_Record;
-use mdb_license_management\classes\License_Record;
+use mdb_license_management\classes\Media_Credit;
+use mdb_license_management\classes\Media_License;
 
 
 
@@ -31,7 +31,7 @@ defined( 'ABSPATH' ) or exit;
 
 function get_license( $id ) {
     $output       = '';
-    $record       = new Credit_Record( $id );
+    $record       = new Media_Credit( $id );
     $license_guid = $record->get_license_guid();
 /*
     if ( ! empty( $license_guid ) and ( true == array_key_exists( $license_guid, LICENSES ) ) ) {
@@ -64,7 +64,7 @@ function get_license( $id ) {
  */
 
 function get_byline( $id ) {
-    $record = new Credit_Record( $id );
+    $record = new Media_Credit( $id );
 
     return $record->get_creator_credit();
 }

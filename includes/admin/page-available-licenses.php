@@ -8,7 +8,7 @@
 
 namespace mdb_license_management\admin\available_licenses;
 
-use mdb_license_management\classes\License_List_Table;
+use mdb_license_management\classes\Media_License_List_Table;
 
 
 /** Prevent direct access */
@@ -50,7 +50,7 @@ function show_page() {
 <div class="wrap">
     <h1 class="wp-heading-inline"><?php echo __( 'Available licenses', 'mdb-license-management' )?></h1>
     <?php
-    $license_list = new License_List_Table();
+    $license_list = new Media_License_List_Table();
     $license_list->prepare_items();
     $license_list->display();
     ?>
