@@ -52,11 +52,11 @@ function handle_custom_columns( $column, $id ) {
 
     if ( in_array( $column, ['mdb_lm_creator', 'mdb_lm_license'] ) ) {
 
-        $record = new Media_Credit( $id );
+        $credit = new Media_Credit( $id );
 
         switch ( $column ) {
             case 'mdb_lm_creator':
-                $creator_credit = trim( $record->get_creator_credit() );
+                $creator_credit = trim( $credit->get_creator_credit() );
 
                 if ( ! empty( $creator_credit ) ) {
                     echo $creator_credit;
@@ -66,6 +66,7 @@ function handle_custom_columns( $column, $id ) {
                 break;
 
             case 'mdb_lm_license':
+            // !!!
                 $license = new Media_License( $record->get_license_guid() );
                 echo $license->get_license_name();
                 /*if ( ( MEDIA_STATE_LICENSED == $record->get_media_state() ) and ( true == array_key_exists( $record->get_license_guid(), LICENSES ) ) ) {

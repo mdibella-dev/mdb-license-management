@@ -24,15 +24,15 @@ defined( 'ABSPATH' ) or exit;
  *
  * @since 0.0.1
  *
- * @param int $id The attachment's post_ID.
+ * @param int $id The media attachment ID
  *
  * @return string Output of the license details.
  */
 
 function get_license( $id ) {
     $output       = '';
-    $record       = new Media_Credit( $id );
-    $license_guid = $record->get_license_guid();
+    $credit       = new Media_Credit( $id );
+
 /*
     if ( ! empty( $license_guid ) and ( true == array_key_exists( $license_guid, LICENSES ) ) ) {
         if ( ! empty( LICENSES[$license_guid]['license_url'] ) ) {
@@ -58,13 +58,13 @@ function get_license( $id ) {
  *
  * @since 0.0.1
  *
- * @param int $id The attachment's post_ID.
+ * @param int $id The media attachment ID
  *
  * @return string Output of the credits.
  */
 
 function get_byline( $id ) {
-    $record = new Media_Credit( $id );
+    $credit = new Media_Credit( $id );
 
-    return $record->get_creator_credit();
+    return $credit->get_creator_credit();
 }

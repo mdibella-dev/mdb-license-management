@@ -107,14 +107,14 @@ add_filter( 'attachment_fields_to_edit', __NAMESPACE__ . '\add_attachment_fields
  */
 
 function save_attachment_fields( $post, $attachment ) {
-    $record = new Media_Credit( $post['ID'] );
+    $credit = new Media_Credit( $post['ID'] );
 
-    $record->set_media_source_url( sanitize_url( $attachment['mdb-lv-media-link'] ) );
-    $record->set_license_guid( $attachment['mdb-lv-license-guid'] );
-    $record->set_creator_credit( sanitize_text_field( $attachment['mdb-lv-by-name'] ) );
-    $record->set_creator_url( sanitize_url( $attachment['mdb-lv-by-link'] ) );
+    $credit->set_media_source_url( sanitize_url( $attachment['mdb-lv-media-link'] ) );
+    $credit->set_license_guid( $attachment['mdb-lv-license-guid'] );
+    $credit->set_creator_credit( sanitize_text_field( $attachment['mdb-lv-by-name'] ) );
+    $credit->set_creator_url( sanitize_url( $attachment['mdb-lv-by-link'] ) );
 
-    $record->update_table_record();
+    $credit->update_table_record();
 
     return $post;
 }
@@ -132,9 +132,9 @@ add_filter( 'attachment_fields_to_save', __NAMESPACE__ . '\save_attachment_field
  */
 
 function delete_attachment_handler( $id ) {
-    $record = new Media_Credit( $id );
+    $credit = new Media_Credit( $id );
 
-    $record->remove_table_record();
+    $credit->remove_table_record();
 }
 
 add_action( 'delete_attachment', __NAMESPACE__ . '\delete_attachment_handler');
