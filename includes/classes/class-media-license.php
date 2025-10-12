@@ -4,9 +4,6 @@
  *
  * @author  Marco Di Bella
  * @package mdb-license-management
- *
- *
- * @todo: needs to be rewritten !!!!
  */
 
 namespace mdb_license_management\classes;
