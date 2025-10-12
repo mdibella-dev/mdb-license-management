@@ -23,8 +23,7 @@ defined( 'ABSPATH' ) or exit;
 
 function plugin_backend_scripts() {
 
-    $current_screen = get_current_screen();
-
+    // $current_screen = get_current_screen();
 
     /** Enqueue styles */
 
@@ -34,36 +33,6 @@ function plugin_backend_scripts() {
         [],
         PLUGIN_VERSION
     );
-
-
-    /** Enqueue script for upload page only */
-
-    if ( 'upload' === $current_screen->id ) {
-        wp_enqueue_script(
-            'mdb_license_management-backend-upload-script',
-            PLUGIN_URL . 'assets/build/js/backend-upload.min.js',
-            [
-                'jquery'
-            ],
-            PLUGIN_VERSION,
-            true
-        );
-    }
-
-
-    /** Enqueue script for attachment page only */
-
-    if ( 'attachment' === $current_screen->id ) {
-        wp_enqueue_script(
-            'mdb_license_management-backend-attachment-script',
-            PLUGIN_URL . 'assets/build/js/backend-attachment.min.js',
-            [
-                'jquery'
-            ],
-            PLUGIN_VERSION,
-            true
-        );
-    }
 }
 
 add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\plugin_backend_scripts' );
