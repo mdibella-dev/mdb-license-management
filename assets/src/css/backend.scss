@@ -9,5 +9,26 @@
 }
 
 
-.wp-list-table .column-license_term { width: 15%; }
-.wp-list-table .column-license_url { width: 10%; }
+.wp-list-table.widefat.media td,
+.wp-list-table.widefat.media th {
+
+    &.column-mdb_lm_creator {
+        width: 15%;
+    }
+
+    &.column-mdb_lm_license {
+       width: 10%
+    }
+}
+
+.wp-list-table.widefat.media_page_mdb-lm-available-licenses td,
+.wp-list-table.widefat.media_page_mdb-lm-available-licenses th {
+
+    &.column-media_count {
+        width: 10%;
+    }
+
+    &.column-license_terms {
+       width: 15%
+    }
+}
