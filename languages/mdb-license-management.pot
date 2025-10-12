@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Marco Di Bella &mdash; License Management\n"
-"POT-Creation-Date: 2025-09-26 15:09+0200\n"
+"POT-Creation-Date: 2025-10-12 13:20+0200\n"
 "PO-Revision-Date: 2023-02-06 12:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,78 +20,57 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
+#: includes/admin/page-available-licenses.php:28
 #: includes/admin/page-available-licenses.php:29
-#: includes/admin/page-available-licenses.php:30
 msgid "Licenses"
 msgstr ""
 
-#: includes/admin/page-available-licenses.php:52
+#: includes/admin/page-available-licenses.php:51
 msgid "Available licenses"
 msgstr ""
 
-#: includes/classes/class-license-list-table.php:40
+#: includes/classes/class-media-license-list-table.php:39
 msgid "Name"
 msgstr ""
 
-#: includes/classes/class-license-list-table.php:41
+#: includes/classes/class-media-license-list-table.php:40
 msgid "Description"
 msgstr ""
 
-#: includes/classes/class-license-list-table.php:42
-msgid "License text"
+#: includes/classes/class-media-license-list-table.php:41
+msgid "License terms"
 msgstr ""
 
-#: includes/classes/class-license-list-table.php:43
+#: includes/classes/class-media-license-list-table.php:42
 msgid "Number of items"
 msgstr ""
 
-#: includes/classes/class-license-list-table.php:129
-msgid "Link to license text"
+#: includes/classes/class-media-license-list-table.php:116
+msgid "Link to license terms"
 msgstr ""
 
-#: includes/classes/class-license-list-table.php:130
-msgid "Read license text"
+#: includes/classes/class-media-license-list-table.php:117
+msgid "Read license terms"
 msgstr ""
 
-#: includes/definitions/media-states.php:47
-msgid "no copyright information necessary"
-msgstr ""
-
-#: includes/definitions/media-states.php:51
-msgid "simple naming (with linking if necessary)"
-msgstr ""
-
-#: includes/definitions/media-states.php:55
-msgid "copyright information according to license"
-msgstr ""
-
-#: includes/definitions/media-states.php:60
-msgid "unknown"
-msgstr ""
-
-#: includes/media-library/attachment.php:41
-#: includes/media-library/attachment.php:69
+#: includes/media-library/attachment.php:50
 msgid "--- please select ---"
 msgstr ""
 
-#: includes/media-library/attachment.php:57
-msgid "Method and manner of the copyright information"
-msgstr ""
-
-#: includes/media-library/attachment.php:85
+#: includes/media-library/attachment.php:66
 #: includes/media-library/media-list-table.php:33
 msgid "License"
 msgstr ""
 
-#: includes/media-library/attachment.php:94
+#: includes/media-library/attachment.php:76
 msgid "Naming of the creator"
 msgstr ""
 
-#: includes/media-library/attachment.php:103
+#: includes/media-library/attachment.php:85
 msgid "Link to the creator"
 msgstr ""
 
-#: includes/media-library/attachment.php:112
+#: includes/media-library/attachment.php:94
 msgid "Link to original file"
 msgstr ""
 

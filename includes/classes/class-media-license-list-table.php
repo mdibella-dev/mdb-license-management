@@ -38,7 +38,7 @@ class Media_License_List_Table extends \WP_List_Table {
         $columns = [
             'license_name'        => __( 'Name', 'mdb-license-management' ),
             'license_description' => __( 'Description', 'mdb-license-management' ),
-            'license_url'         => __( 'License text', 'mdb-license-management' ),
+            'license_terms'       => __( 'License terms', 'mdb-license-management' ),
             'media_count'         => __( 'Number of items', 'mdb-license-management' )
         ];
 
@@ -102,19 +102,19 @@ class Media_License_List_Table extends \WP_List_Table {
 
 
     /**
-     * Handles the license_url column output.
+     * Handles the license_terms column output.
      *
      * @param array $item The row item
      *
      * @return string The output
      */
 
-    function column_license_url( $item ) {
+    function column_license_terms( $item ) {
         return sprintf(
             '<a href="%1$s" title="%2$s" target="_blank">%3$s</a>',
             esc_url( $item['license_url']),
-            __( 'Link to license text', 'mdb-license-management' ),
-            __( 'Read license text', 'mdb-license-management' )
+            __( 'Link to license terms', 'mdb-license-management' ),
+            __( 'Read license terms', 'mdb-license-management' )
         );
     }
 
@@ -143,6 +143,6 @@ class Media_License_List_Table extends \WP_List_Table {
      */
 
     function column_media_count( $item ) {
-        return '0';
+        return $item['media_count'];
     }
 }
