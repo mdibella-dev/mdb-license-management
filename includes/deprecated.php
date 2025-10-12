@@ -30,8 +30,8 @@ defined( 'ABSPATH' ) or exit;
  */
 
 function get_license( $id ) {
-    $output       = '';
-    $credit       = new Media_Credit( $id );
+    $output = '';
+    $credit = new Media_Credit( $id );
 
 /*
     if ( ! empty( $license_guid ) and ( true == array_key_exists( $license_guid, LICENSES ) ) ) {
