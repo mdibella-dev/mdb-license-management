@@ -18,67 +18,70 @@ function database_install() {
            $collate = $wpdb->get_charset_collate();
 
 
-    /** Install tables */
+    /** The licenses table */
 
-    dbDelta(
-        "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}mdb_lm_licenses (
-        license_guid VARCHAR(4) DEFAULT '' NOT NULL,
-        license_name VARCHAR(50) DEFAULT '' NOT NULL,
-        license_description TEXT DEFAULT '' NOT NULL,
-        license_url VARCHAR(255) DEFAULT '' NOT NULL,
-        media_count SMALLINT UNSIGNED DEFAULT 0 NOT NULL,
-        PRIMARY KEY (license_guid)
-        )
-        COLLATE $collate;"
-    );
+    if ( "{$wpdb->prefix}mdb_lm_licenses" == $wpdb->get_var( "SHOW TABLES LIKE '{$wpdb->prefix}mdb_lm_licenses'" ) ) {
 
-    dbDelta(
-        "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}mdb_lm_credits (
-        media_id BIGINT(20) UNSIGNED DEFAULT 0 NOT NULL,
-        media_source_url VARCHAR(255) DEFAULT '' NOT NULL,
-        license_guid VARCHAR(4) DEFAULT '' NOT NULL,
-        creator_credit VARCHAR(255) DEFAULT '' NOT NULL,
-        creator_url VARCHAR(255) DEFAULT '' NOT NULL,
-        PRIMARY KEY (media_id)
-        )
-        COLLATE $collate;"
-    );
+        dbDelta(
+           "CREATE TABLE {$wpdb->prefix}mdb_lm_licenses (
+            license_guid VARCHAR(4) DEFAULT '' NOT NULL,
+            license_name VARCHAR(50) DEFAULT '' NOT NULL,
+            license_description TEXT DEFAULT '',
+            license_url VARCHAR(255) DEFAULT '',
+            media_count SMALLINT UNSIGNED DEFAULT 0,
+            PRIMARY KEY (license_guid)
+            )
+            COLLATE $collate;"
+        );
 
+        $file = file_get_contents( PLUGIN_DIR . 'assets/build/json/licenses.json', false );
 
-    /** Preset credits table */
+        if ( false !== $file ) {
+            $preset = json_decode( $file , true );
 
-    $wpdb->query(
-        "INSERT IGNORE INTO {$wpdb->prefix}mdb_lm_credits (media_id)
-        SELECT ID
-        FROM {$wpdb->prefix}posts
-        WHERE post_type='attachment'"
-    );
+            /** @todo Add file version check */
 
+            foreach ( $preset['Licenses'] as $guid => $content ) {
 
-    /** Preset licenses table */
-
-    $file = file_get_contents( PLUGIN_DIR . 'assets/build/json/licenses.json', false );
-
-    if ( false !== $file ) {
-        $preset = json_decode( $file , true );
-
-        /** @todo Add file version check */
-
-        foreach ( $preset['Licenses'] as $guid => $content ) {
-
-            $wpdb->query(
-                "INSERT IGNORE INTO {$wpdb->prefix}mdb_lm_licenses
-                (license_guid, license_name, license_description, license_url, media_count)
-                VALUES ( %s, %s, %s, %s, %d )",
-                $guid,
-                $content['license_name'],
-                $content['license_description'],
-                $content['license_url'],
-                $content['media_count']
-            );
+                $wpdb->query( $wpdb->prepare(
+                    "INSERT IGNORE INTO {$wpdb->prefix}mdb_lm_licenses
+                    (license_guid, license_name, license_description, license_url, media_count)
+                    VALUES ( %s, %s, %s, %s, %d )",
+                    $guid,
+                    $content['license_name'],
+                    $content['license_description'],
+                    $content['license_url'],
+                    $content['media_count']
+                ) );
+            }
+        } else {
+            // do something?
         }
-    } else {
-        // do something?
+    }
+
+
+    /** The credits table */
+
+    if ( "{$wpdb->prefix}mdb_lm_credits" == $wpdb->get_var( "SHOW TABLES LIKE '{$wpdb->prefix}mdb_lm_credits'" ) ) {
+
+        dbDelta(
+            "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}mdb_lm_credits (
+            media_id BIGINT(20) UNSIGNED DEFAULT 0 NOT NULL,
+            media_source_url VARCHAR(255) DEFAULT '',
+            license_guid VARCHAR(4) DEFAULT '',
+            creator_credit VARCHAR(255) DEFAULT '',
+            creator_url VARCHAR(255) DEFAULT '',
+            PRIMARY KEY (media_id)
+            )
+            COLLATE $collate;"
+        );
+
+        $wpdb->query(
+            "INSERT IGNORE INTO {$wpdb->prefix}mdb_lm_credits (media_id)
+            SELECT ID
+            FROM {$wpdb->prefix}posts
+            WHERE post_type='attachment'"
+        );
     }
 }
 
@@ -116,7 +119,35 @@ function database_migrate() {
         }
     }
 
-    $wpdb->query(
-        "DROP TABLE IF EXISTS {$wpdb->prefix}mdb_lv_licenses, {$wpdb->prefix}mdb_lv_media"
-    );
+    $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}mdb_lv_licenses, {$wpdb->prefix}mdb_lv_media" );
+
+    database_count_licensed_media();
+}
+
+
+
+
+function database_count_licensed_media() {
+
+    global $wpdb;
+
+    $results = $wpdb->get_results( "SELECT license_guid FROM {$wpdb->prefix}mdb_lm_licenses", 'ARRAY_A' );
+
+    if ( null !== $results ) {
+
+        foreach ( $results as $result ) {
+
+            $count = $wpdb->get_var(
+                "SELECT COUNT(*)
+                FROM {$wpdb->prefix}mdb_lm_credits
+                WHERE license_guid = '{$result['license_guid']}'"
+            );
+
+            $wpdb->query(
+                "UPDATE {$wpdb->prefix}mdb_lm_licenses
+                SET media_count = '{$count}'
+                WHERE license_guid = '{$result['license_guid']}'"
+            );
+        }
+    }
 }
