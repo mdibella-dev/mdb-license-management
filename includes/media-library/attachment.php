@@ -44,10 +44,11 @@ function add_attachment_fields( $form_fields, $post ) {
     if ( null !== $results ) {
 
         $html  = "<select id='mdb-lm-license-guid' name='attachments[{$post->ID}][mdb-lm-license-guid]'>";
+
         $html .= sprintf(
-            '<option value="%1$s" disabled %3$s>%2$s</option>',
+            '<option value="%1$s" %3$s>%2$s</option>',
             '0',
-            __( '--- please select ---', 'mdb-license-management' ),
+            __( '— no license —', 'mdb-license-management' ),
             ( '' == $credit->get_license_guid() )? '' : 'selected'
         );
 

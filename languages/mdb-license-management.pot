@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Marco Di Bella &mdash; License Management\n"
-"POT-Creation-Date: 2025-10-12 13:20+0200\n"
+"POT-Creation-Date: 2025-10-12 15:57+0200\n"
 "PO-Revision-Date: 2023-02-06 12:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -53,24 +53,24 @@ msgstr ""
 msgid "Read license terms"
 msgstr ""
 
-#: includes/media-library/attachment.php:50
-msgid "--- please select ---"
+#: includes/media-library/attachment.php:51
+msgid "— no license —"
 msgstr ""
 
-#: includes/media-library/attachment.php:66
+#: includes/media-library/attachment.php:67
 #: includes/media-library/media-list-table.php:33
 msgid "License"
 msgstr ""
 
-#: includes/media-library/attachment.php:76
+#: includes/media-library/attachment.php:77
 msgid "Naming of the creator"
 msgstr ""
 
-#: includes/media-library/attachment.php:85
+#: includes/media-library/attachment.php:86
 msgid "Link to the creator"
 msgstr ""
 
-#: includes/media-library/attachment.php:94
+#: includes/media-library/attachment.php:95
 msgid "Link to original file"
 msgstr ""
 
