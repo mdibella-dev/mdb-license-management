@@ -171,16 +171,7 @@ add_filter( 'attachment_fields_to_save', __NAMESPACE__ . '\save_attachment_field
 
 function delete_attachment_handler( $id ) {
 
-    global $wpdb;
-           $credit = new Media_Credit( $id );
-
-    if ( ! empty( $credit->get_license_guid() ) ) {
-        $wpdb->query(
-           "UPDATE {$wpdb->prefix}mdb_lm_licenses
-           SET media_count = (media_count-1)
-           WHERE license_guid = '{$credit->get_license_guid()}'"
-       );
-    }
+    $credit = new Media_Credit( $id );
 
     $credit->remove_table_record();
 }

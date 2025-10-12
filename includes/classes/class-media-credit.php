@@ -111,12 +111,7 @@ class Media_Credit {
      */
 
     public function set_license_guid( $license_guid ) {
-
          $this->license_guid = $license_guid;
-
-    /*    if ( true == array_key_exists( $license_guid, LICENSES ) ) {
-            $this->license_guid = $license_guid;
-        } */
     }
 
 
@@ -247,6 +242,14 @@ class Media_Credit {
 
     public function remove_table_record() {
         global $wpdb;
+
+        if ( ! empty( $this->license_guid ) ) {
+            $wpdb->query(
+               "UPDATE {$wpdb->prefix}mdb_lm_licenses
+               SET media_count = (media_count-1)
+               WHERE license_guid = '{$this->license_guid}'"
+            );
+        }
 
         $wpdb->delete(
             $wpdb->prefix . 'mdb_lm_credits',
