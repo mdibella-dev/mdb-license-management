@@ -17,7 +17,7 @@ translation-ready, creative-commons, license-management, wordpress-plugin
 
 ### Tested up to
 
-* WordPress 6.3
+* WordPress 6.8
 
 <br>
 
