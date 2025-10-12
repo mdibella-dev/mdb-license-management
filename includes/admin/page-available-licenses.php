@@ -1,6 +1,6 @@
 <?php
 /**
- * A admin page to show all available licenses.
+ * An admin page to show all available licenses.
  *
  * @author  Marco Di Bella
  * @package mdb-license-management
