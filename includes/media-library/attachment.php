@@ -71,7 +71,7 @@ function add_attachment_fields( $form_fields, $post ) {
     }
 
 
-    /** Field 2 - naming of the creator */
+    /** Field 2 - naming of the creator / the credit */
 
     $form_fields['mdb-lm-creator-credit'] = [
         'label' => __( 'Naming of the creator', 'mdb-license-management' ),
@@ -80,7 +80,7 @@ function add_attachment_fields( $form_fields, $post ) {
     ];
 
 
-    /** Field 3 - link to the creator's website (if required) */
+    /** Field 3 - link to the creator's website (if applicable) */
 
     $form_fields['mdb-lm-creator-url'] = [
         'label' => __( 'Link to the creator', 'mdb-license-management' ),
@@ -116,10 +116,40 @@ add_filter( 'attachment_fields_to_edit', __NAMESPACE__ . '\add_attachment_fields
  */
 
 function save_attachment_fields( $post, $attachment ) {
+
     $credit = new Media_Credit( $post['ID'] );
 
+
+    /** Check whether it is necessary to adjust media_count */
+
+    $old_guid = $credit->get_license_guid();
+    $new_guid = $attachment['mdb-lm-license-guid'];
+
+    if ( $old_guid !== $new_guid) {
+        global $wpdb;
+
+        if ( ! empty( $old_guid ) ) {
+            $wpdb->query(
+               "UPDATE {$wpdb->prefix}mdb_lm_licenses
+               SET media_count = (media_count-1)
+               WHERE license_guid = '{$old_guid}'"
+           );
+        }
+
+        if ( ! empty( $new_guid ) ) {
+            $wpdb->query(
+               "UPDATE {$wpdb->prefix}mdb_lm_licenses
+               SET media_count = (media_count+1)
+               WHERE license_guid = '{$new_guid}'"
+           );
+        }
+    }
+
+
+    /** Prepare values and update */
+
+    $credit->set_license_guid( $new_guid );
     $credit->set_media_source_url( sanitize_url( $attachment['mdb-lm-media-source-url'] ) );
-    $credit->set_license_guid( $attachment['mdb-lm-license-guid'] );
     $credit->set_creator_credit( sanitize_text_field( $attachment['mdb-lm-creator-credit'] ) );
     $credit->set_creator_url( sanitize_url( $attachment['mdb-lm-creator-url'] ) );
 
@@ -137,7 +167,7 @@ add_filter( 'attachment_fields_to_save', __NAMESPACE__ . '\save_attachment_field
  *
  * @since 0.0.1
  *
- * @param int $id   The media attachment ID
+ * @param int $id The media attachment ID
  */
 
 function delete_attachment_handler( $id ) {
