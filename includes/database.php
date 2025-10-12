@@ -20,10 +20,10 @@ function database_install() {
 
     /** The licenses table */
 
-    if ( "{$wpdb->prefix}mdb_lm_licenses" == $wpdb->get_var( "SHOW TABLES LIKE '{$wpdb->prefix}mdb_lm_licenses'" ) ) {
+    if ( "{$wpdb->prefix}mdb_lm_licenses" !== $wpdb->get_var( "SHOW TABLES LIKE '{$wpdb->prefix}mdb_lm_licenses'" ) ) {
 
         dbDelta(
-           "CREATE TABLE {$wpdb->prefix}mdb_lm_licenses (
+           "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}mdb_lm_licenses (
             license_guid VARCHAR(4) DEFAULT '' NOT NULL,
             license_name VARCHAR(50) DEFAULT '' NOT NULL,
             license_description TEXT DEFAULT '',
@@ -62,7 +62,7 @@ function database_install() {
 
     /** The credits table */
 
-    if ( "{$wpdb->prefix}mdb_lm_credits" == $wpdb->get_var( "SHOW TABLES LIKE '{$wpdb->prefix}mdb_lm_credits'" ) ) {
+    if ( "{$wpdb->prefix}mdb_lm_credits" !== $wpdb->get_var( "SHOW TABLES LIKE '{$wpdb->prefix}mdb_lm_credits'" ) ) {
 
         dbDelta(
             "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}mdb_lm_credits (
