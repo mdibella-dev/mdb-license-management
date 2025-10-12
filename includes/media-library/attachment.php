@@ -116,8 +116,8 @@ add_filter( 'attachment_fields_to_edit', __NAMESPACE__ . '\add_attachment_fields
  */
 
 function save_attachment_fields( $post, $attachment ) {
-
-    $credit = new Media_Credit( $post['ID'] );
+    global $wpdb;
+           $credit = new Media_Credit( $post['ID'] );
 
 
     /** Check whether it is necessary to adjust media_count */
@@ -126,7 +126,6 @@ function save_attachment_fields( $post, $attachment ) {
     $new_guid = $attachment['mdb-lm-license-guid'];
 
     if ( $old_guid !== $new_guid) {
-        global $wpdb;
 
         if ( ! empty( $old_guid ) ) {
             $wpdb->query(
@@ -171,7 +170,17 @@ add_filter( 'attachment_fields_to_save', __NAMESPACE__ . '\save_attachment_field
  */
 
 function delete_attachment_handler( $id ) {
-    $credit = new Media_Credit( $id );
+
+    global $wpdb;
+           $credit = new Media_Credit( $id );
+
+    if ( ! empty( $credit->get_license_guid() ) ) {
+        $wpdb->query(
+           "UPDATE {$wpdb->prefix}mdb_lm_licenses
+           SET media_count = (media_count-1)
+           WHERE license_guid = '{$credit->get_license_guid()}'"
+       );
+    }
 
     $credit->remove_table_record();
 }
