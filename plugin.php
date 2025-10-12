@@ -33,12 +33,7 @@ define( __NAMESPACE__ . '\PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 /** Include files */
 
 require_once PLUGIN_DIR . 'includes/classes/index.php';
-
-require_once PLUGIN_DIR . 'includes/media-library/media-list-table.php';
-require_once PLUGIN_DIR . 'includes/media-library/attachment.php';
-
-require_once PLUGIN_DIR . 'includes/admin/page-available-licenses.php';
-
+require_once PLUGIN_DIR . 'includes/admin/index.php';
 
 require_once PLUGIN_DIR . 'includes/deprecated.php';
 require_once PLUGIN_DIR . 'includes/backend.php';
