@@ -79,7 +79,7 @@ class Media_License {
             'ARRAY_A'
         );
 
-        if ( null !== $results ) {
+        if ( ( null !== $results ) and ( 0 !== $wpdb->num_rows ) ) {
             $this->license_guid = $results[0]['license_guid'];
             $this->license_name = $results[0]['license_name'];
             $this->license_description = $results[0]['license_description'];
