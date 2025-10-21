@@ -7,30 +7,6 @@
             "license_url"         : "https://creativecommons.org/publicdomain/zero/1.0/",
             "media_count"         : 0
         },
-        "L054" : {
-            "license_name"        : "Dreamstime RF",
-            "license_description" : "Dreamstime – Royalty Free (RF)",
-            "license_url"         : "https://www.dreamstime.com/about-stock-image-licenses",
-            "media_count"         : 0
-        },
-        "L055" : {
-            "license_name"        : "Dreamstime RF/Editorial",
-            "license_description" : "Dreamstime – Royalty Free - editorial use only",
-            "license_url"         : "https://www.dreamstime.com/about-stock-image-licenses",
-            "media_count"         : 0
-        },
-        "L056" : {
-            "license_name"        : "Freeimages",
-            "license_description" : "Freeimages license",
-            "license_url"         : "https://de.freeimages.com/license",
-            "media_count"         : 0
-        },
-        "L057" : {
-            "license_name"        : "Public domain",
-            "license_description" : "Public domain",
-            "license_url"         : "",
-            "media_count"         : 0
-        },
         "L002" : {
             "license_name"        : "CC BY 4.0",
             "license_description" : "Creative Commons – Attribution 4.0",
@@ -341,6 +317,30 @@
             "license_name"        : "LAL 1.1",
             "license_description" : "Licence Art Libre 1.1 (LAL/FAL)",
             "license_url"         : "http://artlibre.org/licence/lal/de/",
+            "media_count"         : 0
+        },
+        "L054" : {
+            "license_name"        : "Dreamstime RF",
+            "license_description" : "Dreamstime – Royalty Free (RF)",
+            "license_url"         : "https://www.dreamstime.com/about-stock-image-licenses",
+            "media_count"         : 0
+        },
+        "L055" : {
+            "license_name"        : "Dreamstime RF/Editorial",
+            "license_description" : "Dreamstime – Royalty Free - editorial use only",
+            "license_url"         : "https://www.dreamstime.com/about-stock-image-licenses",
+            "media_count"         : 0
+        },
+        "L056" : {
+            "license_name"        : "Freeimages",
+            "license_description" : "Freeimages license",
+            "license_url"         : "https://de.freeimages.com/license",
+            "media_count"         : 0
+        },
+        "L057" : {
+            "license_name"        : "Public domain",
+            "license_description" : "Public domain",
+            "license_url"         : "",
             "media_count"         : 0
         },
         "L058" : {
