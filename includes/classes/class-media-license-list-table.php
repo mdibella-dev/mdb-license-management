@@ -11,6 +11,8 @@
 
 namespace mdb_license_management\classes;
 
+use const mdb_license_management\PLUGIN_URL;
+
 
 
 /** Prevent direct access */
@@ -97,7 +99,145 @@ class Media_License_List_Table extends \WP_List_Table {
      */
 
     function column_license_name( $item ) {
-        return '<strong>' . $item['license_name'] . '</strong>';
+        ob_start();
+        ?>
+        <table class="table-license-name">
+        <tr>
+        <td style="width:150px"><?php
+
+            switch ( $item['license_guid'] ) {
+                case 'L001':
+                    $logo_file = "cc-zero.svg";
+                    break;
+
+                case 'L002':
+                case 'L003':
+                case 'L004':
+                case 'L005':
+                case 'L006':
+                case 'L007':
+                case 'L008':
+                case 'L009':
+                case 'L010':
+                case 'L011':
+                    $logo_file = "cc-by.svg";
+                    break;
+
+                case 'L012':
+                case 'L013':
+                case 'L014':
+                case 'L015':
+                case 'L016':
+                case 'L017':
+                case 'L018':
+                case 'L019':
+                case 'L020':
+                case 'L021':
+                case 'L022':
+                case 'L023':
+                case 'L024':
+                case 'L025':
+                case 'L026':
+                case 'L027':
+                case 'L028':
+                case 'L029':
+                case 'L030':
+                case 'L031':
+                case 'L032':
+                case 'L033':
+                case 'L034':
+                case 'L035':
+                case 'L036':
+                case 'L037':
+                case 'L038':
+                case 'L039':
+                case 'L040':
+                case 'L041':
+                case 'L042':
+                case 'L043':
+                case 'L044':
+                case 'L045':
+                case 'L046':
+                case 'L047':
+                case 'L048':
+                    $logo_file = "cc-by-sa.svg";
+                    break;
+
+                case 'L049':
+                case 'L050':
+                case 'L051':
+                    $logo_file = "gfdl.svg";
+                    break;
+
+                case 'L052':
+                case 'L053':
+                    $logo_file = "lal.svg";
+                    break;
+
+                case 'L054':
+                case 'L055':
+                    $logo_file = "dreamstime.svg";
+                    break;
+
+                case 'L056':
+                    $logo_file = "freeimages.svg";
+                    break;
+
+                case 'L057':
+                    $logo_file = "publicdomain.svg";
+                    break;
+
+                case 'L058':
+                case 'L059':
+                case 'L060':
+                case 'L061':
+                case 'L062':
+                case 'L063':
+                case 'L064':
+                case 'L065':
+                case 'L066':
+                case 'L067':
+                case 'L068':
+                case 'L069':
+                case 'L070':
+                    $logo_file = "cc-by-nc-sa.svg";
+                    break;
+
+                case 'L071':
+                    $logo_file = "pixabay.svg";
+                    break;
+
+                case 'L072':
+                    $logo_file = "pexels.svg";
+                    break;
+
+                case 'L073':
+                    $logo_file = "unsplash.svg";
+                    break;
+
+                default:
+                    $logo_file = "";
+                    break;
+            }
+
+            if ( ! empty( $logo_file ) ) {
+                $logo_url  = PLUGIN_URL ."assets/build/svg/" . $logo_file;
+
+                echo sprintf(
+                    '<img src="%1$s">',
+                    esc_url( $logo_url)
+                );
+            }
+        ?></td>
+        <td><strong><?php echo $item['license_name']; ?></strong></td>
+        </tr>
+        </table>
+        <?php
+
+        $output = ob_get_contents();
+        ob_end_clean();
+
+        return $output;
     }
 
 
