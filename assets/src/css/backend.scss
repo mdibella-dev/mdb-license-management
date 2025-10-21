@@ -17,7 +17,7 @@
     }
 
     &.column-mdb_lm_license {
-       width: 10%
+        width: 10%
     }
 }
 
@@ -30,6 +30,34 @@
     }
 
     &.column-license_terms {
-       width: 15%
+        width: 15%
+    }
+}
+
+.wp-list-table.widefat.media_page_mdb-lm-available-licenses td {
+
+    &.column-license_name {
+        padding: 1rem 0;
+    }
+
+}
+
+
+.wp-list-table.widefat.media_page_mdb-lm-available-licenses th {
+
+    &.column-license_name {
+        padding-left: 142px !important;         // 150px - 8px padding (from th.sorting)
+    }
+
+}
+
+
+;
+
+.table-license-name td {
+    vertical-align: middle;
+
+    &:first-of-type {
+        text-align: center;
     }
 }
