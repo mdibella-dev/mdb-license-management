@@ -250,12 +250,18 @@ class Media_License_List_Table extends \WP_List_Table {
      */
 
     function column_license_terms( $item ) {
-        return sprintf(
-            '<a href="%1$s" title="%2$s" target="_blank">%3$s</a>',
-            esc_url( $item['license_url']),
-            __( 'Link to license terms', 'mdb-license-management' ),
-            __( 'Read license terms', 'mdb-license-management' )
-        );
+        $output = '—';
+        $url    = trim( $item['license_url'] );
+
+        if ( ! empty( $url ) ) {
+            $output = sprintf(
+                '<a href="%1$s" title="%2$s" target="_blank">%3$s</a>',
+                esc_url( $url ),
+                __( 'Link to license terms', 'mdb-license-management' ),
+                __( 'Read license terms', 'mdb-license-management' )
+            );
+        }
+        return $output;
     }
 
 
