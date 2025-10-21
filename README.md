@@ -1,15 +1,15 @@
 # Marco Di Bella &mdash; License Management
-A Plugin for establishing a rudimentary image rights management, which is integrated into the media library of WordPress.
+This WordPress plugin extends the media library with functions for creating and managing copyright notices and copyright licenses.
 
 <br>
 
 ## Development Info
 
 ### Contributors
-[Marco Di Bella ](https://github.com/mdibella-dev)
+[Marco Di Bella](https://github.com/mdibella-dev)
 
 ### Tags
-translation-ready, creative-commons, license-management, wordpress-plugin
+translation-ready, media-credits, byline, license-management, wordpress-plugin
 
 ### Requires at least
 
