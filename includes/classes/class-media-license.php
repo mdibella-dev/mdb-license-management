@@ -51,7 +51,7 @@ class Media_License {
      * @var string
      */
 
-    private $license_url = '';
+    private $license_terms_url = '';
 
 
     /**
@@ -138,8 +138,8 @@ class Media_License {
      * @return string The URL
      */
 
-    public function get_license_url() {
-        return $this->license_url;
+    public function get_license_terms_url() {
+        return $this->license_terms_url;
     }
 
 
