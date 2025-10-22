@@ -5,175 +5,204 @@
             "license_name"        : "CC0 1.0",
             "license_description" : "Creative Commons – no Copyright",
             "license_url"         : "https://creativecommons.org/publicdomain/zero/1.0/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-zero.svg"
         },
         "L002" : {
             "license_name"        : "CC BY 4.0",
             "license_description" : "Creative Commons – Attribution 4.0",
             "license_url"         : "https://creativecommons.org/licenses/by/4.0/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by.svg"
         },
         "L003" : {
             "license_name"        : "CC BY 3.0",
             "license_description" : "Creative Commons – Attribution 3.0",
             "license_url"         : "https://creativecommons.org/licenses/by/3.0/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by.svg"
         },
         "L004" : {
             "license_name"        : "CC BY 3.0 AT",
             "license_description" : "Creative Commons – Attribution 3.0 (Austria)",
             "license_url"         : "https://creativecommons.org/licenses/by/3.0/at/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by.svg"
         },
         "L005" : {
             "license_name"        : "CC BY 3.0 CH",
             "license_description" : "Creative Commons – Attribution 3.0 (Swiss)",
             "license_url"         : "https://creativecommons.org/licenses/by/3.0/ch/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by.svg"
         },
         "L006" : {
             "license_name"        : "CC BY 3.0 DE",
             "license_description" : "Creative Commons – Attribution 3.0 (Germany)",
             "license_url"         : "https://creativecommons.org/licenses/by/3.0/de/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by.svg"
         },
         "L007" : {
             "license_name"        : "CC BY 2.5",
             "license_description" : "Creative Commons – Attribution 2.5",
             "license_url"         : "https://creativecommons.org/licenses/by/2.5/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by.svg"
         },
         "L008" : {
             "license_name"        : "CC BY 2.0",
             "license_description" : "Creative Commons – Attribution 2.0",
             "license_url"         : "https://creativecommons.org/licenses/by/2.0/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by.svg"
         },
         "L009" : {
             "license_name"        : "CC BY 2.0 AT",
             "license_description" : "Creative Commons – Attribution 2.0 (Austria)",
             "license_url"         : "https://creativecommons.org/licenses/by/2.0/at/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by.svg"
         },
         "L010" : {
             "license_name"        : "CC BY 2.0 DE",
             "license_description" : "Creative Commons – Attribution 2.0 (Germany)",
             "license_url"         : "https://creativecommons.org/licenses/by/2.0/de/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by.svg"
         },
         "L011" : {
             "license_name"        : "CC BY 1.0",
             "license_description" : "Creative Commons – Attribution 1.0",
             "license_url"         : "https://creativecommons.org/licenses/by/1.0/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by.svg"
         },
         "L012" : {
             "license_name"        : "CC BY-SA 4.0",
             "license_description" : "Creative Commons – Attribution-ShareAlike 4.0",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/4.0/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L013" : {
             "license_name"        : "CC BY-SA 3.0",
             "license_description" : "Creative Commons – Attribution-ShareAlike 3.0",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/3.0/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L014" : {
             "license_name"        : "CC BY-SA 3.0 AT",
             "license_description" : "Creative Commons – Attribution-ShareAlike 3.0 (Austria)",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/3.0/at/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L015" : {
             "license_name"        : "CC BY-SA 3.0 BR",
             "license_description" : "Creative Commons – Attribution-ShareAlike 3.0 (Brasil)",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/3.0/br/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L016" : {
             "license_name"        : "CC BY-SA 3.0 CH",
             "license_description" : "Creative Commons – Attribution-ShareAlike 3.0 (Swiss)",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/3.0/ch/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L017" : {
             "license_name"        : "CC BY-SA 3.0 CN",
             "license_description" : "Creative Commons – Attribution-ShareAlike 3.0 (China)",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/3.0/cn/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L018" : {
             "license_name"        : "CC BY-SA 3.0 DE",
             "license_description" : "Creative Commons – Attribution-ShareAlike 3.0 (Germany)",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/3.0/de/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L019" : {
             "license_name"        : "CC BY-SA 3.0 ES",
             "license_description" : "Creative Commons – Attribution-ShareAlike 3.0 (Spain)",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/3.0/es/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L020" : {
             "license_name"        : "CC BY-SA 3.0 GR",
             "license_description" : "Creative Commons – Attribution-ShareAlike 3.0 (Greece)",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/3.0/gr/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L021" : {
             "license_name"        : "CC BY-SA 3.0 HK",
             "license_description" : "Creative Commons – Attribution-ShareAlike 3.0 (Hongkong)",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/3.0/hk/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L022" : {
             "license_name"        : "CC BY-SA 3.0 IT",
             "license_description" : "Creative Commons – Attribution-ShareAlike 3.0 (Italy)",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/3.0/it/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L023" : {
             "license_name"        : "CC BY-SA 3.0 PT",
             "license_description" : "Creative Commons – Attribution-ShareAlike 3.0 (Portugal)",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/3.0/pt/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L024" : {
             "license_name"        : "CC BY-SA 3.0 TW",
             "license_description" : "Creative Commons – Attribution-ShareAlike 3.0 (Taiwan)",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/3.0/tw/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L025" : {
             "license_name"        : "CC BY-SA 2.5",
             "license_description" : "Creative Commons – Attribution-ShareAlike 2.5",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/2.5/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L026" : {
             "license_name"        : "CC BY-SA 2.5 AU",
             "license_description" : "Creative Commons – Attribution-ShareAlike 2.5 (Australia)",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/2.5/au/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L027" : {
             "license_name"        : "CC BY-SA 2.5 BR",
             "license_description" : "Creative Commons – Attribution-ShareAlike 2.5 (Brasil)",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/2.5/br/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L028" : {
             "license_name"        : "CC BY-SA 2.5 CA",
             "license_description" : "Creative Commons – Attribution-ShareAlike 2.5 (Canada)",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/2.5/ca/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L029" : {
             "license_name"        : "CC BY-SA 2.5 CH",
             "license_description" : "Creative Commons – Attribution-ShareAlike 2.5 (Swiss)",
             "license_url"         : "https://creativecommons.org/licenses/by-sa/2.5/ch/",
-            "media_count"         : 0
+            "media_count"         : 0,
+            "image":              : "cc-by-sa.svg"
         },
         "L030" : {
             "license_name"        : "CC BY-SA 2.5 CO",
