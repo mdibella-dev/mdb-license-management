@@ -54,7 +54,6 @@ class Media_License {
     private $license_url = '';
 
 
-
     /**
      * The number of media using this license.
      *
@@ -62,6 +61,16 @@ class Media_License {
      */
 
     private $media_count = 0;
+
+
+
+    /**
+     * The file name of the SVG file that graphically describes the license.
+     *
+     * @var string
+     */
+
+    private $extra_image = '';
 
 
     /**
@@ -80,11 +89,12 @@ class Media_License {
         );
 
         if ( ( null !== $results ) and ( 0 !== $wpdb->num_rows ) ) {
-            $this->license_guid = $results[0]['license_guid'];
-            $this->license_name = $results[0]['license_name'];
+            $this->license_guid        = $results[0]['license_guid'];
+            $this->license_name        = $results[0]['license_name'];
             $this->license_description = $results[0]['license_description'];
-            $this->license_url = $results[0]['license_url'];
-            $this->media_count = $results[0]['media_count'];
+            $this->license_url         = $results[0]['license_url'];
+            $this->media_count         = $results[0]['media_count'];
+            $this->extra_image         = $results[0]['extra_image'];
         }
     }
 
@@ -143,4 +153,14 @@ class Media_License {
         return $this->media_count;
     }
 
+
+    /**
+     * Gets the file name of the extra image.
+     *
+     * @return string The file name
+     */
+
+    public function get_extra_image() {
+        return $this->extra_image;
+    }
 }

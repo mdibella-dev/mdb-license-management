@@ -29,6 +29,7 @@ function database_install() {
             license_description TEXT DEFAULT '',
             license_url VARCHAR(255) DEFAULT '',
             media_count SMALLINT UNSIGNED DEFAULT 0,
+            extra_image VARCHAR(255) DEFAULT '',
             PRIMARY KEY (license_guid)
             )
             COLLATE $collate;"
@@ -45,13 +46,14 @@ function database_install() {
 
                 $wpdb->query( $wpdb->prepare(
                     "INSERT IGNORE INTO {$wpdb->prefix}mdb_lm_licenses
-                    (license_guid, license_name, license_description, license_url, media_count)
-                    VALUES ( %s, %s, %s, %s, %d )",
+                    (license_guid, license_name, license_description, license_url, media_count, extra_image)
+                    VALUES ( %s, %s, %s, %s, %d, %s )",
                     $guid,
                     $content['license_name'],
                     $content['license_description'],
                     $content['license_url'],
-                    $content['media_count']
+                    $content['media_count'],
+                    $content['extra_image']
                 ) );
             }
         } else {
