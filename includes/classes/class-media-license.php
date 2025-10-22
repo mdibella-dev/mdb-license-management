@@ -92,7 +92,7 @@ class Media_License {
             $this->license_guid        = $results[0]['license_guid'];
             $this->license_name        = $results[0]['license_name'];
             $this->license_description = $results[0]['license_description'];
-            $this->license_url         = $results[0]['license_url'];
+            $this->license_terms_url   = $results[0]['license_terms_url'];
             $this->media_count         = $results[0]['media_count'];
             $this->extra_image         = $results[0]['extra_image'];
         }
