@@ -27,7 +27,7 @@ function database_install() {
             license_guid VARCHAR(4) DEFAULT '' NOT NULL,
             license_name VARCHAR(50) DEFAULT '' NOT NULL,
             license_description TEXT DEFAULT '',
-            license_url VARCHAR(255) DEFAULT '',
+            license_terms_url VARCHAR(255) DEFAULT '',
             media_count SMALLINT UNSIGNED DEFAULT 0,
             extra_image VARCHAR(255) DEFAULT '',
             PRIMARY KEY (license_guid)
@@ -46,12 +46,12 @@ function database_install() {
 
                 $wpdb->query( $wpdb->prepare(
                     "INSERT IGNORE INTO {$wpdb->prefix}mdb_lm_licenses
-                    (license_guid, license_name, license_description, license_url, media_count, extra_image)
+                    (license_guid, license_name, license_description, license_terms_url, media_count, extra_image)
                     VALUES ( %s, %s, %s, %s, %d, %s )",
                     $guid,
                     $content['license_name'],
                     $content['license_description'],
-                    $content['license_url'],
+                    $content['license_terms_url'],
                     $content['media_count'],
                     $content['extra_image']
                 ) );

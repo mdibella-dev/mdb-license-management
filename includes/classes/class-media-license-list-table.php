@@ -138,7 +138,7 @@ class Media_License_List_Table extends \WP_List_Table {
 
     function column_license_terms( $item ) {
         $output = '—';
-        $url    = trim( $item['license_url'] );
+        $url    = trim( $item['license_terms_url'] );
 
         if ( ! empty( $url ) ) {
             $output = sprintf(
