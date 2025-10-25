@@ -30,7 +30,9 @@ define( __NAMESPACE__ . '\PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 
 
-const TABLE_MEDIA    = 'mdb_lv_media';
+const TABLE_MEDIA         = 'mdb_lv_media';
+const LICENSE_METAKEY_URL = 'mdb_lm_license_url';
+const LICENSE_METAKEY_IMG = 'mdb_lm_license_img';
 
 
 /** Include files */

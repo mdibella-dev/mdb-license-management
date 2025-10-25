@@ -8,7 +8,7 @@
 
 namespace mdb_license_management\classes;
 
-use const mdb_license_management\LICENSE_METAKEY_LINK;
+use const mdb_license_management\LICENSE_METAKEY_URL;
 
 
 /** Prevent direct access */
@@ -92,7 +92,7 @@ class Media_License_List extends \wordpress_helper\Admin_Taxonomy_List {
 
         switch( $column_name ) {
             case 'link':
-                $link = get_term_meta( $term_id, LICENSE_METAKEY_LINK, true );
+                $link = get_term_meta( $term_id, LICENSE_METAKEY_URL, true );
 
                 if ( ! empty( $link ) ) {
                     $output = sprintf(

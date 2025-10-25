@@ -9,8 +9,8 @@
 
 namespace mdb_license_management\taxonomies;
 
-use const mdb_license_management\LICENSE_METAKEY_LINK;
-
+use const mdb_license_management\LICENSE_METAKEY_URL;
+use const mdb_license_management\LICENSE_METAKEY_IMG;
 
 
 /** Prevent direct access */
@@ -97,8 +97,8 @@ function setup() {
         $result = term_exists( $license['license_name'], 'media_license' );
 
         if ( (0 !== $result) and (NULL !== $result) ) {
-            update_term_meta( $result['term_id'], 'mdb_lm_license_url', $license['url'] );
-            update_term_meta( $result['term_id'], 'mdb_lm_license_img', $license['image'] );
+            update_term_meta( $result['term_id'], LICENSE_METAKEY_URL, $license['url'] );
+            update_term_meta( $result['term_id'], LICENSE_METAKEY_IMG, $license['image'] );
         }
     }
 }
