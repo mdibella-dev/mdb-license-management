@@ -336,18 +336,18 @@ return [
         'l054' => [
             'name'      => 'Dreamstime RF',
             'name_full' => 'Dreamstime – Royalty Free (RF)',
-            'url'       => 'https://www.dreamstime.com/about-stock-image_file_name-licenses',
+            'url'       => 'https://www.dreamstime.com/about-stock-image-licenses',
             'image'     => 'dreamstime.svg'
         ],
         'l055' => [
             'name'      => 'Dreamstime RF/Editorial',
             'name_full' => 'Dreamstime – Royalty Free - editorial use only',
-            'url'       => 'https://www.dreamstime.com/about-stock-image_file_name-licenses',
+            'url'       => 'https://www.dreamstime.com/about-stock-image-licenses',
             'image'     => 'dreamstime.svg'
         ],
         'l056' => [
-            'name'      => 'Freeimage_file_names',
-            'name_full' => 'Freeimage_file_names license',
+            'name'      => 'Freeimages',
+            'name_full' => 'Freeimages license',
             'url'       => 'https://de.freeimage_file_names.com/license',
             'image'     => 'freeimages.svg'
         ],
