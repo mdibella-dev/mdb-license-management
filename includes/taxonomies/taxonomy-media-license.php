@@ -85,21 +85,30 @@ function setup() {
 
     foreach ( $preset['licenses'] as $slug => $license ) {
 
-        wp_insert_term(
-            $license['name'],
-            'media_license',
-            [
-                'description' => $license['name_full'],
-                'slug'        => $slug
-            ]
-        );
+        $result = term_exists( $license['name'], 'media_license' );
 
-        $result = term_exists( $license['license_name'], 'media_license' );
-
-        if ( (0 !== $result) and (NULL !== $result) ) {
-            update_term_meta( $result['term_id'], LICENSE_METAKEY_URL, $license['url'] );
-            update_term_meta( $result['term_id'], LICENSE_METAKEY_IMG, $license['image'] );
+        if ( ( 0 !== $result ) and ( null !== $result ) ) {
+            wp_insert_term(
+                $license['name'],
+                'media_license',
+                [
+                    'description' => $license['name_full'],
+                    'slug'        => $slug
+                ]
+            );
+        } else {
+            wp_update_term(
+                $license['name'],
+                'media_license',
+                [
+                    'description' => $license['name_full'],
+                    'slug'        => $slug
+                ]
+            );
         }
+
+        update_term_meta( $result['term_id'], LICENSE_METAKEY_URL, $license['url'] );
+        update_term_meta( $result['term_id'], LICENSE_METAKEY_IMG, $license['image'] );
     }
 }
 
