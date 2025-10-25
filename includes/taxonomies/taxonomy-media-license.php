@@ -77,26 +77,28 @@ function register() {
  * @since 2.0.0
  *
  * @todo Add an error routine in case licenses.php does not exist.
+ * @todo Add a version control routine for update purposes
  */
 
 function setup() {
     $preset = include "licenses.php";
 
-    foreach ( $preset['licenses'] as $license ) {
+    foreach ( $preset['licenses'] as $slug => $license ) {
 
         wp_insert_term(
-            $license['term'],
+            $license['name'],
             'media_license',
             [
-                'description' => $license['description'],
-                'slug'        => $license['slug']
+                'description' => $license['name_full'],
+                'slug'        => $slug
             ]
         );
 
-        $result = term_exists( $license['term'], 'media_license' );
+        $result = term_exists( $license['license_name'], 'media_license' );
 
         if ( (0 !== $result) and (NULL !== $result) ) {
-            update_term_meta( $result['term_id'], LICENSE_METAKEY_LINK, $license['link'] );
+            update_term_meta( $result['term_id'], 'mdb_lm_license_url', $license['url'] );
+            update_term_meta( $result['term_id'], 'mdb_lm_license_img', $license['image'] );
         }
     }
 }

@@ -31,7 +31,6 @@ define( __NAMESPACE__ . '\PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 
 const TABLE_MEDIA    = 'mdb_lv_media';
-const LICENSE_METAKEY_LINK = 'mdb_lm_license_link';
 
 
 /** Include files */
