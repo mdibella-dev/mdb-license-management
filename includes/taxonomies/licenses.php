@@ -13,445 +13,445 @@ defined( 'ABSPATH' ) or exit;
 
 
 return [
-    'version'  => '1.0',
+    'version'  => '1.4',
     'licenses' => [
-        [
-            'slug'        => 'l001',
-            'term'        => 'CC0 1.0',
-            'description' => 'Creative Commons – no Copyright',
-            'link'        => 'https://creativecommons.org/publicdomain/zero/1.0/'
-        ],
-        [
-            'slug'        => 'l002',
-            'term'        => 'CC BY 4.0',
-            'description' => 'Creative Commons – Attribution 4.0',
-            'link'        => 'https://creativecommons.org/licenses/by/4.0/'
-        ],
-        [
-            'slug'        => 'l003',
-            'term'        => 'CC BY 3.0',
-            'description' => 'Creative Commons – Attribution 3.0',
-            'link'        => 'https://creativecommons.org/licenses/by/3.0/'
-        ],
-        [
-            'slug'        => 'l004',
-            'term'        => 'CC BY 3.0 AT',
-            'description' => 'Creative Commons – Attribution 3.0 (Austria)',
-            'link'        => 'https://creativecommons.org/licenses/by/3.0/at/'
-        ],
-        [
-            'slug'        => 'l005',
-            'term'        => 'CC BY 3.0 CH',
-            'description' => 'Creative Commons – Attribution 3.0 (Swiss)',
-            'link'        => 'https://creativecommons.org/licenses/by/3.0/ch/'
-        ],
-        [
-            'slug'        => 'l006',
-            'term'        => 'CC BY 3.0 DE',
-            'description' => 'Creative Commons – Attribution 3.0 (Germany)',
-            'link'        => 'https://creativecommons.org/licenses/by/3.0/de/'
-        ],
-        [
-            'slug'        => 'l007',
-            'term'        => 'CC BY 2.5',
-            'description' => 'Creative Commons – Attribution 2.5',
-            'link'        => 'https://creativecommons.org/licenses/by/2.5/'
-        ],
-        [
-            'slug'        => 'l008',
-            'term'        => 'CC BY 2.0',
-            'description' => 'Creative Commons – Attribution 2.0',
-            'link'        => 'https://creativecommons.org/licenses/by/2.0/'
-        ],
-        [
-            'slug'        => 'l009',
-            'term'        => 'CC BY 2.0 AT',
-            'description' => 'Creative Commons – Attribution 2.0 (Austria)',
-            'link'        => 'https://creativecommons.org/licenses/by/2.0/at/'
-        ],
-        [
-            'slug'        => 'l010',
-            'term'        => 'CC BY 2.0 DE',
-            'description' => 'Creative Commons – Attribution 2.0 (Germany)',
-            'link'        => 'https://creativecommons.org/licenses/by/2.0/de/'
-        ],
-        [
-            'slug'        => 'l011',
-            'term'        => 'CC BY 1.0',
-            'description' => 'Creative Commons – Attribution 1.0',
-            'link'        => 'https://creativecommons.org/licenses/by/1.0/'
-        ],
-        [
-            'slug'        => 'l012',
-            'term'        => 'CC BY-SA 4.0',
-            'description' => 'Creative Commons – Attribution-ShareAlike 4.0',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/4.0/'
-        ],
-        [
-            'slug'        => 'l013',
-            'term'        => 'CC BY-SA 3.0',
-            'description' => 'Creative Commons – Attribution-ShareAlike 3.0',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/3.0/'
-        ],
-        [
-            'slug'        => 'l014',
-            'term'        => 'CC BY-SA 3.0 AT',
-            'description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Austria)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/3.0/at/'
-        ],
-        [
-            'slug'        => 'l015',
-            'term'        => 'CC BY-SA 3.0 BR',
-            'description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Brasil)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/3.0/br/'
-        ],
-        [
-            'slug'        => 'l016',
-            'term'        => 'CC BY-SA 3.0 CH',
-            'description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Swiss)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/3.0/ch/'
-        ],
-        [
-            'slug'        => 'l017',
-            'term'        => 'CC BY-SA 3.0 CN',
-            'description' => 'Creative Commons – Attribution-ShareAlike 3.0 (China)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/3.0/cn/'
-        ],
-        [
-            'slug'        => 'l018',
-            'term'        => 'CC BY-SA 3.0 DE',
-            'description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Germany)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/3.0/de/'
-        ],
-        [
-            'slug'        => 'l019',
-            'term'        => 'CC BY-SA 3.0 ES',
-            'description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Spain)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/3.0/es/'
-        ],
-        [
-            'slug'        => 'l020',
-            'term'        => 'CC BY-SA 3.0 GR',
-            'description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Greece)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/3.0/gr/'
-        ],
-        [
-            'slug'        => 'l021',
-            'term'        => 'CC BY-SA 3.0 HK',
-            'description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Hongkong)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/3.0/hk/'
-        ],
-        [
-            'slug'        => 'l022',
-            'term'        => 'CC BY-SA 3.0 IT',
-            'description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Italy)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/3.0/it/'
-        ],
-        [
-            'slug'        => 'l023',
-            'term'        => 'CC BY-SA 3.0 PT',
-            'description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Portugal)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/3.0/pt/'
-        ],
-        [
-            'slug'        => 'l024',
-            'term'        => 'CC BY-SA 3.0 TW',
-            'description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Taiwan)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/3.0/tw/'
-        ],
-        [
-            'slug'        => 'l025',
-            'term'        => 'CC BY-SA 2.5',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.5',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.5/'
-        ],
-        [
-            'slug'        => 'l026',
-            'term'        => 'CC BY-SA 2.5 AU',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Australia)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.5/au/'
-        ],
-        [
-            'slug'        => 'l027',
-            'term'        => 'CC BY-SA 2.5 BR',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Brasil)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.5/br/'
-        ],
-        [
-            'slug'        => 'l028',
-            'term'        => 'CC BY-SA 2.5 CA',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Canada)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.5/ca/'
-        ],
-        [
-            'slug'        => 'l029',
-            'term'        => 'CC BY-SA 2.5 CH',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Swiss)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.5/ch/'
-        ],
-        [
-            'slug'        => 'l030',
-            'term'        => 'CC BY-SA 2.5 CO',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Columbia)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.5/co/'
-        ],
-        [
-            'slug'        => 'l031',
-            'term'        => 'CC BY-SA 2.5 CN',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.5 (China)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.5/co/'
-        ],
-        [
-            'slug'        => 'l032',
-            'term'        => 'CC BY-SA 2.5 ES',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Spain)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.5/es/'
-        ],
-        [
-            'slug'        => 'l033',
-            'term'        => 'CC BY-SA 2.5 IT',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Italy)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.5/it/'
-        ],
-        [
-            'slug'        => 'l034',
-            'term'        => 'CC BY-SA 2.5 MX',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Mexico)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.5/mx/'
-        ],
-        [
-            'slug'        => 'l035',
-            'term'        => 'CC BY-SA 2.5 PT',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Portugal)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.5/pt/'
-        ],
-        [
-            'slug'        => 'l036',
-            'term'        => 'CC BY-SA 2.5 TW',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Taiwan)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.5/tw/'
-        ],
-        [
-            'slug'        => 'l037',
-            'term'        => 'CC BY-SA 2.0',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.0',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.0/'
-        ],
-        [
-            'slug'        => 'l038',
-            'term'        => 'CC BY-SA 2.0 AT',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Austria)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.0/at/'
-        ],
-        [
-            'slug'        => 'l039',
-            'term'        => 'CC BY-SA 2.0 AU',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Australia)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.0/au/'
-        ],
-        [
-            'slug'        => 'l040',
-            'term'        => 'CC BY-SA 2.0 BR',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Brasil)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.0/br/'
-        ],
-        [
-            'slug'        => 'l041',
-            'term'        => 'CC BY-SA 2.0 CA',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Canada)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.0/ca/'
-        ],
-        [
-            'slug'        => 'l042',
-            'term'        => 'CC BY-SA 2.0 DE',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Germany)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.0/de/'
-        ],
-        [
-            'slug'        => 'l043',
-            'term'        => 'CC BY-SA 2.0 ES',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Spain)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.0/es/'
-        ],
-        [
-            'slug'        => 'l044',
-            'term'        => 'CC BY-SA 2.0 IT',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Italy)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.0/it/'
-        ],
-        [
-            'slug'        => 'l045',
-            'term'        => 'CC BY-SA 2.0 KR',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Korea)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.0/kr/'
-        ],
-        [
-            'slug'        => 'l046',
-            'term'        => 'CC BY-SA 2.0 TW',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Taiwan)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.0/tw/'
-        ],
-        [
-            'slug'        => 'l047',
-            'term'        => 'CC BY-SA 2.0 UK',
-            'description' => 'Creative Commons – Attribution-ShareAlike 2.0 (England and Wales)',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/2.0/uk/'
-        ],
-        [
-            'slug'        => 'l048',
-            'term'        => 'CC BY-SA 1.0',
-            'description' => 'Creative Commons – Attribution-ShareAlike 1.0',
-            'link'        => 'https://creativecommons.org/licenses/by-sa/1.0/'
-        ],
-        [
-            'slug'        => 'l049',
-            'term'        => 'GNU FDL 1.3',
-            'description' => 'GNU Free Documentation License 1.3',
-            'link'        => 'https://www.gnu.org/licenses/fdl-1.3.html'
-        ],
-        [
-            'slug'        => 'l050',
-            'term'        => 'GNU FDL 1.2',
-            'description' => 'GNU Free Documentation License 1.2',
-            'link'        => 'https://www.gnu.org/licenses/fdl-1.2.html'
-        ],
-        [
-            'slug'        => 'l051',
-            'term'        => 'GNU FDL 1.1',
-            'description' => 'GNU Free Documentation License 1.1',
-            'link'        => 'https://www.gnu.org/licenses/old-licenses/fdl-1.1.html'
-        ],
-        [
-            'slug'        => 'l052',
-            'term'        => 'LAL 1.3',
-            'description' => 'Licence Art Libre 1.3 (LAL/FAL)',
-            'link'        => 'http://artlibre.org/licence/lal/de1-3/'
-        ],
-        [
-            'slug'        => 'l053',
-            'term'        => 'LAL 1.1',
-            'description' => 'Licence Art Libre 1.1 (LAL/FAL)',
-            'link'        => 'http://artlibre.org/licence/lal/de/'
-        ],
-        [
-            'slug'        => 'l054',
-            'term'        => 'Dreamstime RF',
-            'description' => 'Dreamstime – Royalty Free (RF)',
-            'link'        => 'https://www.dreamstime.com/about-stock-image-licenses'
-        ],
-        [
-            'slug'        => 'l055',
-            'term'        => 'Dreamstime RF/Editorial',
-            'description' => 'Dreamstime – Royalty Free - editorial use only',
-            'link'        => 'https://www.dreamstime.com/about-stock-image-licenses'
-        ],
-        [
-            'slug'        => 'l056',
-            'term'        => 'Freeimages',
-            'description' => 'Freeimages license',
-            'link'        => 'https://de.freeimages.com/license'
-        ],
-        [
-            'slug'        => 'l057',
-            'term'        => 'Public domain',
-            'description' => 'Public domain',
-            'link'        => ''
-        ],
-        [
-            'slug'        => 'l058',
-            'term'        => 'CC BY-NC-SA 2.5',
-            'description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5',
-            'link'        => 'https://creativecommons.org/licenses/by-nc-sa/2.5/'
-        ],
-        [
-            'slug'        => 'l059',
-            'term'        => 'CC BY-NC-SA 2.5 AU',
-            'description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Australia)',
-            'link'        => 'https://creativecommons.org/licenses/by-nc-sa/2.5/au/'
-        ],
-        [
-            'slug'        => 'l060',
-            'term'        => 'CC BY-NC-SA 2.5 BR',
-            'description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Brasil)',
-            'link'        => 'https://creativecommons.org/licenses/by-nc-sa/2.5/br/'
-        ],
-        [
-            'slug'        => 'l061',
-            'term'        => 'CC BY-NC-SA 2.5 CA',
-            'description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Canada)',
-            'link'        => 'https://creativecommons.org/licenses/by-nc-sa/2.5/ca/'
-        ],
-        [
-            'slug'        => 'l062',
-            'term'        => 'CC BY-NC-SA 2.5 CH',
-            'description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Swiss)',
-            'link'        => 'https://creativecommons.org/licenses/by-nc-sa/2.5/ch/'
-        ],
-        [
-            'slug'        => 'l063',
-            'term'        => 'CC BY-NC-SA 2.5 CN',
-            'description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (China)',
-            'link'        => 'https://creativecommons.org/licenses/by-nc-sa/2.5/cn/'
-        ],
-        [
-            'slug'        => 'l064',
-            'term'        => 'CC BY-NC-SA 2.5 CO',
-            'description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Columbia)',
-            'link'        => 'https://creativecommons.org/licenses/by-nc-sa/2.5/co/'
-        ],
-        [
-            'slug'        => 'l065',
-            'term'        => 'CC BY-NC-SA 2.5 ES',
-            'description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Spain)',
-            'link'        => 'https://creativecommons.org/licenses/by-nc-sa/2.5/es/'
-        ],
-        [
-            'slug'        => 'l066',
-            'term'        => 'CC BY-NC-SA 2.5 IT',
-            'description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Italy)',
-            'link'        => 'https://creativecommons.org/licenses/by-nc-sa/2.5/it/'
-        ],
-        [
-            'slug'        => 'l067',
-            'term'        => 'CC BY-NC-SA 2.5 MX',
-            'description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Mexico)',
-            'link'        => 'https://creativecommons.org/licenses/by-nc-sa/2.5/mx/'
-        ],
-        [
-            'slug'        => 'l068',
-            'term'        => 'CC BY-NC-SA 2.5 PT',
-            'description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Portugal)',
-            'link'        => 'https://creativecommons.org/licenses/by-nc-sa/2.5/pt/'
-        ],
-        [
-            'slug'        => 'l069',
-            'term'        => 'CC BY-NC-SA 2.5 SE',
-            'description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Sweden)',
-            'link'        => 'https://creativecommons.org/licenses/by-nc-sa/2.5/se/'
-        ],
-        [
-            'slug'        => 'l070',
-            'term'        => 'CC BY-NC-SA 2.5 TW',
-            'description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Taiwan)',
-            'link'        => 'https://creativecommons.org/licenses/by-nc-sa/2.5/tw/'
-        ],
-        [
-            'slug'        => 'l071',
-            'term'        => 'Pixabay',
-            'description' => 'Pixabay license',
-            'link'        => 'https://pixabay.com/service/license-summary/'
-        ],
-        [
-            'slug'        => 'l072',
-            'term'        => 'Pexels',
-            'description' => 'Pexels license',
-            'link'        => 'https://www.pexels.com/de-de/lizenz/'
-        ],
-        [
-            'slug'        => 'l073',
-            'term'        => 'Unsplash',
-            'description' => 'Unsplash license',
-            'link'        => 'https://unsplash.com/de/lizenz'
-        ]
-    ]
+        'l001' => [
+            'license_name'        => 'CC0 1.0',
+            'license_description' => 'Creative Commons – no Copyright',
+            'license_terms_url'   => 'https:creativecommons.org/publicdomain/zero/1.0/',
+            'extra_image'         => 'cc-zero.svg'
+        ],
+        'l002' => [
+            'license_name'        => 'CC BY 4.0',
+            'license_description' => 'Creative Commons – Attribution 4.0',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by/4.0/',
+            'extra_image'         => 'cc-by.svg'
+        ],
+        'l003' => [
+            'license_name'        => 'CC BY 3.0',
+            'license_description' => 'Creative Commons – Attribution 3.0',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by/3.0/',
+            'extra_image'         => 'cc-by.svg'
+        ],
+        'l004' => [
+            'license_name'        => 'CC BY 3.0 AT',
+            'license_description' => 'Creative Commons – Attribution 3.0 (Austria)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by/3.0/at/',
+            'extra_image'         => 'cc-by.svg'
+        ],
+        'l005' => [
+            'license_name'        => 'CC BY 3.0 CH',
+            'license_description' => 'Creative Commons – Attribution 3.0 (Swiss)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by/3.0/ch/',
+            'extra_image'         => 'cc-by.svg'
+        ],
+        'l006' => [
+            'license_name'        => 'CC BY 3.0 DE',
+            'license_description' => 'Creative Commons – Attribution 3.0 (Germany)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by/3.0/de/',
+            'extra_image'         => 'cc-by.svg'
+        ],
+        'l007' => [
+            'license_name'        => 'CC BY 2.5',
+            'license_description' => 'Creative Commons – Attribution 2.5',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by/2.5/',
+            'extra_image'         => 'cc-by.svg'
+        ],
+        'l008' => [
+            'license_name'        => 'CC BY 2.0',
+            'license_description' => 'Creative Commons – Attribution 2.0',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by/2.0/',
+            'extra_image'         => 'cc-by.svg'
+        ],
+        'l009' => [
+            'license_name'        => 'CC BY 2.0 AT',
+            'license_description' => 'Creative Commons – Attribution 2.0 (Austria)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by/2.0/at/',
+            'extra_image'         => 'cc-by.svg'
+        ],
+        'l010' => [
+            'license_name'        => 'CC BY 2.0 DE',
+            'license_description' => 'Creative Commons – Attribution 2.0 (Germany)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by/2.0/de/',
+            'extra_image'         => 'cc-by.svg'
+        ],
+        'l011' => [
+            'license_name'        => 'CC BY 1.0',
+            'license_description' => 'Creative Commons – Attribution 1.0',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by/1.0/',
+            'extra_image'         => 'cc-by.svg'
+        ],
+        'l012' => [
+            'license_name'        => 'CC BY-SA 4.0',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 4.0',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/4.0/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l013' => [
+            'license_name'        => 'CC BY-SA 3.0',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 3.0',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/3.0/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l014' => [
+            'license_name'        => 'CC BY-SA 3.0 AT',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Austria)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/3.0/at/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l015' => [
+            'license_name'        => 'CC BY-SA 3.0 BR',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Brasil)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/3.0/br/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l016' => [
+            'license_name'        => 'CC BY-SA 3.0 CH',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Swiss)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/3.0/ch/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l017' => [
+            'license_name'        => 'CC BY-SA 3.0 CN',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 3.0 (China)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/3.0/cn/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l018' => [
+            'license_name'        => 'CC BY-SA 3.0 DE',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Germany)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/3.0/de/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l019' => [
+            'license_name'        => 'CC BY-SA 3.0 ES',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Spain)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/3.0/es/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l020' => [
+            'license_name'        => 'CC BY-SA 3.0 GR',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Greece)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/3.0/gr/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l021' => [
+            'license_name'        => 'CC BY-SA 3.0 HK',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Hongkong)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/3.0/hk/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l022' => [
+            'license_name'        => 'CC BY-SA 3.0 IT',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Italy)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/3.0/it/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l023' => [
+            'license_name'        => 'CC BY-SA 3.0 PT',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Portugal)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/3.0/pt/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l024' => [
+            'license_name'        => 'CC BY-SA 3.0 TW',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 3.0 (Taiwan)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/3.0/tw/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l025' => [
+            'license_name'        => 'CC BY-SA 2.5',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.5',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.5/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l026' => [
+            'license_name'        => 'CC BY-SA 2.5 AU',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Australia)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.5/au/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l027' => [
+            'license_name'        => 'CC BY-SA 2.5 BR',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Brasil)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.5/br/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l028' => [
+            'license_name'        => 'CC BY-SA 2.5 CA',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Canada)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.5/ca/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l029' => [
+            'license_name'        => 'CC BY-SA 2.5 CH',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Swiss)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.5/ch/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l030' => [
+            'license_name'        => 'CC BY-SA 2.5 CO',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Columbia)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.5/co/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l031' => [
+            'license_name'        => 'CC BY-SA 2.5 CN',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.5 (China)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.5/co/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l032' => [
+            'license_name'        => 'CC BY-SA 2.5 ES',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Spain)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.5/es/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l033' => [
+            'license_name'        => 'CC BY-SA 2.5 IT',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Italy)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.5/it/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l034' => [
+            'license_name'        => 'CC BY-SA 2.5 MX',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Mexico)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.5/mx/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l035' => [
+            'license_name'        => 'CC BY-SA 2.5 PT',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Portugal)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.5/pt/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l036' => [
+            'license_name'        => 'CC BY-SA 2.5 TW',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.5 (Taiwan)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.5/tw/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l037' => [
+            'license_name'        => 'CC BY-SA 2.0',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.0',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.0/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l038' => [
+            'license_name'        => 'CC BY-SA 2.0 AT',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Austria)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.0/at/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l039' => [
+            'license_name'        => 'CC BY-SA 2.0 AU',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Australia)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.0/au/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l040' => [
+            'license_name'        => 'CC BY-SA 2.0 BR',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Brasil)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.0/br/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l041' => [
+            'license_name'        => 'CC BY-SA 2.0 CA',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Canada)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.0/ca/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l042' => [
+            'license_name'        => 'CC BY-SA 2.0 DE',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Germany)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.0/de/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l043' => [
+            'license_name'        => 'CC BY-SA 2.0 ES',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Spain)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.0/es/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l044' => [
+            'license_name'        => 'CC BY-SA 2.0 IT',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Italy)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.0/it/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l045' => [
+            'license_name'        => 'CC BY-SA 2.0 KR',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Korea)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.0/kr/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l046' => [
+            'license_name'        => 'CC BY-SA 2.0 TW',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.0 (Taiwan)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.0/tw/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l047' => [
+            'license_name'        => 'CC BY-SA 2.0 UK',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 2.0 (England and Wales)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/2.0/uk/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l048' => [
+            'license_name'        => 'CC BY-SA 1.0',
+            'license_description' => 'Creative Commons – Attribution-ShareAlike 1.0',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-sa/1.0/',
+            'extra_image'         => 'cc-by-sa.svg'
+        ],
+        'l049' => [
+            'license_name'        => 'GNU FDL 1.3',
+            'license_description' => 'GNU Free Documentation License 1.3',
+            'license_terms_url'   => 'https:www.gnu.org/licenses/fdl-1.3.html',
+            'extra_image'         => 'gfdl.svg'
+        ],
+        'l050' => [
+            'license_name'        => 'GNU FDL 1.2',
+            'license_description' => 'GNU Free Documentation License 1.2',
+            'license_terms_url'   => 'https:www.gnu.org/licenses/fdl-1.2.html',
+            'extra_image'         => 'gfdl.svg'
+        ],
+        'l051' => [
+            'license_name'        => 'GNU FDL 1.1',
+            'license_description' => 'GNU Free Documentation License 1.1',
+            'license_terms_url'   => 'https:www.gnu.org/licenses/old-licenses/fdl-1.1.html',
+            'extra_image'         => 'gfdl.svg'
+        ],
+        'l052' => [
+            'license_name'        => 'LAL 1.3',
+            'license_description' => 'Licence Art Libre 1.3 (LAL/FAL)',
+            'license_terms_url'   => 'http=>//artlibre.org/licence/lal/de1-3/',
+            'extra_image'         => 'lal.svg'
+        ],
+        'l053' => [
+            'license_name'        => 'LAL 1.1',
+            'license_description' => 'Licence Art Libre 1.1 (LAL/FAL)',
+            'license_terms_url'   => 'http=>//artlibre.org/licence/lal/de/',
+            'extra_image'         => 'lal.svg'
+        ],
+        'l054' => [
+            'license_name'        => 'Dreamstime RF',
+            'license_description' => 'Dreamstime – Royalty Free (RF)',
+            'license_terms_url'   => 'https:www.dreamstime.com/about-stock-image_file_name-licenses',
+            'extra_image'         => 'dreamstime.svg'
+        ],
+        'l055' => [
+            'license_name'        => 'Dreamstime RF/Editorial',
+            'license_description' => 'Dreamstime – Royalty Free - editorial use only',
+            'license_terms_url'   => 'https:www.dreamstime.com/about-stock-image_file_name-licenses',
+            'extra_image'         => 'dreamstime.svg'
+        ],
+        'l056' => [
+            'license_name'        => 'Freeimage_file_names',
+            'license_description' => 'Freeimage_file_names license',
+            'license_terms_url'   => 'https:de.freeimage_file_names.com/license',
+            'extra_image'         => 'freeimages.svg'
+        ],
+        'l057' => [
+            'license_name'        => 'Public domain',
+            'license_description' => 'Public domain',
+            'license_terms_url'   => 'https:creativecommons.org/publicdomain/',
+            'extra_image'         => 'publicdomain.svg'
+        ],
+        'l058' => [
+            'license_name'        => 'CC BY-NC-SA 2.5',
+            'license_description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-nc-sa/2.5/',
+            'extra_image'         => 'cc-by-nc-sa.svg'
+        ],
+        'l059' => [
+            'license_name'        => 'CC BY-NC-SA 2.5 AU',
+            'license_description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Australia)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-nc-sa/2.5/au/',
+            'extra_image'         => 'cc-by-nc-sa.svg'
+        ],
+        'l060' => [
+            'license_name'        => 'CC BY-NC-SA 2.5 BR',
+            'license_description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Brasil)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-nc-sa/2.5/br/',
+            'extra_image'         => 'cc-by-nc-sa.svg'
+        ],
+        'l061' => [
+            'license_name'        => 'CC BY-NC-SA 2.5 CA',
+            'license_description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Canada)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-nc-sa/2.5/ca/',
+            'extra_image'         => 'cc-by-nc-sa.svg'
+        ],
+        'l062' => [
+            'license_name'        => 'CC BY-NC-SA 2.5 CH',
+            'license_description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Swiss)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-nc-sa/2.5/ch/',
+            'extra_image'         => 'cc-by-nc-sa.svg'
+        ],
+        'l063' => [
+            'license_name'        => 'CC BY-NC-SA 2.5 CN',
+            'license_description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (China)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-nc-sa/2.5/cn/',
+            'extra_image'         => 'cc-by-nc-sa.svg'
+        ],
+        'l064' => [
+            'license_name'        => 'CC BY-NC-SA 2.5 CO',
+            'license_description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Columbia)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-nc-sa/2.5/co/',
+            'extra_image'         => 'cc-by-nc-sa.svg'
+        ],
+        'l065' => [
+            'license_name'        => 'CC BY-NC-SA 2.5 ES',
+            'license_description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Spain)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-nc-sa/2.5/es/',
+            'extra_image'         => 'cc-by-nc-sa.svg'
+        ],
+        'l066' => [
+            'license_name'        => 'CC BY-NC-SA 2.5 IT',
+            'license_description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Italy)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-nc-sa/2.5/it/',
+            'extra_image'         => 'cc-by-nc-sa.svg'
+        ],
+        'l067' => [
+            'license_name'        => 'CC BY-NC-SA 2.5 MX',
+            'license_description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Mexico)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-nc-sa/2.5/mx/',
+            'extra_image'         => 'cc-by-nc-sa.svg'
+        ],
+        'l068' => [
+            'license_name'        => 'CC BY-NC-SA 2.5 PT',
+            'license_description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Portugal)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-nc-sa/2.5/pt/',
+            'extra_image'         => 'cc-by-nc-sa.svg'
+        ],
+        'l069' => [
+            'license_name'        => 'CC BY-NC-SA 2.5 SE',
+            'license_description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Sweden)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-nc-sa/2.5/se/',
+            'extra_image'         => 'cc-by-nc-sa.svg'
+        ],
+        'l070' => [
+            'license_name'        => 'CC BY-NC-SA 2.5 TW',
+            'license_description' => 'Creative Commons – Attribution-NonCommercial-ShareAlike 2.5 (Taiwan)',
+            'license_terms_url'   => 'https:creativecommons.org/licenses/by-nc-sa/2.5/tw/',
+            'extra_image'         => 'cc-by-nc-sa.svg'
+        ],
+        'l071' => [
+            'license_name'        => 'Pixabay',
+            'license_description' => 'Pixabay license',
+            'license_terms_url'   => 'https:pixabay.com/service/license-summary/',
+            'extra_image'         => 'pixabay.svg'
+        ],
+        'l072' => [
+            'license_name'        => 'Pexels',
+            'license_description' => 'Pexels license',
+            'license_terms_url'   => 'https:www.pexels.com/de-de/lizenz/',
+            'extra_image'         => 'pexels.svg'
+        ],
+        'l073' => [
+            'license_name'        => 'Unsplash',
+            'license_description' => 'Unsplash license',
+            'license_terms_url'   => 'https:unsplash.com/de/lizenz',
+            'extra_image'         => 'unsplash.svg'
+        }
+    }
 ];
