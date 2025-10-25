@@ -452,6 +452,6 @@ return [
             'license_description' => 'Unsplash license',
             'license_terms_url'   => 'https://unsplash.com/de/lizenz',
             'extra_image'         => 'unsplash.svg'
-        }
-    }
+        ]
+    ]
 ];
