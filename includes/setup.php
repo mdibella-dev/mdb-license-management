@@ -70,8 +70,6 @@ function plugin_activation() {
     }
 }
 
-register_activation_hook( __FILE__, __NAMESPACE__ . '\plugin_activation' );
-
 
 
 /**
@@ -88,5 +86,3 @@ function plugin_uninstall() {
     // Delete custom tables!
 
 }
-
-register_uninstall_hook( __FILE__, __NAMESPACE__ . '\plugin_uninstall' );
