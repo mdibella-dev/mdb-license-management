@@ -36,15 +36,6 @@ class Media_Record {
 
 
     /**
-     * The media state.
-     *
-     * @var int
-     */
-
-    private $media_state = MEDIA_STATE_UNKNOWN;
-
-
-    /**
      * The guid of the license which is used by this media.
      *
      * @var string
@@ -111,30 +102,6 @@ class Media_Record {
         return $this->media_link;
     }
 
-
-    /**
-     * Sets the media state.
-     *
-     * @param int $media_state
-     */
-
-    public function set_media_state( $media_state ) {
-
-        if ( true == array_key_exists( $media_state, MEDIA_STATES ) ) {
-            $this->media_state = $media_state;
-        }
-    }
-
-
-    /**
-     * Gets the media state.
-     *
-     * @return int The media state.
-     */
-
-    public function get_media_state() {
-        return $this->media_state;
-    }
 
 
     /**
@@ -223,7 +190,6 @@ class Media_Record {
         }
 
         $this->media_link   = $result[0]['media_link'];
-        $this->media_state  = $result[0]['media_state'];
         $this->license_guid = $result[0]['license_guid'];
         $this->by_name      = $result[0]['by_name'];
         $this->by_link      = $result[0]['by_link'];
@@ -245,7 +211,6 @@ class Media_Record {
         $data = [
             'media_id'     => $this->media_id,
             'media_link'   => $this->media_link,
-            'media_state'  => $this->media_state,
             'license_guid' => $this->license_guid,
             'by_name'      => $this->by_name,
             'by_link'      => $this->by_link,
@@ -254,7 +219,6 @@ class Media_Record {
         $format = [
             '%d',
             '%s',
-            '%d',
             '%s',
             '%s',
             '%s'
