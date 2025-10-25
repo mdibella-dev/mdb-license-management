@@ -50,6 +50,6 @@ require_once PLUGIN_DIR . 'includes/definitions/licenses.php';
 require_once PLUGIN_DIR . 'includes/media-library/upload.php';
 require_once PLUGIN_DIR . 'includes/media-library/attachment.php';
 
-require_once PLUGIN_DIR . 'includes/theme-integration.php';
+require_once PLUGIN_DIR . 'includes/deprecated.php';
 require_once PLUGIN_DIR . 'includes/backend.php';
 require_once PLUGIN_DIR . 'includes/setup.php';
