@@ -71,9 +71,13 @@ function handle_custom_columns( $column, $id ) {
 
                 if ( ! empty( $licenses ) and ! is_wp_error( $licenses ) ) {
                     foreach ( $licenses as $license ) {
+                        $args = [
+                            'term'     => $license->slug,
+                            'taxonomy' => 'media_license'
+                        ];
                         echo sprintf(
-                            '<a href="upload.php?taxonomy=media_license&term=%1$s">%2$s</a><br>',
-                            $license->slug,
+                            '<a href="%1$s">%2$s</a><br>',
+                            esc_url( add_query_arg( $args, 'upload.php' ) ),
                             $license->name
                         );
                     }
