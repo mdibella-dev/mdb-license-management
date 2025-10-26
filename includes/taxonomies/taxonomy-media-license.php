@@ -78,6 +78,7 @@ function register() {
  *
  * @todo Add an error routine in case licenses.php does not exist.
  * @todo Add a version control routine for update purposes
+ * @todo Add routine to remove obsolete terms
  */
 
 function setup() {
