@@ -23,13 +23,9 @@ defined( 'ABSPATH' ) or exit;
 
 function plugin_backend_scripts() {
     $current_screen = get_current_screen();
+    $screens        = ['upload', 'attachment', 'edit-media_license' ];
 
-    if ( ( 'upload' === $current_screen->id ) or ( 'attachment' === $current_screen->id ) ) {
-
-        /**
-         * Enqueue style settings for both upload and attachment page
-         */
-
+    if ( true == in_array( $current_screen->id, $screens ) ) {
         wp_enqueue_style(
             'mdb_license_management-backend-style',
             PLUGIN_URL . 'assets/build/css/backend.min.css',
