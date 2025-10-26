@@ -163,6 +163,13 @@ class Media_License_List extends \wordpress_helper\Admin_Taxonomy_List {
 
 
 
+    /**
+     * Returns the primary column
+     *
+     * @param string $default Column name default for the specific list table, e.g. 'name'.
+     * @param string $screen  Screen ID for specific list table, e.g. 'plugins'.
+     */
+
     function list_table_primary_column( $default, $screen ) {
 
         if ( 'edit-media_license' === $screen ) {
