@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Marco Di Bella &mdash; License Management\n"
-"POT-Creation-Date: 2025-09-24 13:43+0200\n"
-"PO-Revision-Date: 2025-09-24 13:43+0200\n"
+"POT-Creation-Date: 2025-10-26 09:31+0100\n"
+"PO-Revision-Date: 2025-10-26 09:32+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: plugin.php\n"
@@ -19,6 +19,44 @@ msgstr ""
 "__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: includes/admin/attachment.php:39 includes/admin/attachment.php:67
+msgid "--- please select ---"
+msgstr "— bitte auswählen —"
+
+#: includes/admin/attachment.php:55
+msgid "Method and manner of the copyright information"
+msgstr "Art und Weise der Urheberrechtsinformation"
+
+#: includes/admin/attachment.php:83 includes/admin/media-list-table.php:30
+#: includes/taxonomies/taxonomy-media-license.php:32
+#: includes/taxonomies/taxonomy-media-license.php:41
+msgid "License"
+msgstr "Lizenz"
+
+#: includes/admin/attachment.php:92
+msgid "Naming of the creator"
+msgstr "Benennung des Urhebers"
+
+#: includes/admin/attachment.php:101
+msgid "Link to the creator"
+msgstr "Link zum Urheber"
+
+#: includes/admin/attachment.php:110
+msgid "Link to original file"
+msgstr "Link zur Originaldatei"
+
+#: includes/admin/media-list-table.php:29
+msgid "Creator"
+msgstr "Urheber"
+
+#: includes/admin/media-list-table.php:33
+msgid "Uploaded by"
+msgstr "Hochgeladen von"
+
+#: includes/admin/media-list-table.php:34
+msgid "Uploaded on"
+msgstr "Hochgeladen am"
 
 #: includes/classes/class-media-license-list.php:73
 msgid "License text"
@@ -31,53 +69,6 @@ msgstr "Anzahl an Medien"
 #: includes/classes/class-media-license-list.php:101
 msgid "Read license text"
 msgstr "Lizenztext lesen"
-
-#: includes/definitions/media-states.php:47
-msgid "no copyright information necessary"
-msgstr "keine Angaben zum Urheberrecht erforderlich"
-
-#: includes/definitions/media-states.php:51
-msgid "simple naming (with linking if necessary)"
-msgstr "einfache Benennung (ggf. mit Verlinkung)"
-
-#: includes/definitions/media-states.php:55
-msgid "copyright information according to license"
-msgstr "Urheberrechtsinformation gemäß Lizenz"
-
-#: includes/definitions/media-states.php:60
-msgid "unknown"
-msgstr "unbekannt"
-
-#: includes/media-library/attachment.php:39
-#: includes/media-library/attachment.php:67
-msgid "--- please select ---"
-msgstr "— bitte auswählen —"
-
-#: includes/media-library/attachment.php:55
-msgid "Method and manner of the copyright information"
-msgstr "Art und Weise der Urheberrechtsinformation"
-
-#: includes/media-library/attachment.php:83
-#: includes/taxonomies/taxonomy-media-license.php:32
-#: includes/taxonomies/taxonomy-media-license.php:41
-msgid "License"
-msgstr "Lizenz"
-
-#: includes/media-library/attachment.php:92
-msgid "Naming of the creator"
-msgstr "Benennung des Urhebers"
-
-#: includes/media-library/attachment.php:101
-msgid "Link to the creator"
-msgstr "Link zum Urheber"
-
-#: includes/media-library/attachment.php:110
-msgid "Link to original file"
-msgstr "Link zur Originaldatei"
-
-#: includes/media-library/upload.php:29
-msgid "Creator"
-msgstr "Urheber"
 
 #: includes/taxonomies/taxonomy-media-license.php:31
 #: includes/taxonomies/taxonomy-media-license.php:33
@@ -124,6 +115,18 @@ msgstr "Marco Di Bella"
 #. Author URI of the plugin/theme
 msgid "https://www.marcodibella.de"
 msgstr "https://www.marcodibella.de"
+
+#~ msgid "no copyright information necessary"
+#~ msgstr "keine Angaben zum Urheberrecht erforderlich"
+
+#~ msgid "simple naming (with linking if necessary)"
+#~ msgstr "einfache Benennung (ggf. mit Verlinkung)"
+
+#~ msgid "copyright information according to license"
+#~ msgstr "Urheberrechtsinformation gemäß Lizenz"
+
+#~ msgid "unknown"
+#~ msgstr "unbekannt"
 
 #~ msgid "Copyright"
 #~ msgstr "Urheber/Lizenz"
