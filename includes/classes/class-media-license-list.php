@@ -8,7 +8,9 @@
 
 namespace mdb_license_management\classes;
 
+use const mdb_license_management\PLUGIN_URL;
 use const mdb_license_management\LICENSE_METAKEY_URL;
+use const mdb_license_management\LICENSE_METAKEY_IMG;
 
 
 /** Prevent direct access */
@@ -68,10 +70,10 @@ class Media_License_List extends \wordpress_helper\Admin_Taxonomy_List {
 
     public function manage_columns( $default ) {
         $columns = [
-            'name'        => $default['name'],
-            'description' => $default['description'],
-            'link'        => __( 'License text', 'mdb-license-management' ),
-            'number'      => __( 'Number of media', 'mdb-license-management' ),
+            'license_name'      => __( 'Name', 'mdb-license-management' ),
+            'license_name_full' => __( 'Name (full)', 'mdb-license-management' ),
+            'license_terms'     => __( 'License text', 'mdb-license-management' ),
+            'media_count'       => __( 'Number of media', 'mdb-license-management' ),
         ];
         return $columns;
     }
@@ -89,9 +91,44 @@ class Media_License_List extends \wordpress_helper\Admin_Taxonomy_List {
      */
 
     public function manage_custom_column( $output, $column_name, $term_id ) {
+        $term  = get_term( $term_id, 'media_license' );
 
         switch( $column_name ) {
-            case 'link':
+
+            case 'license_name':
+                $logo_file = get_term_meta( $term_id, LICENSE_METAKEY_IMG, true );
+
+                ob_start();
+                ?>
+                <table class="table-license-name">
+                <tr>
+                <td style="width:100px"><?php
+                    if ( ! empty( $logo_file ) ) {
+                    ?>
+                    <img src="<?php echo esc_url( PLUGIN_URL ."assets/build/svg/" . $logo_file ); ?>">
+                    <?php
+                    }
+                ?></td>
+                <td><strong><?php echo $term->name; ?></strong></td>
+                </tr>
+                </table>
+                <?php
+                $output = ob_get_contents();
+                ob_end_clean();
+                break;
+
+
+            case 'license_name_full':
+                if ( ! empty( $term->description ) ) {
+                    $output = $term->description;
+                }
+                else {
+                    $output = '&mdash;';
+                }
+                break;
+
+
+            case 'license_terms':
                 $link = get_term_meta( $term_id, LICENSE_METAKEY_URL, true );
 
                 if ( ! empty( $link ) ) {
@@ -106,7 +143,8 @@ class Media_License_List extends \wordpress_helper\Admin_Taxonomy_List {
                 }
                 break;
 
-            case 'number':
+
+            case 'media_count':
                 $posts = get_posts( [
                     'post_type'   => 'attachment',
                     'post_status' => 'any',
@@ -116,7 +154,6 @@ class Media_License_List extends \wordpress_helper\Admin_Taxonomy_List {
                         'terms'    => $term_id,
                     ] ],
                 ] );
-                $term  = get_term( $term_id, 'media_license' );
                 $count = sizeof( $posts );
 
                 if ( 0 !== $count ) {
@@ -124,8 +161,11 @@ class Media_License_List extends \wordpress_helper\Admin_Taxonomy_List {
                         'media_license' => $term->slug,
                         'post_type'     => 'attachment'
                     ];
-
-                    $output = "<a href='" . esc_url( add_query_arg( $args, 'upload.php' ) ) . "'>$count</a>";
+                    $output = sprintf(
+                        '<a href="%1$s">%2$s</a><br>',
+                        esc_url( add_query_arg( $args, 'upload.php' ) ),
+                        $count
+                    );
                 }
                 else {
                     $output = '0';
