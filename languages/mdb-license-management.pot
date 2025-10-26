@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Marco Di Bella &mdash; License Management\n"
-"POT-Creation-Date: 2025-10-26 09:31+0100\n"
+"POT-Creation-Date: 2025-10-26 16:43+0100\n"
 "PO-Revision-Date: 2023-02-06 12:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,35 +20,26 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: includes/admin/attachment.php:39 includes/admin/attachment.php:67
-msgid "--- please select ---"
-msgstr ""
-
-#: includes/admin/attachment.php:55
-msgid "Method and manner of the copyright information"
-msgstr ""
-
-#: includes/admin/attachment.php:83
-#: includes/admin/media-list-table.php:30
-#: includes/taxonomies/taxonomy-media-license.php:32
-#: includes/taxonomies/taxonomy-media-license.php:41
-msgid "License"
-msgstr ""
-
-#: includes/admin/attachment.php:92
+#: includes/admin/attachment.php:65
 msgid "Naming of the creator"
 msgstr ""
 
-#: includes/admin/attachment.php:101
+#: includes/admin/attachment.php:74
 msgid "Link to the creator"
 msgstr ""
 
-#: includes/admin/attachment.php:110
+#: includes/admin/attachment.php:83
 msgid "Link to original file"
 msgstr ""
 
 #: includes/admin/media-list-table.php:29
 msgid "Creator"
+msgstr ""
+
+#: includes/admin/media-list-table.php:30
+#: includes/taxonomies/taxonomy-media-license.php:32
+#: includes/taxonomies/taxonomy-media-license.php:40
+msgid "License"
 msgstr ""
 
 #: includes/admin/media-list-table.php:33
@@ -59,15 +50,19 @@ msgstr ""
 msgid "Uploaded on"
 msgstr ""
 
-#: includes/classes/class-media-license-list.php:73
+#: includes/classes/class-media-license-list.php:75
+msgid "Name (full)"
+msgstr ""
+
+#: includes/classes/class-media-license-list.php:76
 msgid "License text"
 msgstr ""
 
-#: includes/classes/class-media-license-list.php:74
+#: includes/classes/class-media-license-list.php:77
 msgid "Number of media"
 msgstr ""
 
-#: includes/classes/class-media-license-list.php:101
+#: includes/classes/class-media-license-list.php:120
 msgid "Read license text"
 msgstr ""
 
@@ -85,10 +80,6 @@ msgid "Search licenses"
 msgstr ""
 
 #: includes/taxonomies/taxonomy-media-license.php:36
-msgid "Popular licenses"
-msgstr ""
-
-#: includes/taxonomies/taxonomy-media-license.php:37
 msgid "Nothing found"
 msgstr ""
 

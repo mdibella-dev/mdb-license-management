@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Marco Di Bella &mdash; License Management\n"
-"POT-Creation-Date: 2025-10-26 09:31+0100\n"
-"PO-Revision-Date: 2025-10-26 09:32+0100\n"
+"POT-Creation-Date: 2025-10-26 16:43+0100\n"
+"PO-Revision-Date: 2025-10-26 16:44+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -20,35 +20,27 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: includes/admin/attachment.php:39 includes/admin/attachment.php:67
-msgid "--- please select ---"
-msgstr "— bitte auswählen —"
-
-#: includes/admin/attachment.php:55
-msgid "Method and manner of the copyright information"
-msgstr "Art und Weise der Urheberrechtsinformation"
-
-#: includes/admin/attachment.php:83 includes/admin/media-list-table.php:30
-#: includes/taxonomies/taxonomy-media-license.php:32
-#: includes/taxonomies/taxonomy-media-license.php:41
-msgid "License"
-msgstr "Lizenz"
-
-#: includes/admin/attachment.php:92
+#: includes/admin/attachment.php:65
 msgid "Naming of the creator"
 msgstr "Benennung des Urhebers"
 
-#: includes/admin/attachment.php:101
+#: includes/admin/attachment.php:74
 msgid "Link to the creator"
 msgstr "Link zum Urheber"
 
-#: includes/admin/attachment.php:110
+#: includes/admin/attachment.php:83
 msgid "Link to original file"
 msgstr "Link zur Originaldatei"
 
 #: includes/admin/media-list-table.php:29
 msgid "Creator"
 msgstr "Urheber"
+
+#: includes/admin/media-list-table.php:30
+#: includes/taxonomies/taxonomy-media-license.php:32
+#: includes/taxonomies/taxonomy-media-license.php:40
+msgid "License"
+msgstr "Lizenz"
 
 #: includes/admin/media-list-table.php:33
 msgid "Uploaded by"
@@ -58,15 +50,19 @@ msgstr "Hochgeladen von"
 msgid "Uploaded on"
 msgstr "Hochgeladen am"
 
-#: includes/classes/class-media-license-list.php:73
+#: includes/classes/class-media-license-list.php:75
+msgid "Name (full)"
+msgstr "Name (lang)"
+
+#: includes/classes/class-media-license-list.php:76
 msgid "License text"
 msgstr "Lizenztext"
 
-#: includes/classes/class-media-license-list.php:74
+#: includes/classes/class-media-license-list.php:77
 msgid "Number of media"
 msgstr "Anzahl an Medien"
 
-#: includes/classes/class-media-license-list.php:101
+#: includes/classes/class-media-license-list.php:120
 msgid "Read license text"
 msgstr "Lizenztext lesen"
 
@@ -84,10 +80,6 @@ msgid "Search licenses"
 msgstr "Lizenzen durchsuchen"
 
 #: includes/taxonomies/taxonomy-media-license.php:36
-msgid "Popular licenses"
-msgstr "Populäre Lizenzen"
-
-#: includes/taxonomies/taxonomy-media-license.php:37
 msgid "Nothing found"
 msgstr "Nichts gefunden"
 
@@ -115,6 +107,15 @@ msgstr "Marco Di Bella"
 #. Author URI of the plugin/theme
 msgid "https://www.marcodibella.de"
 msgstr "https://www.marcodibella.de"
+
+#~ msgid "--- please select ---"
+#~ msgstr "— bitte auswählen —"
+
+#~ msgid "Method and manner of the copyright information"
+#~ msgstr "Art und Weise der Urheberrechtsinformation"
+
+#~ msgid "Popular licenses"
+#~ msgstr "Populäre Lizenzen"
 
 #~ msgid "no copyright information necessary"
 #~ msgstr "keine Angaben zum Urheberrecht erforderlich"
