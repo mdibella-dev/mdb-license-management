@@ -33,7 +33,6 @@ function register() {
         'menu_name'             => __( 'Licenses', 'mdb-license-management' ),
         'all_items'             => __( 'All licenses', 'mdb-license-management' ),
         'search_items'          => __( 'Search licenses', 'mdb-license-management' ),
-        'choose_from_most_used' => __( 'Popular licenses', 'mdb-license-management' ),
         'not_found'             => __( 'Nothing found', 'mdb-license-management' ),
     ];
 
@@ -57,7 +56,7 @@ function register() {
         ],
         'show_admin_column'     => true,
         'show_in_rest'          => true,
-        'show_tagcloud'         => true,
+        'show_tagcloud'         => false,
         'rest_base'             => 'media_license',
         'rest_controller_class' => 'WP_REST_Terms_Controller',
         'rest_namespace'        => 'wp/v2',
