@@ -39,9 +39,7 @@ const LICENSE_METAKEY_IMG = 'mdb_lm_license_img';
 
 require_once PLUGIN_DIR . 'includes/taxonomies/index.php';
 require_once PLUGIN_DIR . 'includes/classes/index.php';
-
-require_once PLUGIN_DIR . 'includes/media-library/upload.php';
-require_once PLUGIN_DIR . 'includes/media-library/attachment.php';
+require_once PLUGIN_DIR . 'includes/admin/index.php';
 
 require_once PLUGIN_DIR . 'includes/deprecated.php';
 require_once PLUGIN_DIR . 'includes/backend.php';
