@@ -9,8 +9,8 @@
 
 namespace mdb_license_management\taxonomies;
 
-use const mdb_license_management\LICENSE_METAKEY_URL;
-use const mdb_license_management\LICENSE_METAKEY_IMG;
+use const mdb_license_management\METAKEY_LICENSE_URL;
+use const mdb_license_management\METAKEY_LICENSE_IMG;
 
 
 /** Prevent direct access */
@@ -107,8 +107,8 @@ function setup() {
             );
         }
 
-        update_term_meta( $result['term_id'], LICENSE_METAKEY_URL, $license['url'] );
-        update_term_meta( $result['term_id'], LICENSE_METAKEY_IMG, $license['image'] );
+        update_term_meta( $result['term_id'], METAKEY_LICENSE_URL, $license['url'] );
+        update_term_meta( $result['term_id'], METAKEY_LICENSE_IMG, $license['image'] );
     }
 }
 

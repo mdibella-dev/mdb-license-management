@@ -8,6 +8,8 @@
 
 namespace mdb_license_management;
 
+use const mdb_license_management\METAKEY_CREATOR_CREDIT;
+
 
 /** Prevent direct access */
 
@@ -55,15 +57,15 @@ function handle_custom_columns( $column, $id ) {
 
         switch ( $column ) {
 
-   /*         case 'mdb_lm_creator':
-                $creator_credit = trim( $credit->get_creator_credit() );
+            case 'mdb_lm_creator':
+                $creator_credit = esc_html( get_post_meta( $id, METAKEY_CREATOR_CREDIT, true ) );
 
                 if ( ! empty( $creator_credit ) ) {
                     echo $creator_credit;
                 } else {
                     echo '—';
                 }
-                break;*/
+                break;
 
             case 'mdb_lm_license':
 
@@ -104,7 +106,7 @@ add_action( 'manage_media_custom_column', __NAMESPACE__ . '\handle_custom_column
  */
 
 function manage_sortable_columns( $columns ) {
-    $columns['mdb_lm_creator'] = 'mdb_lm_creator';
+//    $columns['mdb_lm_creator'] = 'mdb_lm_creator';
     $columns['mdb_lm_license'] = 'mdb_lm_license';
     return $columns;
 

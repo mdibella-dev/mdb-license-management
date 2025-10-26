@@ -9,8 +9,8 @@
 namespace mdb_license_management\classes;
 
 use const mdb_license_management\PLUGIN_URL;
-use const mdb_license_management\LICENSE_METAKEY_URL;
-use const mdb_license_management\LICENSE_METAKEY_IMG;
+use const mdb_license_management\METAKEY_LICENSE_URL;
+use const mdb_license_management\METAKEY_LICENSE_IMG;
 
 
 /** Prevent direct access */
@@ -97,7 +97,7 @@ class Media_License_List extends \wordpress_helper\Admin_Taxonomy_List {
         switch( $column_name ) {
 
             case 'image':
-                $logo_file = get_term_meta( $term_id, LICENSE_METAKEY_IMG, true );
+                $logo_file = get_term_meta( $term_id, METAKEY_LICENSE_IMG, true );
 
                 if ( ! empty( $logo_file ) ) {
                     $output = sprintf(
@@ -111,7 +111,7 @@ class Media_License_List extends \wordpress_helper\Admin_Taxonomy_List {
 
 
             case 'terms':
-                $link = get_term_meta( $term_id, LICENSE_METAKEY_URL, true );
+                $link = get_term_meta( $term_id, METAKEY_LICENSE_URL, true );
 
                 if ( ! empty( $link ) ) {
                     $output = sprintf(

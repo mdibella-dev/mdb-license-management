@@ -31,8 +31,12 @@ define( __NAMESPACE__ . '\PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 
 const TABLE_MEDIA         = 'mdb_lv_media';
-const LICENSE_METAKEY_URL = 'mdb_lm_license_url';
-const LICENSE_METAKEY_IMG = 'mdb_lm_license_img';
+
+const METAKEY_LICENSE_URL      = 'mdb_lm_license_url';
+const METAKEY_LICENSE_IMG      = 'mdb_lm_license_img';
+const METAKEY_CREATOR_CREDIT   = 'mdb-lm-creator-credit';
+const METAKEY_CREATOR_URL      = 'mdb-lm-creator-url';
+const METAKEY_MEDIA_SOURCE_URL = 'mdb-lm-media-source-url';
 
 
 /** Include files */

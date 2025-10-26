@@ -8,6 +8,9 @@
 
 namespace mdb_license_management;
 
+use const mdb_license_management\METAKEY_CREATOR_CREDIT;
+use const mdb_license_management\METAKEY_CREATOR_URL;
+use const mdb_license_management\METAKEY_MEDIA_SOURCE_URL;
 
 /** Prevent direct access */
 
@@ -27,8 +30,6 @@ defined( 'ABSPATH' ) or exit;
  */
 
 function add_attachment_fields( $form_fields, $post ) {
-
-    $record = new Media_Record( $post->ID );
 
 
     /** Field 1 - listing of available licenses */
@@ -64,7 +65,7 @@ function add_attachment_fields( $form_fields, $post ) {
     $form_fields['mdb-lm-creator-credit'] = [
         'label' => __( 'Naming of the creator', 'mdb-license-management' ),
         'input' => 'html',
-        'html'  => "<input type='text' size='128' class='widefat' value='" . esc_html( $record->get_by_name() ) . "' name='attachments[{$post->ID}][mdb-lm-creator-credit]'>",
+        'html'  => "<input type='text' size='128' class='widefat' value='" . esc_html( get_post_meta( $post->ID, METAKEY_CREATOR_CREDIT, true ) ) . "' name='attachments[{$post->ID}][mdb-lm-creator-credit]'>"
     ];
 
 
@@ -73,7 +74,7 @@ function add_attachment_fields( $form_fields, $post ) {
     $form_fields['mdb-lm-creator-url'] = [
         'label' => __( 'Link to the creator', 'mdb-license-management' ),
         'input' => 'html',
-        'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $record->get_by_link() ) . "' name='attachments[{$post->ID}][mdb-lm-creator-url]'>",
+        'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( get_post_meta( $post->ID, METAKEY_CREATOR_URL, true ) ) . "' name='attachments[{$post->ID}][mdb-lm-creator-url]'>",
     ];
 
 
@@ -82,7 +83,7 @@ function add_attachment_fields( $form_fields, $post ) {
     $form_fields[ 'mdb-lm-media-source-url' ] = [
         'label' => __( 'Link to original file', 'mdb-license-management' ),
         'input' => 'html',
-        'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( $record->get_media_link() ) . "' name='attachments[{$post->ID}][mdb-lm-media-source-url]'>",
+        'html'  => "<input type='url' size='128' class='widefat' value='" . esc_url( get_post_meta( $post->ID, METAKEY_MEDIA_SOURCE_URL, true ) ) . "' name='attachments[{$post->ID}][mdb-lm-media-source-url]'>",
     ];
 
     return $form_fields;
@@ -104,15 +105,9 @@ add_filter( 'attachment_fields_to_edit', __NAMESPACE__ . '\add_attachment_fields
  */
 
 function save_attachment_fields( $post, $attachment ) {
-/*   $record = new Media_Record( $post['ID'] );
-
-    $record->set_media_link( sanitize_url( $attachment['mdb-lv-media-link'] ) );
-    $record->set_license_guid( $attachment['mdb-lv-license-guid'] );
-    $record->set_by_name( sanitize_text_field( $attachment['mdb-lv-by-name'] ) );
-    $record->set_by_link( sanitize_url( $attachment['mdb-lv-by-link'] ) );
-
-    $record->update_table_record(); */
-
+    update_post_meta( $post['ID'], METAKEY_CREATOR_CREDIT, sanitize_text_field( $attachment['mdb-lm-creator-credit'] ) );
+    update_post_meta( $post['ID'], METAKEY_CREATOR_URL, sanitize_url( $attachment['mdb-lm-creator-url'] ) );
+    update_post_meta( $post['ID'], METAKEY_MEDIA_SOURCE_URL, sanitize_url( $attachment['mdb-lm-media-source-url'] ) );
     return $post;
 }
 
