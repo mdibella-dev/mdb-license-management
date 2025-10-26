@@ -170,13 +170,27 @@ class Media_License_List extends \wordpress_helper\Admin_Taxonomy_List {
      * @param string $screen  Screen ID for specific list table, e.g. 'plugins'.
      */
 
-    function list_table_primary_column( $default, $screen ) {
+    public function list_table_primary_column( $default, $screen ) {
 
         if ( 'edit-media_license' === $screen ) {
             $default = 'name';
         }
 
         return $default;
+    }
+
+
+    /**
+     * Registers sortable columns (by assigning appropriate orderby parameters).
+     *
+     * @param array columns The columns
+     *
+     * @return array An associative array
+     */
+
+    public function manage_sortable_columns( $columns ) {
+        $columns['media_count']  = 'media_count';
+        return $columns;
     }
 
 }
