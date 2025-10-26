@@ -140,12 +140,10 @@ if ( ! class_exists( __NAMESPACE__ . '\Admin_Taxonomy_List' ) ) {
 
 
         /**
-         * Trigger the sorting if the last query was made in the backend and it was related to our post type.
+         * Returns the primary column
          *
          * @param string $default Column name default for the specific list table, e.g. 'name'.
          * @param string $screen  Screen ID for specific list table, e.g. 'plugins'.
-         *
-         *
          */
 
         public function list_table_primary_column( $default, $screen ) {
