@@ -70,10 +70,11 @@ class Media_License_List extends \wordpress_helper\Admin_Taxonomy_List {
 
     public function manage_columns( $default ) {
         $columns = [
-            'license_name'      => __( 'Name', 'mdb-license-management' ),
-            'license_name_full' => __( 'Name (full)', 'mdb-license-management' ),
-            'license_terms'     => __( 'License text', 'mdb-license-management' ),
-            'media_count'       => __( 'Number of media', 'mdb-license-management' ),
+            'image'         => '',
+            'name'          => $default['name'],
+            'description'   => __( 'Name (full)', 'mdb-license-management' ),
+            'terms'         => __( 'License text', 'mdb-license-management' ),
+            'media_count'   => __( 'Number of media', 'mdb-license-management' ),
         ];
         return $columns;
     }
@@ -91,44 +92,25 @@ class Media_License_List extends \wordpress_helper\Admin_Taxonomy_List {
      */
 
     public function manage_custom_column( $output, $column_name, $term_id ) {
-        $term  = get_term( $term_id, 'media_license' );
+        $term = get_term( $term_id, 'media_license' );
 
         switch( $column_name ) {
 
-            case 'license_name':
+            case 'image':
                 $logo_file = get_term_meta( $term_id, LICENSE_METAKEY_IMG, true );
 
-                ob_start();
-                ?>
-                <table class="table-license-name">
-                <tr>
-                <td style="width:100px"><?php
-                    if ( ! empty( $logo_file ) ) {
-                    ?>
-                    <img src="<?php echo esc_url( PLUGIN_URL ."assets/build/svg/" . $logo_file ); ?>">
-                    <?php
-                    }
-                ?></td>
-                <td><strong><?php echo $term->name; ?></strong></td>
-                </tr>
-                </table>
-                <?php
-                $output = ob_get_contents();
-                ob_end_clean();
-                break;
-
-
-            case 'license_name_full':
-                if ( ! empty( $term->description ) ) {
-                    $output = $term->description;
-                }
-                else {
+                if ( ! empty( $logo_file ) ) {
+                    $output = sprintf(
+                        '<img src="%1$s">',
+                        esc_url( PLUGIN_URL . "assets/build/svg/" . $logo_file )
+                    );
+                } else {
                     $output = '&mdash;';
                 }
                 break;
 
 
-            case 'license_terms':
+            case 'terms':
                 $link = get_term_meta( $term_id, LICENSE_METAKEY_URL, true );
 
                 if ( ! empty( $link ) ) {
@@ -178,7 +160,18 @@ class Media_License_List extends \wordpress_helper\Admin_Taxonomy_List {
 
         return $output;
     }
-}
 
+
+
+    function list_table_primary_column( $default, $screen ) {
+
+        if ( 'edit-media_license' === $screen ) {
+            $default = 'name';
+        }
+
+        return $default;
+    }
+
+}
 
 new Media_License_List();
