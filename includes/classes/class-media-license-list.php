@@ -28,7 +28,7 @@ defined( 'ABSPATH' ) or exit;
 class Media_License_List extends \wordpress_helper\Admin_Taxonomy_List {
 
     /**
-     * The post type.
+     * The taxonomy.
      *
      * @var string
      */
