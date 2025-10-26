@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) or exit;
 
 function plugin_backend_scripts() {
     $current_screen = get_current_screen();
-    $screens        = ['upload', 'attachment', 'edit-media_license' ];
+    $screens        = ['upload', 'attachment', 'edit-media_license'];
 
     if ( true == in_array( $current_screen->id, $screens ) ) {
         wp_enqueue_style(
