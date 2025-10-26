@@ -50,20 +50,7 @@ function plugin_activation() {
         // Add an update procedure here (looping through all media_ids aso)
         // !! Make sure taxonomy media_license already exist to this point!
 
-        /*
-        $sql = "CREATE TABLE $table_name (
-            media_id bigint(20) UNSIGNED NOT NULL,
-            media_link varchar(255) DEFAULT '' NOT NULL,
-            media_state int(8) UNSIGNED DEFAULT 0,
-            license_guid varchar(4) DEFAULT '' NOT NULL,
-            by_name varchar(255) DEFAULT '' NOT NULL,
-            by_link varchar(255) DEFAULT '' NOT NULL,
-            PRIMARY KEY  (media_id)
-            )
-            COLLATE utf8_general_ci;";
 
-        dbDelta( $sql );
-        */
 
         // Remove existing table
 
