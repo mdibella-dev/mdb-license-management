@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => 'mdibella-dev/mdb-license-management',
+        'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'd24866129f69459fac9af44e3ce735c03deb0e82',
+        'reference' => '70215b8b80ab27cebf881613f9764f7864ac365c',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'mdibella-dev/mdb-license-management' => array(
+        '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'd24866129f69459fac9af44e3ce735c03deb0e82',
+            'reference' => '70215b8b80ab27cebf881613f9764f7864ac365c',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

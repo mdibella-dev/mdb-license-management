@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9ac9c9cae6ef9f99a0eaf212e1e26471",
+    "content-hash": "b1a484a7d94a5f867308de5428cfc628",
     "packages": [
         {
             "name": "mdibella-dev/wordpress-helper",
