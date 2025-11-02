@@ -30,7 +30,7 @@ define( __NAMESPACE__ . '\PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 
 
-const TABLE_MEDIA         = 'mdb_lv_media';
+const TABLE_MEDIA = 'mdb_lv_media';
 
 const METAKEY_LICENSE_URL      = 'mdb_lm_license_url';
 const METAKEY_LICENSE_IMG      = 'mdb_lm_license_img';
@@ -41,7 +41,8 @@ const METAKEY_MEDIA_SOURCE_URL = 'mdb-lm-media-source-url';
 
 /** Include files */
 
-require_once PLUGIN_DIR . 'includes/taxonomies/index.php';
+require_once PLUGIN_DIR . 'vendor/autoload.php';
+
 require_once PLUGIN_DIR . 'includes/classes/index.php';
 require_once PLUGIN_DIR . 'includes/admin/index.php';
 
