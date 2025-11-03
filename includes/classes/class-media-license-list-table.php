@@ -106,7 +106,6 @@ class Media_License_List_Table extends \WP_List_Table {
         <td style="width:150px"><?php
             $logo_file = $item['extra_image'];
 
-        error_log($item['extra_image']);
             if ( ! empty( $logo_file ) ) {
                 $logo_url  = PLUGIN_URL ."assets/build/svg/" . $logo_file;
 
