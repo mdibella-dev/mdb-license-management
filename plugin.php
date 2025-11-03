@@ -44,6 +44,7 @@ const METAKEY_MEDIA_SOURCE_URL = 'mdb-lm-media-source-url';
 require_once PLUGIN_DIR . 'vendor/autoload.php';
 
 require_once PLUGIN_DIR . 'includes/classes/index.php';
+require_once PLUGIN_DIR . 'includes/taxonomies/index.php';
 require_once PLUGIN_DIR . 'includes/admin/index.php';
 
 require_once PLUGIN_DIR . 'includes/deprecated.php';
