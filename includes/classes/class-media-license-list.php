@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) or exit;
  * @since 2.1.0
  */
 
-class Media_License_List extends \wordpress_helper\Admin_Taxonomy_List {
+class Media_License_List extends \WordPress_Helper\Admin_Taxonomy_List {
 
     /**
      * The taxonomy.
