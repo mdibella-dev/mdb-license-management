@@ -37,10 +37,7 @@ add_action( 'init', __NAMESPACE__ . '\plugin_init', 9 );
  */
 
 function plugin_activation() {
-    global $wpdb;
-
-    require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-
+    // Do something!
 }
 
 
@@ -57,5 +54,4 @@ function plugin_uninstall() {
     // Do something!
     // Delete options!
     // Delete custom tables!
-
 }
