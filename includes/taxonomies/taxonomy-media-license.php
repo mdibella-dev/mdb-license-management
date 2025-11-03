@@ -6,11 +6,10 @@
  * @package mdb-license-management
  */
 
+namespace MDB_License_Management\Licenses;
 
-namespace mdb_license_management\taxonomies;
-
-use const mdb_license_management\METAKEY_LICENSE_URL;
-use const mdb_license_management\METAKEY_LICENSE_IMG;
+use const MDB_License_Management\METAKEY_LICENSE_URL;
+use const MDB_License_Management\METAKEY_LICENSE_IMG;
 
 
 /** Prevent direct access */

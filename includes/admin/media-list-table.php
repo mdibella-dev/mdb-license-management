@@ -6,9 +6,9 @@
  * @package mdb-license-management
  */
 
-namespace mdb_license_management;
+namespace MDB_License_Management;
 
-use const mdb_license_management\METAKEY_CREATOR_CREDIT;
+use const MDB_License_Management\METAKEY_CREATOR_CREDIT;
 
 
 /** Prevent direct access */
@@ -53,7 +53,6 @@ add_filter( 'manage_media_columns', __NAMESPACE__ . '\add_custom_column');
 function handle_custom_columns( $column, $id ) {
 
     if ( in_array( $column, ['mdb_lm_creator', 'mdb_lm_license'] ) ) {
-
 
         switch ( $column ) {
 

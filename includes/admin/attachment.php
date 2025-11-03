@@ -6,11 +6,12 @@
  * @package mdb-license-management
  */
 
-namespace mdb_license_management;
+namespace MDB_License_Management;
 
-use const mdb_license_management\METAKEY_CREATOR_CREDIT;
-use const mdb_license_management\METAKEY_CREATOR_URL;
-use const mdb_license_management\METAKEY_MEDIA_SOURCE_URL;
+use const MDB_License_Management\METAKEY_CREATOR_CREDIT;
+use const MDB_License_Management\METAKEY_CREATOR_URL;
+use const MDB_License_Management\METAKEY_MEDIA_SOURCE_URL;
+
 
 /** Prevent direct access */
 
