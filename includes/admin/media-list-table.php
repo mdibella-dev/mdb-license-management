@@ -11,6 +11,7 @@ namespace MDB_License_Management;
 use const MDB_License_Management\METAKEY_CREATOR_CREDIT;
 
 
+
 /** Prevent direct access */
 
 defined( 'ABSPATH' ) or exit;

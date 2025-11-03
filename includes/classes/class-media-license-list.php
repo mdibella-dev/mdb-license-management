@@ -13,6 +13,7 @@ use const MDB_License_Management\METAKEY_LICENSE_URL;
 use const MDB_License_Management\METAKEY_LICENSE_IMG;
 
 
+
 /** Prevent direct access */
 
 defined( 'ABSPATH' ) or exit;
