@@ -41,20 +41,6 @@ function plugin_activation() {
 
     require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 
-
-    $table_name = $wpdb->prefix . table_media;
-
-
-    if ( $table_name == $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) ) {
-
-        // Add an update procedure here (looping through all media_ids aso)
-        // !! Make sure taxonomy media_license already exist to this point!
-
-
-
-        // Remove existing table
-
-    }
 }
 
 
