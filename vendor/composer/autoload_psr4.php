@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'wordpress_helper\\classes\\' => array($vendorDir . '/mdibella-dev/wordpress-helper/classes'),
+    'WordPress_Helper\\' => array($vendorDir . '/mdibella-dev/wordpress-helper/includes'),
 );

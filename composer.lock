@@ -12,19 +12,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mdibella-dev/wordpress-helper.git",
-                "reference": "e7cbf204db14da98ebebad5b2a0b352f2b8485a6"
+                "reference": "de42ee74f3cf47213bf88b2d413b9233ab5fa84c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mdibella-dev/wordpress-helper/zipball/e7cbf204db14da98ebebad5b2a0b352f2b8485a6",
-                "reference": "e7cbf204db14da98ebebad5b2a0b352f2b8485a6",
+                "url": "https://api.github.com/repos/mdibella-dev/wordpress-helper/zipball/de42ee74f3cf47213bf88b2d413b9233ab5fa84c",
+                "reference": "de42ee74f3cf47213bf88b2d413b9233ab5fa84c",
                 "shasum": ""
             },
             "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "wordpress_helper\\classes\\": "classes"
+                    "WordPress_Helper\\": "includes/"
                 }
             },
             "license": [
@@ -47,7 +47,7 @@
                 "source": "https://github.com/mdibella-dev/wordpress-helper/tree/main",
                 "issues": "https://github.com/mdibella-dev/wordpress-helper/issues"
             },
-            "time": "2025-11-02T12:16:47+00:00"
+            "time": "2025-11-03T20:07:47+00:00"
         }
     ],
     "packages-dev": [],

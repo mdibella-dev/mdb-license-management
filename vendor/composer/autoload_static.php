@@ -4,32 +4,35 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf4a199a29af11bcf90b9aa0ea51be751
+class ComposerStaticInit5df6ff88bf3a25a25837364f70a64263
 {
     public static $prefixLengthsPsr4 = array (
-        'w' => 
+        'W' => 
         array (
-            'wordpress_helper\\classes\\' => 25,
+            'WordPress_Helper\\' => 17,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'wordpress_helper\\classes\\' => 
+        'WordPress_Helper\\' => 
         array (
-            0 => __DIR__ . '/..' . '/mdibella-dev/wordpress-helper/classes',
+            0 => __DIR__ . '/..' . '/mdibella-dev/wordpress-helper/includes',
         ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'WordPress_Helper\\Admin_Post_List' => __DIR__ . '/..' . '/mdibella-dev/wordpress-helper/includes/Admin_Post_List.php',
+        'WordPress_Helper\\Admin_Taxonomy_List' => __DIR__ . '/..' . '/mdibella-dev/wordpress-helper/includes/Admin_Taxonomy_List.php',
+        'WordPress_Helper\\Shortcode' => __DIR__ . '/..' . '/mdibella-dev/wordpress-helper/includes/Shortcode.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf4a199a29af11bcf90b9aa0ea51be751::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf4a199a29af11bcf90b9aa0ea51be751::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitf4a199a29af11bcf90b9aa0ea51be751::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit5df6ff88bf3a25a25837364f70a64263::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit5df6ff88bf3a25a25837364f70a64263::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit5df6ff88bf3a25a25837364f70a64263::$classMap;
 
         }, null, ClassLoader::class);
     }

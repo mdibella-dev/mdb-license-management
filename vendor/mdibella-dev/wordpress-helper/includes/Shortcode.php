@@ -1,14 +1,12 @@
 <?php
 /**
- * Class Shortcode
+ * Class WordPress_Helper\Shortcode
  *
  * @author  Marco Di Bella
  * @package wordpress-helper
- *
- * @version 1.1.1
  */
 
-namespace wordpress_helper\classes;
+namespace WordPress_Helper;
 
 
 
@@ -22,8 +20,6 @@ if ( ! class_exists( __NAMESPACE__ . '\Shortcode' ) ) {
 
     /**
      * An abstract class for the implementation of shortcodes.
-     *
-     * @version 1.0.1
      */
 
     abstract class Shortcode {
