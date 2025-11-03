@@ -6,9 +6,10 @@
  * @package mdb-license-management
  */
 
-namespace mdb_license_management\admin\available_licenses;
+namespace MDB_License_Management\Admin;
 
-use mdb_license_management\classes\Media_License_List_Table;
+use MDB_License_Management\Classes\Media_License_List_Table;
+
 
 
 /** Prevent direct access */

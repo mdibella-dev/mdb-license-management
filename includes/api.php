@@ -6,9 +6,9 @@
  * @package mdb-license-management
  */
 
-namespace mdb_license_management\theme_integration;
+namespace MDB_License_Management\API;
 
-use mdb_license_management\classes\Media_Credit;
+use MDB_License_Management\Classes\Media_Credit;
 
 
 

@@ -13,7 +13,7 @@
  * @package mdb-license-management
  */
 
-namespace mdb_license_management;
+namespace MDB_License_Management;
 
 
 /** Prevent direct access */

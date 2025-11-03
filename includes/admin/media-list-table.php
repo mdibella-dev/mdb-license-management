@@ -6,10 +6,11 @@
  * @package mdb-license-management
  */
 
-namespace mdb_license_management;
+namespace MDB_License_Management\Admin;
 
-use mdb_license_management\classes\Media_Credit;
-use mdb_license_management\classes\Media_License;
+use MDB_License_Management\Classes\Media_Credit;
+use MDB_License_Management\Classes\Media_License;
+
 
 
 /** Prevent direct access */
