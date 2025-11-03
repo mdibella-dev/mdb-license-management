@@ -1,15 +1,12 @@
 <?php
 /**
- * API for theme integration (deprecated)
+ * API for theme integration (defunc)
  *
  * @author  Marco Di Bella
  * @package mdb-license-management
  */
 
-namespace mdb_license_management\theme_integration;
-
-use mdb_license_management\Media_Record;
-
+namespace MDB_License_Management\API;
 
 
 /** Prevent direct access */
@@ -29,7 +26,6 @@ defined( 'ABSPATH' ) or exit;
  */
 
 function get_byline( $id ) {
-    $record = new Media_Record( $id );
-
-    return $record->get_by_name();
+   /*$record = new Media_Record( $id );**/
+    return '';
 }
