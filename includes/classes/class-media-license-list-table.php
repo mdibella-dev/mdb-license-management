@@ -9,9 +9,9 @@
  * @package mdb-license-management
  */
 
-namespace mdb_license_management\classes;
+namespace MDB_License_Management\Classes;
 
-use const mdb_license_management\PLUGIN_URL;
+use const MDB_License_Management\PLUGIN_URL;
 
 
 
